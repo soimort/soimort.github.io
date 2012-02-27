@@ -1,0 +1,213 @@
+---
+layout: post
+category: tech-blog
+title: 版本控制系统入门 (I). Subversion
+description: 本文采用 Creative Commons Attribution-ShareAlike 3.0 Unported 授权。
+tag: tools
+disqus: true
+---
+
+h2. 0. 预备知识
+
+本文讲解软件开发中常用的软件配置管理（Software Configuration Management, SCM）工具，即版本控制系统（Version Control System, VCS）。读者需要具备一定的实际开发经验，并且熟悉Linux或类Unix系统下的命令行操作。
+
+h2. 1. 为何需要配置管理？
+
+配置管理（Configuration Management, CM）是一种用于“管理变化”的工具。让我们假设有两名技术文档员Bob和Susan，他们同时参与了一个技术手册的更新维护工作。在一次例会上，经理给他们两人各分配了更新同一个文档中不同章节的任务。
+
+这个技术手册存放在一个Bob和Susan都能够访问的服务器上。在没有任何配置管理工具，也没有人为地进行适当的进度协调时，会产生一些问题。一种避免出现问题的手段是，存储该文档的服务器经过设置，使得Bob和Susan无法在同一时间打开这份文档进行工作。但这显然会降低这项工作的效率。
+
+当存储用的服务器允许该文档同时被Bob和Susan打开并进行写操作时，更加危险的情形出现了。以下是可能会发生的状况：
+# Bob在他的计算机上打开了文档的一个拷贝，更新属于他任务的一部分章节。
+# Susan在她的计算机上打开了文档的一个拷贝，更新属于她任务的另一部分章节。
+# Bob完成了他的更改，在存储服务器上写入了该文档。
+# Susan完成了她的更改，在存储服务器上写入了该文档。
+
+下图显示了当该文档的拷贝没有被适当地控制协调时，将会产生的问题。当Susan保存她自己的更改时，她同时也覆盖了之前由Bob所做的那些更改！
+
+!http://code.google.com/edu/images/cm1.PNG!
+
+这正是配置管理系统大显身手的场合。借助于配置管理系统，Bob和Susan都可以“ *签出（check out）* ”他们自己的一份技术文档的拷贝并进行工作。当Bob将他的更改重新“ *签入（check in）* ”回系统时，系统知道Susan也已经签出了她的一份拷贝。之后当Susan签入她的更改时，系统会自动分析Bob和Susan所分别做出的更改并且 *合并（merge）* 两份拷贝，创建出一个新的版本。
+
+除了管理并发的更改之外，配置管理系统还有其他若干有用的功能。很多系统将每个文件自创建起的所有历史版本都进行了存档。在以上维护技术手册的案例中，这项功能非常有用，因为用户在针对技术手册的内容向软件维护人员提问时，可能正使用着某个较旧版本的文档。配置管理系统允许维护者访问处于过去某个时间点状态的文件，看到用户所见的实际版本。
+
+配置管理系统在控制软件源代码的更改时尤其有用。这类系统被称作软件配置管理（Software Configuration Management, SCM）系统。在一个大型的软件项目库中通常存在着大量的独立的源代码文件，并且同时由庞大的工程师团队开发和维护，显然软件配置管理系统在这里将起到至关重要的作用。
+
+h2. 2. 软件配置管理
+
+软件配置管理系统基于一个简单的原理：所有文件的决定性内容被统一存放在一个中心仓储里，人们可以“签出”这些文件的拷贝到本地机，利用这些拷贝独立地进行工作，当完成工作后“签入”回中心仓储。软件配置管理系统将会追踪和管理每一个对“唯一的”主版本所作的修改。
+
+几乎所有现代的软件配置管理系统均提供以下的功能：
+* 并发（concurrency）管理
+* 版本化
+* 同步
+
+h3. 2.1. 并发管理
+
+并发管理指一人以上同时编辑一份文件。对于较大的软件仓储，我们经常希望能够做到这一点，但这可能带来一些问题。
+
+考虑软件开发中的一个简单例子：假定我们允许工程师同时修改中心仓储中的同一份源代码文件。客户端1和客户端2的工程师同时需要对一份文件做出更改：
+# 客户端1打开了bar.cpp。
+# 客户端2打开了bar.cpp。
+# 客户端1修改了文件并且写入仓储。
+# 客户端2修改了文件并且写入仓储，这覆盖了客户端1做出的更改。
+
+显然，我们并不想看到这种情形发生。即使我们通过限制两个工程师必须利用自己的本地拷贝进行工作以避免发生覆盖的危险，这两份独立的拷贝最终也必须被协调为一致。为了解决这个问题，大部分软件配置管理系统允许多个工程师签出一份文件的拷贝（"sync"或"update"）并根据需要做出修改，系统在这些文件被签入回仓储（"submit"或"commit"）后执行某种特定的算法，用以最终合并这些更改。
+
+!http://code.google.com/edu/images/sync.PNG!
+
+这些算法可以从简单（直接询问工程师如何解决冲突）到复杂（自动决定如何合并发生冲突的更改，除非遇到系统无法处理的情形）。
+
+h3. 2.2. 版本化
+
+版本化指追踪并保存文件的变化以供重新生成（或“回滚”到）某个文件的任意早期版本。这通过在每个文件被签入仓储时生成一个存档拷贝，或记录每个文件的每一次具体变化来实现。在任意时刻，我们可以使用这些存档或变化信息来生成一个较早的版本。版本系统也可以生成日志报告，包含谁于何时签入了这些变化、以及具体的变化等信息。
+
+h3. 2.3. 同步
+
+对于某些软件配置管理系统而言，仅仅能从仓储中签入或签出独立的单个文件。更加先进的系统允许一次同时签出多个文件。工程师签出他们自己的一份完整的（或部分的）仓储的拷贝，并利用其需要的文件进行工作。之后他们定期地提交自己的修改回主仓储，并且更新他们自己的拷贝以及时地获取其他工程师做出的修改。这一过程称作同步或更新。
+
+h2. 3. 版本控制中的常见概念
+
+* *修订（revision）* : 对于一个或一组文件作出的更改。在一个持续开发的项目中，一个修订相当于项目当前的一个“快照（snapshot）”。
+* *仓储（repository）* : 版本控制系统存储一个项目及其全部修订历史记录的主拷贝。每个项目均有且仅有一个仓储。
+* *工作拷贝（working copy）* : 工程师实际用于工作并修改的本地项目拷贝。对于每个工程师而言，可以同时存在多份工作拷贝。
+* *签出（check out）* : 从仓储请求获得一份工作拷贝。一份工作拷贝刚被签出时的状态与项目的当前状态完全等同。
+* *提交（commit）* : 将工作拷贝中的更改提交至中心仓储。又叫 *签入（check in）* 或 *submit* 。
+* *签入（check in）* : 将工作拷贝中的更改提交至中心仓储。又叫 *提交（commit）* 或 *submit* 。
+* *更新（update）* : 将其他人在仓储中所做的更改同步更新至自己的工作拷贝，或者仅仅检查工作拷贝是否存在未提交的更改。这与前面提到过的 *同步（sync）* 概念相同。因此，更新/同步将保证本地工作拷贝与仓储及时保持同步状态。
+* *合并（merge）* : 将工作拷贝中的更改与仓储中的更改合并，创建出一个新的版本。注意：两份更改在合并过程中可能会产生冲突。
+* *冲突（conflict）* : 当两个工程师试着提交对于同一文件中同一部分的更改时发生。版本控制系统将作出提示，然后由工程师自行决定如何解决冲突。
+* *日志信息（log message）* :
+提交一个修订时附加的一段文本注释，描述了所作出的变更。日志信息可以显示出一个项目开发历史进展的大致状况。
+
+h2. 4. Subversion简介
+
+Subversion（缩写SVN）是一个流行的开源版本控制系统。它具备上述的全部功能。Subversion由另一个早期的集中式版本控制系统CVS演变而来，其目的是最终取代CVS，提供一套更为强大的版本控制机制。
+
+对于可能发生的冲突，SVN遵循一种极简单的方法论：冲突总是在两个或更多工程师对于源代码的同一部分作出不同更改、并且都提交了更改的情形下发生。SVN所做的仅仅是警告工程师有一个冲突发生了——如何解决则必须由工程师自行决定。
+
+在指定的目录中创建一个仓储，使用 @svn import@ 命令导入已有目录中的内容到项目仓储：
+
+bc. $ svnadmin create /usr/local/svn/newrepos
+$ svn import mytree file:///usr/local/svn/newrepos/project -m "Initial import"
+Adding         mytree/foo.c
+Adding         mytree/bar.c
+Adding         mytree/subdir
+Adding         mytree/subdir/foobar.h
+Committed revision 1.
+
+使用 @svn list@ 命令可以查看仓储目录内容：
+
+bc. $ svn list file:///usr/local/svn/newrepos/project
+bar.c
+foo.c
+subdir/
+
+前面的 @svn import@ 命令并未实际创建任何工作拷贝。如要签出一份工作拷贝，需要执行 @svn checkout@ 命令：
+
+bc. $ svn checkout file:///usr/local/svn/newrepos/project
+A    foo.c
+A    bar.c
+A    subdir
+A    subdir/foobar.h
+.
+Checked out revision 215.
+
+现在你已经有了一份工作拷贝，可以修改其中的文件和目录了！工作拷贝与文件系统中其他普通的目录一样，可以在其中任意添加、编辑或移动文件，甚至可以删除整个工作拷贝。注意，如果在工作拷贝中复制或移动文件，必须使用 @svn copy@ 和 @svn move@ 命令代替正常的操作系统命令。添加一个新文件使用 @svn add@ ，删除一个文件使用 @svn delete@ 。如果你所要做的只是编辑，只需直接打开文件编辑即可。
+
+注意有一些标准的目录名称会被Subversion使用。“trunk”目录用以保存项目的开发主线。“branches”目录用以保存工作时可能会用到的一些版本分支：
+
+bc. $ svn list file:///usr/local/svn/repos
+/trunk
+/branches
+
+一旦完成了所需的更改，可以将工作拷贝同步到仓储。如果其他工程师同样也在该仓储上工作，保持你的工作拷贝始终为最新版本非常重要。可以使用 @svn status@ 命令查看自己所作的更改：
+
+bc. $ svn status
+A       subdir/new.h      # file is scheduled for addition
+D       subdir/old.c      # file is scheduled for deletion
+M       bar.c             # the content in bar.c has local modifications
+
+注意这里有许多用于控制输出的符号。如果想要查看一个被修改文件的具体变化，使用 @svn diff@ 命令：
+
+bc. $ svn diff bar.c
+Index: bar.c
+=============================================================
+--- bar.c	(revision 5)
++++ bar.c	(working copy)
+@@ -1,18 +1,19 @@
++#include 
++#include 
+int main(void) {
+- int temp_var;
++ int new_var;
+...
+
+使用 @svn update@ 命令从仓储更新自己的工作拷贝：
+
+bc. $ svn update
+U  foo.c
+U  bar.c
+G  subdir/foobar.h
+C  subdir/new.h
+Updated to revision 2.
+
+注意可能会发生冲突的地方。在以上的输出中，“U”表明仓储中的这些文件并未发生变化，更新成功；“G”意味着一个合并发生了，因为仓储中的文件版本已经改变，但该变化与你的更改并不冲突；“C”表明发现一个冲突，这意味着仓储中的变化将会覆盖你的更改，因此必须手动在两者之间做出选择。
+
+对于每次发生冲突的文件，Subversion将在工作拷贝中放置三个临时文件：
+* file.mine: 这是在你从仓储更新工作拷贝之前，经过你更改后的文件。
+* file.rOLDREV: 这是在你作出更改之前，从仓储中得到的旧文件。
+* file.rNEWREV: 这是仓储中目前最新版本的文件。
+
+你可以选择以下三种方式之一解决冲突：
+* 查看源代码文件并手动进行合并。
+* 拷贝以上三个由SVN创建的临时文件之一，覆盖你工作拷贝中的版本。
+* 执行 @svn revert@ ，放弃你所做出的更改。
+
+一旦你解决了冲突问题，你应当执行 @svn resolved@ 命令通知SVN。这将使得SVN移除这三个临时文件，并且不再认为该文件处于冲突状态。
+
+最后一件要做的事情就是通过 @svn commit@ 命令提交你最终版本的工作拷贝到仓储！当你提交一个更改时，你应当附上一条日志信息，用以描述你所作的更改。该日志信息将附在你所创建的修订上：
+@$ svn commit -m "Update files to include new headers."@
+
+h2. 5. 其他早期的集中式版本控制系统
+
+h3. 5.1. SCCS（Source Code Control System）和RCS （Revision Control System）
+
+早期的软件配置管理系统是面向Unix主机系统的，它们只允许在本地大型Unix主机的仓储上进行协作开发。这类典型的工具有SCCS和RCS，它们采取强行限制写访问权限的版本控制方式，即通过在用户签出文件之后立即锁定该文件的方法，控制同一时刻只允许一个用户进行写操作。
+
+h3. 5.2. CVS (Concurrent Version System)
+
+CVS由主机系统上的RCS演变而成，它不仅像RCS一样允许锁定文件，更支持对同一文件的并发工作。CVS支持客户端-服务器模式的开发模式，中心仓储不仅限于本地，而且可以存放在远程的服务器上以供开发人员访问。CVS是面向项目的管理工具，比起RCS也更加适合多目录层次的项目管理。
+
+创建新的仓储目录，将其路径加入到环境变量$CVSROOT中（bash下）：
+@$ export CVSROOT=/usr/local/cvsdepot@
+
+在指定目录下初始化仓储：
+@$ cvs -d /usr/local/cvsdepot init@
+
+将目录中所有文件内容导入仓储：
+@$ cvs import -m "Imported project files." projectname vendortag releasetag@
+
+签出一份工作拷贝到本地当前路径下的projectname目录：
+@$ cvs checkout projectname@
+
+提交工作拷贝到仓储：
+@$ cvs commit@
+
+从仓储更新工作拷贝：
+@$ cvs update@
+
+
+
+h2. 参考链接
+
+* "Google Code University - Software Configuration Management":http://code.google.com/edu/tools101/scm.html
+
+* "[Wikipedia: Subversion]":http://en.wikipedia.org/wiki/Subversion_%28software%29
+* "[Subversion]":http://subversion.tigris.org/
+* "Version Control with Subversion, For Subversion 1.7":http://svnbook.red-bean.com/en/1.7/
+
+* "[Wikipedia: RCS]":http://en.wikipedia.org/wiki/Revision_Control_System
+* "[RCS]":http://www.gnu.org/software/rcs/
+* "[Wikipedia: CVS]":http://en.wikipedia.org/wiki/Concurrent_Versions_System
+* "[CVS]":http://savannah.nongnu.org/projects/cvs/

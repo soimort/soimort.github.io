@@ -1,0 +1,15 @@
+{% for post in site.posts %}
+{% if post.layout == 'album' and post.category == 'photography' %}
+<article class="articleScrap">
+    <aside class="asideScrap">
+        {{ post.title }}
+    </aside>
+    
+    <section class="sectionScrap">
+        <a href="{{ post.url }}"><img src="{{ post.cover-image }}" width="50%" alt="{{ post.title }}" title="{{ post.title }}" class="imgScrap" /></a>
+        <br />
+        {{ post.description }}
+    </section>
+</article>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,12 @@
+---
+layout: album
+category: design
+title: Biotech Chrome Themes
+cover-image: http://i.imgur.com/IMmH1.jpg
+description: 
+---
+
+<div style="text-align: center">
+    <a href="http://soimort.deviantart.com/art/Biotech-Chrome-Theme-DNA-287281856"><img src="http://fc09.deviantart.net/fs71/i/2012/057/4/5/biotech_chrome_theme___dna_by_soimort-d4r1g3k.png" width="80%" /><br /><b>DNA</b></a>
+    
+</div>

@@ -1,0 +1,24 @@
+nav#navBarTop {
+	visibility: hidden;
+}
+
+div#divLeft {
+	position: relative;
+	top: 0;
+	left: 10%;
+	width: 80%;
+}
+
+div#divMiddle {
+	position: relative;
+	top: -120px;
+	left: 10%;
+	width: 80%;
+}
+
+div#divRight {
+	position: relative;
+	top: -240px;
+	left: 10%;
+	width: 80%;
+}

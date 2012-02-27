@@ -1,0 +1,323 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	background-attachment: fixed;
+	background-color: #000000;
+	background-image: url("");
+	background-position: top center;
+	background-repeat: no-repeat;
+	
+	font-family: 'Droid Sans', 'DejaVu Sans';
+	font-size: 13px;
+}
+
+a {
+	color: #FFFFFF;
+	font-weight: normal;
+	text-decoration: none;
+	
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+a:hover {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+
+nav#navBarTop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 64px;
+	z-index: 32;
+	
+	background-color: #001111;
+	box-shadow: 0 2px 4px #001111;
+	opacity: 0.9;
+}
+
+nav#navBarBottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 64px;
+	z-index: 32;
+	
+	background-color: #001111;
+	box-shadow: 0 -2px 4px #001111;
+	opacity: 0.9;
+	
+	color: #FFFFFF;
+}
+
+nav ul {
+	list-style: none;
+}
+
+.navBarListLeft {
+	position: relative;
+	top: 0;
+	left: 0;
+	
+	padding-top: 5px;
+	padding-left: 16px;
+}
+
+.navBarListRight {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	padding-top: 5px;
+	padding-right: 16px;
+}
+
+nav li {
+	display: inline;
+	padding-right: 8px;
+	
+	color: #DDDDDD;
+	
+	font-size: 12px;
+}
+
+img.navDock {
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+img.navDock:hover {
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-o-transform: scale(1.2);
+}
+
+
+
+#divLeft {
+	position: absolute;
+	top: 128px;
+	left: 15%;
+	width: 20%;
+}
+
+#divMiddle {
+	position: absolute;
+	top: 128px;
+	left: 36%;
+	width: 24%;
+}
+
+#divRight {
+	position: absolute;
+	top: 128px;
+	left: 61%;
+	width: 24%;
+}
+
+#divSlideshow, #divPhotography, #divDesign, #divDigitalArt,
+#divSignature, #divDiaries, #divFavorites, #divDoubanShow,
+#divMyProjects, #divTechBlog, #divFreeCoding, #divLearningNotes, #divLinks, #divAboutMe {
+	position: relative;
+	
+	padding: 16px;
+	margin-top: 8px;
+	
+	background-color: #002222;
+	border-radius: 8px;
+	box-shadow: 0 0 16px 0 #002222;
+	opacity: 0.8;
+	
+	color: #FFFFFF;
+}
+
+#divSlideshow, #divSignature, #divMyProjects {
+	margin-top: 0;
+}
+
+#divSlideshow {
+	padding-top: -32px;
+}
+
+div.div0 {
+	height: 128px;
+}
+
+
+
+.hTitle1 {
+	position: relative;
+	top: -8px;
+	
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.hTitle2 {
+	position: relative;
+	top: -8px;
+	
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.divExtLinks {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 50%;
+	
+	text-align: right;
+}
+
+
+
+.articleScrap {
+	position: relative;
+	
+	padding: 8px;
+	margin-top: 0px;
+	
+	background-color: #001111;
+	border-radius: 8px;
+	opacity: 0.8;
+}
+
+.asideScrap {
+	position: absolute;
+	left: 55%;
+	width: 40%;
+	
+	text-align: right;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.sectionScrap {
+	position: relative;
+	left: 0;
+	width: 100%;
+	
+	font-style: italic;
+}
+
+.imgScrap {
+	border-radius: 4px;
+	
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+.imgScrap:hover {
+	box-shadow: 0 0 8px 2px #FFFFFF;
+}
+
+
+
+.divIndex {
+	position: relative;
+	margin-bottom: 4px;
+	
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transform: scale(1.2);
+}
+
+.divIndex:hover {
+	box-shadow: 0 0 0 4px #001111;
+}
+
+.divIndexTitle {
+	left: 0;
+	width: 100%;
+}
+
+.divIndexDate {
+	position: relative;
+	top: 0;
+	left: 70%;
+	width: 30%;
+	
+	text-align: right;
+}
+
+
+
+#divPost {
+	position: absolute;
+	top: 128px;
+	left: 32%;
+	width: 60%;
+	
+	padding: 16px;
+	
+	
+	background-color: #001111;
+	border-radius: 8px;
+	box-shadow: 0 0 16px 0 #001111;
+	opacity: 0.8;
+	color: #FFFFFF;
+}
+
+#articlePost {
+	background-color: #002222;
+	border-radius: 8px;
+	opacity: 0.8;
+	
+	padding: 8px;
+	
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+#articlePost a {
+	font-weight: bold;
+}
+
+#articlePost a:hover {
+	text-decoration: underline;
+}
+
+#divTitle {
+	position: fixed;
+	top: 128px;
+	left: 8%;
+	width: 16%;
+	
+	text-align: center;
+}
+
+#divTitleNav {
+	position: fixed;
+	bottom: 20%;
+	left: 8%;
+	width: 16%;
+}
+
+
+
+::-webkit-scrollbar {
+	width: 16px;
+	background-color: #001111;
+}
+
+::-webkit-scrollbar-thumb {
+	box-shadow: inset 0 0 99px rgba(255, 255, 255, .5);
+	border: solid transparent;
+	border-width: 6px 4px;
+}
