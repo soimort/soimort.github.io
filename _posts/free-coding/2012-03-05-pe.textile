@@ -1,7 +1,7 @@
 ---
 layout: post
 category: free-coding
-title: Project Euler / Problem 1~6 (Python)
+title: Project Euler / Problem 1~6
 description: Mort's solutions to Project Euler (source code released into the Public Domain)
 tag: pe
 disqus: true
