@@ -1,0 +1,66 @@
+---
+layout: post
+category: free-coding
+title: Project Euler / Problem 21~24
+description: Mort's solutions to Project Euler (source code released into the Public Domain)
+tag: pe
+disqus: true
+---
+
+h2. Problem 21
+
+Evaluate the sum of all amicable pairs under 10000.
+
+h3. Solution:
+
+<script src="https://gist.github.com/2004752.js?file=pe021.py"></script>
+
+
+
+h2. Problem 22
+
+What is the total of all the name scores in the file of first names?
+
+h3. Solution:
+
+<script src="https://gist.github.com/2004837.js?file=pe022.py"></script>
+
+
+
+h2. Problem 23
+
+Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+
+h3. Solution:
+
+Implementation in Python:
+
+<script src="https://gist.github.com/2006170.js?file=pe023.py"></script>
+
+bc. $ time python3 ./pe023.py 
+4179871
+real	0m16.403s
+user	0m16.249s
+sys	0m0.007s
+
+Implementation in C:
+
+<script src="https://gist.github.com/2006177.js?file=pe023.c"></script>
+
+bc. $ gcc -o pe023 pe023.c -std=c99 -lm
+$ time ./pe023
+4179871
+real	0m0.110s
+user	0m0.110s
+sys	0m0.000s
+
+
+
+h2. Problem 24
+
+What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+
+h3. Solution:
+
+<script src="https://gist.github.com/2006416.js?file=pe024.py"></script>
+
