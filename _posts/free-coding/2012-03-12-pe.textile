@@ -1,0 +1,53 @@
+---
+layout: post
+category: free-coding
+title: Project Euler / Problem 25~28
+description: Mort's solutions to Project Euler (source code released into the Public Domain)
+tag: pe
+disqus: true
+---
+
+h2. Problem 25
+
+What is the first term in the Fibonacci sequence to contain 1000 digits?
+
+h3. Solution:
+
+<script src="https://gist.github.com/2022451.js?file=pe025.py"></script>
+
+
+
+h2. Problem 26
+
+Find the value of d < 1000 for which 1/d contains the longest recurring cycle.
+
+h3. Solution:
+
+<script src="https://gist.github.com/2022643.js?file=pe026.py"></script>
+
+
+
+h2. Problem 27
+
+Find a quadratic formula that produces the maximum number of primes for consecutive values of n.
+
+h3. Solution:
+
+<script src="https://gist.github.com/2022949.js?file=pe027.py"></script>
+
+
+
+h2. Problem 28
+
+What is the sum of both diagonals in a 1001 by 1001 spiral?
+
+h3. Solution:
+
+$1+4\sum_{i=1}^{500}{[1+\sum_{i=1}^{j}{(8i-3)}]}$
+
+Straightforward expression in Maxima:
+<script src="https://gist.github.com/2023225.js?file=pe028.mac"></script>
+
+Implementation in Python:
+<script src="https://gist.github.com/2023259.js?file=pe028.py"></script>
+
