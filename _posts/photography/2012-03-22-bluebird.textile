@@ -2,11 +2,11 @@
 layout: album
 category: photography
 title: ブルーバードの空
-cover-image: https://lh4.googleusercontent.com/-CG8vlLWyJ80/T2qKSXl6TLI/AAAAAAAABoY/RL2Bs9t4qeI/s800/DSC06617_2.JPG
+cover-image: https://lh4.googleusercontent.com/-uS_1UPW__pY/T2qEM-PkjrI/AAAAAAAABmo/6Mn3uTlPjWA/s800/DSC06617.JPG
 description: 
 ---
 
 <div style="text-align: center">
-    <a href="https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313"><img src="https://lh4.googleusercontent.com/-CG8vlLWyJ80/T2qKSXl6TLI/AAAAAAAABoY/RL2Bs9t4qeI/s800/DSC06617_2.JPG" width="80%" /><br /><b>飛翔いたら戻らないと言って。目指したのは、蒼い 蒼い あの空。</b></a>
+    <a href="https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313"><img src="https://lh4.googleusercontent.com/-uS_1UPW__pY/T2qEM-PkjrI/AAAAAAAABmo/6Mn3uTlPjWA/s800/DSC06617.JPG" width="80%" /><br /><b>飛翔いたら戻らないと言って。目指したのは、蒼い 蒼い あの空。</b></a>
     
 </div>
