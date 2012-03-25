@@ -1,0 +1,86 @@
+---
+layout: post
+category: free-coding
+title: Project Euler / Problem 44~45
+description: Mort's solutions to Project Euler (source code released into the Public Domain)
+tag: pe
+disqus: true
+---
+
+h2. Problem 44
+
+Find the smallest pair of pentagonal numbers whose sum and difference is pentagonal.
+
+h3. Solution:
+
+Python implementation using List. Unbearably slow:
+
+<script src="https://gist.github.com/2181582.js?file=pe044_1.py"></script>
+
+bc. $ time python pe044_1.py 
+5482660
+real	9m2.339s
+user	9m1.251s
+sys	0m0.003s
+
+Python implementation using Dictionary (hash table):
+
+<script src="https://gist.github.com/2181585.js?file=pe044_2.py"></script>
+
+bc. $ time python pe044_2.py 
+5482660
+real	0m28.910s
+user	0m28.841s
+sys	0m0.003s
+
+bc. $ time python2 pe044_2.py 
+5482660
+real	0m20.428s
+user	0m20.399s
+sys	0m0.000s
+
+bc. $ time pypy pe044_2.py 
+5482660
+real	0m3.576s
+user	0m3.546s
+sys	0m0.023s
+
+C implementation using hash table:
+
+<script src="https://gist.github.com/2181586.js?file=pe044.c"></script>
+
+bc. $ gcc -o pe044 pe044.c -std=c99
+$ time ./pe044
+5482660
+real	0m0.234s
+user	0m0.230s
+sys	0m0.000s
+
+
+
+h2. Problem 45
+
+After 40755, what is the next triangle number that is also pentagonal and hexagonal?
+
+h3. Solution:
+
+<script src="https://gist.github.com/2192802.js?file=pe045.py"></script>
+
+bc. $ time python pe045.py 
+27693 1533776805
+real	0m0.092s
+user	0m0.080s
+sys	0m0.010s
+
+bc. $ time python2 pe045.py 
+(27693, 1533776805)
+real	0m0.051s
+user	0m0.050s
+sys	0m0.000s
+
+bc. $ time pypy pe045.py 
+(27693, 1533776805)
+real	0m0.173s
+user	0m0.143s
+sys	0m0.027s
+
