@@ -1,0 +1,17 @@
+---
+layout: post
+category: free-coding
+title: Project Euler / Problem 46
+description: Mort's solutions to Project Euler (source code released into the Public Domain)
+tag: pe
+disqus: true
+---
+
+h2. Problem 46
+
+What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
+
+h3. Solution:
+
+<script src="https://gist.github.com/2208863.js?file=pe046.py"></script>
+
