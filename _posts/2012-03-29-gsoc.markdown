@@ -103,14 +103,6 @@ Will be working on my fork of Qt Creator in either one of these repos:
 * [http://qt-creator.soimort.org/](http://qt-creator.soimort.org/)
 * [http://www.soimort.org/gsoc/](http://www.soimort.org/gsoc/)
 
-### GSoC Related
-* **Weekly report / changelog**: will be blogged regularly on my website
-    * [http://www.soimort.org/gsoc/](http://www.soimort.org/gsoc/)
-* **Daily commit**: see the git repository page
-* **Communication** (will appear in):
-    * irc: *#pyside*, *#qt*, *#qt-creator*, *#gsoc*
-    * related mailing lists
-
 ### Timeline
 * **March 26~**: start writing project proposal for application
 * **April 2~**: dive into Qt Creator code base; finish requirements document
@@ -135,6 +127,10 @@ Will be working on my fork of Qt Creator in either one of these repos:
 * **August 13~**: clean up the code and doxygen docs; more test
 * **August 20~**: second release to public; community feedback //official "pencils down" date
 
-### A Lttle About Me
-
-I'm a student majoring in Software Engineering in a Swedish college. Although my experience with Python is not very long, I have a firm C/C++ background (an experience of seven years' programming) and used Qt Creator as my IDE for C++ GUI programming.
+### GSoC Related
+* **Weekly report / changelog**: will be blogged regularly on my website
+    * [http://www.soimort.org/gsoc/](http://www.soimort.org/gsoc/)
+* **Daily commit**: see the git repository page
+* **Communication** (will appear in):
+    * irc: *#pyside*, *#qt*, *#qt-creator*, *#gsoc*
+    * related mailing lists
