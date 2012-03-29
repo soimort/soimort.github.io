@@ -7,6 +7,6 @@ description:
 ---
 
 <div style="text-align: center">
-    <a href="https://plus.google.com/photos/100974147585154622588/albums/5520503304327776481"><img src="https://lh5.googleusercontent.com/-oahe6cg7TFk/TJ7WfFjd_sI/AAAAAAAAAlU/n3Q57SGjTQk/s516/uniform.front.10092600.orange.jpg" width="80%" /><br /><b>iGEM 2010 USTC_Software T-shirt Design</b></a>
+    <a href="https://plus.google.com/photos/100974147585154622588/albums/5520503304327776481"><img src="https://lh5.googleusercontent.com/-oahe6cg7TFk/TJ7WfFjd_sI/AAAAAAAAAlU/n3Q57SGjTQk/s516/uniform.front.10092600.orange.jpg" width="80%" /><br /><b>iGEM 2010 USTC_Software Team Shirt Design</b></a>
     
 </div>

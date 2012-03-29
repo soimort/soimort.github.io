@@ -10,16 +10,6 @@ background-image: http://i.imgur.com/fr1sk.jpg
         {% include Slideshow.html %}
     </div>
     
-    <div id="divPhotography">
-        <h1 class="hTitle1">Photography</h1>
-        <div class="divExtLinks">
-            <a href="https://plus.google.com/photos/100974147585154622588/albums" target="_blank"><img src="/~images/gplus-32.png" alt="gplus" title="Google+ Albums" class="navDock" height="24" /></a>
-            <a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantArt" class="navDock" height="24" /></a>
-        </div>
-        <hr />
-        {% include Photography.html %}
-    </div>
-    
     <div id="divDesign">
         <h1 class="hTitle1">Design</h1>
         <div class="divExtLinks">
@@ -29,14 +19,24 @@ background-image: http://i.imgur.com/fr1sk.jpg
         {% include Design.html %}
     </div>
     
-    <div id="divDigitalArt">
+    <div id="divPhotography">
+        <h1 class="hTitle1">Photography</h1>
+        <div class="divExtLinks">
+            <a href="https://plus.google.com/photos/100974147585154622588/albums" target="_blank"><img src="/~images/gplus-32.png" alt="gplus" title="Google+ Albums" class="navDock" height="24" /></a>
+            <!-- a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantArt" class="navDock" height="24" /></a -->
+        </div>
+        <hr />
+        {% include Photography.html %}
+    </div>
+    
+    <!-- div id="divDigitalArt">
         <h1 class="hTitle1">Digital Art</h1>
         <div class="divExtLinks">
             <a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantArt" class="navDock" height="24" /></a>
         </div>
         <hr />
         {% include DigitalArt.html %}
-    </div>
+    </div -->
     
     <div class="div0"></div>
 </div>
@@ -44,6 +44,24 @@ background-image: http://i.imgur.com/fr1sk.jpg
 <div id="divMiddle">
     <div id="divSignature">
         {% include Signature.html %}
+    </div>
+    
+    <div id="divLinks">
+        <h1 class="hTitle2">me @</h1>
+        <hr />
+        {% include Links.html %}
+    </div>
+    
+    <!-- div id="divNotebook">
+        <h1 class="hTitle1">Notebook</h1>
+        <hr />
+        {% include Notebook.html %}
+    </div -->
+    
+    <div id="divTechBlog">
+        <h1 class="hTitle1">Tech Blog</h1>
+        <hr />
+        {% include TechBlog.html %}
     </div>
     
     <div id="divDiaries">
@@ -56,14 +74,14 @@ background-image: http://i.imgur.com/fr1sk.jpg
         {% include Diaries.html %}
     </div>
     
-    <div id="divFavorites">
+    <!-- div id="divFavorites">
         <h1 class="hTitle1">Favorites</h1>
         <div class="divExtLinks">
             <a href="http://www.douban.com/people/soimort/" target="_blank"><img src="/~images/douban.png" alt="douban" title="Douban" class="navDock" height="24" /></a>
         </div>
         <hr />
         {% include Favorites.html %}
-    </div>
+    </div -->
     
     <div class="div0"></div>
 </div>
@@ -81,31 +99,13 @@ background-image: http://i.imgur.com/fr1sk.jpg
     </div>
     
     <div id="divFreeCoding">
-        <h1 class="hTitle1">Free Coding</h1>
+        <h1 class="hTitle1">Snippets</h1>
         <hr />
         {% include FreeCoding.html %}
     </div>
     
-    <div id="divTechBlog">
-        <h1 class="hTitle1">Tech Blog</h1>
-        <hr />
-        {% include TechBlog.html %}
-    </div>
-    
-    <div id="divLearningNotes">
-        <h1 class="hTitle1">Learning Notes</h1>
-        <hr />
-        {% include LearningNotes.html %}
-    </div>
-    
-    <div id="divLinks">
-        <h1 class="hTitle2">Links</h1>
-        <hr />
-        {% include Links.html %}
-    </div>
-    
     <div id="divAboutMe">
-        <h1 class="hTitle2">About Me</h1>
+        <h1 class="hTitle2">contact me</h1>
         <hr />
         {% include AboutMe.html %}
     </div>
