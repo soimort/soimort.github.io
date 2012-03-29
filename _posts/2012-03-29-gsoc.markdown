@@ -11,8 +11,9 @@ tag: gsoc
 
 ### Maintainer
 * name: [Mort Yao](https://plus.google.com/100974147585154622588)
-* email / xmpp: **mort yao at gmail dot com**
+* email / xmpp: **mort dot yao at gmail dot com**
 * irc: **soimort** @ freenode
+* link_id: **soimort**
 * github: [github.com/soimort](https://github.com/soimort)
 * blog: [www.soimort.org/gsoc](http://www.soimort.org/gsoc)
 
@@ -115,7 +116,7 @@ Will be working on my fork of Qt Creator in either one of these repos:
 * **April 2~**: dive into Qt Creator code base; finish requirements document
 * **April 9~**: dive into Qt Creator code base; contribute first patch to PySide (if required)
 * **April 16~**: dive into Qt Creator code base; start writing design document
-* **April 23~**: finish design document //an exam in college; if not accepted in GSoC: loose this timeline
+* **April 23~**: finish design document //an exam in college
 * **April 30~**: support of meta-build system for Python/PySide projects //another exam in college
 * **May 7~**: support of meta-build system for Python/PySide projects
 * **May 14~**: test for meta-build system
@@ -133,3 +134,7 @@ Will be working on my fork of Qt Creator in either one of these repos:
 * **August 6~**: write tutorials, demos and examples for Shiboken in Qt Creator
 * **August 13~**: clean up the code and doxygen docs; more test
 * **August 20~**: second release to public; community feedback //official "pencils down" date
+
+### A Lttle About Me
+
+I'm a student majoring in Software Engineering in a Swedish college. Although my experience with Python is not very long, I have a firm C/C++ background (an experience of seven years' programming) and used Qt Creator as my IDE for C++ GUI programming.
