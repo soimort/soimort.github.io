@@ -1,0 +1,27 @@
+---
+layout: post
+category: free-coding
+title: Project Euler / Problem 47~48
+description: Mort's solutions to Project Euler (source code released into the Public Domain)
+tag: pe
+disqus: true
+---
+
+h2. Problem 47
+
+Find the first four consecutive integers to have four distinct primes factors.
+
+h3. Solution:
+
+<script src="https://gist.github.com/2245337.js?file=pe047.py"></script>
+
+
+
+h2. Problem 48
+
+Find the last ten digits of $1^1 + 2^2 + ... + 1000^{1000}$.
+
+h3. Solution:
+
+<script src="https://gist.github.com/2245372.js?file=pe048.py"></script>
+
