@@ -3,6 +3,7 @@ layout: album
 category: design
 title: Biotech Chrome Themes
 cover-image: http://i.imgur.com/IMmH1.jpg
+redirect: http://soimort.deviantart.com/art/Biotech-Chrome-Theme-DNA-287281856
 description: 
 ---
 

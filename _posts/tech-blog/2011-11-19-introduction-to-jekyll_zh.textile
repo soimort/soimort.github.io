@@ -51,7 +51,7 @@ Jekyll使用动态脚本语言 "Ruby":http://zh.wikipedia.org/wiki/Ruby 写成�
 
 安装Jekyll的最好方式是通过RubyGems：
 
-@$ sudo gem install jekyll@
+@$ gem install jekyll@
 
 Jekyll依赖以下的gems模块： @liquid@ 、 @fast-stemmer@ 、 @classifier@ 、 @directory_watcher@ 、 @syntax@ 、 @maruku@ 、 @kramdown@ 、 @posix-spawn@ 和 @albino@ 。它们会被gem install命令自动安装。
 
@@ -71,7 +71,7 @@ Jekyll依赖以下的gems模块： @liquid@ 、 @fast-stemmer@ 、 @classifier@ 
 
 在OS X上，你可能需要升级你的RubyGems：
 
-@$ sudo gem update --system@ 
+@$ gem update --system@ 
 
 h3. LaTeX转换到PNG
 
@@ -83,7 +83,7 @@ h3. RDiscount
 
 如果你想用 "RDiscount":http://github.com/rtomayko/rdiscount/tree/master 取代 "Maruku":http://maruku.rubyforge.org/ 作为你的Markdown标记语言转换引擎，只需确认安装：
 
-@$ sudo gem install rdiscount@
+@$ gem install rdiscount@
 
 并通过以下命令行参数执行Jekyll：
 
@@ -99,7 +99,7 @@ h3. RedCloth
 
 若要使用Textile标记语言，需要安装相应的转换引擎 "RedCloth":http://redcloth.org/ 。
 
-@$ sudo gem install RedCloth@
+@$ gem install RedCloth@
 
 
 

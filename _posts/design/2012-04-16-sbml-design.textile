@@ -1,0 +1,13 @@
+---
+layout: album
+category: design
+title: SBML T-shirt Design (Final version)
+cover-image: http://fc02.deviantart.net/fs70/f/2012/106/c/d/sbml_t_shirt_design__final_version__by_soimort-d4wfbov.png
+redirect: http://soimort.deviantart.com/art/SBML-T-shirt-Design-Final-version-296327407
+description: 
+---
+
+<div style="text-align: center">
+    <a href="http://soimort.deviantart.com/art/SBML-T-shirt-Design-Final-version-296327407"><img src="http://fc02.deviantart.net/fs70/f/2012/106/c/d/sbml_t_shirt_design__final_version__by_soimort-d4wfbov.png" width="80%" /><br /><b>{{ page.title }}</b></a>
+    
+</div>

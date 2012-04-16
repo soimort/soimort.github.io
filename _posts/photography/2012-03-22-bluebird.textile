@@ -3,6 +3,7 @@ layout: album
 category: photography
 title: ブルーバードの空
 cover-image: https://lh4.googleusercontent.com/-uS_1UPW__pY/T2qEM-PkjrI/AAAAAAAABmo/6Mn3uTlPjWA/s800/DSC06617.JPG
+redirect: https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313
 description: 
 ---
 

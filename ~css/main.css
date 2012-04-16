@@ -138,12 +138,12 @@ img.navDock:hover {
 	background-color: #002222;
 	border-radius: 8px;
 	box-shadow: 0 0 16px 0 #002222;
-	opacity: 0.8;
+	opacity: 0.85;
 	
 	color: #FFFFFF;
 }
 
-#divSlideshow, #divSignature, #divMyProjects {
+#divSlideshow, #divSignature, #divLinks {
 	margin-top: 0;
 }
 
@@ -192,7 +192,7 @@ div.div0 {
 	
 	background-color: #001111;
 	border-radius: 8px;
-	opacity: 0.8;
+	opacity: 0.85;
 }
 
 .asideScrap {
@@ -270,7 +270,7 @@ div.div0 {
 	background-color: #001111;
 	border-radius: 8px;
 	box-shadow: 0 0 16px 0 #001111;
-	opacity: 0.8;
+	opacity: 0.85;
 	color: #FFFFFF;
 }
 

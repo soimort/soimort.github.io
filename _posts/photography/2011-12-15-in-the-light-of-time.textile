@@ -3,6 +3,7 @@ layout: album
 category: photography
 title: in the light of time
 cover-image: https://lh4.googleusercontent.com/-GX3uqdtjrWc/TupVwO-9CaI/AAAAAAAAA6U/jqPeXTPnFHk/w354-h266-k/0801_001.sc.jpg
+redirect: https://plus.google.com/photos/100974147585154622588/albums/5686451696823525089
 description: 
 ---
 

@@ -3,6 +3,7 @@ layout: album
 category: design
 title: SBML T-shirt Design Contest Submission
 cover-image: http://fc01.deviantart.net/fs71/f/2012/069/f/4/sbml_t_shirt_design_contest_submission_by_soimort-d4sc4jp.png
+redirect: http://soimort.deviantart.com/art/SBML-T-shirt-Design-Contest-Submission-289459717
 description: 
 ---
 
