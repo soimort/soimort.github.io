@@ -5,14 +5,9 @@ title: Code Jam 2012 资格赛 解题报告
 description: 本文采用 Creative Commons Attribution-ShareAlike 3.0 Unported 授权。
 tag: gcj
 disqus: true
-source-url: https://github.com/soimort/soimort.github.com/blob/master/_posts/tech-blog/2012-04-16-gcj-qr.markdown
-raw-url: https://raw.github.com/soimort/soimort.github.com/master/_posts/tech-blog/2012-04-16-gcj-qr.markdown
-history-url: https://github.com/soimort/soimort.github.com/commits/master/_posts/tech-blog/2012-04-16-gcj-qr.markdown
 ---
 
 ## Code Jam 2012 资格赛 解题报告
-
-<div class="divIndex" style="text-align: right">View Page as <b><a href="{{ source-url }}">Source</a></b> | <b><a href="{{ raw-url }}">Raw</a></b> | <b><a href="{{ history-url }}">History</a></b></div>
 
 ### Problem A. Speaking in Tongues
 [http://code.google.com/codejam/contest/1460488/dashboard#s=p0](http://code.google.com/codejam/contest/1460488/dashboard#s=p0)
