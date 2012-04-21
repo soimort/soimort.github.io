@@ -1,13 +1,8 @@
 ---
 layout: album
 category: photography
-title: ブルーバードの空
-cover-image: https://lh4.googleusercontent.com/-uS_1UPW__pY/T2qEM-PkjrI/AAAAAAAABmo/6Mn3uTlPjWA/s800/DSC06617.JPG
+title: 蒼い あの空。
+cover-image: https://lh6.googleusercontent.com/-dTSOHkMA1-A/T2qE9ECdC3I/AAAAAAAABnY/jWV-xZe_S8Y/s516/DSC06626.JPG
 redirect: https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313
 description: 
 ---
-
-<div style="text-align: center">
-    <a href="https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313"><img src="https://lh4.googleusercontent.com/-uS_1UPW__pY/T2qEM-PkjrI/AAAAAAAABmo/6Mn3uTlPjWA/s800/DSC06617.JPG" width="80%" /><br /><b>飛翔いたら戻らないと言って。目指したのは、蒼い 蒼い あの空。</b></a>
-    
-</div>

@@ -2,12 +2,7 @@
 layout: album
 category: photography
 title: in the light of time
-cover-image: https://lh4.googleusercontent.com/-GX3uqdtjrWc/TupVwO-9CaI/AAAAAAAAA6U/jqPeXTPnFHk/w354-h266-k/0801_001.sc.jpg
+cover-image: https://lh4.googleusercontent.com/-f0rYWQA4SC0/TupVsCXXB7I/AAAAAAAAA58/RBIzJBdrBlA/s688/0801_005.sc.jpg
 redirect: https://plus.google.com/photos/100974147585154622588/albums/5686451696823525089
 description: 
 ---
-
-<div style="text-align: center">
-    <a href="https://plus.google.com/photos/100974147585154622588/albums/5686451696823525089"><img src="https://lh6.googleusercontent.com/-GX3uqdtjrWc/TupVwO-9CaI/AAAAAAAAA6U/jqPeXTPnFHk/s688/0801_001.sc.jpg" width="80%" /><br /><b>in the light of time</b></a>
-    
-</div>
