@@ -1,0 +1,53 @@
+---
+layout: post
+category: tech-blog
+title: Code Jam 2012 Round 1A 反思
+description: 本文采用 Creative Commons Attribution-ShareAlike 3.0 Unported 授权。
+tag: gcj
+disqus: true
+---
+
+## Code Jam 2012 Round 1A 反思
+
+### Problem A. Password Problem
+[http://code.google.com/codejam/contest/1645485/dashboard#s=p0](http://code.google.com/codejam/contest/1645485/dashboard#s=p0)
+
+第一题纯模拟，我最不擅长的类型之一，光是理解题意就耗了20分钟(´д`;)
+
+其实就是计算n个数学期望找出其中的最小值……
+
+我居然极端脑残的把明显是O(n)的算法写成了O(n^2 )（见如下代码）。。。然后大数据点就超时了（第9个case无论如何也不能在8分钟内跑出来）。。。
+
+<script src="https://gist.github.com/2517492.js?file=gistfile1.groovy"></script>
+
+当时觉得应该是Groovy处理大文件的时候坏掉了（毕竟是脚本执行效率并不高），比赛结束回头一看，发现完全是自己坏掉了。。。
+
+以下是正解，从循环体里去掉了不必要的累乘（大数据秒出结果）
+
+<script src="https://gist.github.com/2517494.js?file=gistfile1.groovy"></script>
+
+怀疑这题如果用C写O(n^2 )也许能过，不过如果那样做的话，我可能永远都不会知道把一个本该是O(n)的算法搞成了O(n^2 )。
+
+
+
+### Problem B. Kingdom Rush
+[http://code.google.com/codejam/contest/1645485/dashboard#s=p1](http://code.google.com/codejam/contest/1645485/dashboard#s=p1)
+
+正确地使用了贪心法。
+
+我的低级失误是没有意识到完成2星计分时已经完成1星的关卡只能加1分，统统都按加2分算了……
+
+这个甚至在我手算测试数据的时候就已经搞错了，所以直到比赛结束都没有找到症结所在。
+
+事后证明只要在原来的代码上改一行就能解决问题，如下：
+
+<script src="https://gist.github.com/2517534.js?file=gistfile1.java"></script>
+
+
+
+以上。如果没有在做连续两题的时候脑子都坏掉的话，本来还是可以晋级的(；д；)
+
+三题中的前两题基本上不是考算法，更多是考理解题意能力和头脑的清晰程度。
+
+当然，还有我完全不具备的代码实现速度。（大概唯一比较有自信的地方只是自认为代码写得比大多数人整洁而已(´д`;)
+
