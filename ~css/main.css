@@ -4,7 +4,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
 	background-attachment: fixed;
-	background-color: #000000;
+	background-color: #ffffff;
 	background-image: url("");
 	background-position: top center;
 	background-repeat: no-repeat;
@@ -14,8 +14,8 @@ body {
 }
 
 a {
-	color: #FFFFFF;
-	font-weight: normal;
+	color: #035f5f;
+	font-weight: bold;
 	text-decoration: none;
 	
 	transition: all 0.2s ease-out;
@@ -25,7 +25,7 @@ a {
 }
 
 a:hover {
-	color: #FFFFFF;
+	color: #035f5f;
 	font-weight: bold;
 }
 
@@ -39,9 +39,9 @@ nav#navBarTop {
 	height: 64px;
 	z-index: 32;
 	
-	background-color: #001111;
-	box-shadow: 0 2px 4px #001111;
-	opacity: 0.9;
+	background-color: #033f3f;
+	box-shadow: 0 2px 4px #033f3f;
+	opacity: 0.90;
 }
 
 nav#navBarBottom {
@@ -52,15 +52,31 @@ nav#navBarBottom {
 	height: 64px;
 	z-index: 32;
 	
-	background-color: #001111;
-	box-shadow: 0 -2px 4px #001111;
-	opacity: 0.9;
+	background-color: #033f3f;
+	box-shadow: 0 -2px 4px #033f3f;
+	opacity: 0.90;
 	
-	color: #FFFFFF;
+	color: #fff;
 }
 
 nav ul {
 	list-style: none;
+}
+
+nav a {
+	color: #fff;
+	font-weight: normal;
+	text-decoration: none;
+	
+	transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+}
+
+nav a:hover {
+	color: #fff;
+	font-weight: bold;
 }
 
 .navBarListLeft {
@@ -85,7 +101,7 @@ nav li {
 	display: inline;
 	padding-right: 8px;
 	
-	color: #DDDDDD;
+	color: #ddd;
 	
 	font-size: 12px;
 }
@@ -135,15 +151,15 @@ img.navDock:hover {
 	padding: 16px;
 	margin-top: 8px;
 	
-	background-color: #002222;
+	background-color: #cbeaea;
 	border-radius: 8px;
-	box-shadow: 0 0 16px 0 #002222;
+	box-shadow: 0 0 16px 0 #cbeaea;
 	opacity: 0.85;
 	
-	color: #FFFFFF;
+	color: #000;
 }
 
-#divSlideshow, #divSignature, #divLinks {
+#divSlideshow, #divSignature, #divMyProjects {
 	margin-top: 0;
 }
 
@@ -190,9 +206,10 @@ div.div0 {
 	padding: 8px;
 	margin-top: 0px;
 	
-	background-color: #001111;
+	background-color: #fff;
 	border-radius: 8px;
-	opacity: 0.85;
+	box-shadow: 0 0 8px 0 #86aaaa;
+	opacity: 0.90;
 }
 
 .asideScrap {
@@ -223,7 +240,7 @@ div.div0 {
 }
 
 .imgScrap:hover {
-	box-shadow: 0 0 8px 2px #FFFFFF;
+	box-shadow: 0 0 8px 2px #035f5f;
 }
 
 
@@ -266,22 +283,22 @@ div.div0 {
 	
 	padding: 16px;
 	
-	
-	background-color: #001111;
+	background-color: #cbeaea;
 	border-radius: 8px;
-	box-shadow: 0 0 16px 0 #001111;
-	opacity: 0.85;
-	color: #FFFFFF;
+	box-shadow: 0 0 16px 0 #86aaaa;
+	opacity: 0.90;
+	color: #fff;
 }
 
 #articlePost {
-	background-color: #002222;
+	background-color: #fff;
 	border-radius: 8px;
-	opacity: 0.9;
+	box-shadow: 0 0 8px 0 #86aaaa;
+	opacity: 0.90;
 	
-	padding: 8px;
+	padding: 16px;
 	
-	color: #FFFFFF;
+	color: #000;
 	font-size: 15px;
 }
 
@@ -313,7 +330,7 @@ div.div0 {
 
 ::-webkit-scrollbar {
 	width: 16px;
-	background-color: #001111;
+	background-color: #033f3f;
 }
 
 ::-webkit-scrollbar-thumb {
