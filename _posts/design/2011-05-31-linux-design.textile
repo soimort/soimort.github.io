@@ -2,12 +2,7 @@
 layout: album
 category: design
 title: Linux T-shirt Design Contest Submission
-cover-image: https://lh5.googleusercontent.com/-5U-I7bVCXaY/T0pgD-NfwrI/AAAAAAAABeE/rZNtzr6jEtw/w302-h303-k/galileo_nodistro_crystal_t.png
+cover-image: http://i.imgur.com/HjjYj.png
 redirect: https://plus.google.com/photos/100974147585154622588/albums/5713484430482930257
 description: 
 ---
-
-<div style="text-align: center">
-    <a href="https://plus.google.com/photos/100974147585154622588/albums/5713484430482930257"><img src="https://lh5.googleusercontent.com/-iOH0_ohB6pM/T0pf1iZCyzI/AAAAAAAABdc/x-uH_WVZvJw/s516/vanilla_nodistro_crystal_t.png" width="80%" /><br /><b>Linux T-shirt Design Contest Submission</b></a>
-    
-</div>

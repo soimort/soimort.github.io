@@ -2,7 +2,7 @@
 layout: album
 category: photography
 title: 蒼い あの空。
-cover-image: https://lh6.googleusercontent.com/-dTSOHkMA1-A/T2qE9ECdC3I/AAAAAAAABnY/jWV-xZe_S8Y/s516/DSC06626.JPG
+cover-image: http://i.imgur.com/RCZqg.jpg
 redirect: https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313
 description: 
 ---
