@@ -1,0 +1,40 @@
+---
+layout: post
+category: tech-blog
+title: 总结一下长期以来我对于各种程序员网页设计风格的成见
+description: 本文采用 Creative Commons 姓名禁止标示-相同方式分享 3.0 Unported 授权。
+disqus: false
+---
+
+总结一下长期以来我对于各种程序员网页设计风格的成见。
+
+如有任何疑问（装逼/吐槽/板砖/暴走）请勿联系作者本人
+
+如需转载请一定不要保留原作者以及出处谢谢
+
+* __C/C++/Fortran程序员__：极其丑陋。（典型代表：学术界各种教授个人主页）
+
+* __PHP程序员__：比较丑陋。（典型代表： [国内各大门户网站](http://news.baidu.com/)、[Wikipedia](http://en.wikipedia.org/wiki/Main_Page) ）
+
+* __Python程序员__：仍然丑陋，但整体好于PHP。（典型代表：Google各种服务）
+
+* __Ruby/Scala/Clojure程序员__：总是做出来最酷的网页。（典型代表： [Twitter](https://twitter.com/)、[GitHub](https://github.com/)、[Heroku](http://www.heroku.com/)、[C2](http://keminglabs.com/c2/) ）
+
+* __.NET程序员__：喜欢用小字体和整齐的排版。
+
+* __Java程序员__：Copy & Paste。
+
+* __伪技青/伪程序员__：在他们的网站上面总能看到这么一句话：“Proudly powered by Wordpress”。
+
+* __伪设计师__：让我来做一个效果超炫的Flash网站吧（众人叹：牛逼）。。。
+
+* __Lisp/Scheme程序员__：网页设计对他们来说没有意义，只要有文字内容就够了。
+
+_补充一句可有可无的废话，虽说Web前端用到的技术（HTML、CSS、JavaScript）和这些程序语言本身一点关系都没有，甚至很多时候，做前端设计的和做后台开发的完全是两拨人。但是，一种技术（和相应的社区氛围）的确能够影响一个人的思维方式，进而形成某种固定的审美（或者无视审美）模式。_
+
+_这不是简简单单找一个模板来就能解决的问题。_
+
+_我还没有见到过一个能称得上“酷”的Web前端界面是搭在PHP的后台上的。（你看我又在黑PHP了）_
+
+_很多时候，只要看到一个赏心悦目的网页，我就会猜测：它的后台十有八九是RoR。基本上错不了。_
+
