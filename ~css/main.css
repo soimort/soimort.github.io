@@ -297,9 +297,11 @@ div.div0 {
 	opacity: 0.90;
 	
 	padding: 16px;
-	
+    
 	color: #000;
 	font-size: 15px;
+    
+    line-height: 150%;
 }
 
 #articlePost a {
