@@ -5,6 +5,8 @@ date: 2012-06-22
 description: A minimalist Markdown/YAML-based static wiki generator.
 disqus: true
 ---
+<a href="https://github.com/soimort/mayuki"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+
 [Project Homepage](http://www.soimort.org/mayuki/)
 | View on {
 [GitHub](https://github.com/soimort/mayuki)

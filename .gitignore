@@ -1,2 +1,5 @@
 _/
 _site/
+_*.markdown
+_*.md
+_*.textile

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: tech-blog
-title: 【翻译】对非实用编程的赞美
+title: 【译文】对非实用编程的赞美
 description: 本文采用 Creative Commons Attribution-NonCommercial 3.0 United States 授权。
 disqus: true
 ---
