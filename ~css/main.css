@@ -144,7 +144,7 @@ img.navDock:hover {
 }
 
 #divSlideshow, #divPhotography, #divDesign, #divDigitalArt, #divSignature,
-#divMyProjects, #divTechBlog, #divFreeCoding, #divNotebook, #divLinks, #divAboutMe {
+#divMyProjects, #divTechBlog, #divDevBlog, #divNotebook, #divLinks, #divAboutMe {
 	position: relative;
 	
 	padding: 16px;
