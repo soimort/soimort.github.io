@@ -9,7 +9,7 @@ body {
 	background-position: top center;
 	background-repeat: no-repeat;
 	
-	font-family: 'Droid Sans', 'DejaVu Sans Condensed';
+	font-family: 'DejaVu Sans Condensed', 'Arial';
 	font-size: 13px;
 }
 
@@ -251,7 +251,7 @@ div.div0 {
 	transition: all 0.2s ease-out;
 	-webkit-transition: all 0.2s ease-out;
 	-moz-transition: all 0.2s ease-out;
-	-o-transform: scale(1.2);
+	-o-transition: all 0.2s ease-out;
 }
 
 .divIndex:hover {
