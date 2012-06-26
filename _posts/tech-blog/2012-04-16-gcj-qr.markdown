@@ -2,7 +2,7 @@
 layout: post
 category: tech-blog
 title: Code Jam 2012 资格赛 解题报告
-description: 本文采用 Creative Commons Attribution-ShareAlike 3.0 Unported 授权。
+description: 
 tag: gcj
 disqus: true
 ---
