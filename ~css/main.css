@@ -64,7 +64,7 @@ nav ul {
 }
 
 nav a {
-	color: #fff;
+	color: #cbeaea;
 	font-weight: normal;
 	text-decoration: none;
 	
@@ -76,7 +76,7 @@ nav a {
 
 nav a:hover {
 	color: #fff;
-	font-weight: bold;
+    font-weight: normal;
 }
 
 .navBarListLeft {
