@@ -658,6 +658,15 @@ Windows休眠到硬盘后，不要在Linux下对相应的NTFS分区进行写操�
 
 安装gnome-tweak-tool。
 
+#### GDM和GNOME使用X11光标而不是GNOME的光标样式
+
+在`/usr/share/icons/default/index.theme`中写入：（如果不存在则创建）
+
+    [Icon Theme]
+    Inherits=Adwaita
+
+或者直接从AUR安装[gnome-cursors-fix](https://aur.archlinux.org/packages.php?ID=52925)这个包。
+
 #### iBus输入法不能输入，总是显示“No input window”
 
 记得要在ibus-setup的Preferences - Input Method中手动添加已安装的输入法（它们不会自动出现在列表中），然后重启iBus。
@@ -679,16 +688,6 @@ Windows休眠到硬盘后，不要在Linux下对相应的NTFS分区进行写操�
 #### 某些CJK字体无法正常显示出来
 
 安装opendesktop-fonts。注意：会覆盖原来的文泉驿字体。
-
-#### Chromium意外退出
-
-Chromium有时在运行中意外退出，错误输出如下：
-
-    terminate called after throwing an instance of 'std::out_of_range'
-      what():  vector::_M_range_check
-    Aborted
-
-这似乎是只存在于某些版本Chromium上的问题，原因不明。如果出现，可以换用其他版本。
 
 #### VLC播放视频时画面和音轨略不同步
 
