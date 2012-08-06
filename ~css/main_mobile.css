@@ -1,24 +1,45 @@
-nav#navBarTop {
-	visibility: hidden;
+.navBarListRight {
+    visibility: hidden;
 }
 
+/*
 div#divLeft {
 	position: relative;
 	top: 0;
 	left: 10%;
 	width: 80%;
 }
+*/
 
 div#divMiddle {
 	position: relative;
-	top: -120px;
+	top: 128px;
 	left: 10%;
 	width: 80%;
 }
 
 div#divRight {
 	position: relative;
-	top: -240px;
+	top: 8px;
+	left: 10%;
+	width: 80%;
+}
+
+#divTitle {
+	position: absolute;
+	top: 128px;
+	left: 10%;
+	width: 80%;
+	
+	text-align: center;
+}
+
+#divTitleNav {
+	visibility: hidden;
+}
+
+#divPost {
+    top: 256px;
 	left: 10%;
 	width: 80%;
 }

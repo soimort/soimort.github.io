@@ -1,5 +1,5 @@
 {% for post in site.posts %}
-{% if post.layout == 'post' and post.category == 'dev-blog' %}
+{% if post.layout == 'post' and post.category == 'tech-blog' and post.lang == 'en' %}
 <a href="{{ post.url }}">
     <div class="divIndex">
         <div class="divIndexTitle">{{ post.title }}</div>

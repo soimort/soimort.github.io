@@ -2,34 +2,39 @@
 layout: main
 description: Mort Yao (soimort)'s Home Page
 keywords: soimort
-title: Looking Glass
-background-image: http://i.imgur.com/zHl5M.jpg
+title: Looking-Glass
+background-image: http://i.imgur.com/TAvdk.jpg
 ---
-<div id="divLeft">
+<!-- div id="divLeft">
     <div id="divSlideshow">
         {% include Slideshow.html %}
     </div>
     
-    <div id="divPhotography">
-        <h1 class="hTitle1">My Photos</h1>
+    <div class="div0"></div>
+</div -->
+
+<div id="divMiddle">
+    <div id="divSignature">
+        {% include Signature.html %}
+    </div>
+    
+    <div id="divBlog_zh">
+        <h1 class="hTitle1">博客</h1>
+        <hr />
+        {% include Blog_zh.html %}
+    </div>
+    
+    <div id="divPhotos">
+        <h1 class="hTitle1">Photos</h1>
         <div class="divExtLinks">
             <a href="https://plus.google.com/photos/100974147585154622588/albums" target="_blank"><img src="/~images/gplus-32.png" alt="gplus" title="Google+ Albums" class="navDock" height="24" /></a>
         </div>
         <hr />
-        {% include Photography.html %}
+        {% include Photos.html %}
     </div>
     
-    <div id="divDesign">
-        <h1 class="hTitle1">My Design Works</h1>
-        <div class="divExtLinks">
-            <a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantArt" class="navDock" height="24" /></a>
-        </div>
-        <hr />
-        {% include Design.html %}
-    </div>
-    
-    <!-- div id="divDigitalArt">
-        <h1 class="hTitle1">My Digital Artworks</h1>
+    <!-- div id="divDigitalArtworks">
+        <h1 class="hTitle1">Digital Artworks</h1>
         <div class="divExtLinks">
             <a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantArt" class="navDock" height="24" /></a>
         </div>
@@ -40,54 +45,43 @@ background-image: http://i.imgur.com/zHl5M.jpg
     <div class="div0"></div>
 </div>
 
-<div id="divMiddle">
-    <div id="divSignature">
-        {% include Signature.html %}
-    </div>
-    
-    <!-- div id="divNotebook">
-        <h1 class="hTitle1">Notebook</h1>
-        <hr />
-        {% include Notebook.html %}
-    </div -->
-    
-    <!-- div id="divDevBlog">
-        <h1 class="hTitle1">Dev Blog</h1>
-        <hr />
-        {% include DevBlog.html %}
-    </div -->
-    
-    <div id="divTechBlog">
-        <h1 class="hTitle1">Tech Blog</h1>
-        <hr />
-        {% include TechBlog.html %}
-    </div>
-    
-    <div class="div0"></div>
-</div>
-
 <div id="divRight">
-    <div id="divMyProjects">
-        <h1 class="hTitle1">My Projects</h1>
-        <div class="divExtLinks">
-            <a href="https://github.com/soimort" target="_blank"><img src="/~images/github.png" alt="github" title="GitHub" class="navDock" height="24" /></a>
-            <a href="http://code.google.com/u/Mort.Yao/" target="_blank"><img src="/~images/google-code.png" alt="google-code" title="Google Code" class="navDock" height="24" /></a>
-            <!-- a href="https://gitorious.org/~mort" target="_blank"><img src="/~images/gitorious.png" alt="gitorious" title="Gitorious" class="navDock" height="24" /></a -->
-        </div>
-        <hr />
-        {% include MyProjects.html %}
-    </div>
-    
-    <div id="divLinks">
-        <h1 class="hTitle2">My Portfolio</h1>
-        <hr />
-        {% include Links.html %}
-    </div>
-    
     <div id="divAboutMe">
-        <h1 class="hTitle2">Contact Me</h1>
+        <h1 class="hTitle2">About me</h1>
         <hr />
         {% include AboutMe.html %}
+    </div>
+    
+    <div id="divProjects">
+        <h1 class="hTitle1">Projects</h1>
+        <div class="divExtLinks">
+            <a href="https://github.com/soimort" target="_blank"><img src="/~images/github.png" alt="github" title="GitHub" class="navDock" height="24" /></a>
+            <a href="https://gitorious.org/~mort" target="_blank"><img src="/~images/gitorious.png" alt="gitorious" title="Gitorious" class="navDock" height="24" /></a>
+            <a href="http://code.google.com/u/Mort.Yao/" target="_blank"><img src="/~images/google-code.png" alt="google-code" title="Google Code" class="navDock" height="24" /></a>
+        </div>
+        <hr />
+        {% include Projects.html %}
+    </div>
+    
+    <div id="divDesigns">
+        <h1 class="hTitle1">Designs</h1>
+        <div class="divExtLinks">
+            <a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantArt" class="navDock" height="24" /></a>
+        </div>
+        <hr />
+        {% include Designs.html %}
+    </div>
+    
+    <div id="divMyPortfolio">
+        <h1 class="hTitle2">My portfolio</h1>
+        <hr />
+        {% include MyPortfolio.html %}
+    </div>
+    
+    <div id="divContactMe">
+        <h1 class="hTitle2">Contact me</h1>
+        <hr />
+        {% include ContactMe.html %}
     </div>
     
     <div class="div0"></div>

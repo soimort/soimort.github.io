@@ -14,7 +14,7 @@ body {
 }
 
 a {
-	color: #035f5f;
+	color: #402000;
 	font-weight: bold;
 	text-decoration: none;
 	
@@ -25,7 +25,7 @@ a {
 }
 
 a:hover {
-	color: #035f5f;
+	color: #402000;
 	font-weight: bold;
 }
 
@@ -39,8 +39,8 @@ nav#navBarTop {
 	height: 64px;
 	z-index: 32;
 	
-	background-color: #033f3f;
-	box-shadow: 0 2px 4px #033f3f;
+	background-color: #101010;
+	box-shadow: 0 2px 4px #101010;
 	opacity: 0.90;
 }
 
@@ -52,8 +52,8 @@ nav#navBarBottom {
 	height: 64px;
 	z-index: 32;
 	
-	background-color: #033f3f;
-	box-shadow: 0 -2px 4px #033f3f;
+	background-color: #101010;
+	box-shadow: 0 -2px 4px #101010;
 	opacity: 0.90;
 	
 	color: #fff;
@@ -64,7 +64,7 @@ nav ul {
 }
 
 nav a {
-	color: #cbeaea;
+	color: #ffffdd;
 	font-weight: normal;
 	text-decoration: none;
 	
@@ -132,38 +132,35 @@ img.navDock:hover {
 #divMiddle {
 	position: absolute;
 	top: 128px;
-	left: 36%;
+	left: 38%;
 	width: 24%;
 }
 
 #divRight {
 	position: absolute;
 	top: 128px;
-	left: 61%;
+	left: 63%;
 	width: 24%;
 }
 
-#divSlideshow, #divPhotography, #divDesign, #divDigitalArt, #divSignature,
-#divMyProjects, #divTechBlog, #divDevBlog, #divNotebook, #divLinks, #divAboutMe {
+#divAboutMe, #divSignature, #divMyPortfolio, #divContactMe,
+#divProjects, #divPhotos, #divDesigns, #divDigitalArtworks,
+#divBlog_zh, #divBlog_en, #divBlog_ja, #divNotebook {
 	position: relative;
 	
 	padding: 16px;
 	margin-top: 8px;
 	
-	background-color: #cbeaea;
+	background-color: #ffffdd;
 	border-radius: 8px;
-	box-shadow: 0 0 16px 0 #cbeaea;
+	box-shadow: 0 0 16px 0 #ffffdd;
 	opacity: 0.85;
 	
 	color: #000;
 }
 
-#divSlideshow, #divSignature, #divMyProjects {
+#divAboutMe, #divSignature {
 	margin-top: 0;
-}
-
-#divSlideshow {
-	padding-top: -32px;
 }
 
 div.div0 {
@@ -207,7 +204,7 @@ div.div0 {
 	
 	background-color: #fff;
 	border-radius: 8px;
-	box-shadow: 0 0 8px 0 #86aaaa;
+	box-shadow: 0 0 8px 0 #aaaa86;
 	opacity: 0.90;
 }
 
@@ -239,7 +236,7 @@ div.div0 {
 }
 
 .imgScrap:hover {
-	box-shadow: 0 0 8px 2px #035f5f;
+	box-shadow: 0 0 8px 2px #402000;
 }
 
 
@@ -255,7 +252,7 @@ div.div0 {
 }
 
 .divIndex:hover {
-	box-shadow: 0 0 0 4px #001111;
+	box-shadow: 0 0 0 2px #201000;
 }
 
 .divIndexTitle {
@@ -277,14 +274,14 @@ div.div0 {
 #divPost {
 	position: absolute;
 	top: 128px;
-	left: 32%;
-	width: 60%;
+	left: 38%;
+	width: 56%;
 	
 	padding: 16px;
 	
-	background-color: #cbeaea;
+	background-color: #ffffdd;
 	border-radius: 8px;
-	box-shadow: 0 0 16px 0 #86aaaa;
+	box-shadow: 0 0 16px 0 #ffffdd;
 	opacity: 0.90;
 	
 	color: #000;
@@ -293,7 +290,7 @@ div.div0 {
 #articlePost {
 	background-color: #fff;
 	border-radius: 8px;
-	box-shadow: 0 0 8px 0 #86aaaa;
+	box-shadow: 0 0 8px 0 #aaaa86;
 	opacity: 0.90;
 	
 	padding: 16px;
@@ -315,7 +312,7 @@ div.div0 {
 #divTitle {
 	position: fixed;
 	top: 128px;
-	left: 8%;
+	left: 4%;
 	width: 16%;
 	
 	text-align: center;
@@ -324,7 +321,7 @@ div.div0 {
 #divTitleNav {
 	position: fixed;
 	bottom: 20%;
-	left: 8%;
+	left: 4%;
 	width: 16%;
 }
 
@@ -332,7 +329,7 @@ div.div0 {
 
 ::-webkit-scrollbar {
 	width: 16px;
-	background-color: #033f3f;
+	background-color: #101010;
 }
 
 ::-webkit-scrollbar-thumb {

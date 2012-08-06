@@ -1,0 +1,10 @@
+{% for post in site.posts %}
+{% if post.layout == 'post' and post.category == 'tech-blog' and post.lang == 'ja' %}
+<a href="{{ post.url }}">
+    <div class="divIndex">
+        <div class="divIndexTitle">{{ post.title }}</div>
+        <div class="divIndexDate">{{ post.date | date_to_string }}</div>
+    </div>
+</a>
+{% endif %}
+{% endfor %}
