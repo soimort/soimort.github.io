@@ -128,7 +128,8 @@ Download the video:
 
 Download multiple videos:
 
-    $ you-get http://www.youtube.com/watch?v=sGwy8DsUJ4M http://www.youtube.com/watch?v=8bQlxQJEzLk
+    $ you-get http://www.youtube.com/watch?v=sGwy8DsUJ4M \
+    http://www.youtube.com/watch?v=8bQlxQJEzLk
 
 By default, program will skip any video that already exists in the local directory when downloading. If a temporary file (ends with a ".download" filename extension) is found, program will resume the download from last session.
 
@@ -163,7 +164,8 @@ In Python 3 (interactive):
     >>> you_get.__version__
     '0.2'
     
-    >>> you_get.youtube_download("http://www.youtube.com/watch?v=8bQlxQJEzLk", info_only = True)
+    >>> you_get.youtube_download("http://www.youtube.com/watch?v=8bQlxQJEzLk", \
+    info_only = True)
     Video Site: YouTube.com
     Title:      If you're good at something, never do it for free!
     Type:       WebM video (video/webm)
@@ -316,7 +318,8 @@ You-Get基于优酷下载脚本[iambus/youku-lixian](https://github.com/iambus/y
 
 下载多个视频：
 
-    $ you-get http://www.yinyuetai.com/video/463772 http://www.yinyuetai.com/video/471500
+    $ you-get http://www.yinyuetai.com/video/463772 \
+    http://www.yinyuetai.com/video/471500
 
 若当前目录下已有与视频标题同名的文件，下载时会自动跳过。若有同名的`.download`临时文件，程序会从上次中断处开始下载。
 如要强制重新下载该视频，可使用`-f`（`--force`）选项：
