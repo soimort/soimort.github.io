@@ -176,13 +176,11 @@ Linux下的播放器软件中，GNOME的Totem Movie Player是支持M3U播放列�
 
 但是，我们其实有一个更简单的方法：直接把这些片段文件连接起来！（以下代码适用于Unix环境）
 
-{% highlight python linenos %}
-import os
-for id in range(800, 2800):
-    if os.path.isfile('%s.ts' % id):
-        print('Merging %s.ts ...' % id)
-        os.system('cat %s.ts >> full.ts' % id)
-{% endhighlight %}
+    import os
+    for id in range(800, 2800):
+        if os.path.isfile('%s.ts' % id):
+            print('Merging %s.ts ...' % id)
+            os.system('cat %s.ts >> full.ts' % id)
 
 用于网络流媒体传输的[MPEG-2 TS](http://en.wikipedia.org/wiki/MPEG_transport_stream)是极少数能够通过直接连接文件来实现合并的多媒体容器之一（其它类似的格式还有DV，MPEG-1，和用于介质存储的[MPEG-2 PS](http://en.wikipedia.org/wiki/MPEG_program_stream)）。所以，不用劳烦FFmpeg了，直接把这2000个片段按先后顺序连接起来即可。
 
