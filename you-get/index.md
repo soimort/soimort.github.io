@@ -40,7 +40,7 @@ Fork me on GitHub: <https://github.com/soimort/you-get>
 * AcFun <http://www.acfun.tv>
 * bilibili <http://www.bilibili.tv>
 * CNTV (中国网络电视台) <http://www.cntv.cn>
-* ifeng (凤凰网) <http://www.ifeng.com>
+* ifeng (凤凰视频) <http://v.ifeng.com>
 * iQIYI (爱奇艺) <http://www.iqiyi.com>
 * Ku6 (酷6网) <http://www.ku6.com>
 * PPTV <http://www.pptv.com>
@@ -54,6 +54,7 @@ Fork me on GitHub: <https://github.com/soimort/you-get>
 * MP4 (*.mp4)
 * FLV (*.flv)
 * 3GP (*.3gp)
+* MPEG-TS (*.ts)
 
 ## Installation
 
@@ -128,8 +129,7 @@ Download the video:
 
 Download multiple videos:
 
-    $ you-get http://www.youtube.com/watch?v=sGwy8DsUJ4M \
-    http://www.youtube.com/watch?v=8bQlxQJEzLk
+    $ you-get http://www.youtube.com/watch?v=sGwy8DsUJ4M http://www.youtube.com/watch?v=8bQlxQJEzLk
 
 By default, program will skip any video that already exists in the local directory when downloading. If a temporary file (ends with a ".download" filename extension) is found, program will resume the download from last session.
 
@@ -164,8 +164,7 @@ In Python 3 (interactive):
     >>> you_get.__version__
     '0.2'
     
-    >>> you_get.youtube_download("http://www.youtube.com/watch?v=8bQlxQJEzLk", \
-    info_only = True)
+    >>> you_get.youtube_download("http://www.youtube.com/watch?v=8bQlxQJEzLk", info_only = True)
     Video Site: YouTube.com
     Title:      If you're good at something, never do it for free!
     Type:       WebM video (video/webm)
@@ -224,7 +223,7 @@ You-Get基于优酷下载脚本[iambus/youku-lixian](https://github.com/iambus/y
 * AcFun <http://www.acfun.tv>
 * bilibili <http://www.bilibili.tv>
 * CNTV <http://www.cntv.cn>
-* 凤凰网 <http://www.ifeng.com>
+* 凤凰视频 <http://v.ifeng.com>
 * 爱奇艺 <http://www.iqiyi.com>
 * 酷6网 <http://www.ku6.com>
 * PPTV <http://www.pptv.com>
@@ -238,14 +237,13 @@ You-Get基于优酷下载脚本[iambus/youku-lixian](https://github.com/iambus/y
 * MP4 (*.mp4)
 * FLV (*.flv)
 * 3GP (*.3gp)
-
-对于YouTube，程序将下载画质最高的[编码格式](http://en.wikipedia.org/wiki/Youtube#Quality_and_codecs)。
+* MPEG-TS (*.ts)
 
 ## 安装说明
 
 （以下命令格式均以Linux shell为例）
 
-### 1. 通过[Pip](http://www.pip-installer.org/)安装:
+### 1. 通过[Pip](http://www.pip-installer.org/)安装：
 
     $ pip install you-get
     
@@ -283,7 +281,7 @@ You-Get基于优酷下载脚本[iambus/youku-lixian](https://github.com/iambus/y
     
     $ you-get -V
 
-### 4. 从Git安装:
+### 4. 从Git安装：
 
     $ git clone git://github.com/soimort/you-get.git
     
@@ -318,8 +316,7 @@ You-Get基于优酷下载脚本[iambus/youku-lixian](https://github.com/iambus/y
 
 下载多个视频：
 
-    $ you-get http://www.yinyuetai.com/video/463772 \
-    http://www.yinyuetai.com/video/471500
+    $ you-get http://www.yinyuetai.com/video/463772 http://www.yinyuetai.com/video/471500
 
 若当前目录下已有与视频标题同名的文件，下载时会自动跳过。若有同名的`.download`临时文件，程序会从上次中断处开始下载。
 如要强制重新下载该视频，可使用`-f`（`--force`）选项：
@@ -372,4 +369,4 @@ YouTube等国外视频网站的下载，请移步：[rg3/youtube-dl](https://git
 
 You-Get在[MIT License](https://raw.github.com/soimort/you-get/master/LICENSE.txt)下发布。
 
-_Last Revision: 2012-09-02, by [Mort Yao](http://www.soimort.org/)_
+_Last Revision: 2012-09-17, by [Mort Yao](http://www.soimort.org/)_
