@@ -174,17 +174,15 @@ Linux下的播放器软件中，GNOME的Totem Movie Player是支持M3U播放列�
 
 当然，一提到合并视频，就不能不提到处理多媒体文件的神器：[FFmpeg](http://ffmpeg.org/)。
 
-但是，我们其实有一个更简单的方法：直接把这些片段文件连接起来！（以下代码适用于Unix环境）
+<del>但是，我们其实有一个更简单的方法：直接把这些片段文件连接起来！</del>
 
-    import os
-    for id in range(800, 2800):
-        if os.path.isfile('%s.ts' % id):
-            print('Merging %s.ts ...' % id)
-            os.system('cat %s.ts >> full.ts' % id)
+<del>用于网络流媒体传输的[MPEG-2 TS](http://en.wikipedia.org/wiki/MPEG_transport_stream)是极少数能够通过直接连接文件来实现合并的多媒体容器之一（其它类似的格式还有DV，MPEG-1，和用于介质存储的[MPEG-2 PS](http://en.wikipedia.org/wiki/MPEG_program_stream)）。所以，不用劳烦FFmpeg了，直接把这2000个片段按先后顺序连接起来即可。</del>
 
-用于网络流媒体传输的[MPEG-2 TS](http://en.wikipedia.org/wiki/MPEG_transport_stream)是极少数能够通过直接连接文件来实现合并的多媒体容器之一（其它类似的格式还有DV，MPEG-1，和用于介质存储的[MPEG-2 PS](http://en.wikipedia.org/wiki/MPEG_program_stream)）。所以，不用劳烦FFmpeg了，直接把这2000个片段按先后顺序连接起来即可。
+<del>合并后的这个大的MPEG TS文件在Totem中的支持并不怎么好，时间轴好像有问题。在VLC中可以正常播放。当然，最好是stream成更适合保存的格式诸如MPEG PS或者MP4、FLV，至于用VLC，FFmpeg，还是随便其它哪个支持MPEG TS格式的转换工具就任意了。</del>
 
-合并后的这个大的MPEG TS文件在Totem中的支持并不怎么好，时间轴好像有问题。在VLC中可以正常播放。当然，最好是stream成更适合保存的格式诸如MPEG PS或者MP4、FLV，至于用VLC，FFmpeg，还是随便其它哪个支持MPEG TS格式的转换工具就任意了。
+__9月19日更正：__ [MPEG-2 TS](http://en.wikipedia.org/wiki/MPEG_transport_stream)是不能够像[MPEG-2 PS](http://en.wikipedia.org/wiki/MPEG_program_stream)那样通过直接连接文件来实现合并的！
+
+暂时不想花时间研究MPEG-2 TS的容器规范。最靠谱的合并`.ts`文件的方法，就只有借助于FFmpeg了。
 
 btw. 视频转码果然很烧GPU……(´д`;)
 
