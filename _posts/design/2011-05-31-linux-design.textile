@@ -1,8 +1,0 @@
----
-layout: album
-category: design
-title: Linux T-shirt Design Contest Submission
-cover-image: http://i.imgur.com/HjjYj.png
-redirect: https://plus.google.com/photos/100974147585154622588/albums/5713484430482930257
-description: 
----

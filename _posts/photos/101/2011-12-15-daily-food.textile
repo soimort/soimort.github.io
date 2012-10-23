@@ -1,0 +1,12 @@
+---
+layout: album
+uri: /photos/101
+permalink: /photos/101/index.html
+title: 日常 / 食物篇
+category: photos
+tag:
+description:
+disqus: true
+thumbnail-image: http://i.imgur.com/JC7sb.jpg
+---
+<meta http-equiv="refresh" content="0;url=https://plus.google.com/photos/100974147585154622588/albums/5686456812845005825">

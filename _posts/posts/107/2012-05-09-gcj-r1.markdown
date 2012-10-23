@@ -1,0 +1,77 @@
+---
+layout: post
+uri: /posts/107
+permalink: /posts/107/index.html
+title: Code Jam 2012 剩余的杯具总结
+category:
+tag:
+description: 
+disqus: true
+disqus-url: /tech-blog/2012/05/09/gcj-r1.html
+---
+
+## Code Jam 2012 剩余的杯具总结
+
+### Round 1B - Problem A. Safety in Numbers
+<http://code.google.com/codejam/contest/1836486/dashboard#s=p0&a=0>
+
+纯粹是在考察浮点数计算，和不等式推导。
+
+最关键的坑人点是要注意排除出现负值的情况。（当然这也就是唯一的难点了。这题小数据集正确率很低，不到50%）
+
+一个判断条件写错了，导致在某些情况下会出现负数解。小数据集侥幸过了，大数据集看都没看就直接提交，于是杯具。
+
+改一个语句就能通过的这种题还真是残念得不行啊。。。
+
+<script src="https://gist.github.com/2644309.js?file=gistfile1.scala"></script>
+
+### Round 1B - Problem C. Equal Sums
+<http://code.google.com/codejam/contest/1836486/dashboard#s=p2&a=0>
+
+我承认我只想到最原始的穷举。。。
+
+生成集合的幂集然后逐个枚举求和，用一个hash map来保存以前的结果。
+
+但是，枚举的顺序是有讲究的（！）
+
+如果只是盲目地通过生成从0到2^n-1 的二进制序列来枚举幂集（我采用的方法），大数据集肯定会超时。
+
+官方给出的解析是根据和[生日悖论](http://zh.wikipedia.org/wiki/%E7%94%9F%E6%97%A5%E5%95%8F%E9%A1%8C)类似的推导，一个基数为500的集合，对于其所有基数为6的子集而言，所有子集的求和结果均不相同的概率非常之小，所以只需要首先枚举基数为6的那些子集（因为只需要找到一组解，在找到两个和相同的子集之后，算法就可以结束）。（这就是密码学上的所谓_生日攻击_）
+
+以下是我的穷举法（大数据超时）。根据官方的解答，写一个不会超时的版本应该不难。
+
+<script src="https://gist.github.com/2644369.js?file=gistfile1.java"></script>
+
+### Round 1C - Problem A. Diamond Inheritance
+<http://code.google.com/codejam/contest/1781488/dashboard#s=p0&a=0>
+
+不想再说什么了，最基本的BFS，花了我无穷多的时间，充分反映了我的算法实现能力是多么的渣。
+
+亏我这题还是用的Ruby（要是再回到中学时代做信息学竞赛的时候让我用C甚至Pascal写估计得写崩溃了。。。）
+
+<script src="https://gist.github.com/2644578.js?file=gistfile1.rb"></script>
+
+### Round 1C - Problem C. Box Factory
+<http://code.google.com/codejam/contest/1781488/dashboard#s=p2&a=0>
+
+动态规划，并不算太复杂。具体解法略（反正俺也没在比赛时间内做出来。。。）
+
+本着一题一语言的原则，我选择了OCaml，结果因为在A题上实在是花了太多时间，加之对OCaml的List操作不熟悉，所以(´д`;)
+
+
+
+### Code Jam 2012，结束了。明年再来过。
+<http://www.go-hero.net/jam/12/name/soimort>
+
+恩，考虑到无数混迹于TopCoder、UVa、SPOJ和POJ和……的ACM大神的存在，2500 * 3 -> 七千到八千名之间大概也就是我的真实水平了。
+
+我没有做过TopCoder（因为不喜欢它的UI，和编程语言限制）。然后很恶心SPOJ的广告（当然不做SPOJ的一个主要原因是虽然它支持很多非主流编程语言，却又不及时维护更新版本，然后时间限制还一视同仁，搞到最后觉得还是不如用C++最靠谱。。。汗）。倒是很喜欢Code Jam和Project Euler这种data driven的方式，一直在想要是能有这么一个算法竞赛的OJ就好了。
+
+把问题抽象成算法模型的能力一直是我的一个瓶颈。（经常是一道题已经有几百号人提交了我还在纸上写写画画没开始编码）
+
+然后就是各种坑爹的低级失误（今年Round 1A的A题large，B题，Round 1B的A题large），代码只有那么一点点小错误当时改掉一行就能通过了但比赛过程中就是发现不了= =||
+
+好吧，不管怎么说，Code Jam 2012算是结束了。可以去做点别的事情了。
+
+明年再来过。
+

@@ -1,8 +1,0 @@
----
-layout: album
-category: photography
-title: 日常 / 食物篇
-cover-image: http://i.imgur.com/JC7sb.jpg
-redirect: https://plus.google.com/photos/100974147585154622588/albums/5686456812845005825
-description: 
----

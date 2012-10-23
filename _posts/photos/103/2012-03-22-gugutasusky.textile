@@ -1,0 +1,12 @@
+---
+layout: album
+uri: /photos/103
+permalink: /photos/103/index.html
+title: 「ぐぐたすの空」
+category: photos
+tag:
+description:
+disqus: true
+thumbnail-image: http://i.imgur.com/RCZqg.jpg
+---
+<meta http-equiv="refresh" content="0;url=https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313">

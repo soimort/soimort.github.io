@@ -1,8 +1,0 @@
----
-layout: album
-category: photography
-title: 「ぐぐたすの空」
-cover-image: http://i.imgur.com/RCZqg.jpg
-redirect: https://plus.google.com/photos/100974147585154622588/albums/5722531633090961313
-description: 
----

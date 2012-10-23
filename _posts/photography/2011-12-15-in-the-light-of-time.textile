@@ -1,8 +1,0 @@
----
-layout: album
-category: photography
-title: in the light of time
-cover-image: http://i.imgur.com/n5fiv.jpg
-redirect: https://plus.google.com/photos/100974147585154622588/albums/5686451696823525089
-description: 
----

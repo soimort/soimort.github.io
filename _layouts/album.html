@@ -1,11 +1,12 @@
 ---
 layout: main
-background-image: http://i.imgur.com/TAvdk.jpg
+background-image: http://i.imgur.com/0eQ5v.jpg
 author: Mort
 ---
 <div id="divTitle">
     <h1>{{ page.title }}</h1>
-    <b>{{ page.date | date_to_string }}</b>, by <b>{{ page.author }}</b>
+    <p><div class="g-plusone" data-size="medium" data-annotation="none"></div></p>
+    <p><b>{{ page.date | date_to_string }}</b>, by <b>{{ page.author }}</b></p>
     <p>{{ page.description }}</p>
     <div id="divTitleNav">
         <a href="/"><img src="/~images/left-arrow.png" class="navDock" /></a>
@@ -13,27 +14,33 @@ author: Mort
 </div>
 
 <div id="divPost">
-    <article id="articlePost">
+    <article id="articlePost" style="padding: 0">
         {{ content }}
     </article>
     
     {% if page.disqus == true %}
-    <div class="disqus">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            var disqus_shortname = 'soimort';
-            var disqus_url = 'http://www.soimort.org{{ page.url }}';
-            
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+    <article id="articlePost" style="padding-bottom: 0">
+        <div id="divDisqus">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'soimort';
+                {% if page.disqus-url %}
+                var disqus_url = 'http://www.soimort.org{{ page.disqus-url }}';
+                {% else %}
+                var disqus_url = 'http://www.soimort.org{{ page.url }}';
+                {% endif %}
+                
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </article>
+    {% else %}
+    <div style="height: 64px"></div>
     {% endif %}
-    
-    <div class="div0"></div>
 </div>

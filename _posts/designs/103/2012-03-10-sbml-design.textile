@@ -1,0 +1,12 @@
+---
+layout: album
+uri: /designs/103
+permalink: /designs/103/index.html
+title: SBML T-shirt Design
+category: designs
+tag:
+description:
+disqus: true
+thumbnail-image: http://i.imgur.com/5Hurm.png
+---
+<meta http-equiv="refresh" content="0;url=http://soimort.deviantart.com/#/d4wfbov">

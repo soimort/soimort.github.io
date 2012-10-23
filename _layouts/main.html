@@ -25,15 +25,25 @@ generator: Jekyll 0.11.2
     <link rel="author" type="text/html" href="https://plus.google.com/100974147585154622588/about" />
     <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/3.0/" />
     
-    <!-- load Google Web Fonts -->
+    <!-- Google Web Fonts (not in use) -->
     <!-- link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Droid+Sans' / -->
     
     <link rel="stylesheet" type="text/css" href="/~css/main.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="/~css/main_mobile.css" media="all and (max-width:1023px)" />
+    <link rel="stylesheet" type="text/css" href="/~css/mobile.css" media="all and (max-width:1023px)" />
     
-    <link rel="stylesheet" type="text/css" href="/~css/pygments.css" media="all" />
+    <!-- Pygments (not in use) -->
+    <!-- link rel="stylesheet" type="text/css" href="/~css/pygments.css" media="all" / -->
     
-    <!-- load MathJax -->
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="/~css/tomorrow-night.min.css">
+    <script src="/~js/highlight.min.js"></script>
+    <!-- script>hljs.initHighlightingOnLoad();</script -->
+    
+    <!-- jQuery & Galleria -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="/~plugins/galleria/galleria-1.2.8.min.js"></script>
+    
+    <!-- MathJax (not in use) -->
     <!-- script type="text/x-mathjax-config">
         MathJax.Hub.Config({
           tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -41,11 +51,11 @@ generator: Jekyll 0.11.2
     </script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script -->
     
-    <!-- load ShareThis -->
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({publisher: "9aabed9c-ac3f-4f96-8f5a-8e7a27307543"}); </script>
+    <!-- ShareThis (not in use) -->
+    <!-- script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "9aabed9c-ac3f-4f96-8f5a-8e7a27307543"}); </script -->
     
-    <!-- load Google Analytics -->
+    <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-27086900-1']);
@@ -70,13 +80,10 @@ generator: Jekyll 0.11.2
     
     <nav id="navBarTop">
         <ul class="navBarListLeft">
-            <li><a href="/"><img src="/~images/mort.png" alt="mort" title="{{ page.author }}'s Home Page" height="32" /></a></li>
             <li><a href="/"><img src="/~images/home.png" alt="home" title="Home" class="navDock" height="32" /></a></li>
             <li><a href="/atom.xml" target="_blank"><img src="/~images/feed.png" alt="feed" title="Feed" class="navDock" height="32" /></a></li>
-            <!--li style="position: relative; top: -12px; font-size: 16px">|</li>
-            <li style="position: relative; top: -12px; font-size: 16px"><a href="http://blog.soimort.org" target="_blank">Blogger</a></li>
-            <li style="position: relative; top: -12px; font-size: 16px">|</li>
-            <li style="position: relative; top: -12px; font-size: 16px"><a href="http://microblog.soimort.org" target="_blank">Tumblr</a></li -->
+            <!-- li style="position: relative; top: -12px; font-size: 16px">|</li -->
+            <!-- li style="position: relative; top: -12px; font-size: 16px"><a href="/" title="Hello world" target="_blank">Hello world</a></li -->
         </ul>
         
         <ul class="navBarListRight">
@@ -84,10 +91,10 @@ generator: Jekyll 0.11.2
             <!-- Google+ --><li><a href="https://plus.google.com/100974147585154622588" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="gplus" title="Google+" class="navDock" height="32" /></a></li>
             <!-- Blogger --><li><a href="http://blog.soimort.org" target="_blank"><img src="/~images/blogger.png" alt="blog" title="Blogger" class="navDock" height="32" /></a></li>
             <!-- Tumblr --><li><a href="http://microblog.soimort.org" target="_blank"><img src="/~images/tumblr.png" alt="microblog" title="Tumblr" class="navDock" height="32" /></a></li>
-            <!-- Ameba --><li><a href="http://ameblo.jp/soimort/" target="_blank"><img src="/~images/ameba.png" alt="ameba" title="Ameba" class="navDock" height="32" /></a></li>
-            <!-- pixiv --><li><a href="http://www.pixiv.net/member.php?id=5106162" target="_blank"><img src="/~images/pixiv.png" alt="pixiv" title="Pixiv" class="navDock" height="32" /></a></li>
+            <!-- Ameba --><!-- li><a href="http://ameblo.jp/soimort/" target="_blank"><img src="/~images/ameba.png" alt="ameba" title="Ameba" class="navDock" height="32" /></a></li -->
+            <!-- pixiv --><!-- li><a href="http://www.pixiv.net/member.php?id=5106162" target="_blank"><img src="/~images/pixiv.png" alt="pixiv" title="Pixiv" class="navDock" height="32" /></a></li -->
             <!-- deviantArt --><li><a href="http://soimort.deviantart.com" target="_blank"><img src="/~images/deviantart.png" alt="deviantart" title="deviantART" class="navDock" height="32" /></a></li>
-            <!-- Facebook --><li><a href="https://www.facebook.com/soimort" target="_blank"><img src="/~images/facebook.png" alt="facebook" title="Facebook" class="navDock" height="32" /></a></li>
+            <!-- Facebook --><!-- li><a href="https://www.facebook.com/soimort" target="_blank"><img src="/~images/facebook.png" alt="facebook" title="Facebook" class="navDock" height="32" /></a></li -->
             <!-- Twitter --><li><a href="https://twitter.com/soimort" target="_blank"><img src="/~images/twitter.png" alt="twitter" title="Twitter" class="navDock" height="32" /></a></li>
             <!-- LinkedIn --><li><a href="http://www.linkedin.com/in/soimort" target="_blank"><img src="/~images/linkedin.png" alt="linkedin" title="Linkedin" class="navDock" height="32" /></a></li>
             <!-- GitHub--><li><a href="http://github.com/soimort" target="_blank"><img src="/~images/github.png" alt="github" title="GitHub" class="navDock" height="32" /></a></li>
@@ -96,7 +103,7 @@ generator: Jekyll 0.11.2
     
     <nav id="navBarBottom">
         <div class="navBarListLeft">
-            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+            <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" height="28" alt="CC BY-SA 3.0 License" title="CC BY-SA 3.0 License" /></a>
             <br />
             <div style="position: relative; top: 4px; width: 60%">
                 © 2012 <a href="https://plus.google.com/100974147585154622588/about" target="_blank"><b>Mort Yao</b></a>. Unless otherwise stated, all contents on this site are released under a <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank"><b>CC BY-SA 3.0 License</b></a>.

@@ -1,6 +1,6 @@
 ---
 layout: nil
-canonical: http://www.soimort.org
+canonical: http://www.soimort.org/
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -11,7 +11,7 @@ canonical: http://www.soimort.org
     <id>{{ page.canonical }}</id>
     <author>
         <name>Mort Yao</name>
-        <email>mort.yao@gmail.com</email>
+        <email>mort.yao@soimort.org</email>
     </author>
     {% for post in site.posts %}
     <entry>

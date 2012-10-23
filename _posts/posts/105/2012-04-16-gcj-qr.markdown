@@ -1,0 +1,49 @@
+---
+layout: post
+uri: /posts/105
+permalink: /posts/105/index.html
+title: Code Jam 2012 资格赛 解题报告
+category:
+tag:
+description:
+disqus: true
+disqus-url: /tech-blog/2012/04/16/gcj-qr.html
+---
+
+## Code Jam 2012 资格赛 解题报告
+
+### Problem A. Speaking in Tongues
+[http://code.google.com/codejam/contest/1460488/dashboard#s=p0](http://code.google.com/codejam/contest/1460488/dashboard#s=p0)
+
+Code Jam资格赛历年来最水的一道水题，字符替换。
+
+我的做法是人肉分析输入输出样例之间的字符映射关系。（不知道有没有人用代码来做这事）
+
+<script src="https://gist.github.com/2401276.js?file=a.dart"></script>
+
+### Problem B. Dancing With the Googlers
+[http://code.google.com/codejam/contest/1460488/dashboard#s=p1](http://code.google.com/codejam/contest/1460488/dashboard#s=p1)
+
+直接贪心法，把有限的__s__个“surprising triplets”机会尽可能分配给那些在surprising情形下best score能够达到__p__、否则达不到__p__的Googlers。
+
+<script src="https://gist.github.com/2401349.js?file=gistfile1.hs"></script>
+
+### Problem C. Recycled Numbers
+[http://code.google.com/codejam/contest/1460488/dashboard#s=p2](http://code.google.com/codejam/contest/1460488/dashboard#s=p2)
+
+典型的Project Euler风格。从数据规模来看穷举完全可以承受，没必要用查找表什么的。（反正Code Jam又不是OJ判题）
+
+注意消除重复的情况。
+
+<script src="https://gist.github.com/2401419.js?file=gistfile1.py"></script>
+
+### Problem D. Hall of Mirrors
+[http://code.google.com/codejam/contest/1460488/dashboard#s=p3](http://code.google.com/codejam/contest/1460488/dashboard#s=p3)
+
+这次资格赛中唯一一道不水的题……而且相当有技术含量。（从Correct的人数来看，小数据集555人，大数据集186人。前面三题的正确数都在10000以上。。。）
+
+计算几何中的镜面反射模拟+枚举策略。
+
+看过官网上的分析就知道，这策略其实很简单，只是实现起来略麻烦。
+
+我的C++实现太臃肿（600多行），而且大数据集还是做错的。不贴出来了。

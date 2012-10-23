@@ -1,8 +1,0 @@
----
-layout: album
-category: design
-title: SBML T-shirt Design
-cover-image: http://i.imgur.com/5Hurm.png
-redirect: http://soimort.deviantart.com/#/d4wfbov
-description: 
----

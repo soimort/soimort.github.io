@@ -1,12 +1,12 @@
 {% for post in site.posts %}
-{% if post.layout == 'album' and post.category == 'photography' %}
+{% if post.layout == 'album' and post.category == 'photos' %}
 <article class="articleScrap">
     <aside class="asideScrap">
         {{ post.title }}
     </aside>
     
     <section class="sectionScrap">
-        <a href="{{ post.redirect }}"><img src="{{ post.cover-image }}" width="50%" alt="{{ post.title }}" title="{{ post.title }}" class="imgScrap" /></a>
+        <a href="{{ post.uri }}" target="_blank"><img src="{{ post.thumbnail-image }}" width="50%" alt="{{ post.title }}" title="{{ post.title }}" class="imgScrap" /></a>
         <br />
         {{ post.description }}
     </section>

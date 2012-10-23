@@ -1,8 +1,0 @@
----
-layout: album
-category: design
-title: iGEM 2010 USTC_Software T-shirt Design
-cover-image: http://i.imgur.com/bBwBi.jpg
-redirect: https://plus.google.com/photos/100974147585154622588/albums/5520503304327776481
-description: 
----

@@ -1,0 +1,12 @@
+---
+layout: album
+uri: /photos/102
+permalink: /photos/102/index.html
+title: in the light of time
+category: photos
+tag:
+description:
+disqus: true
+thumbnail-image: http://i.imgur.com/n5fiv.jpg
+---
+<meta http-equiv="refresh" content="0;url=https://plus.google.com/photos/100974147585154622588/albums/5686451696823525089">
