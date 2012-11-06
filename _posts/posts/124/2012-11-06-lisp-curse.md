@@ -111,7 +111,7 @@ _在“自由软件”的世界里，工业界教条仅仅是在口头上被激�
 
 提供给Lisp的、可用的自由开发环境可以作为“Lisp魔咒”的一个例证。
 
-尽管说出来让人难堪，但必须得有人去做这件事情。忘掉Lisp机器吧；我们甚至还没有一个能达到算得上[Smalltalk](http://www.opencobalt.org/)[黑客](http://www.pharo-project.org/home)[小康标准](http://www.squeak.org/)的开发环境（_“我总赶脚到Lisp是一个牛逼的语言，而Smalltalk是一个牛逼的环境。”_——[Ramon Leon](http://onsmalltalk.com/aha-moments-in-lisp)如是说）。除非他们愿意付上千刀美元，否则Lisp黑客们仍然会受制于Emacs。<del>（翻译君吐槽：上千刀是去喂[苹果](http://www.apple.com/macbook-pro/)吗？）</del>
+尽管说出来让人难堪，但必须得有人去做这件事情。忘掉Lisp机器吧；我们甚至还没有一个能达到算得上[Smalltalk](http://www.opencobalt.org/)[黑客](http://www.pharo-project.org/home)[小康标准](http://www.squeak.org/)的开发环境（_“我总赶脚到Lisp是一个牛逼的语言，而Smalltalk是一个牛逼的环境。”_——[Ramon Leon](http://onsmalltalk.com/aha-moments-in-lisp)如是说）。除非他们愿意付上千刀美元，否则Lisp黑客们仍然会受制于Emacs。<del>（翻译君：[比肾还贵](http://www.lispworks.com/buy/prices-1c.html)的LispWorks，包邮哦亲，[欲购从速](http://disney.go.com/wreck-it-ralph/)哦）</del>
 
 James Gosling，第一个在Unix上运行的Emacs的作者，[恰当地指出了](http://www.computerworld.com.au/article/207799/don_t_use_emacs_says_java_father/)Emacs已经长达二十年没有任何基础上的变动。这是因为，Emacs维护者们只是不断地在这个当年由一个MIT的AI实验室的研究生做的设计上垒代码，那时Emacs项目仍然间接地从国债那里获得资助。也许Slashdot喷子会反驳说Emacs已经无所不能，它可以完成其它任何开发环境所能做的事情，而且只会完成得更好。不然那些[当年曾经用过](http://www.ymeme.com/zmacs-vs-emacs-manual.html)Lisp机器的也要这么说。
 
