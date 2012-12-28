@@ -1,6 +1,6 @@
 ---
 layout: nil
-canonical: http://www.soimort.org/
+canonical: http://www.soimort.org
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -17,7 +17,7 @@ canonical: http://www.soimort.org/
     {% if post.layout == 'post' %}
     <entry>
         <title>{{ post.title }}</title>
-        <link href="{{ page.canonical }}{{ post.url }}" />
+        <link href="{{ page.canonical }}{{ post.uri }}" />
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>{{ page.canonical }}{{ post.id }}</id>
         <content type="html">{{ post.content | xml_escape }}</content>
