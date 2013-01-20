@@ -28,6 +28,7 @@ background-image: http://i.imgur.com/0eQ5v.jpg
 <div id="divSeparator2"></div>
 
 <div id="divMiddle">
+
     <div class="divCategory">
         <h1 class="hTitle1">Posts</h1>
         <hr />
@@ -35,21 +36,9 @@ background-image: http://i.imgur.com/0eQ5v.jpg
     </div>
     
     <div class="divCategory">
-        <h1 class="hTitle1">Posts (中文)</h1>
+        <h1 class="hTitle1">博客</h1>
         <hr />
         {% include Posts_zh.html %}
-    </div>
-    
-    <div class="divCategory">
-        <h1 class="hTitle1">Projects</h1>
-        <div class="divExtLinks">
-            <a href="https://github.com/soimort" target="_blank"><img src="/~images/github.png" alt="github" title="GitHub" class="navDock" height="24" /></a>
-            <a href="https://gitorious.org/~mort" target="_blank"><img src="/~images/gitorious.png" alt="gitorious" title="Gitorious" class="navDock" height="24" /></a>
-            <a href="https://bitbucket.org/soimort" target="_blank"><img src="/~images/bitbucket.png" alt="bitbucket" title="BitBucket" class="navDock" height="24" /></a>
-            <a href="http://code.google.com/u/Mort.Yao/" target="_blank"><img src="/~images/google-code.png" alt="google-code" title="Google Code" class="navDock" height="24" /></a>
-        </div>
-        <hr />
-        {% include Projects.html %}
     </div>
     
     <div class="divCategory">
@@ -63,19 +52,21 @@ background-image: http://i.imgur.com/0eQ5v.jpg
         <hr />
         {% include ContactMe.html %}
     </div>
+    
 </div>
 
 <div id="divRight">
+
     <div class="divCategory">
-        <h1 class="hTitle2">About me</h1>
+        <h1 class="hTitle1">Projects</h1>
+        <div class="divExtLinks">
+            <a href="https://github.com/soimort" target="_blank"><img src="/~images/github.png" alt="github" title="GitHub" class="navDock" height="24" /></a>
+            <a href="https://gitorious.org/~mort" target="_blank"><img src="/~images/gitorious.png" alt="gitorious" title="Gitorious" class="navDock" height="24" /></a>
+            <a href="https://bitbucket.org/soimort" target="_blank"><img src="/~images/bitbucket.png" alt="bitbucket" title="BitBucket" class="navDock" height="24" /></a>
+            <a href="http://code.google.com/u/Mort.Yao/" target="_blank"><img src="/~images/google-code.png" alt="google-code" title="Google Code" class="navDock" height="24" /></a>
+        </div>
         <hr />
-        {% include AboutMe.html %}
-    </div>
-    
-    <div class="divCategory">
-        <h1 class="hTitle2">Links</h1>
-        <hr />
-        {% include Links.html %}
+        {% include Projects.html %}
     </div>
     
     <div class="divCategory">
@@ -96,5 +87,17 @@ background-image: http://i.imgur.com/0eQ5v.jpg
         {% include Designs.html %}
     </div>
     
+    <div class="divCategory" style="visibility:hidden">
+        <h1 class="hTitle2">About me</h1>
+        <hr />
+        {% include AboutMe.html %}
+    </div>
+
+    <div class="divCategory" style="visibility:hidden">
+        <h1 class="hTitle2">Links</h1>
+        <hr />
+        {% include Links.html %}
+    </div>
+
     <div id="div0"></div>
 </div>
