@@ -2,7 +2,7 @@
 layout: post
 uri: /posts/141
 permalink: /posts/141/index.html
-title: Linux黑历史挖坟（1）：<br/>shebang的多参数问题
+title: Linux黑历史挖坟（1）：shebang的多参数问题
 category:
 tag:
 description:
