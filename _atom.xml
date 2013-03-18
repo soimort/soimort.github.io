@@ -13,4 +13,15 @@ canonical: http://www.soimort.org
         <name>Mort Yao</name>
         <email>mort.yao@soimort.org</email>
     </author>
+    {% for post in site.posts %}
+    {% if post.layout == 'post' %}
+    <entry>
+        <title>{{ post.title }}</title>
+        <link href="{{ page.canonical }}{{ post.uri }}" />
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <id>{{ page.canonical }}{{ post.id }}</id>
+        <content type="html">{{ post.content | xml_escape }}</content>
+    </entry>
+    {% endif %}
+    {% endfor %}
 </feed>
