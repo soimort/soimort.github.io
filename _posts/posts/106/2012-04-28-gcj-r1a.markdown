@@ -21,13 +21,13 @@ disqus-url: /tech-blog/2012/04/28/gcj-r1a.html
 
 我居然极端脑残的把明显是O(n)的算法写成了O(n^2 )（见如下代码）。。。然后大数据点就超时了（第9个case无论如何也不能在8分钟内跑出来）。。。
 
-<script src="https://gist.github.com/2517492.js?file=gistfile1.groovy"></script>
+<script src="https://gist.github.com/2517492.js"></script>
 
 当时觉得应该是Groovy处理大文件的时候坏掉了（毕竟是脚本执行效率并不高），比赛结束回头一看，发现完全是自己坏掉了。。。
 
 以下是正解，从循环体里去掉了不必要的累乘（大数据秒出结果）
 
-<script src="https://gist.github.com/2517494.js?file=gistfile1.groovy"></script>
+<script src="https://gist.github.com/2517494.js"></script>
 
 怀疑这题如果用C写O(n^2 )也许能过，不过如果那样做的话，我可能永远都不会知道把一个本该是O(n)的算法搞成了O(n^2 )。
 
@@ -44,7 +44,7 @@ disqus-url: /tech-blog/2012/04/28/gcj-r1a.html
 
 事后证明只要在原来的代码上改一行就能解决问题，如下：
 
-<script src="https://gist.github.com/2517534.js?file=gistfile1.java"></script>
+<script src="https://gist.github.com/2517534.js"></script>
 
 
 

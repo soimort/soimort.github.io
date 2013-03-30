@@ -23,7 +23,7 @@ disqus-url: /tech-blog/2012/05/09/gcj-r1.html
 
 改一个语句就能通过的这种题还真是残念得不行啊。。。
 
-<script src="https://gist.github.com/2644309.js?file=gistfile1.scala"></script>
+<script src="https://gist.github.com/2644309.js"></script>
 
 ### Round 1B - Problem C. Equal Sums
 <http://code.google.com/codejam/contest/1836486/dashboard#s=p2&a=0>
@@ -40,7 +40,7 @@ disqus-url: /tech-blog/2012/05/09/gcj-r1.html
 
 以下是我的穷举法（大数据超时）。根据官方的解答，写一个不会超时的版本应该不难。
 
-<script src="https://gist.github.com/2644369.js?file=gistfile1.java"></script>
+<script src="https://gist.github.com/2644369.js"></script>
 
 ### Round 1C - Problem A. Diamond Inheritance
 <http://code.google.com/codejam/contest/1781488/dashboard#s=p0&a=0>
@@ -49,7 +49,7 @@ disqus-url: /tech-blog/2012/05/09/gcj-r1.html
 
 亏我这题还是用的Ruby（要是再回到中学时代做信息学竞赛的时候让我用C甚至Pascal写估计得写崩溃了。。。）
 
-<script src="https://gist.github.com/2644578.js?file=gistfile1.rb"></script>
+<script src="https://gist.github.com/2644578.js"></script>
 
 ### Round 1C - Problem C. Box Factory
 <http://code.google.com/codejam/contest/1781488/dashboard#s=p2&a=0>

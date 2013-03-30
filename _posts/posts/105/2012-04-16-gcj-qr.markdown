@@ -19,14 +19,14 @@ Code Jam资格赛历年来最水的一道水题，字符替换。
 
 我的做法是人肉分析输入输出样例之间的字符映射关系。（不知道有没有人用代码来做这事）
 
-<script src="https://gist.github.com/2401276.js?file=a.dart"></script>
+<script src="https://gist.github.com/2401276.js"></script>
 
 ### Problem B. Dancing With the Googlers
 [http://code.google.com/codejam/contest/1460488/dashboard#s=p1](http://code.google.com/codejam/contest/1460488/dashboard#s=p1)
 
 直接贪心法，把有限的__s__个“surprising triplets”机会尽可能分配给那些在surprising情形下best score能够达到__p__、否则达不到__p__的Googlers。
 
-<script src="https://gist.github.com/2401349.js?file=gistfile1.hs"></script>
+<script src="https://gist.github.com/2401349.js"></script>
 
 ### Problem C. Recycled Numbers
 [http://code.google.com/codejam/contest/1460488/dashboard#s=p2](http://code.google.com/codejam/contest/1460488/dashboard#s=p2)
@@ -35,7 +35,7 @@ Code Jam资格赛历年来最水的一道水题，字符替换。
 
 注意消除重复的情况。
 
-<script src="https://gist.github.com/2401419.js?file=gistfile1.py"></script>
+<script src="https://gist.github.com/2401419.js"></script>
 
 ### Problem D. Hall of Mirrors
 [http://code.google.com/codejam/contest/1460488/dashboard#s=p3](http://code.google.com/codejam/contest/1460488/dashboard#s=p3)
