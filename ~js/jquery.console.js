@@ -135,13 +135,6 @@
         (function(){
             container.append(inner);
             inner.append(typer);
-            
-            $.fn.focusWithoutScrolling = function(){
-                var x = window.scrollX, y = window.scrollY;
-                this.focus();
-                window.scrollTo(x, y);
-            };
-            
             typer.css({position:'absolute',top:0,left:'-9999px'});
             if (config.welcomeMessage)
                 message(config.welcomeMessage,'jquery-console-welcome');
@@ -230,8 +223,11 @@
         container.click(function(){
             inner.addClass('jquery-console-focus');
             inner.removeClass('jquery-console-nofocus');
-            typer.focusWithoutScrolling();
-            //typer.focus();
+            if ($.browser.webkit) {
+                typer.focusWithoutScrolling();
+            } else {
+                typer.css('position', 'fixed').focus();
+            }
             scrollToBottom();
             return false;
         });
@@ -284,7 +280,7 @@
 		    (altCodes[keyCode])();
 		    return false;
 		}
-	    };
+	    }
         });
 
         ////////////////////////////////////////////////////////////////////////
@@ -689,5 +685,12 @@
         $(this).text(txt);
         $(this).html($(this).html().replace(/\n/g,'<br/>'));
         return this;
+    };
+
+    // Alternative method for focus without scrolling
+    $.fn.focusWithoutScrolling = function(){
+        var x = window.scrollX, y = window.scrollY;
+        $(this).focus();
+        window.scrollTo(x, y);
     };
 })(jQuery);
