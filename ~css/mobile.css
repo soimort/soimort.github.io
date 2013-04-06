@@ -2,6 +2,10 @@ nav#navBarTop .navBarListRight, nav#navBarBottom .navBarListLeft {
     visibility: hidden;
 }
 
+span#spanBadges {
+    visibility: hidden;
+}
+
 div#divLogo, div#divSeparator1, div#divSeparator2 {
     visibility: hidden;
 }

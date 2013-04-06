@@ -24,3 +24,41 @@
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(po, s);
 }
+
+// add Coderwall badges
+(function(){
+    var appendCoderwallBadge = function(){
+        var coderwallJSONurl ="http://www.coderwall.com/soimort.json?callback=?"
+          , size = 32
+          ;
+
+        $.getJSON(coderwallJSONurl, function(data) {
+            $.each(data.data.badges, function(i, item){
+                var a = $("<a>")
+                    .attr("href", "http://www.coderwall.com/soimort/")
+                    .attr("target", "_blank")
+                    ;
+
+                $("<img>").attr("src", item.badge)
+                    .attr("float", "left")
+                    .attr("title", item.name + ": " + item.description)
+                    .attr("alt", item.name)
+                    .attr("height", size)
+                    .attr("width", size)
+                    .hover(
+                        function(){ $(this).css("opacity", "0.6"); }
+                      , function(){ $(this).css("opacity", "1.0"); }
+                    )
+//                    .click( function(){ window.location = "http://www.coderwall.com/soimort/"; })
+                    .appendTo(a)
+                    ;
+                $("#coderwall").append(a);
+            });
+        });
+    };
+
+    $(function(){
+       appendCoderwallBadge();
+    });
+
+}());
