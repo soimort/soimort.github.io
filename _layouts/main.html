@@ -2,6 +2,7 @@
 application-name: Looking-Glass
 author: Mort
 generator: Jekyll 0.12.0
+cover-image: /~images/m.png
 ---
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/Blog">
@@ -13,10 +14,9 @@ generator: Jekyll 0.12.0
     <meta name="description" content="{{ page.description }}" />
     <meta name="keywords" content="{{ page.keywords }}" />
     
-    <meta itemprop="name" content="{{ page.title }}">
-    <meta itemprop="description" content="{{ page.description }}">
+    <meta itemprop="name" content="{{ page.title }}" />
+    <meta itemprop="description" content="{{ page.description }}" />
     <meta itemprop="image" content="{{ page.cover-image }}" />
-    <meta property="og:image" content="http://www.soimort.org/~images/m.png" />
     
     <title>{{ page.author }} | {{ page.title }}</title>
     
