@@ -26,7 +26,7 @@ lang: zh
 
 直接调用[google-translate-cli](https://github.com/soimort/google-translate-cli)（免安装）在命令行下做翻译：
 
-<p style="font-weight: bold"><span>gawk "$(curl -Ls git.io/google-translate-cli)" {=zh} "God morgon."</span></p>
+<p style="font-weight: bold"><span>gawk "$(curl -Ls git.io/google-translate-cli)" {sv=zh} "God morgon."</span></p>
 
 ***
 
