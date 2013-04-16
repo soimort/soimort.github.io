@@ -6,7 +6,7 @@ title: 为什么我们应该频繁发布新版本（以及怎样发布）
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 
