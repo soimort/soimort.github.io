@@ -3,9 +3,9 @@ require 'rake'
 task :default => [:debug]
 
 task :debug do
-  sh "jekyll --server"
+  sh "jekyll serve"
 end
 
 task :release do
-  sh "jekyll"
+  sh "jekyll build"
 end
