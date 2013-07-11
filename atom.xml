@@ -17,7 +17,7 @@ canonical: http://www.soimort.org
     {% if post.layout == 'post' %}
     <entry>
         <title>{{ post.title }}</title>
-        <link href="{{ page.canonical }}{{ post.uri }}" />
+        {% if post.extlink %}<link href="{{ post.extlink }}" />{% else %}<link href="{{ page.canonical }}{{ post.uri }}" />{% endif %}
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>{{ page.canonical }}{{ post.id }}</id>
         <content type="html">{{ post.content | xml_escape }}</content>
