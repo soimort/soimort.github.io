@@ -6,7 +6,7 @@ title: 危险的Shell，邪恶的HTML
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 
