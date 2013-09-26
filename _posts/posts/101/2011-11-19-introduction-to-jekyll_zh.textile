@@ -6,7 +6,7 @@ title: 像黑客一样写博客——Jekyll入门
 category:
 tag:
 description: 本文采用 Creative Commons Attribution-ShareAlike 3.0 Unported 授权。
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2011/11/19/introduction-to-jekyll_zh.html
 ---
 
