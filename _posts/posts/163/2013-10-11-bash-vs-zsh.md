@@ -166,9 +166,7 @@ Zsh内置的`echo`命令，与我们以前在GNU Bash中常见的`echo`命令，
     $ echo -E '\\\\'
     \\\\
 
-而GNU的`echo`默认就是不对输出进行转义的，若要得到转义的效果，需显式地指定`-e`选项。Bash和Zsh中`echo`命令用法的不兼容，在这里体现出来了。
-
-（<del>顺便说一句，GNU提供的echo功能显然更加碉堡，想知道为什么，[看这里](http://www.gnu.org/fun/jokes/echo-msg.zh-cn.html) 。</del>）
+而Bash的`echo`默认就是不对输出进行转义的，若要得到转义的效果，需显式地指定`-e`选项。Bash和Zsh中`echo`命令用法的不兼容，在这里体现出来了。
 
 
 
