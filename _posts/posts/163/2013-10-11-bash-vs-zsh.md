@@ -66,7 +66,7 @@ Zsh是不会根据文件开头的shebang（如`#!/bin/sh`和`#!/bin/bash`）自�
 
 ## `echo`命令 / 字符串转义
 
-Zsh比之于Bash，可能最容易被注意到的一点不同是，Zsh中的`echo`和`printf`是内置的命令。
+<del>Zsh比之于Bash，可能最容易被注意到的一点不同是，</del>Zsh中的`echo`和`printf`是内置的命令。
 
     $ which echo
     echo: shell built-in command
@@ -74,15 +74,17 @@ Zsh比之于Bash，可能最容易被注意到的一点不同是，Zsh中的`ech
     $ which printf
     printf: shell built-in command
 
-而Bash中并没有内置这`echo`和`printf`这两个命令。它们实际上是Unix（GNU Coreutils）的外部命令：
+Bash中的`echo`和`printf`同样是内置命令：
 
-    $ which /bin/echo
-    /bin/echo
+    $ type echo
+    echo is a shell builtin
     
-    $ which /usr/bin/printf
-    /usr/bin/printf
+    $ type printf
+    echo is a shell builtin
 
-当然，Zsh内置了这些命令是好事情，用起一个语言内置的函数来，总是比调用外部的进程要更加安心的，而且通常效率也更高。然而，Zsh内置的这个`echo`，与我们以前在GNU Bash中常见的外部命令`echo`，使用方式上是___不兼容___的。
+感谢读者提醒，__在Bash中不能通过`which`来确定一个命令是否为外部命令__，因为__`which`本身并不是Bash中的内置命令__。`which`在Zsh中是一个内置命令。
+
+Zsh内置的`echo`命令，与我们以前在GNU Bash中常见的`echo`命令，使用方式是___不兼容___的。
 
 首先，请看Bash：
 
@@ -96,12 +98,6 @@ Zsh比之于Bash，可能最容易被注意到的一点不同是，Zsh中的`ech
 
 你能猜到Zsh的输出结果么？
 
-↓  
-↓  
-↓  
-↓  
-↓  
-↓  
 ↓  
 ↓  
 ↓  
@@ -133,12 +129,6 @@ Zsh比之于Bash，可能最容易被注意到的一点不同是，Zsh中的`ech
 
 再一次，你能猜到Zsh的输出结果么？
 
-↓  
-↓  
-↓  
-↓  
-↓  
-↓  
 ↓  
 ↓  
 ↓  
