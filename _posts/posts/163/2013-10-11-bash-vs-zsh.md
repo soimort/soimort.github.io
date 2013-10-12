@@ -82,7 +82,7 @@ Bash中的`echo`和`printf`同样是内置命令：
     $ type printf
     echo is a shell builtin
 
-感谢读者提醒，__在Bash中不能通过`which`来确定一个命令是否为外部命令__，因为__`which`本身并不是Bash中的内置命令__。`which`在Zsh中是一个内置命令。
+感谢读者提醒，在Bash中不能通过`which`来确定一个命令是否为外部命令，__因为`which`本身并不是Bash中的内置命令__。`which`在Zsh中是一个内置命令。
 
 Zsh内置的`echo`命令，与我们以前在GNU Bash中常见的`echo`命令，使用方式是___不兼容___的。
 
