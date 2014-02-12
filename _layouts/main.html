@@ -13,37 +13,37 @@ cover-image: /images/m.png
     <meta name="generator" content="{{ page.generator }}" />
     <meta name="description" content="{{ page.description }}" />
     <meta name="keywords" content="{{ page.keywords }}" />
-
+    
     <meta itemprop="name" content="{{ page.title }}" />
     <meta itemprop="description" content="{{ page.description }}" />
     <meta itemprop="image" content="{{ page.cover-image }}" />
-
+    
     <title>{{ page.author }} | {{ page.title }}</title>
-
+    
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
     <link rel="icon" type="image/x-icon" href="http://www.soimort.org/favicon.ico" />
-
+    
     <link rel="author" type="text/html" href="https://plus.google.com/100974147585154622588/about" />
     <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
-
+    
     <!-- Google Web Fonts (not in use) -->
     <!-- link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Droid+Sans' / -->
-
+    
     <link rel="stylesheet" type="text/css" href="/css/main.css" media="all" />
     <link rel="stylesheet" type="text/css" href="/css/mobile.css" media="all and (max-width:1023px)" />
-
+    
     <!-- Highlight.js -->
     <link rel="stylesheet" href="/css/tomorrow-night.min.css">
     <script src="/js/highlight.pack.js"></script>
     <!-- script>hljs.initHighlightingOnLoad();</script -->
-
+    
     <!-- Pygments -->
     <link rel="stylesheet" type="text/css" href="/css/pygments.css" media="all" />
-
+    
     <!-- jQuery & Galleria -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script src="/plugins/galleria/galleria-1.2.8.min.js"></script>
-
+    
     <!-- MathJax (not in use) -->
     <!-- script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -51,11 +51,11 @@ cover-image: /images/m.png
         });
     </script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script -->
-
+    
     <!-- ShareThis (not in use) -->
     <!-- script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript">stLight.options({publisher: "9aabed9c-ac3f-4f96-8f5a-8e7a27307543"}); </script -->
-
+    
     <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -68,9 +68,9 @@ cover-image: /images/m.png
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-
+    
     <script type="text/javascript" src="/js/main.js"></script>
-
+    
 </head>
 
 <body>
@@ -78,7 +78,7 @@ cover-image: /images/m.png
     <script type="text/javascript">
         document.body.style.backgroundImage = "url('{{ page.background-image }}')";
     </script>
-
+    
     <nav id="navBarTop">
         <ul class="navBarListLeft">
             <li><a href="/"><img src="/images/home.png" alt="home" title="Home" class="navDock" height="32" /></a></li>
@@ -90,7 +90,7 @@ cover-image: /images/m.png
             </span>
             <!-- li style="position: relative; top: -12px; font-size: 16px"><a href="/" title="Hello world" target="_blank">Hello world</a></li -->
         </ul>
-
+        
         <ul class="navBarListRight">
             <li style="position: relative; top: -12px"><b>{{ page.author }}</b> on </li>
             <!-- Google+ --><li><a href="https://plus.google.com/100974147585154622588" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-32.png" alt="gplus" title="Google+" class="navDock" height="32" /></a></li>
@@ -106,7 +106,7 @@ cover-image: /images/m.png
             <!-- GitHub --><li><a href="http://github.com/soimort" target="_blank"><img src="/images/github.png" alt="github" title="GitHub" class="navDock" height="32" /></a></li>
         </ul>
     </nav>
-
+    
     <nav id="navBarBottom">
         <div class="navBarListLeft">
             <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><img src="http://i.creativecommons.org/l/by-sa/4.0/88x31.png" height="28" alt="CC BY-SA 4.0 License" title="CC BY-SA 4.0 License" /></a>
@@ -115,7 +115,7 @@ cover-image: /images/m.png
                 © 2014 <a href="https://plus.google.com/100974147585154622588/about" target="_blank"><b>Mort Yao</b></a>. Unless otherwise stated, all contents on this site are released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank"><b>CC BY-SA 4.0 International License</b></a>.
             </div>
         </div>
-
+        
         <div class="navBarListRight">
             <a href="http://www.w3.org/html/logo/" target="_blank" style="position: absolute; right: 0"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" height="36" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics" /></a>
             <br />
@@ -124,17 +124,8 @@ cover-image: /images/m.png
             </div>
         </div>
     </nav>
-
+    
     {{ content }}
-
-    <!--[if !(lt IE 8)]><!-->
-    <script type="text/javascript">
-      (function(){
-      var e = document.createElement('script'); e.type='text/javascript'; e.async = true;
-      e.src = document.location.protocol + '//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(e, s);
-      })();
-    </script>
-    <!--<![endif]-->
+    
 </body>
 </html>
