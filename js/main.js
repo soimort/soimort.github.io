@@ -62,3 +62,35 @@
     });
 
 }());
+
+function lock() {
+    var divMask = document.createElement("div");
+    divMask.id = "mask";
+
+    var divMaskText = document.createElement("div");
+    divMaskText.id = "maskText";
+
+    var textMessage = document.createTextNode("啊拉拉，这篇文章包含的信息似乎已经过时了(´д`;)"); 
+    divMaskText.appendChild(textMessage);
+
+    var br = document.createElement("br");
+    divMaskText.appendChild(br);
+
+    var aBack = document.createElement("a");
+    aBack.href = "/";
+    aBack.innerHTML = "< 去看点别的吧";
+    divMaskText.appendChild(aBack);
+
+    var p = document.createElement("p");
+    p.innerHTML = "使用 <code>javascript:unlock()</code> 解锁";
+    divMaskText.appendChild(p);
+
+    document.getElementById("articlePost").appendChild(divMask);
+    document.getElementById("articlePost").appendChild(divMaskText);
+}
+
+function unlock() {
+    document.getElementById("articlePost").removeChild(document.getElementById("mask"));
+    document.getElementById("articlePost").removeChild(document.getElementById("maskText"));
+    return "Really?! So you wanna read me anyway?";
+}
