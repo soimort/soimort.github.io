@@ -70,7 +70,7 @@ function lock() {
     var divMaskText = document.createElement("div");
     divMaskText.id = "maskText";
 
-    var textMessage = document.createTextNode("啊拉拉，这篇文章包含的信息似乎已经过时了(´д`;)"); 
+    var textMessage = document.createTextNode("啊拉拉，这篇文章包含的信息已经过时了(´д`;)"); 
     divMaskText.appendChild(textMessage);
 
     var br = document.createElement("br");
@@ -82,8 +82,8 @@ function lock() {
     divMaskText.appendChild(aBack);
 
     var p = document.createElement("p");
-    p.innerHTML = "使用 <code>javascript:unlock()</code> 解锁";
-    divMaskText.appendChild(p);
+    p.innerHTML = "使用 <code>javascript:unlock()</code> 解锁归档页面。";
+    //divMaskText.appendChild(p);
 
     document.getElementById("articlePost").appendChild(divMask);
     document.getElementById("articlePost").appendChild(divMaskText);
