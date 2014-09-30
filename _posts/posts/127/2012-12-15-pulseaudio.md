@@ -6,9 +6,11 @@ title: PulseAudio的正确打开方式（两则）
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
+
+<script>lock()</script>
 
 记录在此，以供自己备忘之用。
 

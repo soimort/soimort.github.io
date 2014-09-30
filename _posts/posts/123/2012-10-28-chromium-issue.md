@@ -6,9 +6,11 @@ title: Chromium保存网页的.html文件神秘消失问题
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
+
+<script>lock()</script>
 
 曾几何时，我的Chromium浏览器（包括Google Chrome在内）出现了某些网页不能正确保存的问题。
 

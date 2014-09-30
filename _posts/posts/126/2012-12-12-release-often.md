@@ -10,6 +10,8 @@ disqus: false
 lang: zh
 ---
 
+<script>lock()</script>
+
 敏捷开发中有句常讲的话，叫做[“Release early, release often（及早发布，频繁发布）”](http://en.wikipedia.org/wiki/Release_early,_release_often)。
 
 什么叫发布呢？简单地讲，就是把东西打包出一个新的版本，让最终用户可以直接拿过来用（无论是通过包管理器升级、下载预构建包手动安装还是下载源码自己去`make install`）。
