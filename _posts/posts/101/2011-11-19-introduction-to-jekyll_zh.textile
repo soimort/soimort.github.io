@@ -10,6 +10,8 @@ disqus: false
 disqus-url: /tech-blog/2011/11/19/introduction-to-jekyll_zh.html
 ---
 
+<script>lock()</script>
+
 "Jekyll":http://jekyllrb.com/ 是一个简洁的、特别针对博客平台的 "静态网站":http://en.wikipedia.org/wiki/Static_site 生成器。它使用一个模板目录作为网站布局的基础框架，并在其上运行 "Textile":http://en.wikipedia.org/wiki/Textile_(markup_language) 、 "Markdown":http://en.wikipedia.org/wiki/Markdown 或 "Liquid":http://liquidmarkup.org/ 标记语言的转换器，最终生成一个完整的静态Web站点，可以被放置在Apache或者你喜欢的其他任何Web服务器上。它同时也是 "GitHub Pages":http://pages.github.com/ 、一个由 "GitHub":http://www.github.com/ 提供的用于托管项目主页或博客的服务，在后台所运行的引擎。
 
 你可以去 "这里":https://github.com/mojombo/jekyll/wiki/Sites 围观一些现有的使用Jekyll搭建的网站。本站（ "www.soimort.org":http://www.soimort.org ）同样亦是基于Jekyll构建。

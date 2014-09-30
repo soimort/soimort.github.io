@@ -10,6 +10,8 @@ disqus: true
 disqus-url: /tech-blog/2012/05/09/gcj-r1.html
 ---
 
+<script>lock()</script>
+
 ## Code Jam 2012 剩余的杯具总结
 
 ### Round 1B - Problem A. Safety in Numbers
