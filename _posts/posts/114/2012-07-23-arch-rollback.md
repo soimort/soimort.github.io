@@ -6,9 +6,11 @@ title: Arch Linux Rollback安装笔记
 category:
 tag:
 description:
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2012/07/23/arch-rollback.html
 ---
+
+<script>lock()</script>
 
 本文依照我至今为止四次在Dell Latitude E6420笔记本上安装Arch Linux的过程中所记录的零碎笔记整理而成。
 
