@@ -6,7 +6,7 @@ title: 【译文】Linux的成功源于自私和信任
 category:
 tag:
 description: 转载自BBC News
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2012/06/24/linux-succeeded.html
 ---
 Original Article: [Linus Torvalds: Linux succeeded thanks to selfishness and trust](http://www.bbc.com/news/technology-18419231)

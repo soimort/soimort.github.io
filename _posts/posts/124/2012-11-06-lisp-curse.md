@@ -6,7 +6,7 @@ title: 【译文】Lisp魔咒：对Lisp的非技术性吐槽
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 Original Article: [The Lisp Curse](http://www.winestockwebdesign.com/Essays/Lisp_Curse.html)

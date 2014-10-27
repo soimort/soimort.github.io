@@ -6,7 +6,7 @@ title: 坑爹的课程项目之Arduino合成器
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

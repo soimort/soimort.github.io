@@ -6,7 +6,7 @@ title: 【译文】承认吧，函数式编程可能是笨拙的
 category:
 tag:
 description: 
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2012/07/12/functional-programming.html
 ---
 Original Article: [Admitting that Functional Programming Can Be Awkward](http://prog21.dadgum.com/3.html)

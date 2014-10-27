@@ -6,7 +6,7 @@ title: Horseshit：一个帮助克服拖延症的小工具
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

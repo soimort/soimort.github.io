@@ -6,9 +6,11 @@ title: YouTube Live Stream直播视频的下载
 category:
 tag:
 description:
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2012/09/06/live-stream.html
 ---
+
+<script>lock()</script>
 
 上周在[YouTube Live](http://www.youtube.com/live)上看了[AKB48劇場 前田敦子卒業公演](https://plus.google.com/+AKB48/posts/giJESU7pbcT)的直播，顺便研究了一下这个问题。
 

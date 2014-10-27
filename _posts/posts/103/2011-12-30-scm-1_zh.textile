@@ -6,7 +6,7 @@ title: 版本控制系统入门 (I). Subversion
 category:
 tag:
 description: 本文采用 Creative Commons Attribution-ShareAlike 3.0 Unported 授权。
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2011/12/30/scm-1_zh.html
 ---
 

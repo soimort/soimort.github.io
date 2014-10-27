@@ -6,7 +6,7 @@ title: 【快速参考】用Emacs做Android开发环境
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

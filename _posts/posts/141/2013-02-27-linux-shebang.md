@@ -6,7 +6,7 @@ title: Linux黑历史挖坟（1）：shebang的多参数问题
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

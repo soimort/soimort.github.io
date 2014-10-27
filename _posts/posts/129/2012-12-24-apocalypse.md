@@ -6,7 +6,7 @@ title: 关于Unix世界末日的调查报告
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

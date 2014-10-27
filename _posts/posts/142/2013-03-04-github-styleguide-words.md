@@ -6,7 +6,7 @@ title: 【译文】GitHub内部词汇与写作风格建议
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 Original Article: [GitHub Styleguide - Words, Writing and Copy](https://github.com/styleguide/words) by __GitHub__  

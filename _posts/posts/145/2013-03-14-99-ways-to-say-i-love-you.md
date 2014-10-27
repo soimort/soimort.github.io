@@ -6,9 +6,10 @@ title: 【技术宅的情人节】99种用Racket说I love you的方式
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
+<script>lock()</script>
 
 ![](http://pre.racket-lang.org/racket/collects/icons/heart.png)
 

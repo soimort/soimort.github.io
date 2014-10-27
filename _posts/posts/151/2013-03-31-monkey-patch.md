@@ -6,9 +6,10 @@ title: Furious the Monkey Patch（狂暴的猴子修补）
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
+<script>lock()</script>
 
 ## FURIOUS THE MONKEY PATCH
 

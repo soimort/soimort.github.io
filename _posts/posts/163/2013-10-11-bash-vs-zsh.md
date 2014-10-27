@@ -6,7 +6,7 @@ title: Zsh vs. Bash：不完全对比解析（1）
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

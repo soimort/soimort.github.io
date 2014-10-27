@@ -6,7 +6,7 @@ title: 【译文】GNOME之父Miguel de Icaza：我是怎样投奔Mac的
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 Original Article: [How I ended up with Mac](http://tirania.org/blog/archive/2013/Mar-05.html) by [Miguel de Icaza](https://twitter.com/migueldeicaza)  

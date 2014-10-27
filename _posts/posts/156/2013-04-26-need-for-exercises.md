@@ -6,7 +6,7 @@ title: 【译文】我们需要更多的编程练习
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 Original Article: [Need for Exercises](http://tirania.org/blog/archive/2013/Apr-25.html) by [Miguel de Icaza](https://twitter.com/migueldeicaza)  

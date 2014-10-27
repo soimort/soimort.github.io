@@ -6,7 +6,7 @@ title: Markdown+Pandoc→HTML幻灯片速成
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

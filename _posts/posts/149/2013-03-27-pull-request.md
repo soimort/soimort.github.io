@@ -6,7 +6,7 @@ title: Pull Request的正确打开方式（如何在GitHub上贡献开源项目�
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

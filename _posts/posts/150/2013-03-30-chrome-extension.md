@@ -6,7 +6,7 @@ title: 【提醒Chrome用户】不要再使用“Download”扩展！
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

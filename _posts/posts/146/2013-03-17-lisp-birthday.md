@@ -6,7 +6,7 @@ title: 【Unix考据癖】Lisp节快乐！
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

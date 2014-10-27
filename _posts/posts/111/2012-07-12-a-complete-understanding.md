@@ -6,7 +6,7 @@ title: 【译文】不可能的全盘理解
 category:
 tag:
 description: 
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2012/07/12/a-complete-understanding.html
 ---
 Original Article: [A Complete Understanding is No Longer Possible](http://prog21.dadgum.com/129.html)

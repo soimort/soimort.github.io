@@ -6,7 +6,7 @@ title: 【译文】对非实用编程的赞美
 category:
 tag:
 description: 本文采用 Creative Commons Attribution-NonCommercial 3.0 United States 授权。
-disqus: true
+disqus: false
 disqus-url: /tech-blog/2012/06/22/impractical-programming.html
 ---
 Original Article: [In Praise of Impractical Programming](http://www.niemanlab.org/2011/11/in-praise-of-impractical-programming/)

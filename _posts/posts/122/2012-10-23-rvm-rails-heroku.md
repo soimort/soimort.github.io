@@ -6,9 +6,11 @@ title: RVM + Rails + Heroku开发环境搭建
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
+
+<script>lock()</script>
 
 说来惭愧，所有我跟过的在线课程，没有哪一门不是拖到作业截止日期之前的周末才拼命通宵补课赶作业的……
 

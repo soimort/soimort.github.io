@@ -6,7 +6,7 @@ title: 如何在Python中滥用函数式编程（误）
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
 

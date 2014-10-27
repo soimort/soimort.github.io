@@ -6,9 +6,10 @@ title: 在命令行下使用Google Translate
 category:
 tag:
 description:
-disqus: true
+disqus: false
 lang: zh
 ---
+<script>lock()</script>
 
 所以说我还是发篇中文博介绍一下这个东西好了。貌似对其他人还蛮有用的样子。
 
