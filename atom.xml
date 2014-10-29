@@ -13,7 +13,7 @@ canonical: http://www.soimort.org
         <email>mort.yao@soimort.org</email>
     </author>
     {% for post in site.posts %}
-    {% if post.layout == 'post' %}
+    {% if post.layout == 'impossible' %}
     <entry>
         <title>{{ post.title }}</title>
         {% if post.extlink %}<link href="{{ post.extlink }}" />{% else %}<link href="{{ page.canonical }}{{ post.uri }}" />{% endif %}
