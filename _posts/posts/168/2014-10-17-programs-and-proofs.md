@@ -6,6 +6,7 @@ title: 程序与证明
 category:
 tag:
 description:
+published: false
 disqus: false
 lang: zh
 abstract: <img src="http://i.imgur.com/FBn41NF.png" width="360px"></img><p><i>The essay was hidden in the obscure meanings of words.</p>
