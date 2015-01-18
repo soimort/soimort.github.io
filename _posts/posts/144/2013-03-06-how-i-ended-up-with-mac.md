@@ -9,6 +9,8 @@ description:
 disqus: false
 lang: zh
 ---
+<script>lock()</script>
+
 Original Article: [How I ended up with Mac](http://tirania.org/blog/archive/2013/Mar-05.html) by [Miguel de Icaza](https://twitter.com/migueldeicaza)  
 (Chinese Translation by __Mort Yao__)
 
