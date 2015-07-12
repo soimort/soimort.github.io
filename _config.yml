@@ -1,3 +1,0 @@
-markdown: redcarpet
-highlighter: pygments
-exclude: [Rakefile, README.md]
