@@ -1,0 +1,225 @@
+#!/usr/bin/env ruby
+
+# Author: Mort Yao <soi@mort.ninja>
+# License:
+#   This is free and unencumbered software released into the public domain.
+"""
+Pancake
+
+For more details:
+  http://www.soimort.org/README.html
+"""
+
+require 'yaml'
+require 'webrick'
+require 'listen'
+
+def i(x)   puts "\33[36m#{x}\33[0m"   end
+def ok(x)  puts "\33[33m#{x}\33[0m"   end
+def w(x)   puts "\33[33m#{x}\33[0m"   end
+def e(x)   puts "\33[33;1m#{x}\33[0m" end
+def wtf(x) puts "\33[31;1m#{x}\33[0m" end
+
+PANDOC = 'pandoc'
+METADATA_EXT = ['.yaml', '.yml']
+SOURCE_EXT   = ['.markdown', '.md']
+IGNORED_EXT  = ['.html', '.htm']
+
+module Pancake
+
+  def self.escape(str)
+    str.gsub(/[ "'*?]/) { |s| '\\' + s }
+  end
+
+  def self.get_file_list(name, exclude = nil)
+    return [] if exclude && exclude.match(File.basename(name))
+    return [name] unless File.directory? name
+    Dir.glob(File.join(name, '*')).inject [] do |files, file|
+      files + get_file_list(file, exclude)
+    end
+  end
+
+  def self.main(target, extra_opts = [])
+    opts = []
+
+    # find all relevant paths
+    root_path = File.expand_path('.')
+    target_path = if File.directory? target
+                    File.expand_path(target)
+                  else
+                    File.expand_path('..', target)
+                  end
+    paths = []
+    paths << t = target_path
+    until t == root_path do
+      paths << t = File.expand_path('..', t)
+    end
+    paths.reverse!
+
+    # find preloadable metadata files and source files
+    files = []
+    paths.each do |path|
+      configs = Dir.glob(File.join(path, '*')).select do |file|
+        file[path.length+1..-1].start_with? '_'
+      end
+      files += configs.inject [] do |files, config|
+        files + get_file_list(config)
+      end
+    end
+    metadata_files = files.select do |file|
+      METADATA_EXT.include? File.extname(file)
+    end.sort
+    source_files = files.select do |file|
+      SOURCE_EXT.include? File.extname(file)
+    end.sort
+
+    # preload metadata
+    meta = metadata_files.inject Hash.new do |meta, metadata_file|
+      i "    <#{target}> preloading metadata: " \
+        "#{metadata_file[root_path.length+1..-1]}"
+      meta.merge! YAML.load_file(metadata_file)
+    end
+
+    # generate pandoc options
+    # I/O formats
+    opts << ['-f',  meta['input-format']] if meta['input-format']
+    opts << ['-t',  meta['output-format']] if meta['output-format']
+    # template
+    opts << ['--template', meta['template']] if meta['template']
+    # filter(s)
+    [meta['filter'] || meta['filters']].flatten.each do |filter|
+      opts << ['--filter', filter]
+    end if meta['filter'] || meta['filters']
+    # bibliography file
+    opts << ['--bibliography',
+             File.join(target_path, meta['source-bibliography'])] if meta['source-bibliography']
+    # target (output) file
+    opts << ['--output',
+             File.join(target_path, meta['target'])] if meta['target']
+    # metadata: id
+    if meta['source']
+      # only when 'source' field is specified
+      id = escape target_path[root_path.length+1..-1]
+      opts << ['-M', "id=#{id}"]
+    end
+    # misc & raw option(s)
+    opts << "--mathjax=#{meta['mathjax']}" if meta['mathjax'] # must use =
+    [meta['raw-option'] || meta['raw-options']].flatten.each do |opt|
+      opts << opt
+    end if meta['raw-option'] || meta['raw-options']
+    # extra options
+    opts += extra_opts
+    # source files (must come before metadata files)
+    if meta['source']
+      # only when 'source' field is specified
+      opts << File.join(target_path, meta['source'])
+    else
+      opts << target
+    end
+    opts += source_files
+    # metadata files (must come after source files)
+    opts += metadata_files
+    opts << File.join(target_path,
+                      meta['source-metadata']) if meta['source-metadata']
+
+    i "    <#{target}> generating: #{([PANDOC] + opts).flatten.join ' '}"
+    unless system(PANDOC, *opts.flatten)
+      e "    <#{target}> generating failed."
+      # do not exit
+    end
+  end
+end
+
+if __FILE__ == $0
+  real_targets = [] # keep track of real targets
+  extra_opts = []   # keep track of extra options
+  ARGV.each_index do |arg_no|
+    target = ARGV[arg_no]
+
+    if File.exist? target
+      # real target
+      real_targets << target
+      i "[#{arg_no+1}] <#{target}> target processing ..."
+      Pancake::main(target, extra_opts)
+
+    elsif target.start_with? '-'
+      # extra option
+      extra_opts << target
+      i "[#{arg_no+1}] '#{target}' extra option added."
+
+    else
+      # phony target
+      target_name, target_params_str = target.split ':'
+      target_params = {}
+      target_params_str.split(',').each do |item|
+        param_name, param_val = item.split '='
+        target_params[param_name] = param_val || true
+      end if target_params_str
+
+      case target_name
+      # phony target: all
+      when 'all'
+        files = Pancake::get_file_list('.', exclude = /_.*/)
+        source_files = files.select do |file|
+          SOURCE_EXT.include? File.extname(file)
+        end.sort
+        source_files.each do |source_file|
+          Pancake::main(source_file, extra_opts)
+        end
+
+      # phony target: server
+      when 'server'
+        # start listen
+        if target_params['watch']
+          if target_params['watch'].class != String
+            listen_path = '.' # true, but no specific watching path
+          elsif File.directory? target_params['watch']
+            listen_path = target_params['watch']
+          elsif File.exist? target_params['watch']
+            listen_path = File.expand_path('..', target_params['watch'])
+          else
+            # invalid watch path
+            wtf "[#{arg_no+1}] [#{target_name}] failed: invalid watch path."
+            exit 1
+          end
+          i "[#{arg_no+1}] [#{target_name}] watching: #{listen_path}"
+          ignored = IGNORED_EXT.collect do |ext|
+            Regexp.new "\\#{ext}$"
+          end
+          listener = Listen.to(listen_path, ignore: ignored) do |m, a, r|
+            w "[#{arg_no+1}] [#{target_name}] modified: #{m}"
+            w "[#{arg_no+1}] [#{target_name}] regenerating ..."
+            real_targets.each do |real_target|
+              Pancake::main(real_target, extra_opts)
+            end
+            ok "[#{arg_no+1}] [#{target_name}] regenerating completed."
+          end
+          listener.start # not blocking
+        end
+
+        # set default port
+        if target_params['port']
+          target_params['port'] = target_params['port'].to_i
+        else
+          target_params['port'] = 8000
+        end
+
+        # start webrick server
+        i "[#{arg_no+1}] [#{target_name}] server started: " \
+          "http://localhost:#{target_params['port']}/"
+        server = WEBrick::HTTPServer.new(:Port => target_params['port'],
+                                         :DocumentRoot => Dir::pwd)
+        trap('INT') do
+          server.shutdown
+          i "[#{arg_no+1}] [#{target_name}] closing server ..."
+        end
+        server.start
+
+      # invalid target
+      else
+        wtf "[#{arg_no+1}] [#{target_name}] failed: invalid target."
+        exit 1
+      end
+    end
+  end
+end
