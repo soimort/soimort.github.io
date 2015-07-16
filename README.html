@@ -1,0 +1,137 @@
+<!-- sans mono theme (pandoc template) v0.1.0 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">
+   /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+   /*! sans mono theme v0.1.0 | Public Domain */body{width:60%;padding:5% 10%;background:ivory;font-family:Helvetica,'Liberation Sans',Arial,freesans,sans-serif}code{font-size:.9em;font-family:Consolas,'Liberation Mono','Droid Sans Mono','DejaVu Sans Mono',Courier,freemono,monospace}a{color:maroon}#TOC{position:fixed;width:20%;right:5%;font-size:.8em}#TOC ul{list-style:none;padding-left:1em}
+  </style>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#soimort.org">soimort.org</a><ul>
+<li><a href="#pancake">Pancake</a><ul>
+<li><a href="#why-my-homemade-pancake-and-why-not-jekyll-hakyll-yst">Why my homemade pancake? (and why not <a href="http://jekyllrb.com/">Jekyll</a> / <a href="http://jaspervdj.be/hakyll/">Hakyll</a> / <a href="https://github.com/jgm/yst">yst</a>?)</a></li>
+</ul></li>
+<li><a href="#monkeydown"><a href="http://www.soimort.org/filters/README.html">Monkeydown</a></a></li>
+</ul></li>
+</ul>
+</nav>
+<section id="soimort.org" class="level1">
+<h1>soimort.org</h1>
+<p><a href="http://www.soimort.org/README.html"><img src="http://www.soimort.org/favicon.ico" alt="www.soimort.org/README.html" /></a></p>
+<p>Through the looking-glass, welcome to the inside world of <a href="http://www.soimort.org">www.soimort.org</a>. Here you may explore the fascinating (tedious) technical details of my blog site.</p>
+<section id="pancake" class="level2">
+<h2>Pancake</h2>
+<p>This site is basically powered by <a href="http://pandoc.org/">pandoc</a>, a universal document converter. It turns human-editable markdown documents into stylish HTML pages that can be rendered in a web browser.</p>
+<p>I hate <a href="https://en.wikipedia.org/wiki/Occam%27s_razor">complexity beyond necessity</a>; that's why I prefer a document converter to any <a href="https://staticsitegenerators.net/">fancy static site generators</a>. Since I write in markdown and publish in HTML, I need no rocket technique to go beyond the straightforward markdown -&gt; HTML conversion, or need I?</p>
+<p>To build my static site (usually involves a bunch of calls to the <code>pandoc</code> command), I used to write a lot of <a href="https://raw.githubusercontent.com/soimort/soimort/1a31222d029b6c2e70b51aa5dc7bdbe1b2d6916b/Makefile">Makefile</a>s. But Makefile is hardly programmable, and embedding shell scripts are just too horrible to maintain, debug or even read for a self-esteemed programmer. As a result, I started to write a small wrapper script, <strong>pancake</strong>, to help myself building sites with pandoc painlessly. It simply replaces my naive &quot;pandoc + make&quot; approach. And it's yet another minimal static site generator (whatever you name it).</p>
+<p><code>pancake</code> has a few dependencies:</p>
+<ul>
+<li>Ruby 2.0 or above (It's written in Ruby. I like Haskell, but it was a little cumbersome for simple system scripting)</li>
+<li>The <a href="https://rubygems.org/gems/listen/">listen</a> gem: <code>gem install listen</code></li>
+<li>And <a href="http://pandoc.org/">pandoc</a>, of course.</li>
+</ul>
+<p><code>pancake</code> can be put into the system <code>PATH</code>, or it may also be modified on need and copied into a specific directory. A subdirectory or file under the current path is called a &quot;<strong><em>real target</em></strong>&quot; and can be built by <code>pancake</code>: (in this repository, for example)</p>
+<pre><code>$ pancake posts/salve-munde</code></pre>
+<p><code>pancake</code> will look into the current path &quot;<code>.</code>&quot;, &quot;<code>posts/</code>&quot; and &quot;<code>posts/salve-munde/</code>&quot; and find all relevant &quot;configuration paths&quot; (all files whose name starts with an underscore &quot;<code>_</code>&quot;, and all files under directories whose name starts with an underscore). Among all these &quot;configuration paths&quot;, <code>pancake</code> is interested in two types of files: metadata files (<code>.yaml</code> or <code>.yml</code>, e.g., <code>_config.yaml</code> and <code>posts/_config/meta.yaml</code>) and source files (<code>.markdown</code> or <code>.md</code>, e.g., <code>posts/_config/1_footer.md</code> and <code>posts/_config/2_references.md</code>).</p>
+<p>All metadata files are passed straight to <code>pandoc</code>. Moreover, there are some metadata fields used by <code>pancake</code> specifically: (<strong><code>target</code></strong>, <strong><code>source</code></strong>, <strong><code>source-metadata</code></strong>, <strong><code>source-bibliography</code></strong>)</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">target:</span> index.html
+<span class="fu">source:</span> source.md
+<span class="fu">source-metadata:</span> source.yaml
+<span class="fu">source-bibliography:</span> source.bib</code></pre>
+<p>With these fields above, <code>pancake</code> will look for <code>source.md</code>, <code>source.yaml</code> under the target path <code>posts/salve-munde</code> and pass them to <code>pandoc</code>, pass <code>posts/salve-munde/source.bib</code> as a <code>--bibliography</code> option to <code>pandoc</code>, and pass <code>posts/salve-munde/index.html</code> as a <code>--output</code> option to <code>pandoc.</code></p>
+<p><em>Note</em>: A <strong><em>real target</em></strong> may also be a file other than directory; in that case, the <strong><code>source</code></strong> field is not used since the target filename speaks for itself.</p>
+<p>Furthermore, the target path as a string <code>posts/salve-munde</code> is passed to <code>pandoc</code> as an extra metadata field <code>id</code>. So the resulting <code>pandoc</code> command will be like:</p>
+<pre class="shell"><code>$ pandoc --bibliography posts/salve-munde/source.bib \
+    --output posts/salve-munde/index.html            \
+    -M id=posts/salve-munde                          \
+    posts/salve-munde/source.md                      \
+    posts/_config/1_footer.md                        \
+    posts/_config/2_references.md                    \
+    _config.yaml                                     \
+    posts/_config/meta.yaml                          \
+    posts/salve-munde/source.yaml</code></pre>
+<p>Some more metadata fields recognized by <code>pancake</code>:</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">input-format:</span> markdown       <span class="co"># passed to pandoc as option -f</span>
+<span class="fu">output-format:</span> html5         <span class="co"># passed to pandoc as option -t</span>
+<span class="fu">template:</span> templates/default.html5 <span class="co"># passed to pandoc as option --template</span>
+<span class="fu">mathjax:</span> https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+<span class="co"># passed to pandoc as option --mathjax</span>
+<span class="fu">filters:</span> pandoc-citeproc     <span class="co"># passed to pandoc as --filter. can be an array</span>
+<span class="fu">raw-options:</span> --section-divs  <span class="co"># passed to pandoc directly. can be an array</span></code></pre>
+<p>To pass other options to <code>pandoc</code>, the alternative way of specifying the <strong><code>raw-options</code></strong> field in a metadata file is to use <strong><em>extra option</em></strong> targets in command line. Anything starts with a hyphen &quot;<code>-</code>&quot; is regarded as an extra option to be passed to <code>pandoc</code>. For example:</p>
+<pre><code>$ pancake --toc --section-divs posts/salve-munde</code></pre>
+<p><em>Note</em>: If an option has a value, the option and the value must appear as a single parameter. For example, <code>pancake --output README.html README.md</code> will not work properly, since it treats <code>README.html</code> as a <strong><em>real target</em></strong> other than the value of extra option <code>--output</code>. The correct way is to use:</p>
+<pre><code>$ pancake --output=README.html README.md</code></pre>
+<p>Besides <strong><em>real targets</em></strong> and <strong><em>extra options</em></strong>, there are also a few predefined <strong><em>phony targets</em></strong>: (like what you may have in a Makefile)</p>
+<pre><code>$ pancake all</code></pre>
+<p>The phony target <strong><code>all</code></strong> looks for all source files recursively under the current directory, but not under a directory whose name starts with an underscore (which is considered to be a &quot;configuration path&quot;). <code>pancake</code> then calls <code>pandoc</code> on these source files in alphabetical order, with their relevant metadata respectively.</p>
+<pre><code>$ pancake server</code></pre>
+<p>The phony target <strong><code>server</code></strong> starts a local server to serve the current directory. You may also specify a port to use:</p>
+<pre><code>$ pancake server:port=4000</code></pre>
+<p>It is also possible to specify a directory to watch for changes; <code>pancake</code> will automatically regenerate all targets every time a file is modified in that directory:</p>
+<pre><code>$ pancake posts/salve-munde server:port=4000,watch=posts/salve-munde</code></pre>
+<p><em>Note</em>: Changes of <code>.html</code> and <code>.htm</code> files will NOT trigger the regenerating, otherwise <code>pandoc</code> will be called infinitely (since every time it changes the <code>.html</code> file it generates).</p>
+<p>Here's a simple but really practical trick: <code>pancake</code> can serve as a markdown previewer (like <a href="https://github.com/joeyespo/grip">grip</a>, <a href="https://github.com/suan/instant-markdown-d/blob/master/instant-markdown-d">instant-markdown-d</a> or <code>jekyll serve</code>).</p>
+<pre><code>$ pancake -s --output=README.html README.md server:watch</code></pre>
+<p>Preview your <code>README.md</code> at <a href="http://localhost:8000/README.html" class="uri">http://localhost:8000/README.html</a>.</p>
+<p>Even better, you may easily specify a customized template to use via <code>--template</code>, or include your own stylesheets as a <code>css</code> field in <code>--metadata</code>:</p>
+<pre><code>$ pancake --metadata=css:/css/minimal.css -s --output=README.html README.md server:watch</code></pre>
+<p><em>Note</em>: The <a href="https://github.com/guard/listen">listen</a> gem uses the polling mechanism to watch for filesystem changes on OS X, which might be slow on very big directories. In such cases, avoid using <strong><code>server:watch</code></strong> and limit watching in a small but relevant directory, like <strong><code>server:watch=posts/salve-munde</code></strong>.</p>
+<section id="why-my-homemade-pancake-and-why-not-jekyll-hakyll-yst" class="level3">
+<h3>Why my homemade pancake? (and why not <a href="http://jekyllrb.com/">Jekyll</a> / <a href="http://jaspervdj.be/hakyll/">Hakyll</a> / <a href="https://github.com/jgm/yst">yst</a>?)</h3>
+<p><a href="http://jekyllrb.com/">Jekyll</a> was a great static site generator. It does one thing well: generating static sites. It hides details about its underlying template engine (<a href="https://github.com/Shopify/liquid">liquid</a>) and markdown engine (<a href="https://github.com/gettalong/kramdown">kramdown</a>) and encapsulates them into a highly configurable site generator. The first version of <a href="http://www.soimort.org/">www.soimort.org</a> (and my first blog site ever hosted on GitHub) was powered by Jekyll since November 2011, until it's replaced by <strong>pancake</strong> in July 2015.</p>
+<p>The reason I decided to migrate from Jekyll to my own, minimal static site solution isn't because Jekyll is not good, nor Jekyll lacks of the functionality I need. It's because Jekyll is too much beyond what I really need.</p>
+<p>Jekyll consists of over <em>10,000</em> lines of Ruby code (not including other gems such as the template engine and the markdown engine). <strong>Pancake</strong> has only about <em>200</em> lines (not including pandoc); the whole source code is a self-contained Ruby script, which can be readable in 15 minutes. The most important thing is, it has every functionality I need and it's fully under control due to its tiny size; anything more than that looks like an overkill to me.</p>
+<p>Both <a href="http://jaspervdj.be/hakyll/">Hakyll</a> and <a href="https://github.com/jgm/yst">yst</a> are static site generators based on pandoc. In addition to rich features of markdown conversion provided by pandoc, yst offers good support for string templates, and Hakyll has its non-trivial (if not too complicated) DSL (in Haskell) for building static sites. <strong>Pancake</strong> has none of these. I almost believe that simple string interpolations are sufficient for so-called &quot;templating&quot; in most cases I need, and I'd rather follow one convention than have to write a DSL-like recipe for building a site from time to time.</p>
+<p>Furthermore, there is one thing <strong>pancake</strong> can do but most other static site generators cannot easily accomplish: <em>building a single target</em>. This is because <strong>pancake</strong> will build only demanded targets by nature. In this way, the whole site is prevented from rebuilding every time (unless you ask for the target <strong><code>all</code></strong>). Such a &quot;<em>build-on-demand</em>&quot; mechanism has a few advantages:</p>
+<ul>
+<li>It is generally faster. If you're just starting to write a new post, it could be meaningless (and wasteful) to rebuild (or look at the <code>mtime</code> of) all posts on running the site generator.</li>
+<li>Old HTML pages can be kept. This is especially helpful when a user-defined pandoc filter is involved. As updates of the filter could cause pandoc to build HTML differently, you don't have to break already generated HTML pages if they are intended to stay as they are.</li>
+<li>A markdown file is a valid target, so you could use <strong>pancake</strong> as a markdown live previewer which gives you the power to have customized template and stylesheets, while not bothering with site configurations at all (e.g., preview your <code>README.md</code> using a single command <code>pancake -s --output=README.html README.md server:watch</code>).</li>
+</ul>
+<p>Last but not the least, geeks keep writing homemade static site generators all the time, even if they were the only user of their blogging tool and they don't even actually blog. So just why not? It's always fun to build something.</p>
+<p>Get a copy of <strong>pancake</strong> <a href="https://github.com/soimort/soimort.github.io/blob/master/pancake">here</a> (the source code is released into the public domain).</p>
+</section>
+</section>
+<section id="monkeydown" class="level2">
+<h2><a href="http://www.soimort.org/filters/README.html">Monkeydown</a></h2>
+<p><strong>Monkeydown</strong> (or &quot;Monkey Flavored Markdown&quot;) is an extension to the standard / pandoc markdown format, implemented as a pandoc filter. It is used in all blog posts on this site.</p>
+<p>For more details, see: <a href="http://www.soimort.org/filters/README.html" class="uri">http://www.soimort.org/filters/README.html</a></p>
+<div class="references">
+
+</div>
+</section>
+</section>
+<a href="https://github.com/soimort/soimort.github.io"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+</body>
+</html>
