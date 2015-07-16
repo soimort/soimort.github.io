@@ -42,6 +42,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="#why-my-homemade-pancake-and-why-not-jekyll-hakyll-yst">Why my homemade pancake? (and why not <a href="http://jekyllrb.com/">Jekyll</a> / <a href="http://jaspervdj.be/hakyll/">Hakyll</a> / <a href="https://github.com/jgm/yst">yst</a>?)</a></li>
 </ul></li>
 <li><a href="#monkeydown"><a href="http://www.soimort.org/filters/README.html">Monkeydown</a></a></li>
+<li><a href="#jsinliner.py">jsinliner.py</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -127,6 +128,36 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <h2><a href="http://www.soimort.org/filters/README.html">Monkeydown</a></h2>
 <p><strong>Monkeydown</strong> (or &quot;Monkey Flavored Markdown&quot;) is an extension to the standard / pandoc markdown format, implemented as a pandoc filter. It is used in all blog posts on this site.</p>
 <p>For more details, see: <a href="http://www.soimort.org/filters/README.html" class="uri">http://www.soimort.org/filters/README.html</a></p>
+</section>
+<section id="jsinliner.py" class="level2">
+<h2>jsinliner.py</h2>
+<p><strong>jsinliner.py</strong> is a pandoc filter to enable neater inlining of raw HTML, CSS and JavaScript code in markdown.</p>
+<p>Examples: (embed raw HTML/CSS/JavaScript in code blocks identified by <strong><code>:html</code></strong>, <strong><code>:css</code></strong>, <strong><code>:js</code></strong> respectively)</p>
+<pre><code>```:html
+&lt;div id=&quot;foo&quot;&gt;
+    &lt;div id=&quot;bar&quot;&gt;
+        hello
+    &lt;/div&gt;
+&lt;/div&gt;
+```
+
+```:css
+a {
+    color: red;
+}
+```
+
+```:js
+{
+    var po = document.createElement(&#39;script&#39;);
+    po.type = &#39;text/javascript&#39;;
+    po.async = true;
+    po.src = &#39;https://apis.google.com/js/plusone.js&#39;;
+    var s = document.getElementsByTagName(&#39;script&#39;)[0];
+    s.parentNode.insertBefore(po, s);
+}
+```</code></pre>
+<p>Source code: <a href="https://github.com/soimort/soimort.github.io/blob/master/filters/jsinliner.py" class="uri">https://github.com/soimort/soimort.github.io/blob/master/filters/jsinliner.py</a></p>
 <div class="references">
 
 </div>

@@ -126,3 +126,36 @@ Get a copy of **pancake** [here](https://github.com/soimort/soimort.github.io/bl
 **Monkeydown** (or "Monkey Flavored Markdown") is an extension to the standard / pandoc markdown format, implemented as a pandoc filter. It is used in all blog posts on this site.
 
 For more details, see: <http://www.soimort.org/filters/README.html>
+
+## jsinliner.py
+
+**jsinliner.py** is a pandoc filter to enable neater inlining of raw HTML, CSS and JavaScript code in markdown.
+
+Examples: (embed raw HTML/CSS/JavaScript in code blocks identified by **`:html`**, **`:css`**, **`:js`** respectively)
+
+    ```:html
+    <div id="foo">
+        <div id="bar">
+            hello
+        </div>
+    </div>
+    ```
+
+    ```:css
+    a {
+        color: red;
+    }
+    ```
+
+    ```:js
+    {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    }
+    ```
+
+Source code: <https://github.com/soimort/soimort.github.io/blob/master/filters/jsinliner.py>
