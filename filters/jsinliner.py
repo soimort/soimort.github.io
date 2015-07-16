@@ -82,9 +82,9 @@ def inliner(key: str, value: dict, fmt: str, meta: dict) -> dict:
 
         elif key == 'CodeBlock':
             # block commands
-            c = value[0][1][0]
+            c = value[0][1][0] if value[0][1] else None
             v = value[1]
-            if c[0] == ':':
+            if c and c[0] == ':':
                 cmd_strings = c[1:].split(',')
                 cmd = {}
                 for cmd_string in cmd_strings:
