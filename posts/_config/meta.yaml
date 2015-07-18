@@ -1,0 +1,9 @@
+---
+# pancake - local settings
+target: index.html
+source: source.md
+source-metadata: source.yaml
+source-bibliography: source.bib
+# pandoc template - use <article>
+article: true
+---
