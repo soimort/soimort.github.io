@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html$if(schema)$ itemscope itemtype="http://schema.org/$schema$"$endif$$if(lang)$ lang="$lang$"$endif$>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    $if(notranslate)$<meta name="google" content="notranslate" />
+    $endif$$if(google-site-verification)$<meta name="google-site-verification" content="$google-site-verification$" />
+    $endif$$if(robots)$<meta name="robots" content="$robots$" />
+    $endif$<meta name="generator" content="pandoc" />
+    $for(author-meta)$<meta name="author" itemprop="author" content="$author-meta$" />$endfor$
+    $if(description)$<meta name="description" itemprop="description" content="$description$" />
+    $endif$<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- begin js -->
+    $for(js)$<script src="$js$"></script>
+    $endfor$<!-- end js -->
+    <link rel="canonical" href="$canonical$$id$" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- begin css -->
+    $for(css)$<link rel="stylesheet" type="text/css" href="$css$" />
+    $endfor$<!-- end css -->
+    <!-- begin quotes -->$if(quotes)$
+    <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+    $endif$<!-- end quotes -->
+    <!-- begin highlighting-css -->
+    $if(highlighting-css)$<style type="text/css">
+    $highlighting-css$
+    </style>
+    $endif$<!-- end highlighting-css -->
+    <!-- begin math -->
+    $if(math)$$math$
+    $endif$<!-- end math -->
+    <!-- begin header-includes -->
+    $for(header-includes)$$header-includes$
+    $endfor$<!-- end header-includes -->
+  </head>
+  <body>
+    <!-- begin include-before -->
+    $for(include-before)$$include-before$
+    $endfor$<!-- end include-before -->
+    <!-- begin title -->
+    $if(title)$<header>
+      <h1 class="title">$title$</h1>
+      <!-- begin subtitle -->
+      $if(subtitle)$<h1 class="subtitle">$subtitle$</h1>
+      $endif$<!-- end subtitle -->
+      <!-- begin author -->
+      $for(author)$<address class="author">$author$</address>
+      $endfor$<!-- end author -->
+      <!-- begin date -->
+      $if(date)$<a href="$canonical$$id$"><time datetime="$date$">$date$</time></a>
+      $endif$<!-- end date -->
+    </header>
+    $endif$<!-- end title -->
+    <!-- begin toc -->
+    $if(toc)$<nav id="$idprefix$TOC">
+      $toc$
+    </nav>
+    $endif$<!-- end toc -->
+    <!-- begin body -->
+    $if(article)$<article>
+$body$ <!-- preformatted text must be preserved -->
+    </article>
+    $else$
+$body$
+    $endif$<!-- end body -->
+    <!-- begin include-after -->
+    $for(include-after)$$include-after$
+    $endfor$<!-- end include-after -->
+  </body>
+</html>
