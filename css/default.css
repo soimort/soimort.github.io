@@ -1,0 +1,460 @@
+/* Ivoire theme
+ * (designed for exclusive use on www.soimort.org)
+ *
+ * Version: 2015-07-18 (v0.1.0)
+ * Author: Mort Yao <soi@mort.ninja>
+ * Copyright: (C) 2015 Mort Yao
+ */
+
+html { /* main font stack */
+  font-family: 'PT Serif', 'Droid Serif', FreeSerif,
+               Palatino, 'Palatino Linotype', 'TeX Gyre Pagella',
+               HanaMinA, /* CJK */
+               serif;
+}
+
+/* Main elements */
+
+body {
+  margin-top: 5%;
+  background-color: ivory;
+  background-attachment: fixed;
+  background-image: url('/images/laugh-now.png');
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  color: transparent; /* get rid of ugly Web Font Loader message */
+  cursor: default; /* no I-beam on text */
+  overflow-x: hidden; /* hide horizontal scrollbar */
+}
+/* Hack for WebKit fullscreen mode (not actually used)
+ * see <https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode> */
+body:-webkit-full-screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  color: maroon;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: fixed;
+  top: 10%;
+  width: 25%;
+  margin: 0 5%;
+  color: black;
+  font-variant: small-caps;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+header address.author {
+  font-style: normal;
+}
+
+header time {
+  font-size: .75em;
+}
+
+header h1.subtitle {
+  font-size: 1.5em;
+}
+
+article {
+  position: absolute;
+  left: 35%;
+  width: 55%;
+  padding-bottom: 5%;
+  color: black;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+article h1, article h2 { /* h1 is never used in article */
+  margin: 0;
+  padding: 1em 0 .5em;
+  font-size: 2em;
+  text-transform: capitalize;
+}
+article h3 {
+  margin: 0;
+  padding: .5em 0;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+article h4, article h5, article h6 { /* not commonly used */
+  margin: 0;
+  padding: .5em 0;
+  font-size: 1.17em;
+}
+
+p { /* indentation */
+  text-indent: 2em;
+}
+p:first-of-type { /* no first-line indentation */
+  text-indent: 0;
+}
+p:first-of-type::first-letter { /* drop cap */
+  float: left;
+  padding-right: .05em;
+  font-size: 4.5em;
+  line-height: 1em;
+}
+
+section p:first-of-type { /* first-line indentation in section */
+  text-indent: 2em;
+}
+section p:first-of-type::first-letter { /* no drop cap in section */
+  float: none;
+  padding-right: 0;
+  font-size: 1em;
+}
+
+blockquote p:first-of-type { /* no first-line indentation in blockquote */
+  text-indent: 0;
+}
+
+code, kbd, var, samp { /* code font stack */
+  font-family: Inconsolata, Consolas,
+               'Liberation Mono', 'Ubuntu Mono',
+               'Droid Sans Mono', 'DejaVu Sans Mono',
+               Monaco, FreeMono, Courier, monospace;
+}
+code { /* preserve sequences of whitespace */
+  white-space: pre;
+}
+code:not(.sourceCode) { /* inline verbatim */
+  padding: 0 .5em;
+  font-size: .9em;
+}
+pre { /* code blocks */
+  padding: 1em 1.5em 1em;
+  background-color: beige;
+  border-radius: 1em;
+  font-size: .9em;
+  line-height: 1.2em;
+}
+kbd {
+  margin-right: .25em;
+  padding: .25em .5em .25em;
+  background-color: gainsboro;
+  border-radius: .5em;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+  color: black;
+  font-size: .9em;
+  font-weight: bold;
+}
+samp {
+  padding: .25em .5em .25em;
+  background-color: black;
+  border-radius: .25em;
+  color: white;
+  font-size: .9em;
+}
+
+table {
+  display: table;
+  border: 1px solid gainsboro;
+}
+table th {
+  padding: .5em;
+  background-color: gainsboro;
+  border: 1px solid white;
+}
+table td {
+  padding: .5em;
+  border: 1px solid gainsboro;
+}
+
+figure, div.figure {
+  text-align: center;
+}
+figcaption, div.figure p.caption {
+  font-size: .9em;
+}
+
+/* TOC nav */
+#TOC {
+  position: relative;
+  left: 35%;
+  width: 55%;
+  padding: 1em 0;
+  background-color: beige;
+  border-radius: 1em;
+  font-size: .9em;
+}
+#TOC ul {
+  list-style: none;
+}
+
+/* Final section (including footer) */
+#FIN {
+  line-height: 5em;
+  text-align: center;
+}
+#FIN footer {
+  line-height: 1em;
+  font-size: .8em;
+  text-align: right;
+}
+
+/* Citations in context */
+span.citation {
+  font-weight: bold;
+}
+
+/* Citations */
+section#citations h2 {
+  font-size: 1.5em;
+}
+div.references {
+  font-size: .9em;
+  font-weight: bold;
+  text-align: left;
+}
+div.references p {
+  text-indent: 0;
+}
+
+/* Footnotes in context */
+a.footnoteRef {
+  color: sienna;
+}
+
+/* Footnotes */
+section.footnotes {
+  font-size: .9em;
+}
+section.footnotes p {
+  text-indent: 0;
+}
+section.footnotes a {
+  color: sienna;
+}
+
+/* Fixed elements */
+
+/* Drop-down HUD & console */
+#HUD {
+  visibility: hidden; /* visible */
+  display: block;
+  position: fixed;
+  left: 37.5%;
+  top: .8em;
+  width: 50%;
+  height: 16em;
+  opacity: 0;
+  font-size: .8em;
+  line-height: 1.2em;
+  text-align: center;
+}
+#HUD table {
+  margin-left: auto;
+  margin-right: auto;
+}
+#DROPDOWN, #CONSOLE {
+  display: block;
+  position: fixed;
+  left: 35%;
+  width: 55%;
+  box-shadow: 0 0 4em rgba(0, 0, 0, .5);
+}
+#DROPDOWN {
+  top: -24em; /* 0 */
+  height: 24em;
+  background-color: ivory;
+  border-radius: 0 0 .8em .8em;
+  opacity: .9;
+}
+#CONSOLE {
+  bottom: -2em; /* 0 */
+  height: 2em;
+  background-color: black;
+  border-radius: .8em .8em 0 0;
+  color: white;
+  opacity: .9;
+  font-size: 1em;
+  line-height: 2em;
+  text-align: left;
+}
+#CONSOLE-CODE {
+  margin-left: 1em;
+  background-color: black;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Toolbar */
+#TOOLBAR {
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding-right: 2em;
+  padding-top: .8em;
+  width: 5%;
+  height: 100%;
+  color: darkgray;
+  line-height: 2em;
+  text-align: right;
+}
+#TOOLBAR i {
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+#TOOLBAR i:hover {
+  color: black;
+}
+
+/* Toolbar - navigator (for widescreens only)
+ * (not actually used) */
+#TOOLBAR-NAVIGATOR {
+  visibility: hidden; /* visible */
+  font-size: .5em;
+  line-height: 1.25em;
+  text-align: center;
+}
+#BUTTON-CENTER, #BUTTON-UP, #BUTTON-DOWN, #BUTTON-LEFT, #BUTTON-RIGHT {
+  position: fixed;
+  width: 1.6em;
+  height: 1.6em;
+}
+#BUTTON-CENTER {
+  right: 8em;
+  bottom: 4em;
+}
+#BUTTON-UP {
+  right: 8em;
+  bottom: 7.2em;
+}
+#BUTTON-DOWN {
+  right: 8em;
+  bottom: .8em;
+}
+#BUTTON-LEFT {
+  right: 11.2em;
+  bottom: 4em;
+}
+#BUTTON-RIGHT {
+  right: 4.8em;
+  bottom: 4em;
+}
+
+/* Pseudo-elements */
+
+/* Customized text selection (non-Gecko) */
+::selection {
+  background-color: gainsboro;
+}
+/* Customized text selection (Gecko) */
+::-moz-selection {
+  background-color: gainsboro;
+}
+/* Inactive selections (WebKit only)
+ * NOTE:
+ * ::-moz-selection:-moz-window-inactive doesn't work in Gecko
+ * see <https://css-tricks.com/window-inactive-styling/>
+ */
+::selection:window-inactive {
+  background-color: ivory;
+  color: darkgray;
+}
+
+/* Customized scrollbar (WebKit only) */
+::-webkit-scrollbar {
+  width: 2em;
+  background-color: ivory;
+}
+::-webkit-scrollbar-thumb {
+  min-height: 4em;
+  background-color: darkgray;
+  border-color: ivory;
+  border-style: solid;
+  border-width: .8em;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: gainsboro;
+}
+
+/* Media queries */
+
+/* For small screens (mobile devices) or portrait orientation */
+@media (max-width: 1023px), (max-height: 575px), (orientation: portrait) {
+  body {
+    background-image: none;
+  }
+  header {
+    position: relative;
+    left: 0;
+    width: 95%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+  article, #TOC {
+    left: 0;
+    width: 85%;
+    margin: 0 10%;
+  }
+  #DROPDOWN, #CONSOLE, #HUD {
+    left: 0;
+    width: 85%;
+    margin: 0 10%;
+  }
+  #TOOLBAR {
+    visibility: visible;
+    left: 0;
+    opacity: 1;
+  }
+}
+
+/* For printing */
+@media print {
+  body {
+    background-image: none;
+  }
+  header {
+    position: relative;
+    left: 0;
+    width: 90%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+  header time, #FIN {
+    visibility: hidden;
+    height: 0;
+  }
+  article, #TOC {
+    left: 0;
+    width: 80%;
+    margin: 0 10%;
+  }
+  #DROPDOWN, #CONSOLE, #HUD, #TOOLBAR {
+    visibility: hidden;
+  }
+  a {
+    text-decoration: underline;
+  }
+  kbd, samp {
+    background-color: white;
+    color: black;
+    font-weight: normal;
+  }
+  div.references {
+    font-weight: normal;
+  }
+}
