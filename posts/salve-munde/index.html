@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Blog">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes" />
+    <meta name="generator" content="pandoc" />
+    <meta name="author" itemprop="author" content="Mort Yao" />
+    <meta name="description" itemprop="description" content="Hello, world" />
+    <title>Salve, munde</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- begin js -->
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/webfontloader.js"></script>
+    <script src="/js/fontchecker.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <!-- end js -->
+    <link rel="canonical" href="http://www.soimort.org/posts/salve-munde" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
+    <!-- begin css -->
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <!-- end css -->
+    <!-- begin quotes --><!-- end quotes -->
+    <!-- begin highlighting-css -->
+    <style type="text/css">
+    table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+      margin: 0; padding: 0; vertical-align: baseline; border: none; }
+    table.sourceCode { width: 100%; line-height: 100%; }
+    td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+    td.sourceCode { padding-left: 5px; }
+    code > span.kw { color: #007020; font-weight: bold; }
+    code > span.dt { color: #902000; }
+    code > span.dv { color: #40a070; }
+    code > span.bn { color: #40a070; }
+    code > span.fl { color: #40a070; }
+    code > span.ch { color: #4070a0; }
+    code > span.st { color: #4070a0; }
+    code > span.co { color: #60a0b0; font-style: italic; }
+    code > span.ot { color: #007020; }
+    code > span.al { color: #ff0000; font-weight: bold; }
+    code > span.fu { color: #06287e; }
+    code > span.er { color: #ff0000; font-weight: bold; }
+    </style>
+    <!-- end highlighting-css -->
+    <!-- begin math -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <!-- end math -->
+    <!-- begin header-includes -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-27086900-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- end header-includes -->
+  </head>
+  <body>
+    <!-- begin include-before -->
+    <!-- end include-before -->
+    <!-- begin title -->
+    <header>
+      <h1 class="title">Salve, munde</h1>
+      <!-- begin subtitle -->
+      <h1 class="subtitle">Oratio in Catilinam Prima in Senatu Habita</h1>
+      <!-- end subtitle -->
+      <!-- begin author -->
+      <address class="author">Mort Yao</address>
+      <!-- end author -->
+      <!-- begin date -->
+      <a href="http://www.soimort.org/posts/salve-munde"><time datetime="2015-07-05">2015-07-05</time></a>
+      <!-- end date -->
+    </header>
+    <!-- end title -->
+    <!-- begin toc -->
+    <nav id="TOC">
+      <ul>
+      <li><a href="#this-is-a-heading-level-2">This is a heading (level 2)</a><ul>
+      <li><a href="#this-is-a-heading-level-3">This is a heading (level 3)</a></li>
+      </ul></li>
+      <li><a href="#blockquotes-line-breaks-alignment">Blockquotes, line breaks &amp; alignment</a></li>
+      <li><a href="#indentation">Indentation</a></li>
+      <li><a href="#cjk-typesetting-ruby-characters">CJK typesetting &amp; ruby characters</a></li>
+      <li><a href="#bidirectional-typesetting">Bidirectional typesetting</a></li>
+      <li><a href="#columns">Columns</a></li>
+      <li><a href="#inline-formatting">Inline formatting</a><ul>
+      <li><a href="#subscripts-superscripts">Subscripts &amp; superscripts</a></li>
+      <li><a href="#underlines-strikeout">Underlines &amp; strikeout</a></li>
+      <li><a href="#colors-fonts">Colors &amp; fonts</a></li>
+      </ul></li>
+      <li><a href="#tables-links">Tables &amp; links</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#images">Images</a></li>
+      <li><a href="#math-rendering">Math rendering</a></li>
+      <li><a href="#citation-rendering">Citation rendering</a></li>
+      <li><a href="#footnotes">Footnotes</a></li>
+      <li><a href="#citations"><span field="citations" class="interpolated">References</span></a></li>
+      </ul>
+    </nav>
+    <!-- end toc -->
+    <!-- begin body -->
+    <article>
+<p>Quo usque tandem abutere, Catilina, patientia nostra? Quam diu etiam furor iste tuus nos eludet? Quem ad finem sese effrenata iactabit audacia? Nihil ne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt? Patere tua consilia non sentis, constrictam iam horum omnium scientia teneri coniurationem tuam non vides? Quid proxima, quid superiore nocte egeris, ubi fueris, quos convocaveris, quid consilii ceperis, quem nostrum ignorare arbitraris?</p>
+<section id="this-is-a-heading-level-2" class="level2">
+<h2>This is a heading (level 2)</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L7">View source</a> ]</p>
+<p>Headings in the article must start with level 2.</p>
+<section id="this-is-a-heading-level-3" class="level3">
+<h3>This is a heading (level 3)</h3>
+<p>Headings under level 3 are not to be automatically capitalized.</p>
+<section id="this-is-a-heading-level-4" class="level4">
+<h4>This is a heading (level 4)</h4>
+<section id="this-is-a-heading-level-5" class="level5">
+<h5>This is a heading (level 5)</h5>
+<section id="this-is-a-heading-level-6" class="level6">
+<h6>This is a heading (level 6)</h6>
+<p>With the CSS setting of this page, headings of level 4, 5 and 6 share the identical font size. Level 5 and 6 are rarely used (and it is not recommended to use too many levels of headings in one page; divide them into separate pages instead).</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="blockquotes-line-breaks-alignment" class="level2">
+<h2>Blockquotes, line breaks &amp; alignment</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L25">View source</a> ]</p>
+<p><strong>MACBETH</strong></p>
+<blockquote>
+<p>She should have died hereafter;<br />There would have been a time for such a word.<br />To-morrow, and to-morrow, and to-morrow,<br />Creeps in this petty pace from day to day<br />To the last syllable of recorded time,<br />And all our yesterdays have lighted fools<br />The way to dusty death. Out, out, brief candle!<br />Life's but a walking shadow, a poor player<br />That struts and frets his hour upon the stage<br />And then is heard no more: it is a tale<br />Told by an idiot, full of sound and fury,<br />Signifying nothing.</p>
+</blockquote>
+<p style="text-align:right !important;text-indent:0 !important">Shakespeare, <em>The Tragedy of Macbeth</em></p>
+</section>
+<section id="indentation" class="level2">
+<h2>Indentation</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L46">View source</a> ]</p>
+<h3 style="text-align:center !important">Heaven Is Not Reached At A Single Bound</h3>
+<p style="text-align:left !important;text-indent:0 !important;position:relative;left:25.00%">Heaven is not reached at a single bound,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; But we build the ladder by which we rise<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; From the lowly earth to the vaulted skies,<br />And we mount to its summit round by round.<br /><br /> I count this thing to be grandly true:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; That a noble deed is a step toward God,<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lifting the soul from the common clod<br />To a purer air and a broader view.</p>
+<p style="text-align:right !important;text-indent:0 !important;position:relative;right:25.00%">J. G. Holland.</p>
+</section>
+<section id="cjk-typesetting-ruby-characters" class="level2">
+<h2>CJK typesetting &amp; ruby characters</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L65">View source</a> ]</p>
+<h3 style="text-align:center !important">いろは<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby></h3>
+<p style="text-align:center !important;text-indent:0 !important"><ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>は<ruby>匂<rp>(</rp><rt>にほ</rt><rp>)</rp></ruby>へど　<ruby>散<rp>(</rp><rt>ち</rt><rp>)</rp></ruby>りぬるを<br /><ruby>我<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>が<ruby>世<rp>(</rp><rt>よ</rt><rp>)</rp></ruby><ruby>誰<rp>(</rp><rt>たれ</rt><rp>)</rp></ruby>ぞ　<ruby>常<rp>(</rp><rt>つね</rt><rp>)</rp></ruby>ならん<br /><ruby>有為<rp>(</rp><rt>うゐ</rt><rp>)</rp></ruby>の<ruby>奥山<rp>(</rp><rt>おくやま</rt><rp>)</rp></ruby>　<ruby>今日<rp>(</rp><rt>けふ</rt><rp>)</rp></ruby><ruby>越<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>えて<br /><ruby>浅<rp>(</rp><rt>あさ</rt><rp>)</rp></ruby>き<ruby>夢<rp>(</rp><rt>ゆめ</rt><rp>)</rp></ruby><ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>じ　<ruby>酔<rp>(</rp><rt>ゑ</rt><rp>)</rp></ruby>ひもせず</p>
+</section>
+<section id="bidirectional-typesetting" class="level2">
+<h2>Bidirectional typesetting</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L77">View source</a> ]</p>
+<h3 style="text-align:center !important">Genesis</h3>
+<h3 style="text-align:center !important">1.</h3>
+<p dir="rtl"><strong> בראשית ברא אלהים את השמים ואת הארץ </strong></p>
+<p>In principio creavit Deus cælum et terram.</p>
+<h3 style="text-align:center !important">2.</h3>
+<p dir="rtl"><strong> והארץ היתה תהו ובהו וחשך על־פני תהום ורוח אלהים מרחפת על־פני המים </strong></p>
+<p>Terra autem erat inanis et vacua, et tenebræ erant super faciem abyssi: et spiritus Dei ferebatur super aquas.</p>
+<h3 style="text-align:center !important">3.</h3>
+<p dir="rtl"><strong> ויאמר אלהים יהי אור ויהי־אור </strong></p>
+<p>Dixitque Deus: Fiat lux. Et facta est lux.</p>
+</section>
+<section id="columns" class="level2">
+<h2>Columns</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#107">View source</a> ]</p>
+<div style="columns:300px 2;-webkit-columns:300px 2;-moz-columns:300px 2">
+<p><sup>1</sup> <strong>In the beginning God created the heavens and the earth.</strong></p>
+<p><em>起初，神創造天地。</em></p>
+<p><sup>2</sup> <strong>Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.</strong></p>
+<p><em>地是空虛混沌，淵面黑暗，神的靈運行在水面上。</em></p>
+<p><sup>3</sup> <strong>And God said, “Let there be light,” and there was light.</strong></p>
+<p><em>神說：「要有光。」就有了光。</em></p>
+<p><sup>4</sup> <strong>God saw that the light was good, and he separated the light from the darkness.</strong></p>
+<p><em>神看光是好的，就把光暗分開了。</em></p>
+<p><sup>5</sup> <strong>God called the light “day,” and the darkness he called “night.” And there was evening, and there was morning—the first day.</strong></p>
+<p><em>神稱光為晝，稱暗為夜。有晚上，有早晨，這是頭一日。</em></p>
+</div>
+</section>
+<section id="inline-formatting" class="level2">
+<h2>Inline formatting</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L135">View source</a> ]</p>
+<section id="subscripts-superscripts" class="level3">
+<h3>Subscripts &amp; superscripts</h3>
+<p>CH<sub>3</sub>-CH=CH<sub>2</sub> + HBr → CH<sub>3</sub>-CHBr-CH<sub>3</sub></p>
+<p>a<sup>n</sup> + b<sup>n</sup> = c<sup>n</sup></p>
+</section>
+<section id="underlines-strikeout" class="level3">
+<h3>Underlines &amp; strikeout</h3>
+<p>Quietly, unassumingly Rumbold stepped on to the scaffold in faultless morning dress and wearing his favourite flower, the <em><u>Gladiolus Cruentus</u></em>.</p>
+<p>He announced his presence by that gentle Rumboldian cough which so many have tried <del>(unsuccessfully)</del> to imitate—short, painstaking yet withal so characteristic of the man.</p>
+</section>
+<section id="colors-fonts" class="level3">
+<h3>Colors &amp; fonts</h3>
+<p>The arrival of the worldrenowned headsman was greeted by a roar of acclamation from the huge concourse, the viceregal ladies waving their handkerchiefs in their excitement while the even more excitable foreign delegates cheered vociferously in a medley of cries, <span style="color:red;">hoch</span>, <strong><span style="color:green;">banzai</span></strong>, <em><span style="color:#00f;">eljen</span></em>, <span style="font-family:sans;">zivio</span>, <span style="font-family:mono;">chinchin</span>, <span style="font-size:0.8em;">polla kronia</span>, <span style="font-family:mono;font-size:1.2em;">hiphip</span>, <span style="color:white;font-size:1.5em;">vive</span>, <span style="color:purple;font-family:mono;font-size:1.8em;">Allah</span>, amid which the ringing <strong><span style="color:orange;">evviva</span></strong> of the delegate of the land of song (a high double F recalling those piercingly lovely notes with which the eunuch Catalani beglamoured our greatgreatgrandmothers) was easily distinguishable.</p>
+</section>
+</section>
+<section id="tables-links" class="level2">
+<h2>Tables &amp; links</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L155">View source</a> ]</p>
+<!-- DO NOT REMOVE THIS COMMENT -->
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Language</th>
+<th style="text-align: center;">Code</th>
+<th style="text-align: center;">Language</th>
+<th style="text-align: center;">Code</th>
+<th style="text-align: center;">Language</th>
+<th style="text-align: center;">Code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Afrikaans_language">Afrikaans</a></strong> <br/> <strong>Afrikaans</strong></td>
+<td style="text-align: center;"><strong><code>af</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Hawaiian_language">Hawaiian</a></strong> <br/> <strong>ʻŌlelo Hawaiʻi</strong></td>
+<td style="text-align: center;"><strong><code>haw</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Portuguese_language">Portuguese</a></strong> <br/> <strong>Português</strong></td>
+<td style="text-align: center;"><strong><code>pt</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Albanian_language">Albanian</a></strong> <br/> <strong>Shqip</strong></td>
+<td style="text-align: center;"><strong><code>sq</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Hebrew_language">Hebrew</a></strong> <br/> <strong>עִבְרִית</strong></td>
+<td style="text-align: center;"><strong><code>he</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Punjabi_language">Punjabi</a></strong> <br/> <strong>ਪੰਜਾਬੀ</strong></td>
+<td style="text-align: center;"><strong><code>pa</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Amharic_language">Amharic</a></strong> <br/> <strong>አማርኛ</strong></td>
+<td style="text-align: center;"><strong><code>am</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Hindi_language">Hindi</a></strong> <br/> <strong>हिन्दी</strong></td>
+<td style="text-align: center;"><strong><code>hi</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Romanian_language">Romanian</a></strong> <br/> <strong>Română</strong></td>
+<td style="text-align: center;"><strong><code>ro</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Arabic_language">Arabic</a></strong> <br/> <strong>العربية</strong></td>
+<td style="text-align: center;"><strong><code>ar</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Hmong_language">Hmong</a></strong> <br/> <strong>Hmoob</strong></td>
+<td style="text-align: center;"><strong><code>hmn</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Romansh_language">Romansh</a></strong> <br/> <strong>Rumantsch</strong></td>
+<td style="text-align: center;"><strong><code>rm</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Armenian_language">Armenian</a></strong> <br/> <strong>Հայերեն</strong></td>
+<td style="text-align: center;"><strong><code>hy</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Hungarian_language">Hungarian</a></strong> <br/> <strong>Magyar</strong></td>
+<td style="text-align: center;"><strong><code>hu</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Russian_language">Russian</a></strong> <br/> <strong>Русский</strong></td>
+<td style="text-align: center;"><strong><code>ru</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Assamese_language">Assamese</a></strong> <br/> <strong>অসমীয়া</strong></td>
+<td style="text-align: center;"><strong><code>as</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Icelandic_language">Icelandic</a></strong> <br/> <strong>Íslenska</strong></td>
+<td style="text-align: center;"><strong><code>is</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Samoan_language">Samoan</a></strong> <br/> <strong>Gagana Sāmoa</strong></td>
+<td style="text-align: center;"><strong><code>sm</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Azerbaijani_language">Azerbaijani</a></strong> <br/> <strong>Azərbaycanca</strong></td>
+<td style="text-align: center;"><strong><code>az</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Igbo_language">Igbo</a></strong> <br/> <strong>Igbo</strong></td>
+<td style="text-align: center;"><strong><code>ig</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Scottish_Gaelic">Scottish Gaelic</a></strong> <br/> <strong>Gàidhlig</strong></td>
+<td style="text-align: center;"><strong><code>gd</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Bashkir_language">Bashkir</a></strong> <br/> <strong>башҡорт теле</strong></td>
+<td style="text-align: center;"><strong><code>ba</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Indonesian_language">Indonesian</a></strong> <br/> <strong>Bahasa Indonesia</strong></td>
+<td style="text-align: center;"><strong><code>id</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Serbian_language">Serbian</a></strong> <br/> <strong>српски</strong></td>
+<td style="text-align: center;"><strong><code>sr</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Basque_language">Basque</a></strong> <br/> <strong>Euskara</strong></td>
+<td style="text-align: center;"><strong><code>eu</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Interlingue_language">Interlingue</a></strong> <br/> <strong>Interlingue</strong></td>
+<td style="text-align: center;"><strong><code>ie</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Sesotho_language">Sesotho</a></strong> <br/> <strong>Sesotho</strong></td>
+<td style="text-align: center;"><strong><code>st</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Belarusian_language">Belarusian</a></strong> <br/> <strong>беларуская</strong></td>
+<td style="text-align: center;"><strong><code>be</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Irish_language">Irish</a></strong> <br/> <strong>Gaeilge</strong></td>
+<td style="text-align: center;"><strong><code>ga</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Shona_language">Shona</a></strong> <br/> <strong>chiShona</strong></td>
+<td style="text-align: center;"><strong><code>sn</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Bengali_language">Bengali</a></strong> <br/> <strong>বাংলা</strong></td>
+<td style="text-align: center;"><strong><code>bn</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Italian_language">Italian</a></strong> <br/> <strong>Italiano</strong></td>
+<td style="text-align: center;"><strong><code>it</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Sindhi_language">Sindhi</a></strong> <br/> <strong>سنڌي</strong></td>
+<td style="text-align: center;"><strong><code>sd</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Bosnian_language">Bosnian</a></strong> <br/> <strong>Bosanski</strong></td>
+<td style="text-align: center;"><strong><code>bs</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Japanese_language">Japanese</a></strong> <br/> <strong>日本語</strong></td>
+<td style="text-align: center;"><strong><code>ja</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Sinhala_language">Sinhala</a></strong> <br/> <strong>සිංහල</strong></td>
+<td style="text-align: center;"><strong><code>si</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Breton_language">Breton</a></strong> <br/> <strong>Brezhoneg</strong></td>
+<td style="text-align: center;"><strong><code>br</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Javanese_language">Javanese</a></strong> <br/> <strong>Basa Jawa</strong></td>
+<td style="text-align: center;"><strong><code>jv</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Slovak_language">Slovak</a></strong> <br/> <strong>Slovenčina</strong></td>
+<td style="text-align: center;"><strong><code>sk</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Bulgarian_language">Bulgarian</a></strong> <br/> <strong>български</strong></td>
+<td style="text-align: center;"><strong><code>bg</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Kannada_language">Kannada</a></strong> <br/> <strong>ಕನ್ನಡ</strong></td>
+<td style="text-align: center;"><strong><code>kn</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Slovenian_language">Slovenian</a></strong> <br/> <strong>Slovenščina</strong></td>
+<td style="text-align: center;"><strong><code>sl</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Catalan_language">Catalan</a></strong> <br/> <strong>Català</strong></td>
+<td style="text-align: center;"><strong><code>ca</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Kazakh_language">Kazakh</a></strong> <br/> <strong>Қазақ тілі</strong></td>
+<td style="text-align: center;"><strong><code>kk</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Somali_language">Somali</a></strong> <br/> <strong>Soomaali</strong></td>
+<td style="text-align: center;"><strong><code>so</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Cebuano_language">Cebuano</a></strong> <br/> <strong>Cebuano</strong></td>
+<td style="text-align: center;"><strong><code>ceb</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Khmer_language">Khmer</a></strong> <br/> <strong>ភាសាខ្មែរ</strong></td>
+<td style="text-align: center;"><strong><code>km</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Spanish_language">Spanish</a></strong> <br/> <strong>Español</strong></td>
+<td style="text-align: center;"><strong><code>es</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Cherokee_language">Cherokee</a></strong> <br/> <strong>ᏣᎳᎩ</strong></td>
+<td style="text-align: center;"><strong><code>chr</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Kinyarwanda_language">Kinyarwanda</a></strong> <br/> <strong>Ikinyarwanda</strong></td>
+<td style="text-align: center;"><strong><code>rw</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Sundanese_language">Sundanese</a></strong> <br/> <strong>Basa Sunda</strong></td>
+<td style="text-align: center;"><strong><code>su</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Chichewa_language">Chichewa</a></strong> <br/> <strong>Nyanja</strong></td>
+<td style="text-align: center;"><strong><code>ny</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Korean_language">Korean</a></strong> <br/> <strong>한국어</strong></td>
+<td style="text-align: center;"><strong><code>ko</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Swahili_language">Swahili</a></strong> <br/> <strong>Kiswahili</strong></td>
+<td style="text-align: center;"><strong><code>sw</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Chinese_Simplified">Chinese Simplified</a></strong> <br/> <strong>简体中文</strong></td>
+<td style="text-align: center;"><strong><code>zh-CN</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Kurdish_language">Kurdish</a></strong> <br/> <strong>Kurdî</strong></td>
+<td style="text-align: center;"><strong><code>ku</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Swedish_language">Swedish</a></strong> <br/> <strong>Svenska</strong></td>
+<td style="text-align: center;"><strong><code>sv</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Chinese_Traditional">Chinese Traditional</a></strong> <br/> <strong>正體中文</strong></td>
+<td style="text-align: center;"><strong><code>zh-TW</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Kyrgyz_language">Kyrgyz</a></strong> <br/> <strong>Кыргызча</strong></td>
+<td style="text-align: center;"><strong><code>ky</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Tajik_language">Tajik</a></strong> <br/> <strong>Тоҷикӣ</strong></td>
+<td style="text-align: center;"><strong><code>tg</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Corsican_language">Corsican</a></strong> <br/> <strong>Corsu</strong></td>
+<td style="text-align: center;"><strong><code>co</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Lao_language">Lao</a></strong> <br/> <strong>ລາວ</strong></td>
+<td style="text-align: center;"><strong><code>lo</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Tamil_language">Tamil</a></strong> <br/> <strong>தமிழ்</strong></td>
+<td style="text-align: center;"><strong><code>ta</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Croatian_language">Croatian</a></strong> <br/> <strong>Hrvatski</strong></td>
+<td style="text-align: center;"><strong><code>hr</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Latin_language">Latin</a></strong> <br/> <strong>Latina</strong></td>
+<td style="text-align: center;"><strong><code>la</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Tatar_language">Tatar</a></strong> <br/> <strong>татарча</strong></td>
+<td style="text-align: center;"><strong><code>tt</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Czech_language">Czech</a></strong> <br/> <strong>Čeština</strong></td>
+<td style="text-align: center;"><strong><code>cs</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Latvian_language">Latvian</a></strong> <br/> <strong>Latviešu</strong></td>
+<td style="text-align: center;"><strong><code>lv</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Telugu_language">Telugu</a></strong> <br/> <strong>తెలుగు</strong></td>
+<td style="text-align: center;"><strong><code>te</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Danish_language">Danish</a></strong> <br/> <strong>Dansk</strong></td>
+<td style="text-align: center;"><strong><code>da</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Lithuanian_language">Lithuanian</a></strong> <br/> <strong>Lietuvių</strong></td>
+<td style="text-align: center;"><strong><code>lt</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Thai_language">Thai</a></strong> <br/> <strong>ไทย</strong></td>
+<td style="text-align: center;"><strong><code>th</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Dutch_language">Dutch</a></strong> <br/> <strong>Nederlands</strong></td>
+<td style="text-align: center;"><strong><code>nl</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Luxembourgish_language">Luxembourgish</a></strong> <br/> <strong>Lëtzebuergesch</strong></td>
+<td style="text-align: center;"><strong><code>lb</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Tibetan_language">Tibetan</a></strong> <br/> <strong>བོད་ཡིག</strong></td>
+<td style="text-align: center;"><strong><code>bo</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Dzongkha_language">Dzongkha</a></strong> <br/> <strong>རྫོང་ཁ</strong></td>
+<td style="text-align: center;"><strong><code>dz</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Macedonian_language">Macedonian</a></strong> <br/> <strong>Македонски</strong></td>
+<td style="text-align: center;"><strong><code>mk</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Tigrinya_language">Tigrinya</a></strong> <br/> <strong>ትግርኛ</strong></td>
+<td style="text-align: center;"><strong><code>ti</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/English_language">English</a></strong> <br/> <strong>English</strong></td>
+<td style="text-align: center;"><strong><code>en</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Malagasy_language">Malagasy</a></strong> <br/> <strong>Malagasy</strong></td>
+<td style="text-align: center;"><strong><code>mg</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Turkish_language">Turkish</a></strong> <br/> <strong>Türkçe</strong></td>
+<td style="text-align: center;"><strong><code>tr</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Esperanto_language">Esperanto</a></strong> <br/> <strong>Esperanto</strong></td>
+<td style="text-align: center;"><strong><code>eo</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Malay_language">Malay</a></strong> <br/> <strong>Bahasa Melayu</strong></td>
+<td style="text-align: center;"><strong><code>ms</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Turkmen_language">Turkmen</a></strong> <br/> <strong>Türkmen</strong></td>
+<td style="text-align: center;"><strong><code>tk</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Estonian_language">Estonian</a></strong> <br/> <strong>Eesti</strong></td>
+<td style="text-align: center;"><strong><code>et</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Malayalam_language">Malayalam</a></strong> <br/> <strong>മലയാളം</strong></td>
+<td style="text-align: center;"><strong><code>ml</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Ukrainian_language">Ukrainian</a></strong> <br/> <strong>Українська</strong></td>
+<td style="text-align: center;"><strong><code>uk</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Faroese_language">Faroese</a></strong> <br/> <strong>Føroyskt</strong></td>
+<td style="text-align: center;"><strong><code>fo</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Maltese_language">Maltese</a></strong> <br/> <strong>Malti</strong></td>
+<td style="text-align: center;"><strong><code>mt</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Urdu_language">Urdu</a></strong> <br/> <strong>اُردُو</strong></td>
+<td style="text-align: center;"><strong><code>ur</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Fijian_language">Fijian</a></strong> <br/> <strong>Vosa Vakaviti</strong></td>
+<td style="text-align: center;"><strong><code>fj</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Maori_language">Maori</a></strong> <br/> <strong>Māori</strong></td>
+<td style="text-align: center;"><strong><code>mi</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Uyghur_language">Uyghur</a></strong> <br/> <strong>ئۇيغۇر تىلى</strong></td>
+<td style="text-align: center;"><strong><code>ug</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Filipino_language">Filipino</a></strong> <br/> <strong>Tagalog</strong></td>
+<td style="text-align: center;"><strong><code>tl</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Marathi_language">Marathi</a></strong> <br/> <strong>मराठी</strong></td>
+<td style="text-align: center;"><strong><code>mr</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Uzbek_language">Uzbek</a></strong> <br/> <strong>Oʻzbek tili</strong></td>
+<td style="text-align: center;"><strong><code>uz</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Finnish_language">Finnish</a></strong> <br/> <strong>Suomi</strong></td>
+<td style="text-align: center;"><strong><code>fi</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Mongolian_language">Mongolian</a></strong> <br/> <strong>Монгол</strong></td>
+<td style="text-align: center;"><strong><code>mn</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Vietnamese_language">Vietnamese</a></strong> <br/> <strong>Tiếng Việt</strong></td>
+<td style="text-align: center;"><strong><code>vi</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/French_language">French</a></strong> <br/> <strong>Français</strong></td>
+<td style="text-align: center;"><strong><code>fr</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Myanmar_language">Myanmar</a></strong> <br/> <strong>မြန်မာစာ</strong></td>
+<td style="text-align: center;"><strong><code>my</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Volapük_language">Volapük</a></strong> <br/> <strong>Volapük</strong></td>
+<td style="text-align: center;"><strong><code>vo</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Galician_language">Galician</a></strong> <br/> <strong>Galego</strong></td>
+<td style="text-align: center;"><strong><code>gl</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Nepali_language">Nepali</a></strong> <br/> <strong>नेपाली</strong></td>
+<td style="text-align: center;"><strong><code>ne</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Welsh_language">Welsh</a></strong> <br/> <strong>Cymraeg</strong></td>
+<td style="text-align: center;"><strong><code>cy</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Georgian_language">Georgian</a></strong> <br/> <strong>ქართული</strong></td>
+<td style="text-align: center;"><strong><code>ka</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Norwegian_language">Norwegian</a></strong> <br/> <strong>Norsk</strong></td>
+<td style="text-align: center;"><strong><code>no</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Western_Frisian">Western Frisian</a></strong> <br/> <strong>Frysk</strong></td>
+<td style="text-align: center;"><strong><code>fy</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/German_language">German</a></strong> <br/> <strong>Deutsch</strong></td>
+<td style="text-align: center;"><strong><code>de</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Occitan_language">Occitan</a></strong> <br/> <strong>Occitan</strong></td>
+<td style="text-align: center;"><strong><code>oc</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Wolof_language">Wolof</a></strong> <br/> <strong>Wollof</strong></td>
+<td style="text-align: center;"><strong><code>wo</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Greek_language">Greek</a></strong> <br/> <strong>Ελληνικά</strong></td>
+<td style="text-align: center;"><strong><code>el</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Oriya_language">Oriya</a></strong> <br/> <strong>ଓଡ଼ିଆ</strong></td>
+<td style="text-align: center;"><strong><code>or</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Xhosa_language">Xhosa</a></strong> <br/> <strong>isiXhosa</strong></td>
+<td style="text-align: center;"><strong><code>xh</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Guarani_language">Guarani</a></strong> <br/> <strong>Avañe'ẽ</strong></td>
+<td style="text-align: center;"><strong><code>gn</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Oromo_language">Oromo</a></strong> <br/> <strong>Afaan Oromoo</strong></td>
+<td style="text-align: center;"><strong><code>om</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Yiddish_language">Yiddish</a></strong> <br/> <strong>ייִדיש</strong></td>
+<td style="text-align: center;"><strong><code>yi</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Gujarati_language">Gujarati</a></strong> <br/> <strong>ગુજરાતી</strong></td>
+<td style="text-align: center;"><strong><code>gu</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Pashto_language">Pashto</a></strong> <br/> <strong>پښتو</strong></td>
+<td style="text-align: center;"><strong><code>ps</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Yoruba_language">Yoruba</a></strong> <br/> <strong>Yorùbá</strong></td>
+<td style="text-align: center;"><strong><code>yo</code></strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Haitian_Creole">Haitian Creole</a></strong> <br/> <strong>Kreyòl Ayisyen</strong></td>
+<td style="text-align: center;"><strong><code>ht</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Persian_language">Persian</a></strong> <br/> <strong>فارسی</strong></td>
+<td style="text-align: center;"><strong><code>fa</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Zulu_language">Zulu</a></strong> <br/> <strong>isiZulu</strong></td>
+<td style="text-align: center;"><strong><code>zu</code></strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Hausa_language">Hausa</a></strong> <br/> <strong>Hausa</strong></td>
+<td style="text-align: center;"><strong><code>ha</code></strong></td>
+<td style="text-align: center;"><strong><a href="http://en.wikipedia.org/wiki/Polish_language">Polish</a></strong> <br/> <strong>Polski</strong></td>
+<td style="text-align: center;"><strong><code>pl</code></strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="code" class="level2">
+<h2>Code</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L206">View source</a> ]</p>
+<p>Try command <code>perl -p -i -e 's/foo/bar/g' hello.c</code>.</p>
+<pre class="sourceCode commonlisp"><code class="sourceCode commonlisp">(<span class="kw">defun</span><span class="fu"> eval </span>(original-exp)
+  #!+sb-doc
+  <span class="st">&quot;Evaluate the argument in a null lexical environment, returning the</span>
+<span class="st">   result or results.&quot;</span>
+  (<span class="kw">let</span> ((*eval-source-context* original-exp)
+        (*eval-tlf-index* <span class="kw">nil</span>)
+        (*eval-source-info* <span class="kw">nil</span>))
+    (eval-in-lexenv original-exp (make-null-lexenv))))</code></pre>
+<pre class="sourceCode c"><code class="sourceCode c">PRIVATE <span class="dt">int</span> HTTPCleanup ARGS1(http_info *, http)
+{
+    <span class="dt">int</span> status = <span class="dv">0</span>;
+    <span class="kw">if</span> (!http) {
+        <span class="kw">if</span> (TRACE) fprintf(stderr, <span class="st">&quot;HTTPCleanup. Bad argument!</span><span class="ch">\n</span><span class="st">&quot;</span>);
+        status = -<span class="dv">1</span>;
+    } <span class="kw">else</span> {
+        <span class="kw">if</span> (http-&gt;sockfd &gt;= <span class="dv">0</span>) {
+            <span class="kw">if</span> (TRACE) fprintf(stderr, <span class="st">&quot;HTTP........ Closing socket %d</span><span class="ch">\n</span><span class="st">&quot;</span>,
+                               http-&gt;sockfd);
+            <span class="kw">if</span> ((status = NETCLOSE(http-&gt;sockfd)) &lt; <span class="dv">0</span>)
+                HTErrorSysAdd(http-&gt;request, ERR_FATAL, NO, <span class="st">&quot;NETCLOSE&quot;</span>);
+        }
+    }
+    free(http);
+    <span class="kw">return</span> status;
+}</code></pre>
+<p>Set mark in Emacs: <kbd>C-SPC</kbd>, <kbd>C-@</kbd>, <kbd>M-x set-mark-command</kbd>.</p>
+<p><var>testVar</var></p>
+<p><samp>gcc: fatal error: no input files</samp></p>
+</section>
+<section id="lists" class="level2">
+<h2>Lists</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L249">View source</a> ]</p>
+<ol type="1">
+<li>True berry
+<ul>
+<li><input type="checkbox" checked> Eggplant</li>
+<li><input type="checkbox" checked> Tomato</li>
+<li><input type="checkbox"> Kiwifruit</li>
+<li><input type="checkbox" checked> Grape</li>
+<li><input type="checkbox"> Cranberry</li>
+<li><input type="checkbox" checked> Blueberry</li>
+</ul></li>
+<li>Pepo</li>
+<li>Hesperidium</li>
+<li>Aggregate fruit</li>
+<li>Multiple fruit</li>
+<li>Accessory fruit</li>
+</ol>
+</section>
+<section id="images" class="level2">
+<h2>Images</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L266">View source</a> ]</p>
+<figure>
+<img src="/images/laugh-now.png" title="Original" alt="Laugh now (Original)" /><figcaption>Laugh now (Original)</figcaption>
+</figure>
+<p><div class="figure"><img src="/images/laugh-now.png" title="30%" alt="Laugh now (30%)" width="30%" /><p class="caption">Laugh now (30%)</p></div></p>
+<p><div class="figure"><img src="/images/laugh-now.png" title="10%" alt="Laugh now (10%)" width="10%" /><p class="caption">Laugh now (10%)</p></div></p>
+</section>
+<section id="math-rendering" class="level2">
+<h2>Math rendering</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L276">View source</a> ]</p>
+<p><span class="math">\(e=\sqrt{1+\frac{b^2}{a^2}}\)</span></p>
+<p><span class="math">\(\frac{n!}{k!(n-k)!} = {n \choose k}\)</span></p>
+<p><span class="math">\(\int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x\)</span></p>
+<p><span class="math">\[\oint_{\partial \Sigma} \mathbf{B} \cdot \mathrm{d}\boldsymbol{\ell} = \mu_0 \iint_{\Sigma} \mathbf{J} \cdot \mathrm{d}\mathbf{S} + \mu_0 \varepsilon_0 \frac{d}{dt} \iint_{\Sigma} \mathbf{E} \cdot \mathrm{d}\mathbf{S}\]</span></p>
+<p><span class="math">\[\nabla \times \mathbf{B} = \mu_0\left(\mathbf{J} + \varepsilon_0 \frac{\partial \mathbf{E}} {\partial t} \right)\]</span></p>
+<p><span class="math">\[i\hbar\frac{\partial}{\partial t} \Psi(\mathbf{r},t) = \left [ \frac{-\hbar^2}{2\mu}\nabla^2 + V(\mathbf{r},t)\right ] \Psi(\mathbf{r},t)\]</span></p>
+</section>
+<section id="citation-rendering" class="level2">
+<h2>Citation rendering</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L292">View source</a> ]</p>
+<p>Lorem ipsum dolor sit amet [<span class="citation" data-cites="WatsonCrick1953">1</span>], consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Εδώ αν κάποιο πακέτων [<span class="citation" data-cites="Landin:1966:NPL:365230.365257">2</span>]. Όλη πω κάνε μέση είχαμε, κόλπα βγαίνει παίξουν σε την. Μη τις πολύ μέγιστη επιχείρηση, στην αρχεία τι όσο. Προσοχή δημιουργική μη μια. Πετάνε ανεπιθύμητη κλπ μη, στο πάρα γέλασαν δουλεύει μα. Τι πως νύχτας περιβάλλοντος.</p>
+</section>
+<section id="footnotes" class="level2">
+<h2>Footnotes</h2>
+<p style="text-align:right !important;text-indent:0 !important">[ <a href="https://github.com/soimort/soimort.github.io/blob/master/posts/salve-munde/source.md#L303">View source</a> ]</p>
+<h3 style="text-align:center !important">俠客行<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h3>
+<p style="text-align:right !important;text-indent:0 !important;position:relative;right:25.00%">李白</p>
+<p style="text-align:center !important;text-indent:0 !important">趙客縵胡纓<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>，吳鉤霜雪明<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>。銀鞍照白馬，颯沓如流星。<br />十步殺一人，千里不留行。事了拂衣去，深藏身與名。<br />閑過信陵飲，脫劍膝前橫。將炙啖朱亥，持觴勸侯嬴。<br />三杯吐然諾，五嶽倒為輕。眼花耳熱後，意氣素霓生。<br />救趙揮金槌，邯鄲先震驚。千秋二壯士，煊赫大梁城。<br />縱死俠骨香，不慚世上英。誰能書閣下，白首太玄經。</p>
+</section>
+<section id="FIN">
+<hr />
+<footer>
+<p><a href="https://github.com/soimort/soimort.github.io/blame/master/posts/salve-munde/source.md">Comment on GitHub</a> or <a href="javascript:cmdEmail();">via email</a>.</p>
+Unless otherwise stated, the content of this article is dedicated to the public domain. No rights reserved.
+</footer>
+<p>⁂</p>
+<script>
+var _meta = new Object();
+_meta['raw-options'] = '--section-divs';
+_meta['bibliography'] = '/home/soimort/soimort/soimort.github.io/posts/salve-munde/source.bib';
+_meta['github-user'] = 'soimort';
+_meta['title'] = 'Salve, munde';
+_meta['schema'] = 'Blog';
+_meta['template'] = 'templates/default.html5';
+_meta['csl'] = 'csl/ieee-with-url.csl';
+_meta['subtitle'] = 'Oratio in Catilinam Prima in Senatu Habita';
+_meta['github-repo'] = 'soimort.github.io';
+_meta['canonical'] = 'http://www.soimort.org/';
+_meta['contact'] = 'm'+'a'+'i'+'l'+'t'+'o'+':'+'s'+'o'+'i'+'@'+'m'+'o'+'r'+'t'+'.'+'n'+'i'+'n'+'j'+'a';
+_meta['source-bibliography'] = 'source.bib';
+_meta['id'] = 'posts/salve-munde';
+_meta['target'] = 'index.html';
+_meta['mathjax'] = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+_meta['output-format'] = 'html5';
+_meta['date'] = '2015-07-05';
+_meta['source'] = 'source.md';
+_meta['citations'] = 'References';
+_meta['description'] = 'Hello, world';
+_meta['source-metadata'] = 'source.yaml';
+</script>
+<div id="DROPDOWN">
+
+</div>
+<div id="HUD">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Description</th>
+<th style="text-align: center;">Command</th>
+<th style="text-align: center;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><kbd>g</kbd></td>
+<td style="text-align: center;">Back to top</td>
+<td style="text-align: center;"><kbd>t</kbd> <samp>:toc</samp></td>
+<td style="text-align: center;">Go to TOC</td>
+<td style="text-align: center;"><kbd>A</kbd> <samp>:about</samp></td>
+<td style="text-align: center;">About me</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><kbd>h</kbd></td>
+<td style="text-align: center;">Scroll left</td>
+<td style="text-align: center;"><kbd>r</kbd> <samp>:ref</samp></td>
+<td style="text-align: center;">Go to references</td>
+<td style="text-align: center;"><kbd>F</kbd> <samp>:feed</samp></td>
+<td style="text-align: center;">My feed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><kbd>j</kbd></td>
+<td style="text-align: center;">Scroll down</td>
+<td style="text-align: center;"><samp>:goto#foo</samp></td>
+<td style="text-align: center;">Go to section</td>
+<td style="text-align: center;"><samp>:github</samp></td>
+<td style="text-align: center;">My GitHub</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><kbd>k</kbd></td>
+<td style="text-align: center;">Scroll up</td>
+<td style="text-align: center;"><samp>:goto!#foo</samp></td>
+<td style="text-align: center;">Anchor to section</td>
+<td style="text-align: center;"><samp>:source</samp></td>
+<td style="text-align: center;">View source</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><kbd>l</kbd></td>
+<td style="text-align: center;">Scroll right</td>
+<td style="text-align: center;"><kbd>S</kbd> <samp>:goog</samp></td>
+<td style="text-align: center;">Search selected text (on Google)</td>
+<td style="text-align: center;"><samp>:bib</samp></td>
+<td style="text-align: center;">View bibliography</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><kbd>+</kbd></td>
+<td style="text-align: center;">Zoom in</td>
+<td style="text-align: center;"><kbd>D</kbd> <samp>:duck</samp></td>
+<td style="text-align: center;">(on DuckDuckGo)</td>
+<td style="text-align: center;"><samp>:blame</samp></td>
+<td style="text-align: center;">Blame me</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><kbd>-</kbd></td>
+<td style="text-align: center;">Zoom out</td>
+<td style="text-align: center;"><kbd>W</kbd> <samp>:wiki</samp></td>
+<td style="text-align: center;">(on Wikipedia)</td>
+<td style="text-align: center;"><samp>:email</samp></td>
+<td style="text-align: center;">Email me</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><kbd>:</kbd></td>
+<td style="text-align: center;">Console</td>
+<td style="text-align: center;"><kbd>T</kbd> <samp>:trans</samp></td>
+<td style="text-align: center;">Translate selected text</td>
+<td style="text-align: center;"><samp>:tweet</samp></td>
+<td style="text-align: center;">Tweet this</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><kbd>?</kbd> <samp>:help</samp></td>
+<td style="text-align: center;">Show help</td>
+<td style="text-align: center;"><kbd>H</kbd> <samp>:home</samp></td>
+<td style="text-align: center;">Home</td>
+<td style="text-align: center;"><samp>:print</samp></td>
+<td style="text-align: center;">Print this</td>
+</tr>
+</tbody>
+</table>
+<p>Press <kbd>Esc</kbd> to close this message.</p>
+</div>
+<div id="CONSOLE">
+  <code id="CONSOLE-CODE">:</code>
+</div>
+<div id="TOOLBAR">
+  <i id="BUTTON-HOME" title="Home &lt;H&gt;" class="fa fa-home"></i><br />
+  <i id="BUTTON-ABOUT" title="About me &lt;A&gt;" class="fa fa-user"></i><br />
+  <i id="BUTTON-FEED" title="Subscribe to my feed &lt;F&gt;" class="fa fa-rss-square"></i><br />
+  <i id="BUTTON-GITHUB" title="Follow me on GitHub" class="fa fa-github-square"></i><br />
+  <i id="BUTTON-SOURCE" title="View Source" class="fa fa-file-code-o"></i><br />
+  <i id="BUTTON-BIB" title="View Bibliography" class="fa fa-book"></i><br />
+  <i id="BUTTON-BLAME" title="Blame me" class="fa fa-comments"></i><br />
+  <i id="BUTTON-EMAIL" title="Email me" class="fa fa-envelope-o"></i><br />
+  <i id="BUTTON-TWEET" title="Tweet this" class="fa fa-retweet"></i><br />
+  <i id="BUTTON-PRINT" title="Print this" class="fa fa-print"></i><br />
+  <i id="BUTTON-HELP" title="Help &lt;?&gt;" class="fa fa-question-circle"></i><br />
+  <div id="TOOLBAR-NAVIGATOR">
+    <div id="BUTTON-CENTER">
+      <i title="" class="fa fa-desktop"></i>
+    </div>
+    <div id="BUTTON-UP">
+      <i title="Up &lt;k&gt;" class="fa fa-chevron-up"></i>
+    </div>
+    <div id="BUTTON-DOWN">
+      <i title="Down &lt;j&gt;" class="fa fa-chevron-down"></i>
+    </div>
+    <div id="BUTTON-LEFT">
+      <i title="Left &lt;h&gt;" class="fa fa-chevron-left"></i>
+    </div>
+    <div id="BUTTON-RIGHT">
+      <i title="Right &lt;l&gt;" class="fa fa-chevron-right"></i>
+    </div>
+  </div>
+</div>
+</section>
+<section id="citations" class="level2">
+<h2><span field="citations" class="interpolated">References</span></h2>
+<!-- start references & footnotes -->
+<!-- DO NOT REMOVE THIS COMMENT, otherwise section will not be wrapped! -->
+<div class="references">
+<p>[1]J. D. Watson and F. H. C. Crick, “Molecular structure of nucleic acids: a structure for deoxyribose nucleic acid,” <em>Nature</em>, vol. 171, no. 4356, pp. 737–738, Apr. 1953 [Online]. Available: <a href="http://www.nature.com/nature/journal/v171/n4356/abs/171737a0.html" class="uri">http://www.nature.com/nature/journal/v171/n4356/abs/171737a0.html</a></p>
+<p>[2]P. J. Landin, “The next 700 programming languages,” <em>Commun. ACM</em>, vol. 9, no. 3, pp. 157–166, Mar. 1966 [Online]. Available: <a href="http://doi.acm.org/10.1145/365230.365257" class="uri">http://doi.acm.org/10.1145/365230.365257</a></p>
+</div>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>這是一首描寫和歌頌俠客的古體五言詩，是李白古風五十九首中的一首。行，這里不是行走的行，而是歌行體的行，等于說「俠客的歌」。<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>趙客，燕趙之地的俠客。自古燕趙多慷慨悲歌之士。《莊子·說劍》：「昔趙文王好劍，劍士夾門而客三千余人。」縵，沒有花紋。胡纓，古時將北方少數民族通稱為胡；纓，系冠帽的帶子。縵胡纓，即少數民族做工粗糙的沒有花紋的帶子。這句寫俠客的冠帶。<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>吳鉤，寶刀名。霜雪明，謂寶刀的鋒刃像霜雪一樣明亮。<a href="#fnref3">↩</a></p></li>
+</ol>
+</section> <!-- preformatted text must be preserved -->
+    </article>
+    <!-- end body -->
+    <!-- begin include-after -->
+    <!-- end include-after -->
+  </body>
+</html>
