@@ -1,0 +1,27 @@
+---
+# pancake - global settings
+output-format: html5
+template: templates/default.html5
+filters: ["pandoc-citeproc", "filters/monkey.py", "filters/jsinliner.py"]
+mathjax: https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+raw-options: --section-divs
+# pandoc - citation rendering
+csl: csl/ieee-with-url.csl
+# sitewide metadata
+schema: Blog
+canonical: http://www.soimort.org/
+contact: mailto:soi@mort.ninja
+github-user: soimort
+github-repo: soimort.github.io
+google-site-verification: WYlg0axsD9zVqYdreMQBZSQgeosDMT9pZXOdRQRweKs
+header-includes: | # Google Analytics tracking code
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-27086900-1', 'auto');
+      ga('send', 'pageview');
+      </script>
+---
