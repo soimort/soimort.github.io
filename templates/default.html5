@@ -19,6 +19,7 @@
     $endfor$<!-- end js -->
     <link rel="canonical" href="$canonical$$id$" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
     <!-- begin css -->
     $for(css)$<link rel="stylesheet" type="text/css" href="$css$" />
     $endfor$<!-- end css -->
