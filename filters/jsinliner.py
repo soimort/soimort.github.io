@@ -68,6 +68,9 @@ def inliner(key: str, value: dict, fmt: str, meta: dict) -> dict:
                                 elif i['t'] == 'Space':
                                     meta_v += ' '
                                 # TODO: more types
+                            if re.match(r'^mailto:', meta_v):
+                                # obfuscate email address
+                                meta_v = "'+'".join(list(meta_v))
                             script += "_meta['{}'] = '{}';\n" \
                                 .format(meta_f, meta_v)
 
