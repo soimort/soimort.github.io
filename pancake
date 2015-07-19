@@ -25,6 +25,11 @@ METADATA_EXT = ['.yaml', '.yml']
 SOURCE_EXT   = ['.markdown', '.md']
 IGNORED_EXT  = ['.html', '.htm']
 
+SETTINGS = {
+  'preload' => true,
+  'meta'    => [],
+}
+
 module Pancake
 
   def self.escape(str)
@@ -57,21 +62,25 @@ module Pancake
     paths.reverse!
 
     # find preloadable metadata files and source files
-    files = []
-    paths.each do |path|
-      configs = Dir.glob(File.join(path, '*')).select do |file|
-        file[path.length+1..-1].start_with? '_'
+    metadata_files = SETTINGS['meta']
+    source_files = []
+    if SETTINGS['preload']
+      files = []
+      paths.each do |path|
+        configs = Dir.glob(File.join(path, '*')).select do |file|
+          file[path.length+1..-1].start_with? '_'
+        end
+        files += configs.inject [] do |files, config|
+          files + get_file_list(config)
+        end
       end
-      files += configs.inject [] do |files, config|
-        files + get_file_list(config)
-      end
+      metadata_files += files.select do |file|
+        METADATA_EXT.include? File.extname(file)
+      end.sort
+      source_files += files.select do |file|
+        SOURCE_EXT.include? File.extname(file)
+      end.sort
     end
-    metadata_files = files.select do |file|
-      METADATA_EXT.include? File.extname(file)
-    end.sort
-    source_files = files.select do |file|
-      SOURCE_EXT.include? File.extname(file)
-    end.sort
 
     # preload metadata
     meta = metadata_files.inject Hash.new do |meta, metadata_file|
@@ -146,6 +155,20 @@ if __FILE__ == $0
       # extra option
       extra_opts << target
       i "[#{arg_no+1}] '#{target}' extra option added."
+
+    elsif target.start_with? '/'
+      # control option
+      opt_name, opt_val = target[1..-1].split '='
+      case opt_name
+      when 'no-preload'
+        i "[#{arg_no+1}] '/#{opt_name}' control option found."
+        SETTINGS['preload'] = false
+      when 'meta'
+        i "[#{arg_no+1}] '/#{opt_name}' control option found."
+        SETTINGS['meta'] = [opt_val]
+      else
+        w "[#{arg_no+1}] '/#{opt_name}' control option not found."
+      end
 
     else
       # phony target
