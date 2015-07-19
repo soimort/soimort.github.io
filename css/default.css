@@ -1,7 +1,7 @@
-/* Ivoire theme
+/* Ivoire theme (CSS part)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-18 (v0.1.0)
+ * Version: 2015-07-19 (v0.1.1)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -19,7 +19,7 @@ body {
   margin-top: 5%;
   background-color: ivory;
   background-attachment: fixed;
-  background-image: url('/images/laugh-now.png');
+  background-image: none;
   background-position: left bottom;
   background-repeat: no-repeat;
   color: transparent; /* get rid of ugly Web Font Loader message */

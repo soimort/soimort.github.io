@@ -1,4 +1,4 @@
-/* Ivoire theme
+/* Ivoire theme (JavaScript part)
  * (designed for exclusive use on www.soimort.org)
  *
  * Version: 2015-07-18 (v0.1.0)
