@@ -1,0 +1,10 @@
+---
+title: Monkeydown::README
+author: soimort
+date: 2015-07-19
+output-format: html5
+template: templates/sm.html5
+github-user: soimort
+github-repo: soimort.github.io
+raw-options: ["-s", "--toc"]
+---
