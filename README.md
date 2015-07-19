@@ -22,7 +22,9 @@ To build my static site (usually involves a bunch of calls to the `pandoc` comma
 
     $ pancake posts/salve-munde
 
-`pancake` will look into the current path "`.`", "`posts/`" and "`posts/salve-munde/`" and find all relevant "configuration paths" (all files whose name starts with an underscore "`_`", and all files under directories whose name starts with an underscore). Among all these "configuration paths", `pancake` is interested in two types of files: metadata files (`.yaml` or `.yml`, e.g., `_config.yaml` and `posts/_config/meta.yaml`) and source files (`.markdown` or `.md`, e.g., `posts/_config/1_footer.md` and `posts/_config/2_references.md`).
+By default, `pancake` will look into the current path "`.`", "`posts/`" and "`posts/salve-munde/`" and find all relevant "configuration paths" (all files whose name starts with an underscore "`_`", and all files under directories whose name starts with an underscore). Among all these "configuration paths", `pancake` is interested in two types of files: metadata files (`.yaml` or `.yml`, e.g., `_config.yaml` and `posts/_config/meta.yaml`) and source files (`.markdown` or `.md`, e.g., `posts/_config/1_footer.md` and `posts/_config/2_references.md`).
+
+(In case you don't want `pancake` to search for configuration paths, use the ***control option*** `/no-preload`, e.g., `pancake /no-preload posts/salve-munde`. To specify a configuration file explicitly, use something like `/meta=filename.yaml`)
 
 All metadata files are passed straight to `pandoc`. Moreover, there are some metadata fields used by `pancake` specifically: (**`target`**, **`source`**, **`source-metadata`**, **`source-bibliography`**)
 
@@ -71,7 +73,7 @@ To pass other options to `pandoc`, the alternative way of specifying the **`raw-
 
     $ pancake --output=README.html README.md
 
-Besides ***real targets*** and ***extra options***, there are also a few predefined ***phony targets***: (like what you may have in a Makefile)
+Besides ***real targets***, ***control options*** and ***extra options***, there are also a few predefined ***phony targets***: (like what you may have in a Makefile)
 
     $ pancake all
 
