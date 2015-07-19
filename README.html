@@ -1,14 +1,16 @@
-<!-- sans mono theme (pandoc template) v0.1.0 -->
+<!-- sans mono theme (pandoc template) v0.1.1 -->
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title></title>
+  <meta name="author" content="soimort">
+  <meta name="dcterms.date" content="2015-07-19">
+  <title>soimort.org::README</title>
   <style type="text/css">
    /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
-   /*! sans mono theme v0.1.0 | Public Domain */body{width:60%;padding:5% 10%;background:ivory;font-family:Helvetica,'Liberation Sans',Arial,freesans,sans-serif}code{font-size:.9em;font-family:Consolas,'Liberation Mono','Droid Sans Mono','DejaVu Sans Mono',Courier,freemono,monospace}a{color:maroon}#TOC{position:fixed;width:20%;right:5%;font-size:.8em}#TOC ul{list-style:none;padding-left:1em}
+   /*! sans mono theme v0.1.1 | Public Domain */#TOC,header{position:fixed}body{width:60%;padding:5% 10%;background:ivory;font-family:Helvetica,'Liberation Sans',Arial,freesans,sans-serif}code{font-family:'Droid Sans Mono','Liberation Mono','DejaVu Sans Mono',Courier,FreeMono,monospace;font-size:.9em}a{color:maroon}header{visibility:hidden}#TOC{right:5%;width:20%;font-size:.8em}#TOC ul{padding-left:1em;list-style:none}
   </style>
   <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
@@ -35,6 +37,11 @@ code > span.er { color: #ff0000; font-weight: bold; }
   </style>
 </head>
 <body>
+<header>
+<h1 class="title">soimort.org::README</h1>
+<h2 class="author">soimort</h2>
+<h3 class="date">2015-07-19</h3>
+</header>
 <nav id="TOC">
 <ul>
 <li><a href="#soimort.org">soimort.org</a><ul>
@@ -46,12 +53,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul></li>
 </ul>
 </nav>
-<section id="soimort.org" class="level1">
-<h1>soimort.org</h1>
+<h1 id="soimort.org">soimort.org</h1>
 <p><a href="http://www.soimort.org/README.html"><img src="http://www.soimort.org/favicon.ico" alt="www.soimort.org/README.html" /></a></p>
 <p>Through the looking-glass, welcome to the inside world of <a href="http://www.soimort.org">www.soimort.org</a>. Here you may explore the fascinating (tedious) technical details of my blog site.</p>
-<section id="pancake" class="level2">
-<h2>Pancake</h2>
+<h2 id="pancake">Pancake</h2>
 <p>This site is basically powered by <a href="http://pandoc.org/">pandoc</a>, a universal document converter. It turns human-editable markdown documents into stylish HTML pages that can be rendered in a web browser.</p>
 <p>I hate <a href="https://en.wikipedia.org/wiki/Occam%27s_razor">complexity beyond necessity</a>; that's why I prefer a document converter to any <a href="https://staticsitegenerators.net/">fancy static site generators</a>. Since I write in markdown and publish in HTML, I need no rocket technique to go beyond the straightforward markdown -&gt; HTML conversion, or need I?</p>
 <p>To build my static site (usually involves a bunch of calls to the <code>pandoc</code> command), I used to write a lot of <a href="https://raw.githubusercontent.com/soimort/soimort/1a31222d029b6c2e70b51aa5dc7bdbe1b2d6916b/Makefile">Makefile</a>s. But Makefile is hardly programmable, and embedding shell scripts are just too horrible to maintain, debug or even read for a self-esteemed programmer. As a result, I started to write a small wrapper script, <strong>pancake</strong>, to help myself building sites with pandoc painlessly. It simply replaces my naive &quot;pandoc + make&quot; approach. And it's yet another minimal static site generator (whatever you name it).</p>
@@ -63,7 +68,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul>
 <p><code>pancake</code> can be put into the system <code>PATH</code>, or it may also be modified on need and copied into a specific directory. A subdirectory or file under the current path is called a &quot;<strong><em>real target</em></strong>&quot; and can be built by <code>pancake</code>: (in this repository, for example)</p>
 <pre><code>$ pancake posts/salve-munde</code></pre>
-<p><code>pancake</code> will look into the current path &quot;<code>.</code>&quot;, &quot;<code>posts/</code>&quot; and &quot;<code>posts/salve-munde/</code>&quot; and find all relevant &quot;configuration paths&quot; (all files whose name starts with an underscore &quot;<code>_</code>&quot;, and all files under directories whose name starts with an underscore). Among all these &quot;configuration paths&quot;, <code>pancake</code> is interested in two types of files: metadata files (<code>.yaml</code> or <code>.yml</code>, e.g., <code>_config.yaml</code> and <code>posts/_config/meta.yaml</code>) and source files (<code>.markdown</code> or <code>.md</code>, e.g., <code>posts/_config/1_footer.md</code> and <code>posts/_config/2_references.md</code>).</p>
+<p>By default, <code>pancake</code> will look into the current path &quot;<code>.</code>&quot;, &quot;<code>posts/</code>&quot; and &quot;<code>posts/salve-munde/</code>&quot; and find all relevant &quot;configuration paths&quot; (all files whose name starts with an underscore &quot;<code>_</code>&quot;, and all files under directories whose name starts with an underscore). Among all these &quot;configuration paths&quot;, <code>pancake</code> is interested in two types of files: metadata files (<code>.yaml</code> or <code>.yml</code>, e.g., <code>_config.yaml</code> and <code>posts/_config/meta.yaml</code>) and source files (<code>.markdown</code> or <code>.md</code>, e.g., <code>posts/_config/1_footer.md</code> and <code>posts/_config/2_references.md</code>).</p>
+<p>(In case you don't want <code>pancake</code> to search for configuration paths, use the <strong><em>control option</em></strong> <code>/no-preload</code>, e.g., <code>pancake /no-preload posts/salve-munde</code>. To specify a configuration file explicitly, use something like <code>/meta=filename.yaml</code>)</p>
 <p>All metadata files are passed straight to <code>pandoc</code>. Moreover, there are some metadata fields used by <code>pancake</code> specifically: (<strong><code>target</code></strong>, <strong><code>source</code></strong>, <strong><code>source-metadata</code></strong>, <strong><code>source-bibliography</code></strong>)</p>
 <pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">target:</span> index.html
 <span class="fu">source:</span> source.md
@@ -93,7 +99,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <pre><code>$ pancake --toc --section-divs posts/salve-munde</code></pre>
 <p><em>Note</em>: If an option has a value, the option and the value must appear as a single parameter. For example, <code>pancake --output README.html README.md</code> will not work properly, since it treats <code>README.html</code> as a <strong><em>real target</em></strong> other than the value of extra option <code>--output</code>. The correct way is to use:</p>
 <pre><code>$ pancake --output=README.html README.md</code></pre>
-<p>Besides <strong><em>real targets</em></strong> and <strong><em>extra options</em></strong>, there are also a few predefined <strong><em>phony targets</em></strong>: (like what you may have in a Makefile)</p>
+<p>Besides <strong><em>real targets</em></strong>, <strong><em>control options</em></strong> and <strong><em>extra options</em></strong>, there are also a few predefined <strong><em>phony targets</em></strong>: (like what you may have in a Makefile)</p>
 <pre><code>$ pancake all</code></pre>
 <p>The phony target <strong><code>all</code></strong> looks for all source files recursively under the current directory, but not under a directory whose name starts with an underscore (which is considered to be a &quot;configuration path&quot;). <code>pancake</code> then calls <code>pandoc</code> on these source files in alphabetical order, with their relevant metadata respectively.</p>
 <pre><code>$ pancake server</code></pre>
@@ -108,8 +114,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <p>Even better, you may easily specify a customized template to use via <code>--template</code>, or include your own stylesheets as a <code>css</code> field in <code>--metadata</code>:</p>
 <pre><code>$ pancake --metadata=css:/css/minimal.css -s --output=README.html README.md server:watch</code></pre>
 <p><em>Note</em>: The <a href="https://github.com/guard/listen">listen</a> gem uses the polling mechanism to watch for filesystem changes on OS X, which might be slow on very big directories. In such cases, avoid using <strong><code>server:watch</code></strong> and limit watching in a small but relevant directory, like <strong><code>server:watch=posts/salve-munde</code></strong>.</p>
-<section id="why-my-homemade-pancake-and-why-not-jekyll-hakyll-yst" class="level3">
-<h3>Why my homemade pancake? (and why not <a href="http://jekyllrb.com/">Jekyll</a> / <a href="http://jaspervdj.be/hakyll/">Hakyll</a> / <a href="https://github.com/jgm/yst">yst</a>?)</h3>
+<h3 id="why-my-homemade-pancake-and-why-not-jekyll-hakyll-yst">Why my homemade pancake? (and why not <a href="http://jekyllrb.com/">Jekyll</a> / <a href="http://jaspervdj.be/hakyll/">Hakyll</a> / <a href="https://github.com/jgm/yst">yst</a>?)</h3>
 <p><a href="http://jekyllrb.com/">Jekyll</a> was a great static site generator. It does one thing well: generating static sites. It hides details about its underlying template engine (<a href="https://github.com/Shopify/liquid">liquid</a>) and markdown engine (<a href="https://github.com/gettalong/kramdown">kramdown</a>) and encapsulates them into a highly configurable site generator. The first version of <a href="http://www.soimort.org/">www.soimort.org</a> (and my first blog site ever hosted on GitHub) was powered by Jekyll since November 2011, until it's replaced by <strong>pancake</strong> in July 2015.</p>
 <p>The reason I decided to migrate from Jekyll to my own, minimal static site solution isn't because Jekyll is not good, nor Jekyll lacks of the functionality I need. It's because Jekyll is too much beyond what I really need.</p>
 <p>Jekyll consists of over <em>10,000</em> lines of Ruby code (not including other gems such as the template engine and the markdown engine). <strong>Pancake</strong> has only about <em>200</em> lines (not including pandoc); the whole source code is a self-contained Ruby script, which can be readable in 15 minutes. The most important thing is, it has every functionality I need and it's fully under control due to its tiny size; anything more than that looks like an overkill to me.</p>
@@ -122,15 +127,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul>
 <p>Last but not the least, geeks keep writing homemade static site generators all the time, even if they were the only user of their blogging tool and they don't even actually blog. So just why not? It's always fun to build something.</p>
 <p>Get a copy of <strong>pancake</strong> <a href="https://github.com/soimort/soimort.github.io/blob/master/pancake">here</a> (the source code is released into the public domain).</p>
-</section>
-</section>
-<section id="monkeydown" class="level2">
-<h2><a href="http://www.soimort.org/filters/README.html">Monkeydown</a></h2>
+<h2 id="monkeydown"><a href="http://www.soimort.org/filters/README.html">Monkeydown</a></h2>
 <p><strong>Monkeydown</strong> (or &quot;Monkey Flavored Markdown&quot;) is an extension to the standard / pandoc markdown format, implemented as a pandoc filter. It is used in all blog posts on this site.</p>
 <p>For more details, see: <a href="http://www.soimort.org/filters/README.html" class="uri">http://www.soimort.org/filters/README.html</a></p>
-</section>
-<section id="jsinliner.py" class="level2">
-<h2>jsinliner.py</h2>
+<h2 id="jsinliner.py">jsinliner.py</h2>
 <p><strong>jsinliner.py</strong> is a pandoc filter to enable neater inlining of raw HTML, CSS and JavaScript code in markdown.</p>
 <p>Examples: (embed raw HTML/CSS/JavaScript in code blocks identified by <strong><code>:html</code></strong>, <strong><code>:css</code></strong>, <strong><code>:js</code></strong> respectively)</p>
 <pre><code>```:html
@@ -158,11 +158,6 @@ a {
 }
 ```</code></pre>
 <p>Source code: <a href="https://github.com/soimort/soimort.github.io/blob/master/filters/jsinliner.py" class="uri">https://github.com/soimort/soimort.github.io/blob/master/filters/jsinliner.py</a></p>
-<div class="references">
-
-</div>
-</section>
-</section>
 <a href="https://github.com/soimort/soimort.github.io"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 </body>
 </html>
