@@ -396,11 +396,11 @@ function cmdEmail() {
 }
 
 function cmdTweet() {
-  if (_meta['canonical'] && _meta['id']) {
+  if (_meta['site'] && _meta['id']) {
     window.open('https://twitter.com/intent/tweet?' +
                 'original_referer=' + encodeURIComponent(location.href) +
                 '&text=' + encodeURIComponent(_meta['title']) +
-                '&url=' + encodeURIComponent(_meta['canonical'] + _meta['id']) +
+                '&url=' + encodeURIComponent(_meta['site'] + _meta['id']) +
                 '&via=' + _meta['github-user']);
   }
 }

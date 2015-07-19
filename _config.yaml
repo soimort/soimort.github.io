@@ -9,7 +9,7 @@ raw-options: --section-divs
 csl: csl/ieee-with-url.csl
 # sitewide metadata
 schema: Blog
-canonical: http://www.soimort.org/
+site: http://www.soimort.org/
 contact: mailto:soi@mort.ninja
 github-user: soimort
 github-repo: soimort.github.io

@@ -17,7 +17,7 @@
     <!-- begin js -->
     $for(js)$<script src="$js$"></script>
     $endfor$<!-- end js -->
-    <link rel="canonical" href="$canonical$$id$" />
+    <link rel="canonical" href="$site$$id$" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" />
     <!-- begin css -->
@@ -52,7 +52,7 @@
       $for(author)$<address class="author">$author$</address>
       $endfor$<!-- end author -->
       <!-- begin date -->
-      $if(date)$<a href="$canonical$$id$"><time datetime="$date$">$date$</time></a>
+      $if(date)$<a href="$site$$id$"><time datetime="$date$">$date$</time></a>
       $endif$<!-- end date -->
     </header>
     $endif$<!-- end title -->
