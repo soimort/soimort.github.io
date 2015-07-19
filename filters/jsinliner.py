@@ -54,7 +54,7 @@ def inliner(key: str, value: dict, fmt: str, meta: dict) -> dict:
 
                 if 'meta' in cmd:
                     script = 'var _meta = new Object();\n'
-                    for meta_f in meta:
+                    for meta_f in sorted(meta):
                         if meta[meta_f]['t'] == 'MetaString':
                             meta_v = meta[meta_f]['c']
                             script += "_meta['{}'] = '{}';\n" \
