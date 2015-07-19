@@ -10,8 +10,18 @@ Unless otherwise stated, the content of this article is dedicated to the public 
 
 ⁂
 
+<!-- initialize page-wide metadata (for use in JavaScript) -->
 :meta
 
+<!-- initialize page-wide style -->
+```:css
+body { background-image: url('/images/laugh-now.png'); }
+@media (max-width: 1023px), (max-height: 575px), (orientation: portrait), print {
+  body { background-image: none; }
+}
+```
+
+<!-- initialize page-wide UI -->
 <div id="DROPDOWN"></div>
 <div id="HUD">
 
