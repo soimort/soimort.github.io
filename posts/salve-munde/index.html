@@ -102,7 +102,7 @@
       <li><a href="#math-rendering">Math rendering</a></li>
       <li><a href="#citation-rendering">Citation rendering</a></li>
       <li><a href="#footnotes">Footnotes</a></li>
-      <li><a href="#citations"><span field="citations" class="interpolated">References</span></a></li>
+      <li><a href="#citations"><span class="interpolated" field="citations">References</span></a></li>
       </ul>
     </nav>
     <!-- end toc -->
@@ -643,6 +643,7 @@
 Unless otherwise stated, the content of this article is dedicated to the public domain. No rights reserved.
 </footer>
 <p>⁂</p>
+<!-- initialize page-wide metadata (for use in JavaScript) -->
 <script>
 var _meta = new Object();
 _meta['bibliography'] = '/home/soimort/soimort/soimort.github.io/posts/salve-munde/source.bib';
@@ -667,6 +668,14 @@ _meta['target'] = 'index.html';
 _meta['template'] = 'templates/default.html5';
 _meta['title'] = 'Salve, munde';
 </script>
+<!-- initialize page-wide style -->
+<style type="text/css">
+body { background-image: url('/images/laugh-now.png'); }
+@media (max-width: 1023px), (max-height: 575px), (orientation: portrait), print {
+  body { background-image: none; }
+}
+</style>
+<!-- initialize page-wide UI -->
 <div id="DROPDOWN">
 
 </div>
@@ -794,7 +803,7 @@ _meta['title'] = 'Salve, munde';
 </div>
 </section>
 <section id="citations" class="level2">
-<h2><span field="citations" class="interpolated">References</span></h2>
+<h2><span class="interpolated" field="citations">References</span></h2>
 <!-- start references & footnotes -->
 <!-- DO NOT REMOVE THIS COMMENT, otherwise section will not be wrapped! -->
 <div class="references">
