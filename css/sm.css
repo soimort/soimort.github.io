@@ -1,4 +1,4 @@
-/*! sans mono theme v0.1.0 | Public Domain */
+/*! sans mono theme v0.1.1 | Public Domain */
 
 body {
   width: 60%;
@@ -8,22 +8,26 @@ body {
 }
 
 code {
+  font-family: 'Droid Sans Mono', 'Liberation Mono', 'DejaVu Sans Mono', Courier, FreeMono, monospace;
   font-size: .9em;
-  font-family: Consolas, 'Liberation Mono', 'Droid Sans Mono', 'DejaVu Sans Mono', Courier, freemono, monospace;
 }
 
 a {
   color: maroon;
 }
 
-#TOC {
+header {
+  visibility: hidden;
   position: fixed;
-  width: 20%;
-  right: 5%;
-  font-size: .8em;
 }
 
+#TOC {
+  position: fixed;
+  right: 5%;
+  width: 20%;
+  font-size: .8em;
+}
 #TOC ul {
-  list-style: none;
   padding-left: 1em;
+  list-style: none;
 }
