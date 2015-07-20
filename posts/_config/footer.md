@@ -1,4 +1,4 @@
-</section><section id="FIN">
+## %{FIN}
 
 ***
 
@@ -10,9 +10,6 @@ Unless otherwise stated, the content of this article is dedicated to the public 
 
 ⁂
 
-<!-- initialize page-wide metadata (for use in JavaScript) -->
-:meta
-
 <!-- initialize page-wide style -->
 ```:css
 body { background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/s285j4g4rwco5d3/laugh-now.png'); }
@@ -20,6 +17,9 @@ body { background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/s285
   body { background-image: none; }
 }
 ```
+
+<!-- initialize page-wide metadata (for use in JavaScript) -->
+:meta
 
 <!-- initialize page-wide UI -->
 <div id="DROPDOWN"></div>
