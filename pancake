@@ -28,6 +28,7 @@ IGNORED_EXT  = ['.html', '.htm']
 SETTINGS = {
   'preload' => true,
   'meta'    => [],
+  'source'  => [],
 }
 
 module Pancake
@@ -63,7 +64,7 @@ module Pancake
 
     # find preloadable metadata files and source files
     metadata_files = SETTINGS['meta']
-    source_files = []
+    source_files = SETTINGS['source']
     if SETTINGS['preload']
       files = []
       paths.each do |path|
@@ -166,6 +167,9 @@ if __FILE__ == $0
       when 'meta'
         i "[#{arg_no+1}] '/#{opt_name}' control option found."
         SETTINGS['meta'] = [opt_val]
+      when 'source'
+        i "[#{arg_no+1}] '/#{opt_name}' control option found."
+        SETTINGS['source'] = [opt_val]
       else
         w "[#{arg_no+1}] '/#{opt_name}' control option not found."
       end
