@@ -49,7 +49,7 @@
       $if(subtitle)$<h1 class="subtitle">$subtitle$</h1>
       $endif$<!-- end subtitle -->
       <!-- begin author -->
-      $for(author)$<address class="author">$author$</address>
+      $for(author)$<a href="$site$"><address class="author">$author$</address></a>
       $endfor$<!-- end author -->
       <!-- begin date -->
       $if(date)$<a href="$site$$id$"><time datetime="$date$">$date$</time></a>
