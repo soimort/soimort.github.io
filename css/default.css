@@ -1,7 +1,7 @@
 /* Ivoire theme (CSS part)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-19 (v0.1.1)
+ * Version: 2015-07-20 (v0.1.2)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -197,11 +197,14 @@ figcaption, div.figure p.caption {
 }
 
 /* Final section (including footer) */
-#FIN {
+#fin {
   line-height: 5em;
   text-align: center;
 }
-#FIN footer {
+#fin h2 {
+  visibility: hidden;
+}
+#fin footer {
   line-height: 1em;
   font-size: .8em;
   text-align: right;
