@@ -10,7 +10,7 @@
     $endif$<meta name="generator" content="pandoc" />
     $for(author-meta)$<meta name="author" itemprop="author" content="$author-meta$" />$endfor$
     $if(description)$<meta name="description" itemprop="description" content="$description$" />
-    $endif$<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+    $endif$<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$$if(title-postfix)$ | $title-postfix$$endif$</title>
     <!--[if lt IE 9]>
     <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
