@@ -15,7 +15,7 @@ Unless otherwise stated, the content of this article is dedicated to the public 
 
 <!-- initialize page-wide style -->
 ```:css
-body { background-image: url('/images/laugh-now.png'); }
+body { background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/s285j4g4rwco5d3/laugh-now.png'); }
 @media (max-width: 1023px), (max-height: 575px), (orientation: portrait), print {
   body { background-image: none; }
 }
