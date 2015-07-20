@@ -267,11 +267,11 @@ Set mark in Emacs: [C-SPC](:kbd), [C-@](:kbd), [M-x set-mark-command](:kbd).
 
 :< [ [View source](https://github.com/%{github-user}/%{github-repo}/blob/master/%{id}/%{source}#L266) ]
 
-![Laugh now (Original)](/images/laugh-now.png "Original")
+![Laugh now (Original)](https://i0.wp.com/dl.dropboxusercontent.com/s/s285j4g4rwco5d3/laugh-now.png "Original")
 
-![:w=30% Laugh now (30%)](/images/laugh-now.png "30%")
+![:w=30% Laugh now (30%)](https://i0.wp.com/dl.dropboxusercontent.com/s/s285j4g4rwco5d3/laugh-now.png "30%")
 
-![:w=10% Laugh now (10%)](/images/laugh-now.png "10%")
+![:w=10% Laugh now (10%)](https://i0.wp.com/dl.dropboxusercontent.com/s/s285j4g4rwco5d3/laugh-now.png "10%")
 
 ## Math rendering
 
