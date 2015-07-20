@@ -1,7 +1,7 @@
 /* Ivoire theme (JavaScript part)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-18 (v0.1.0)
+ * Version: 2015-07-20 (v0.1.1)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -487,19 +487,27 @@ function cmdRight() {
   }, 400);
 }
 
-/* Zoom in / out (non-standard, WebKit & IE only)
+/* Zoom in / out
  * see <https://css-tricks.com/almanac/properties/z/zoom/>
  * don't use MozTransform to scale in Firefox - it's seriously fucked up */
 function cmdZoomIn() {
-  var step = 5;
-  currentZoom += step;
-  $('body').css('zoom', ' ' + currentZoom + '%');
+  if ($('body').css('zoom')) { // non-standard, WebKit & IE only
+    currentZoom += 5;
+    $('body').css('zoom', ' ' + currentZoom + '%');
+  } else {
+    var size = parseInt($('body').css('font-size')) + 1;
+    $('body').css('font-size', size + 'px');
+  }
 }
 
 function cmdZoomOut() {
-  var step = 5;
-  currentZoom -= step;
-  $('body').css('zoom', ' ' + currentZoom + '%');
+  if ($('body').css('zoom')) { // non-standard, WebKit & IE only
+    currentZoom -= 5;
+    $('body').css('zoom', ' ' + currentZoom + '%');
+  } else {
+    var size = parseInt($('body').css('font-size')) - 1;
+    $('body').css('font-size', size + 'px');
+  }
 }
 
 function scrollTo(target) {
