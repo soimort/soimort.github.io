@@ -13,6 +13,7 @@ site: https://www.soimort.org/
 contact: mailto:soi@mort.ninja
 github-user: soimort
 github-repo: soimort.github.io
+title-postfix: soimort
 css: ["/css/normalize.css", "/css/default.css",
       "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"]
 js: ["/js/jquery-2.1.4.min.js",
