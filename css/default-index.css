@@ -1,0 +1,102 @@
+/* Ivoire theme (CSS part for index.html, imported after default.css)
+ * (designed for exclusive use on www.soimort.org)
+ *
+ * Version: 2015-07-22 (v0.1.0)
+ * Author: Mort Yao <soi@mort.ninja>
+ * Copyright: (C) 2015 Mort Yao
+ */
+
+body {
+  background-attachment: scroll;
+  background-position: 72% 0;
+}
+
+header {
+  top: 80px;
+}
+
+header h1 {
+  margin-bottom: 0;
+  font-size: 3.2em;
+}
+
+header h1.title {
+  font-family: _my_caption, 'PT Serif', serif;
+}
+
+header h1.subtitle {
+  font-size: 1.5em;
+}
+
+article {
+  left: 35%;
+  top: 280px;
+  width: 55%;
+}
+
+section h1 {
+  visibility: hidden;
+  font-size: 0;
+}
+
+section#alpha {
+  position: fixed;
+  left: 0;
+  top: 280px;
+  width: 30%;
+  text-align: right;
+}
+
+section#alpha div {
+  position: relative;
+  padding: .8em;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: .5em;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+}
+
+section#alpha div:hover {
+  background-color: gainsboro;
+  color: black;
+}
+
+section#alpha a {
+  color: maroon;
+}
+
+section#alpha a:hover {
+  text-decoration: none;
+}
+
+section#beta p {
+  margin: 0;
+  padding: .8em;
+}
+
+/* For small screens (mobile devices) or portrait orientation */
+@media (max-width: 1023px), (max-height: 575px), (orientation: portrait) {
+  body {
+    background-position: 100% 200px;
+    background-size: auto 100px;
+  }
+
+  header {
+    top: 0;
+  }
+
+  article {
+    left: 25%;
+    top: 320px;
+    width: 65%;
+  }
+
+  section#alpha {
+    position: absolute;
+    left: -50%;
+    top: 0;
+  }
+}
