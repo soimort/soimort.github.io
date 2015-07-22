@@ -1,7 +1,7 @@
 /* Ivoire theme (JavaScript part)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-20 (v0.1.1)
+ * Version: 2015-07-22 (v0.1.2)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -11,7 +11,7 @@
 var $buoop = {vs: {i: 8, f: 5, o: 12, s: 5.1, n: 12, c: 23}};
 function $buo_f() {
   var e = document.createElement("script");
-  e.src = "//browser-update.org/update.min.js";
+  e.src = "/js/browser-update.min.js";
   document.body.appendChild(e);
 };
 try { document.addEventListener("DOMContentLoaded", $buo_f, false) }
