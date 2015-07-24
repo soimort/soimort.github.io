@@ -62,6 +62,7 @@ section#alpha div {
 section#alpha div:hover {
   background-color: gainsboro;
   color: black;
+  opacity: .8;
 }
 
 section#alpha a {
