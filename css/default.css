@@ -1,7 +1,7 @@
 /* Ivoire theme (CSS part)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-20 (v0.1.2)
+ * Version: 2015-07-24 (v0.1.3)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -142,6 +142,9 @@ pre { /* code blocks */
   border-radius: 1em;
   font-size: .9em;
   line-height: 1.2em;
+}
+pre code {
+  display: block;
 }
 kbd {
   margin-right: .25em;
