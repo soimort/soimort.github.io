@@ -1,0 +1,109 @@
+---
+title: FAQ
+css: ["/css/normalize.css", "/css/default.css",
+      "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css",
+      "/css/default-index.css"]
+article: true
+
+---
+
+# %{BETA}
+
+#### What tool do you use to create your website?
+
+GNU Emacs.
+
+#### What tool do you use to …?
+
+GNU Emacs.
+
+#### Is Emacs superior than Vim?
+
+Yes.
+
+#### Is Vim superior than Emacs?
+
+Yes.
+
+#### Is command-line interface superior than graphical interface?
+
+Not really. It's just faster and more flexible than many poorly designed GUIs.
+
+#### What's your operating system of choice?
+
+A non-rolling [Arch](https://www.archlinux.org/) installation of GNU/Linux. Because Arch is *simpler* than others. "Simple" in the sense that users always have easy and straightforward control of things, not in a sense like "having this fancy suspicious shit installed is just one-click-away".
+
+Because I can't risk breaking my system unintentionally for updates I don't badly need, I no longer follow the official Arch development and I'm against its rolling release model.
+
+#### Which DE / WM do you use?
+
+GNOME 3. Every desktop environment sucks, this one just sucks less.
+
+I don't usually have that many (like, 3 or more) windows tiling on my screen to distract myself. And I hardly call that efficiency. Whenever there's a full-fledged DE, I use it for a consistent user experience.
+
+#### Do you program? How?
+
+I don't just "program", I design best possible API and user interface with consistency and simplicity, and implement them properly with least effort.
+
+*A program without good design is a program not worth programming.*
+
+#### Why do you blog?
+
+Cogito, ergo sum.
+
+#### Will you do reciprocal links on this site?
+
+No.
+
+#### Will you do paid links / ads on this site?
+
+No.
+
+#### How do I get in touch with you?
+
+You are most welcome to [send me an email](mailto:soi@mort.ninja). Note that I read and reply emails using a lazy evaluation strategy (namely "reply-by-need"), therefore I cannot guarantee a reply for every email I get, especially during the time when I drive myself crazy for tons of todos and deadlines.
+
+Optionally, you might want to [encrypt your message](https://keybase.io/encrypt#soimort) before reaching me through an unreliable channel.
+
+I am not a fan of instant messaging. Sorry for the inconvenience.
+
+#### How do I find you on the Internet?
+
+My IRC handle is `soimort`, which is also my identity on [GitHub](https://github.com/soimort) and [Twitter](https://twitter.com/soimort), as well as on a few other SNS sites like [Flickr](https://www.flickr.com/photos/soimort/), [Tumblr](http://soimort.tumblr.com/) and [SoundCloud](https://soundcloud.com/soimort).
+
+I take SNS as a very personal thing. I hate impression management, ego sum qui sum. If you don't want to know me in person or not interested in stuff and nonsense that interest me, please don't bother connecting with me. There are numerous comforting people to follow on the Internet, and I'm not one of them. Spammers, unfollow-on-followback self-promoters, marketing bots and trolls that are too serious to be interesting will get blocked timely.
+
+You won't find me on Facebook ([here](https://stallman.org/facebook.html)'s why), WeChat, or any other SNS that I believe to be contributing to government surveillance and censorship.
+
+#### How do I meet you in person?
+
+You'll have to run down the hill and jump over the first of the six little brooks.
+
+# %{ALPHA}
+
+```:html
+<a href="/"><div style="font-size:1.5em" title="Home &lt;H&gt;">
+  <i class="fa fa-home"></i>
+</div></a>
+<a href="/about"><div>
+  About me
+</div></a>
+<a href="/about/site"><div>
+  About this site
+</div></a>
+<a href="/about/acknowledgments"><div>
+  Acknowledgments
+</div></a>
+<div>
+  FAQ
+</div>
+```
+
+# %{FIN}
+
+<!-- initialize page-wide style -->
+```:css
+body {
+  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/qawcyrowaeniur6/evolution.png');
+}
+```
