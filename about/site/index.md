@@ -34,7 +34,8 @@ Unless otherwise indicated or obviously owned by someone else, the content of ar
 
 Note that most media contents hosted elsewhere (e.g. photos, cliparts, fonts, audios and videos) and many code components used to build this site (e.g. open-source CSS and JavaScript assets) are not considered as contents of articles, therefore they are, by default, COPYRIGHTED. As long as they are not put into the public domain, they may NOT be reused without an explicit permission or license from their original author(s). Please find a list of open-source components used on this site [here](/about/acknowledgments#open-source).
 
-
+:<
+~~:font-size=.8em Last updated: [30 Jul, 2015](/about/site)~~
 
 # %{ALPHA}
 
@@ -61,6 +62,6 @@ Note that most media contents hosted elsewhere (e.g. photos, cliparts, fonts, au
 <!-- initialize page-wide style -->
 ```:css
 body {
-  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/qawcyrowaeniur6/evolution.png');
+  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/20sy2j8p9z3jky8/robot%2Bqr_b.png');
 }
 ```

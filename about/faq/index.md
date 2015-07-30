@@ -108,6 +108,9 @@ I'm not a Buddhist practitioner; That's why I have chosen this name and am conte
 
 You'll have to run down the hill and jump over the first of the six little brooks.
 
+:<
+~~:font-size=.8em Last updated: [30 Jul, 2015](/about/faq)~~
+
 # %{ALPHA}
 
 ```:html
@@ -133,8 +136,8 @@ You'll have to run down the hill and jump over the first of the six little brook
 <!-- initialize page-wide style -->
 ```:css
 body {
-  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/qawcyrowaeniur6/evolution.png');
-  }
+  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/20sy2j8p9z3jky8/robot%2Bqr_b.png');
+}
 @font-face {
   font-family: HanaMinA;
   font-style: normal;
