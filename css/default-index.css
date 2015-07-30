@@ -1,7 +1,7 @@
 /* Ivoire theme (CSS part for index.html, imported after default.css)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-22 (v0.1.0)
+ * Version: 2015-07-30 (v0.1.1)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -30,7 +30,7 @@ header h1.subtitle {
 
 article {
   left: 35%;
-  top: 280px;
+  top: 240px;
   width: 55%;
 }
 
