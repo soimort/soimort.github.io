@@ -136,7 +136,7 @@ You'll have to run down the hill and jump over the first of the six little brook
 <!-- initialize page-wide style -->
 ```:css
 body {
-  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/20sy2j8p9z3jky8/robot%2Bqr_b.png');
+  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/yz1pjkvqip2mpok/robot%2Blogo_b.png');
 }
 @font-face {
   font-family: HanaMinA;
