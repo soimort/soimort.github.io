@@ -28,7 +28,7 @@ article: true
 <!-- initialize page-wide style -->
 ```:css
 body {
-  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/vctybc6bjwcikb2/dep-types_b.png');
+  background-image: none;
 }
 img {
   float: right;
