@@ -95,16 +95,16 @@ You'll have to run down the hill and jump over the first of the six little brook
   <i class="fa fa-home"></i>
 </div></a>
 <a href="/about"><div>
-  About me
+  About me &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <a href="/about/site"><div>
-  About this site
+  About this site &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <a href="/about/acknowledgments"><div>
-  Acknowledgments
+  Acknowledgments &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <div>
-  FAQ
+  FAQ &nbsp;<i class="fa fa-question-circle"></i>
 </div>
 ```
 

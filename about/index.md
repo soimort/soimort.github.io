@@ -164,16 +164,16 @@ See [FAQ](/about/faq).
   <i class="fa fa-home"></i>
 </div></a>
 <div>
-  About me
+  About me &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div>
 <a href="/about/site"><div>
-  About this site
+  About this site &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <a href="/about/acknowledgments"><div>
-  Acknowledgments
+  Acknowledgments &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <a href="/about/faq"><div>
-  FAQ
+  FAQ &nbsp;<i class="fa fa-question-circle"></i>
 </div></a>
 ```
 

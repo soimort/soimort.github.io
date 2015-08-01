@@ -45,16 +45,16 @@ Note that most media contents hosted elsewhere (e.g. photos, cliparts, fonts, au
   <i class="fa fa-home"></i>
 </div></a>
 <a href="/about"><div>
-  About me
+  About me &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <div>
-  About this site
+  About this site &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div>
 <a href="/about/acknowledgments"><div>
-  Acknowledgments
+  Acknowledgments &nbsp;<i class="fa fa-arrow-circle-right"></i>
 </div></a>
 <a href="/about/faq"><div>
-  FAQ
+  FAQ &nbsp;<i class="fa fa-question-circle"></i>
 </div></a>
 ```
 
