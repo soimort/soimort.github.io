@@ -61,21 +61,38 @@
     <!-- end toc -->
     <!-- begin body -->
     <article>
+<section id="beta" class="level1">
+<h1></h1>
+</section>
 <section id="alpha" class="level1">
 <h1></h1>
 <a href="/"><div style="font-size:1.5em" title="Home &lt;H&gt;">
   <i class="fa fa-home"></i>
 </div></a>
+<div id="alpha-msg"></div>
 </section>
 <section id="fin" class="level1">
 <h1></h1>
+<script>
+document.onreadystatechange = function () {
+  if (document.readyState == 'complete') {
+    var uriPath = decodeURIComponent(location.href).split('/');
+    var postId = uriPath[uriPath.length - 2];
+    if (postId.match(/^[0-9][0-9][0-9]$/)) {
+      $('#alpha-msg').html('<p>Sorry, the post you are looking for (<a href="' + location.href +
+      '">' + location.href + '</a>) is outdated and has been removed from this site.</p>' +
+      '<p>Thank you for your interest so far.</p>');
+    }
+  }
+};
+</script>
 <!-- initialize page-wide style -->
 <style type="text/css">
 body {
-background-attachment: fixed;
-background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/sm7385rmpevm0jv/404.png');
-background-position: 90% bottom;
-background-size: 50%;
+  background-attachment: fixed;
+  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/sm7385rmpevm0jv/404.png');
+  background-position: 90% bottom;
+  background-size: 50%;
 }
 </style>
 <!-- initialize page-wide metadata (for use in JavaScript) -->
