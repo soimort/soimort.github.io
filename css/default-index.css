@@ -1,7 +1,7 @@
 /* Ivoire theme (CSS part for index.html, imported after default.css)
  * (designed for exclusive use on www.soimort.org)
  *
- * Version: 2015-07-30 (v0.1.1)
+ * Version: 2015-08-01 (v0.1.2)
  * Author: Mort Yao <soi@mort.ninja>
  * Copyright: (C) 2015 Mort Yao
  */
@@ -26,6 +26,10 @@ header h1.title {
 
 header h1.subtitle {
   font-size: 1.5em;
+}
+
+header address.author {
+  margin-top: 1em;
 }
 
 article {
