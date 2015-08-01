@@ -1,5 +1,6 @@
 ---
 title: Acknowledgments
+author: Mort Yao
 css: ["/css/normalize.css", "/css/default.css",
       "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css",
       "/css/default-index.css"]
@@ -8,6 +9,15 @@ article: true
 ---
 
 # %{BETA}
+
+## Cloud services
+
+This site would not have been online without some cool (also free of charge) services provided by commercial companies. Thanks to:
+
+- [<i class="fa fa-github"></i> GitHub](https://github.com/), and their [GitHub Pages](https://pages.github.com/) for free web hosting
+- [<i class="fa fa-cloud"></i> CloudFlare](https://www.cloudflare.com/)'s CDN and Universal SSL service
+- [<i class="fa fa-dropbox"></i> Dropbox](https://www.dropbox.com/) as a file hosting service
+- [<i class="fa fa-google"></i> Google Fonts](https://www.google.com/fonts) as a web font hosting service
 
 ## Open source
 
@@ -29,25 +39,16 @@ For open source tools I wrote to dogfood myself, see [here](/README.html) for de
 
 ## Fonts
 
-For typomaniacs, the typeface for Latin scripts is [PT Serif](http://www.paratype.com/public/), a transitional serif typeface with humanistic terminals, designed by ParaType. From my experience, it is one of the best rendered free serif faces on FreeType.
+For typomaniacs, the Latin typeface used on this site is [PT Serif](http://www.paratype.com/public/), a transitional serif typeface with humanistic terminals, designed by ParaType. From my experience, it is one of the best rendered free serif faces on FreeType.
 
 The preferred CJK typeface on this site is [Hanazono Mincho](http://fonts.jp/hanazono/).
 
 ## Artworks
 
-Some of the clip arts appeared on this site are just shameless ripoffs or parodies. I owe those original authors for inspiration. Cheers [Banksy](https://en.wikipedia.org/wiki/Banksy)!
-
-## Services
-
-This site would not have been online without some cool (and free of charge) services provided by commercial companies. Thanks to:
-
-- [GitHub](https://github.com/), and their [GitHub Pages](https://pages.github.com/) for free web hosting
-- [CloudFlare](https://www.cloudflare.com/)'s CDN and Universal SSL service
-- [Dropbox](https://www.dropbox.com/) as a file hosting service
-- [Google Fonts](https://www.google.com/fonts) as a web font hosting service
+Some of the clip arts appeared on this site are just shameless ripoffs or parodies. I owe their original authors for inspiration. Cheers [Banksy](https://en.wikipedia.org/wiki/Banksy)!
 
 :<
-~~:font-size=.8em Last updated: [30 Jul, 2015](/about/acknowledgments)~~
+~~:font-size=.8em Last updated: [1 Aug, 2015](/about/acknowledgments)~~
 
 # %{ALPHA}
 

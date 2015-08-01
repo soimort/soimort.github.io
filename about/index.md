@@ -1,6 +1,7 @@
 ---
 title: About
 subtitle: me
+author: Mort Yao
 css: ["/css/normalize.css", "/css/default.css",
       "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css",
       "/css/default-index.css"]
