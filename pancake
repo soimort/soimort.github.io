@@ -101,8 +101,11 @@ module Pancake
       opts << ['--filter', filter]
     end if meta['filter'] || meta['filters']
     # bibliography file
-    opts << ['--bibliography',
-             File.join(target_path, meta['source-bibliography'])] if meta['source-bibliography']
+    if meta['source-bibliography'] and
+      File.exist?(File.join(target_path, meta['source-bibliography']))
+      opts << ['--bibliography',
+               File.join(target_path, meta['source-bibliography'])]
+    end
     # target (output) file
     opts << ['--output',
              File.join(target_path, meta['target'])] if meta['target']
