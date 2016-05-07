@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/soimort
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.soimort.org
+  * I am soimort (https://keybase.io/soimort) on keybase.
+  * I have a public key with fingerprint 8A9C A653 83B6 71BC 995C  CEAE 07DA 00CB 7820 3251
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101ede505ead0b752f5431511808ba691a42765a61658ec3af81ea5e570963577da0a",
+            "fingerprint": "8a9ca65383b671bc995cceae07da00cb78203251",
+            "host": "keybase.io",
+            "key_id": "07da00cb78203251",
+            "kid": "0101ede505ead0b752f5431511808ba691a42765a61658ec3af81ea5e570963577da0a",
+            "uid": "6723ac1d4015947d0d8f2afa217ea600",
+            "username": "soimort"
+        },
+        "revoke": {
+            "sig_ids": [
+                "a3ada229fc7de80046d87eb445a5deac171c826c66c468fe3e2e60d59dd23d7d0f"
+            ]
+        },
+        "service": {
+            "hostname": "www.soimort.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1462652164,
+    "expire_in": 157680000,
+    "prev": "03506cbbcd8ca346a123eab9cb1e5264e2fde9e3dc7145014159789e1187346d",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owGtUl1sFUUYvbcI3DbWwENTHppURqIvpc7M7szsXv/TmmhIAySCtYCX2ZlvL0vb
+u5fd7S0t6YP6QFSIaExIjNoKpWkb+Q9iEMTEmKapRgNP1kaQEBIIiT4Q26qhztb6
+5KtPk5k53znnO993qHZZJpddOZ2Z2vsw3Zyduu1lXm5uy+1DXqj7UH4f6oTFA7o0
+xEmhM9AojzDBBDQwzEBq7AlGfWZbhBHiYMeT3CXSpoIzyQlnDihL+g4ByYAJ7HKL
+CaEllqgJ+UGpCFE5CkqJoXWkqyRnlmN5XBBPuS5TCiTgFI6VJxyKLcqIKdwVxmmF
+MefJGJqD0LyZS+Efe//F/8++exbpuKCWVETbmDDXFhprx6fSl5QIkBzjFBhDVJLd
+YNBxGHSHUYIGmlAElbAT0ljjoGg8xyi/DUlLakmp6yuhwcHY5toR4Nk2k0yD0RFE
+OZQrzpXNHR8soMCxZq7W1NJG3Uc7DLcRrARqkTwNaUm8t7e3eclAcxgVjbNyFCah
+CrvM564kKcf51FjSVz6/CAevsERU8IKSNmMyJRWI4iAsoTwxUJUEKTOxOeWMEm43
+IdhbDiIoBCmCCW56wDgVgkqavcUwV56ntKOkZXNJqAXSc5VHgFFuA/U1uGBpJYjN
+MLFNpsJxwcxGGLhGaWt7SqHhJsaoLKaRBsWSTHoiQAM1b2YbHshkc5kVy6vSBc7U
+VK/6d6svta+8/0zV97DZvVtaP3aUvaM/6M8lZFPt8f1fPPLrkbPDw+/Vn9wyNv1H
+fvap7M2/Jnom5kcab9wqfjV7Z/vTLS+O/nZ50/iWycG2Yuu1gTWzDUPHa/pqj+2e
+2jmqWhe+CemHQz9YW4/xlo8XDu9fCNdOnvFbPlr7xIaR5ffEtcMbJn/8+eJPLYPP
+Pvb1c2+9/XzXrbmN3/X2v1r36Hzjqf62c5XLnz35IIqqfz/57gV8f/J6/Y5vv3xj
+tv18bvT9q69vdBvvvHDiwJ91rejg7qMNe8bDU1HHBbTu82Cu+pfVp6sOjqxLHprv
+OCTmPvGvN13qaK9bdWVm+LXxJPdp9eP1J47QezMT67tXv7Lw0oHWvwE=
+=OLs7
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/soimort
+
+==================================================================
