@@ -138,6 +138,23 @@ footer a {
   font-weight: bold;
 }
 
+/* (www.soimort.org) last updated: 2016-05-07 */
+
+aside#soimort-toolbar {
+  margin-top: 2.5%;
+  text-align: center;
+}
+
+aside#soimort-toolbar a {
+  padding: 8px;
+  border-radius: 4px;
+  transition: .5s;
+}
+aside#soimort-toolbar a:hover {
+  background-color: firebrick; /* $F */
+  color: ivory; /* $B */
+}
+
 
 
 @media (max-width: 1023px), (orientation: portrait) {

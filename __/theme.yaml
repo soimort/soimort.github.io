@@ -2,6 +2,7 @@
 css: [
   //cdn.soimort.org/fonts/api/URW-Palladio-L.css,
   //cdn.soimort.org/normalize/4.1.1/normalize.min.css,
+  //maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css,
   /__/css/style.css,
   ]
 header-includes: [
