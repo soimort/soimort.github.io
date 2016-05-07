@@ -1,0 +1,18 @@
+---
+css: [
+  //cdn.soimort.org/fonts/api/URW-Palladio-L.css,
+  //cdn.soimort.org/normalize/4.1.1/normalize.min.css,
+  /__/css/style.css,
+  ]
+header-includes: [
+  <script src="//cdn.soimort.org/jk/latest/jk.min.js"></script>,
+  <link rel="icon" href="/favicon.png">,
+  <link rel="apple-touch-icon" href="/favicon.png">,
+  ]
+raw-options: [
+  --section-divs,
+  --smart,
+  --mathjax,
+  ]
+output-format: html5
+---

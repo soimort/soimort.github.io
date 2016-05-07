@@ -1,0 +1,150 @@
+/* Akai theme (pandoc HTML5 template)
+ * designer:     soimort
+ * last updated: 2016-05-06
+ */
+
+/* General */
+
+body {
+  font-family: /* font stack (normal) */
+  Palatino, 'Palatino Linotype',  'Book Antiqua',
+  'URW Palladio L', 'Palladio URW', 'TeX Gyre Pagella', serif,
+  'HanaMinA', 'Adobe Song Std', 'Source Han Sans',
+  'WenQuanYi Micro Hei', 'WenQuanYi Zen Hei',
+  'Meiryo', 'Microsoft JhengHei', 'Microsoft YaHei';
+
+  font-size: 16px;
+  cursor: default;
+  overflow-x: hidden;
+  background-color: ivory; /* $B */
+  color: black; /* $T */
+}
+
+a {
+  text-decoration: none;
+  color: firebrick; /* $F */
+}
+
+code, kbd {
+  font-family: /* font stack (monospaced) */
+  'Inconsolata', Consolas, 'Ubuntu Mono',
+  'Latin Modern Mono', 'Anonymous Pro', 'FreeMono', monospace;
+
+}
+kbd {
+  margin: 1px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px dimgray;
+  background-color: black; /* $T */
+  color: ivory; /* $B */
+}
+
+
+
+/* Pseudo element: selection */
+
+::selection {
+  background-color: firebrick; /* $F */
+  color: ivory; /* $B */
+}
+::-moz-selection {
+  background-color: firebrick; /* $F */
+  color: ivory; /* $B */
+}
+
+::selection:window-inactive {
+  background-color: gainsboro; /* $G */
+}
+
+/* Pseudo element: scrollbar (WebKit-only) */
+
+::-webkit-scrollbar {
+  width: 32px;
+  height: 32px;
+  background-color: ivory; /* $B */
+}
+
+::-webkit-scrollbar-track {
+  background-color: ivory; /* $B */
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 64px;
+  border-radius: 32px;
+  border-style: solid;
+  border-width: 12px;
+  border-color: ivory; /* $B */
+  background-color: firebrick; /* $F */
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background-color: gainsboro; /* $G */
+}
+
+
+
+/* Contents (single column layout) */
+
+article {
+  position: absolute;
+  width: 50%;
+  left: 20%;
+  padding: 5%;
+  font-size: 15px; /* use minor fonts! */
+  line-height: 1.5em; /* optimize for readability */
+}
+
+header {
+  text-align: center;
+  font-variant: small-caps;
+}
+
+header .subtitle {
+  font-style: normal;
+}
+
+header address.author {
+  margin-top: 2em;
+  font-style: normal;
+}
+
+section h1, section h2, section h3,
+section h4, section h5, section h6 {
+  padding-top: 2em;
+  text-align: center;
+}
+
+figure {
+  margin: 1em 0;
+  text-align: center;
+}
+
+
+
+/* Footer */
+
+footer {
+  padding: .5em;
+  text-align: right;
+  font-size: .8em;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: firebrick; /* $F */
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 1023px), (orientation: portrait) {
+  article {
+    position: absolute;
+    width: 80%;
+    left: 5%;
+    padding: 5%;
+  }
+}
