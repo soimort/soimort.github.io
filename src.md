@@ -1,0 +1,41 @@
+---
+title: Through the Looking-Glass
+date: 2016-05-07
+
+include-before: <link rel="stylesheet" href="index.css">
+---
+
+(**2016-05-07**:
+This site is still under construction. Links may not be up yet.)
+
+
+
+* [About](http://mort.ninja/) *All you need to know about me.*
+* [Blog](//blog.soimort.org/) *Writings for fun.*
+
+***
+
+* [Wiki](//wiki.soimort.org/) *Writings for profit.*
+* [Notebook](/notebook) *Inspirational stuff.*
+* [Code](/code) *Practical stuff.*
+
+***
+
+* [Personal & Misc.](/personal) *Warning: Expect graphical content.*
+* [Gallery](/gallery) *Could be anything.*
+
+
+
+<aside id="soimort-links">
+<a title="Feed" href="https://www.soimort.org/atom.xml">
+<i class="fa fa-rss-square" aria-hidden="true"></i></a>
+<a title="GitHub" href="https://github.com/soimort" rel="nofollow">
+<i class="fa fa-github-square" aria-hidden="true"></i></a>
+<a title="Home" href="https://www.soimort.org/" id="soimort">
+<img src="/favicon.png" width="42px"></a>
+<a title="Twitter" href="https://twitter.com/soimort" rel="nofollow">
+<i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+<a title="Email" href="#" onclick="window.open(atob('bWFpbHRvOg==') +
+'soi' + atob('QA==') + 'mort.ninja')">
+<i class="fa fa-envelope-square" aria-hidden="true"></i></a>
+</aside>

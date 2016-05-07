@@ -1,0 +1,68 @@
+article {
+  padding-bottom: 0;
+}
+
+div#content {
+  padding-top: 1em;
+  text-align: center;
+}
+
+div#content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  line-height: 48px;
+}
+
+div#content li {
+  transition: .5s;
+  color: ivory; /* $B */
+}
+div#content li:hover {
+  color: firebrick; /* $F */
+}
+
+div#content li a {
+  font-variant: small-caps;
+}
+
+div#content li em {
+  display: block;
+  position: absolute;
+  right: 8.33%;
+  margin-top: -48px;
+  padding: 0;
+  font-size: 15px;
+}
+
+div#content hr {
+  width: 61.8%;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(178, 34, 34, 0.5), rgba(0, 0, 0, 0));
+}
+
+aside#soimort-links {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 2.5%;
+  text-align: center;
+  font-size: 24px;
+}
+
+aside#soimort-links #soimort {
+  position: relative;
+  top: .1em;
+}
+
+aside#soimort-toolbar {
+  visibility: hidden;
+}
+
+@media (max-width: 1280px) {
+  div#content li em {
+    margin-top: -24px;
+  }
+}
