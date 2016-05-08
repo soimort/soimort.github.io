@@ -11,17 +11,17 @@ This site is still under construction. Links may not be up yet.)
 
 
 * [About](http://mort.ninja/) *All you need to know about me.*
-* [Blog](//blog.soimort.org/) *Writings for fun.*
+* [Blog](//blog.soimort.org/) *Writings, or art of arranging characters.*
 
 ***
 
-* [Wiki](//wiki.soimort.org/) *Writings for profit.*
-* [Notebook](//babel.soimort.org/) *Inspirational stuff.*
-* [Code](//code.soimort.org/) *Practical stuff.*
+* [Wiki](//wiki.soimort.org/) *Finite set of (barely) working knowledge.*
+* [Notebook](//babel.soimort.org/) *Collection of pearls of languages.*
+* [Code](//code.soimort.org/) *Practical things I made.*
 
 ***
 
-* [Personal & Misc.](/personal) *Warning: Expect graphical content.*
+* [Personal & Misc.](/personal) *Warning: graphical content.*
 * [Gallery](/gallery) *Could be anything.*
 
 
