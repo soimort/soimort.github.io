@@ -16,8 +16,8 @@ This site is still under construction. Links may not be up yet.)
 ***
 
 * [Wiki](//wiki.soimort.org/) *Writings for profit.*
-* [Notebook](/notebook) *Inspirational stuff.*
-* [Code](/code) *Practical stuff.*
+* [Notebook](//babel.soimort.org/) *Inspirational stuff.*
+* [Code](//code.soimort.org/) *Practical stuff.*
 
 ***
 
