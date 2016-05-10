@@ -1,6 +1,6 @@
 /* Akai theme (pandoc HTML5 template)
  * designer:     soimort
- * last updated: 2016-05-06
+ * last updated: 2016-05-09
  */
 
 /* General */
@@ -90,7 +90,7 @@ article {
   position: absolute;
   width: 50%;
   left: 20%;
-  padding: 5%;
+  padding: 5% 5% 0 5%;
   font-size: 15px; /* use minor fonts! */
   line-height: 1.5em; /* optimize for readability */
 }
@@ -109,15 +109,36 @@ header address.author {
   font-style: normal;
 }
 
+div#content {
+  padding-top: 1em;
+}
+
 section h1, section h2, section h3,
 section h4, section h5, section h6 {
   padding-top: 2em;
   text-align: center;
 }
 
+section.footnotes {
+  font-size: .85em;
+}
+
 figure {
   margin: 1em 0;
   text-align: center;
+}
+img {
+  border-radius: 8px;
+}
+figcaption {
+  font-size: .85em;
+}
+
+hr {
+  width: 61.8%;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(178, 34, 34, 0.5), rgba(0, 0, 0, 0));
 }
 
 
