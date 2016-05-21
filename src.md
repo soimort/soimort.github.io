@@ -5,7 +5,7 @@ date: 2016-05-21
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-* [About](http://mort.ninja/) *A little bit about me.*
+* [About](/about) *A little bit about me.*
 
 ***
 
@@ -15,7 +15,7 @@ include-before: <link rel="stylesheet" href="index.css">
 
 ***
 
-* [Misc.](/m) *Miscellaneous (and personal).*
+* [Misc.](//meta.soimort.org/) *Miscellaneous (and personal).*
 
 <div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
 
