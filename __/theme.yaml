@@ -9,6 +9,7 @@ header-includes: [
   <script src="//cdn.soimort.org/jk/latest/jk.min.js"></script>,
   <link rel="icon" href="/favicon.png">,
   <link rel="apple-touch-icon" href="/favicon.png">,
+  <link rel="alternate" type="application/atom+xml" href="/atom.xml">,
   ]
 raw-options: [
   --section-divs,
