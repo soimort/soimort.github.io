@@ -61,6 +61,10 @@ aside#soimort-toolbar {
   visibility: hidden;
 }
 
+div#sketch {
+  text-align: center;
+}
+
 @media (max-width: 1280px) {
   div#content li em {
     margin-top: -24px;

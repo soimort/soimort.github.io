@@ -1,30 +1,23 @@
 ---
 title: Through the Looking-Glass
-date: 2016-05-07
+date: 2016-05-21
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-(**2016-05-07**:
-This site is still under construction. Links may not be up yet.)
-
-
-
-* [About](http://mort.ninja/) *All you need to know about me.*
-* [Blog](//blog.soimort.org/) *Writings, or art of arranging characters.*
+* [About](http://mort.ninja/) *A little bit about me.*
 
 ***
 
-* [Wiki](//wiki.soimort.org/) *Finite set of (barely) working knowledge.*
-* [Notebook](//babel.soimort.org/) *Collection of pearls of languages.*
-* [Code](//code.soimort.org/) *Practical things I made.*
+* [Blog](//blog.soimort.org/) *My writings.*
+* [Code](//code.soimort.org/) *My coding projects.*
+* [Wiki](//wiki.soimort.org/) *My knowledge base.*
 
 ***
 
-* [Personal & Misc.](/personal) *Warning: graphical content.*
-* [Gallery](/gallery) *Could be anything.*
+* [Misc.](/m) *Miscellaneous (and personal).*
 
-
+<div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
 
 <aside id="soimort-links">
 <a title="Feed" href="https://www.soimort.org/atom.xml">
