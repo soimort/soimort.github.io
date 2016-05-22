@@ -1,6 +1,6 @@
 ---
 title: Through the Looking-Glass
-date: 2016-05-21
+date: 2016-05-22
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
@@ -15,7 +15,7 @@ include-before: <link rel="stylesheet" href="index.css">
 
 ***
 
-* [Misc.](//meta.soimort.org/) *Miscellaneous (and personal).*
+* [More...](//i.soimort.org/) *More about me, personally.*
 
 <div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
 
