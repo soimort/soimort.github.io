@@ -1,21 +1,19 @@
 ---
 title: Through the Looking-Glass
-date: 2016-05-25
+date: 2016-07-11
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-* <small>[About](/about)</small> *A little bit about me.*
-
-***
-
-* [Wiki](//wiki.soimort.org/) *My knowledge base.*
-* [Code](//code.soimort.org/) *My coding projects.*
 * [Blog](//blog.soimort.org/) *My writings.*
+* [Wiki](//wiki.soimort.org/) *My knowledge base.*
 
 ***
 
-* <small>[More...](//i.soimort.org/)</small> *More about me, personally.*
+* <small>[Readings](//babel.soimort.org/)</small> *(Under construction)*
+* <small>[Music](//music.soimort.org/)</small> *(Under construction)*
+* <small>[Photolog](http://log.soimort.org/)</small> *(Alert: graphical content)*
+* <small>[...](//i.soimort.org/)</small>
 
 <div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
 
