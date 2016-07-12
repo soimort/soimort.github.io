@@ -1,6 +1,6 @@
 ---
 title: Through the Looking-Glass
-date: 2016-07-11
+date: 2016-07-12
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
@@ -12,8 +12,9 @@ include-before: <link rel="stylesheet" href="index.css">
 
 * <small>[Readings](//babel.soimort.org/)</small> *(Under construction)*
 * <small>[Music](//music.soimort.org/)</small> *(Under construction)*
-* <small>[Photolog](http://log.soimort.org/)</small> *(Alert: graphical content)*
-* <small>[...](//i.soimort.org/)</small>
+* <small>[Photolog
+<i class="fa fa-tumblr-square" aria-hidden="true"></i>](http://log.soimort.org/)</small> *(Alert: graphical content)*
+* <small>[...](//i.soimort.org/)</small> *(More...)*
 
 <div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
 
