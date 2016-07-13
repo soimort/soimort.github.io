@@ -21,7 +21,7 @@ include-before: <link rel="stylesheet" href="index.css">
 
 * <small>[Readings](//babel.soimort.org/)</small> *Some random reading notes, etc.*
 * <small>[Photolog
-<i class="fa fa-tumblr-square" aria-hidden="true"></i>](http://log.soimort.org/)</small> *(potentially graphical)*
+<i class="fa fa-tumblr-square" aria-hidden="true"></i>](http://log.soimort.org/)</small> *Photos of everyday life. <br><small>(potentially graphical)</small>*
 * <small>[...](//i.soimort.org/)</small> *More...*
 
 <!-- div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div -->
