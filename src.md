@@ -1,20 +1,24 @@
 ---
 title: Through the Looking-Glass
-date: 2016-07-12
+author:
+date: 2016-07-13
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
+
+"*Carpe diem, quam minimum credula postero.*"
+
+
 
 * [Blog](//blog.soimort.org/) *My writings.*
 * [Wiki](//wiki.soimort.org/) *My knowledge base.*
 
 ***
 
-* <small>[Readings](//babel.soimort.org/)</small> *(Under construction)*
-* <small>[Music](//music.soimort.org/)</small> *(Under construction)*
+* <small>[Readings](//babel.soimort.org/)</small> *Some random reading notes, etc.*
 * <small>[Photolog
-<i class="fa fa-tumblr-square" aria-hidden="true"></i>](http://log.soimort.org/)</small> *(Alert: graphical content)*
-* <small>[...](//i.soimort.org/)</small> *(More...)*
+<i class="fa fa-tumblr-square" aria-hidden="true"></i>](http://log.soimort.org/)</small> *(potentially graphical)*
+* <small>[...](//i.soimort.org/)</small> *More...*
 
 <div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
 
