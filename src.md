@@ -10,6 +10,10 @@ include-before: <link rel="stylesheet" href="index.css">
 
 
 
+* <small>[About me](/about)</small>
+
+***
+
 * [Blog](//blog.soimort.org/) *My writings.*
 * [Wiki](//wiki.soimort.org/) *My knowledge base.*
 
@@ -20,7 +24,7 @@ include-before: <link rel="stylesheet" href="index.css">
 <i class="fa fa-tumblr-square" aria-hidden="true"></i>](http://log.soimort.org/)</small> *(potentially graphical)*
 * <small>[...](//i.soimort.org/)</small> *More...*
 
-<div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div>
+<!-- div id="sketch"><img src="https://i0.wp.com/dl.dropboxusercontent.com/s/anxo7v9zwgbxnsi/chessboard.png"></div -->
 
 <aside id="soimort-links">
 <a title="Feed" href="https://www.soimort.org/atom.xml">
