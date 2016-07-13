@@ -36,6 +36,6 @@ Email: <soi@mort.ninja>
 
 GPG fingerprint: [`07DA 00CB 7820 3251`](https://keybase.io/soimort/key.asc)
 
-![](http://cdn.soimort.org/resources/signature.png)
+![](//cdn.soimort.org/resources/signature.png)
 
 ***
