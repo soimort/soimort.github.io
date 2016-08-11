@@ -1,46 +1,35 @@
 body {
   background-attachment: fixed;
-  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/5unnat65owlezbi/mandelbrot.png');
+  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/s285j4g4rwco5d3/laugh-now.png');
   background-position: right bottom;
   background-repeat: no-repeat;
 }
 
-article {
-  padding-bottom: 0;
+@media (max-width: 1280px) {
+  body {
+    background-image: none;
+  }
 }
 
-div#content {
-  padding-top: 1em;
-  text-align: center;
-}
-
-div#content ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-  line-height: 48px;
-}
-
-div#content li {
-  transition: .5s;
-  color: ivory; /* $B */
-}
-div#content li:hover {
-  color: firebrick; /* $F */
-}
-
-div#content li a {
+section h2 {
+  text-align: left;
   font-variant: small-caps;
 }
 
-div#content li em {
-  display: block;
-  position: absolute;
-  right: 8.33%;
-  margin-top: -48px;
-  padding: 0;
-  font-size: 15px;
+section h2 a:hover::after {
+  content: " […]";
+}
+
+section ul {
+  list-style-type: none;
+}
+
+section li {
+  transition: .5s;
+  color: ivory; /* $B */
+}
+section li:hover {
+  color: firebrick; /* $F */
 }
 
 div#content hr {
@@ -66,14 +55,4 @@ aside#soimort-links #soimort {
 
 aside#soimort-toolbar {
   visibility: hidden;
-}
-
-div#sketch {
-  text-align: center;
-}
-
-@media (max-width: 1280px) {
-  div#content li em {
-    margin-top: -24px;
-  }
 }
