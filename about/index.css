@@ -13,13 +13,13 @@
   background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/cjc1aw9sa4pc1ex/soimort_mono_heart_96.jpg');
 }
 
-section:first-of-type > p:first-of-type::first-letter { /* drop cap */
+p:first-of-type::first-letter { /* drop cap */
   float: left;
   padding-right: .1em;
   font-size: 3.5em;
   line-height: 1em;
 }
 
-section figure:last-of-type {
+figure:last-of-type {
   text-align: right;
 }
