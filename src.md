@@ -26,12 +26,13 @@ Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 AKB48 fanblog](http://microblog.soimort.org/)
 
-Contact: **@soimort** on
+**@soimort** on
 <a title="GitHub" href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
 | <a title="Twitter" href="https://twitter.com/soimort" rel="nofollow">
 <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
-| Email: <soi@mort.ninja>
+| <i class="fa fa-envelope" aria-hidden="true"></i>
+soi@mort.ninja
 | [<i class="fa fa-key" aria-hidden="true"></i>
 `07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 
