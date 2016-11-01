@@ -2,6 +2,7 @@
  * designer:     soimort
  * revision:     1
  * last updated: 2016-05-20
+ * last adapted: 2016-11-01
  */
 
 /* General */
@@ -108,6 +109,10 @@ header .subtitle {
 header address.author {
   margin-top: 2em;
   font-style: normal;
+}
+
+header .date {
+  font-size: .75em;
 }
 
 div#content {
