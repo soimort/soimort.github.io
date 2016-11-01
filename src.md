@@ -6,34 +6,25 @@ date:
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-## [Blog](https://blog.soimort.org/)
+## [My Study Track](https://wiki.soimort.org/)
 
-* [<i class="fa fa-star-o" aria-hidden="true"></i>
-Emacs 已死](https://blog.soimort.org/posts/emacs-is-dead)
-* [...](https://blog.soimort.org/)
+* [**2016-11-01** *The Decisional Hardness*](/ep/1)
 
-## [Wiki](https://wiki.soimort.org/)
 
-* [<i class="fa fa-cube" aria-hidden="true"></i>
-Command-line Tricks](https://wiki.soimort.org/unix/cli/)
-* [...](https://wiki.soimort.org/)
 
 ***
 
 <div style="text-align:right">
 <small>
 
-Personal, graphical and (potentially) NSFW stuff:
-[<i class="fa fa-comments" aria-hidden="true"></i>
-Buzz](https://buzz.soimort.org/)
-| [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
-Photolog](http://log.soimort.org/)
-| [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
-AKB48](http://microblog.soimort.org/)
-| ...
-
 [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
+
+Personal, graphical and (potentially) NSFW stuff:
+[<i class="fa fa-tumblr-square" aria-hidden="true"></i>
+Photolog](http://log.soimort.org/)
+| [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
+AKB48 fanblog](http://microblog.soimort.org/)
 
 Contact: **@soimort** on
 <a title="GitHub" href="https://github.com/soimort" rel="nofollow">
