@@ -1,24 +1,21 @@
 ---
 title: Through the Looking-Glass
-author:
-date:
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
+:= "Now, *here*, you see, it takes all the running *you* can do, to keep in the same place."
+
 ## [My Study Track](https://wiki.soimort.org/)
 
-* [**2016-11-01** *The Decisional Hardness*](/ep/1)
+* [**2016-11-01** The Decisional Hardness](/ep/1)
 
 
 
-***
+:|
 
 <div style="text-align:right">
 <small>
-
-[<i class="fa fa-user" aria-hidden="true"></i>
-About me](/about)
 
 Personal, graphical and (potentially) NSFW stuff:
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
@@ -26,10 +23,17 @@ Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 AKB48 fanblog](http://microblog.soimort.org/)
 
+***
+
+[<i class="fa fa-rss" aria-hidden="true"></i>
+Subscribe](https://www.soimort.org/atom.xml)
+| [<i class="fa fa-user" aria-hidden="true"></i>
+About me](/about)
+
 **@soimort** on
-<a title="GitHub" href="https://github.com/soimort" rel="nofollow">
+<a href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
-| <a title="Twitter" href="https://twitter.com/soimort" rel="nofollow">
+| <a href="https://twitter.com/soimort" rel="nofollow">
 <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
 | <i class="fa fa-envelope" aria-hidden="true"></i>
 soi@mort.ninja
@@ -44,7 +48,7 @@ soi@mort.ninja
 <i class="fa fa-rss-square" aria-hidden="true"></i></a>
 <a title="GitHub" href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github-square" aria-hidden="true"></i></a>
-<a title="Home" href="https://www.soimort.org/" id="soimort">
+<a title="About me" href="/about" id="soimort">
 <img src="/favicon.png" width="42px"></a>
 <a title="Twitter" href="https://twitter.com/soimort" rel="nofollow">
 <i class="fa fa-twitter-square" aria-hidden="true"></i></a>
