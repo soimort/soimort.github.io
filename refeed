@@ -1,0 +1,62 @@
+#!/bin/bash
+title="Through the Looking-Glass"
+subtitle="Mort Yao's homepage"
+author_name="Mort Yao"
+author_email="soi@mort.ninja"
+canonical="https://www.soimort.org/"
+id_prefix="tag:www.soimort.org,2016:/"
+feed="atom.xml"
+
+feed_updated=`date --iso-8601=seconds`
+
+echo """<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<feed xmlns=\"http://www.w3.org/2005/Atom\">
+  <title>${title}</title>
+  <subtitle>${subtitle}</subtitle>
+  <link href=\"${canonical}${feed}\" rel=\"self\" />
+  <link href=\"${canonical}\" />
+  <id>${id_prefix}</id>
+  <updated>${feed_updated}</updated>
+  <author>
+    <name>${author_name}</name>
+    <email>${author_email}</email>
+  </author>""" > $feed
+
+# generate feed entries
+for src in `ls -t */*/src.md`; do
+    id=${src%/src.md}
+
+    # skip .archived post (do not create entry)
+    if [ -f ${id}/.archived ]; then
+        continue
+    fi
+
+    # extract metadata (only pandoc_title_block is supported)
+    # TODO: yaml_metadata_block support
+    title=`sed -n '1p' "${src}"`
+    title=${title#% }
+    date=`sed -n '3p' "${src}"`
+    date=${date#% }
+
+    echo """
+  <entry>
+    <title>${title?-WTF!}</title>
+    <link href=\"${canonical}${id}\" />
+    <id>${id_prefix}${id}</id>
+    <updated>${date?-WTF!}</updated>
+    <author>
+      <name>${author_name}</name>
+      <email>${author_email}</email>
+    </author>
+    <content type=\"xhtml\">
+      <div xmlns=\"http://www.w3.org/1999/xhtml\">
+""" >> $feed
+    pandoc -t html "${src}" >> $feed
+    echo """
+      </div>
+    </content>
+  </entry>""" >> $feed
+done
+
+echo """
+</feed>""" >> $feed
