@@ -4,9 +4,11 @@ title: Through the Looking-Glass
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-:= "Now, *here*, you see, it takes all the running *you* can do, to keep in the same place."
+:= ... Somewhere between world and toys.
 
 ## [My Study Track](https://wiki.soimort.org/)
+
+> Next due: **2016-11-16**
 
 * [**2016-11-01** The Decisional Hardness](/ep/1)
 
@@ -17,11 +19,17 @@ include-before: <link rel="stylesheet" href="index.css">
 <div style="text-align:right">
 <small>
 
+Archived:
+[<i class="fa fa-tumblr-square" aria-hidden="true"></i>
+Poetry (Chinese)](http://poetry.soimort.org/)
+\
 Personal, graphical and (potentially) NSFW stuff:
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 AKB48 fanblog](http://microblog.soimort.org/)
+| [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
+Forty-eight tales](http://48.soimort.org/)
 
 ***
 
@@ -29,7 +37,7 @@ AKB48 fanblog](http://microblog.soimort.org/)
 Subscribe](https://www.soimort.org/atom.xml)
 | [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
-
+\
 **@soimort** on
 <a href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
