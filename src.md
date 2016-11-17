@@ -13,7 +13,7 @@ Life was a lie, an instance of falsity.
 
 
 
-## Art
+## Art & Philosophy
 
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
