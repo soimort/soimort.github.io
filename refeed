@@ -8,6 +8,7 @@ id_prefix="tag:www.soimort.org,2016:/"
 feed="feed.atom"
 
 feed_updated=`date --iso-8601=seconds`
+pandoc_options=
 
 echo """<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <feed xmlns=\"http://www.w3.org/2005/Atom\">
@@ -51,7 +52,7 @@ for src in `ls -t */*/src.md`; do
     <content type=\"xhtml\">
       <div xmlns=\"http://www.w3.org/1999/xhtml\">
 """ >> $feed
-    pandoc -t html "${src}" >> $feed
+    pandoc -t html ${pandoc_options} "${src}" >> $feed
     echo """
       </div>
     </content>
