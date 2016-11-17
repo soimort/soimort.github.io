@@ -1,6 +1,7 @@
 ---
 title: Through the Looking-Glass
-author: Mort Yao
+subtitle: A random blog.
+author:
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
@@ -12,9 +13,16 @@ Life was a lie, an instance of falsity.
 
 
 
-## [My Study Track](https://wiki.soimort.org/)
+## Art
 
-* [**1 Nov 2016** The Decisional Hardness](/mst/1/)
+* [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
+](https://blog.soimort.org/art/manabu-yamanaka/)
+
+## My Study Track
+
+* [**1 Nov 2016**
+The Decisional Hardness
+](/mst/1/)
 
 
 
