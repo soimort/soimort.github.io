@@ -1,8 +1,6 @@
 /* Akai theme (pandoc HTML5 template)
  * designer:     soimort
- * revision:     1
- * last updated: 2016-05-20
- * last adapted: 2016-11-01
+ * last updated: 2016-11-17
  */
 
 /* General */
@@ -103,6 +101,7 @@ header {
 }
 
 header .subtitle {
+  font-size: 1.125em;
   font-style: normal;
 }
 

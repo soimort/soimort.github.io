@@ -1,15 +1,15 @@
 ---
 css: [
-  //cdn.soimort.org/normalize/4.1.1/normalize.min.css,
+  //cdn.soimort.org/normalize/5.0.0/normalize.min.css,
   //cdn.soimort.org/fonts/api/URW-Palladio-L.css,
-  //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css,
+  //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css,
   /__/css/style.css,
   ]
 header-includes: [
   <script src="//cdn.soimort.org/jk/latest/jk.min.js"></script>,
   <link rel="icon" href="/favicon.png">,
   <link rel="apple-touch-icon" href="/favicon.png">,
-  <link rel="alternate" type="application/atom+xml" href="/atom.xml">,
+  <link rel="alternate" type="application/atom+xml" href="/feed.atom">,
   ]
 raw-options: [
   --section-divs,

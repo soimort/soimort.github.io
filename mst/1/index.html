@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Akai (pandoc HTML5 template)
+     designer:     soimort
+     last updated: 2016-05-06
+     last adapted: 2016-11-01 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mort Yao">
+    <meta name="dcterms.date" content="2016-11-01">
+    <title>The Decisional Hardness</title>
+    <link rel="canonical" href="https://www.soimort.org/mst/1">
+    <style type="text/css">code { white-space: pre; }</style>
+    <link rel="stylesheet" href="//cdn.soimort.org/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.soimort.org/fonts/api/URW-Palladio-L.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/__/css/style.css">
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.soimort.org/jk/latest/jk.min.js"></script>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 class="title"><a href="https://www.soimort.org/mst/1">The Decisional Hardness</a></h1>
+        <address class="author">Mort Yao</address>
+        <h3 class="date">2016-11-01</h3>
+      </header>
+      <div id="content">
+<p><strong>Intro.</strong> Starting from November, I’ll summarize my study notes on <a href="https://wiki.soimort.org">wiki</a> into weekly blog posts. I always wanted to keep my study progress on track; I feel that it’s hard even to convince myself without visible footprints.</p>
+<p>So here we have the first episode. (Hopefully it won’t be the last one)</p>
+<hr />
+<p>Asymptotic notation is an important tool in analyzing the time/space efficiency of algorithms.</p>
+<ul>
+<li><a href="https://wiki.soimort.org/math/calculus/limit/">Limit</a>
+<ul>
+<li>Formal definition of limit (the (ε, δ)-definition) in calculus. Note that limits involving infinity are closely related to asymptotic analysis. In addition to basic limit rules, L’Hôpital’s rule is also relevant.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/algo/asymptotic-notation/">Asymptotic notation</a>
+<ul>
+<li>Introduction to the Bachmann–Landau notation family (among them are the most widely-used Big O notation and Big Theta notation).</li>
+<li>Master theorem is used to find the asymptotic bound for recurrence. This is particularly helpful when analyzing recursive algorithms (e.g., binary search, merge sort, tree traversal).</li>
+<li>Based on common orders of asymptotic running time using Big O notation, we can categorize algorithms into various classes of time complexities (among them are P, DLOGTIME, SUBEXP and EXPTIME). Note that we have not formally defined the word “algorithm” and “complexity class” yet.</li>
+</ul></li>
+</ul>
+<p>For decision problems, we now formally define the time complexity classes P and NP, and propose the hardness of NP-complete problems, which plays an indispensable role in the study of algorithm design and modern cryptography.</p>
+<ul>
+<li><a href="https://wiki.soimort.org/comp/language/">Formal language</a>
+<ul>
+<li>Formal definition of language. We will revisit this when studying formal grammars like the context-free grammar and parsing techniques for compilers. For now, it suffices to know that binary string is a common encoding for all kinds of problems (especially, decision problems).</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/decidability/">Decidability</a>
+<ul>
+<li>Among all abstract problems, we are mostly interested in decision problems.</li>
+<li>The decidability of a language depends on whether there exists an algorithm that decides it.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/reducibility/">Reducibility</a>
+<ul>
+<li>Polynomial-time reduction is a commonly used technique that maps one language to another.</li>
+<li>What is a hard language for a complexity class; what is a complete language for a complexity class.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/complexity/time/">Time complexity</a>
+<ul>
+<li>Encodings of concrete problems matter. Normally we would choose a “standard encoding” for our language of interest.</li>
+<li>Polynomial-time algorithms are considered to be efficient and languages which have polynomial-time algorithms that decide them are considered tractable.</li>
+<li>P is the time complexity class of all problems that are polynomial-time solvable.</li>
+<li>NP is the time complexity class of all problems that are polynomial-time verifiable.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/complexity/time/npc/">NP-completeness</a>
+<ul>
+<li>The set of languages that are complete for the complexity class NP, that is, the “hardest problems” in NP.</li>
+<li>NP-complete problems are central in answering the open question whether P = NP.</li>
+<li>We (informally) show that every NP problem is polynomial-time reducible to CIRCUIT-SAT, and that CIRCUIT-SAT is NP-complete.</li>
+<li>There are other problems (SAT, 3-CNF-SAT, CLIQUE, VERTEX-COVER, HAM-CYCLE, TSP, SUBSET-SUM) polynomial-time reducible from one to another, thus they are also shown to be NP-complete.</li>
+</ul></li>
+</ul>
+<p><strong>Computational hardness assumption P ≠ NP.</strong> Although it is still an open proposition, many believe that P ≠ NP. Notably, if P ≠ NP holds true,</p>
+<ol type="1">
+<li>If a decision problem is polynomial-time unsolvable in general case, we should strive to find approximations or randomized algorithms; exact algorithms cannot be run in worst-case polynomial time thus may not be efficient. This applies to optimization problems too.</li>
+<li>One-way functions exist, which implies that pseudorandom generators and functions exist. Consequently, many cryptographic constructions (private-key encryption, MACs, etc.) are provably computationally secure.</li>
+</ol>
+<p>Later we will cover the notion of security in cryptography, so there is a refresher of basic probability: (Probability is also considerably used in analyzing the behaviors of non-deterministic algorithms, hash functions, etc.)</p>
+<ul>
+<li><a href="https://wiki.soimort.org/math/probability/">Probability</a>
+<ul>
+<li>An intuitive introduction to basic probability theory based on Kolmogorov’s axioms, including the union bound (Boole’s inequality) and its generalized form Bonferroni inequalities, the conditional probability and Bayes’ theorem. We will revisit the notion of probability space when coming to measure theory.</li>
+</ul></li>
+</ul>
+<p>Plan for next week:</p>
+<ul>
+<li><strong>(Algorithms)</strong> More involved NP-complete problems. Exact algorithms. Approximation algorithms. Probabilistic algorithms.</li>
+<li><strong>(Cryptography)</strong> Information-theoretic/computational security (semantic security, IND, IND-CPA, IND-CCA). Private-key encryption. Message authentication codes. Hash functions. Theoretical constructions (one-way functions, pseudorandomness). Practical constructions (Feistel network, substitution-permutation network, DES, AES).</li>
+</ul>
+      </div>
+      <!-- (www.soimort.org) last updated: 2016-05-07 -->
+      <aside id="soimort-toolbar">
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </aside>
+    </article>
+  </body>
+</html>

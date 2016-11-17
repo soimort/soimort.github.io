@@ -1,7 +1,6 @@
 ---
 title: 404
 subtitle: Find the Red Queen.
-date: 2016-05-07
 ---
 
 <style>

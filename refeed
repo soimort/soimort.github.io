@@ -5,7 +5,7 @@ author_name="Mort Yao"
 author_email="soi@mort.ninja"
 canonical="https://www.soimort.org/"
 id_prefix="tag:www.soimort.org,2016:/"
-feed="atom.xml"
+feed="feed.atom"
 
 feed_updated=`date --iso-8601=seconds`
 

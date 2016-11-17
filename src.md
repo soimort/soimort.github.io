@@ -1,16 +1,20 @@
 ---
 title: Through the Looking-Glass
+author: Mort Yao
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-:= ... Somewhere between world and toys.
+![I drew a picture of yesterday,
+where all my failings exposed and dreams compromised. \
+Life was a lie, an instance of falsity.
+](https://i0.wp.com/dl.dropboxusercontent.com/s/ne16xw7rmnjewct/header-161116.jpg){ width=61.8% }
+
+
 
 ## [My Study Track](https://wiki.soimort.org/)
 
-> Next due: **2016-11-16**
-
-* [**2016-11-01** The Decisional Hardness](/ep/1)
+* [**1 Nov 2016** The Decisional Hardness](/mst/1/)
 
 
 
@@ -34,25 +38,28 @@ Forty-eight tales](http://48.soimort.org/)
 ***
 
 [<i class="fa fa-rss" aria-hidden="true"></i>
-Subscribe](https://www.soimort.org/atom.xml)
+Subscribe](https://www.soimort.org/feed.atom)
 | [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
+\
+<i class="fa fa-envelope" aria-hidden="true"></i>
+soi@mort.ninja
+| [<i class="fa fa-key" aria-hidden="true"></i>
+`07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 \
 **@soimort** on
 <a href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
 | <a href="https://twitter.com/soimort" rel="nofollow">
 <i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
-| <i class="fa fa-envelope" aria-hidden="true"></i>
-soi@mort.ninja
-| [<i class="fa fa-key" aria-hidden="true"></i>
-`07DA00CB78203251`](https://keybase.io/soimort/key.asc)
+
+:|
 
 </small>
 </div>
 
 <aside id="soimort-links">
-<a title="Feed" href="https://www.soimort.org/atom.xml">
+<a title="Feed" href="https://www.soimort.org/feed.atom">
 <i class="fa fa-rss-square" aria-hidden="true"></i></a>
 <a title="GitHub" href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github-square" aria-hidden="true"></i></a>
