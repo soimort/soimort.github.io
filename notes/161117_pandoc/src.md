@@ -4,9 +4,7 @@
 
 For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like `title`, `author` and `date`) into a properly typeset PDF document:
 
-```sh
-$ pandoc src.md -o out.pdf
-```
+    $ pandoc src.md -o out.pdf
 
 However, Markdown is not TeX. *Not even close.* Once you need to have some bleeding edge control over the typesetting outcome, or perhaps just a little refinement on its LaTeX templating, you'll soon notice that Pandoc has its quirks and gotchas. I've been utilizing Pandoc in all my serious academic writing (incl. homework reports) for years, ever since I gave up on learning more about the overwhelmingly sophisticated TeX ecosystem and turned to something that "just works". Pandoc fits my needs well. And when it doesn't, there's almost always a workaround that achieves the same thing neatly. And this is what this write-up is mostly about.
 
@@ -62,7 +60,7 @@ header-includes: |
 Above is my personal default, and it's worth a few words to explain:
 
 * `geometry` is where you control the geometric settings of your document. For example, you may narrow down the page margin to `margin=1.5in`, and this is equivalent to raw LaTeX:
-```tex
+```
 \usepackage[margin=1.5in]{geometry}
 ```
 * Set `indent` to any value other than `false` if paragraph indentation is desired. (And it is often desired in formal publications.)

@@ -71,7 +71,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       </header>
       <div id="content">
 <p>For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like <code>title</code>, <code>author</code> and <code>date</code>) into a properly typeset PDF document:</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="ex">pandoc</span> src.md -o out.pdf</code></pre></div>
+<pre><code>$ pandoc src.md -o out.pdf</code></pre>
 <p>However, Markdown is not TeX. <em>Not even close.</em> Once you need to have some bleeding edge control over the typesetting outcome, or perhaps just a little refinement on its LaTeX templating, you’ll soon notice that Pandoc has its quirks and gotchas. I’ve been utilizing Pandoc in all my serious academic writing (incl. homework reports) for years, ever since I gave up on learning more about the overwhelmingly sophisticated TeX ecosystem and turned to something that “just works”. Pandoc fits my needs well. And when it doesn’t, there’s almost always a workaround that achieves the same thing neatly. And this is what this write-up is mostly about.</p>
 <section id="tweaking-default.latex-bad-idea." class="level2">
 <h2>Tweaking <code>default.latex</code>? Bad idea.</h2>
@@ -110,7 +110,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Above is my personal default, and it’s worth a few words to explain:</p>
 <ul>
 <li><p><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</p>
-<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="bu">\usepackage</span>[margin=1.5in]{<span class="ex">geometry</span>}</code></pre></div></li>
+<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre></li>
 <li>Set <code>indent</code> to any value other than <code>false</code> if paragraph indentation is desired. (And it is often desired in formal publications.)</li>
 <li><code>header-includes</code> is where you define your own macros, configure existing ones, or claim <code>\usepackage</code> in case you want to use a package not enabled by Pandoc (e.g., <a href="https://www.ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>). Although you might as well define those in other places (e.g., in the content of a Markdown file), <em>don’t do that</em>.
 <ul>
