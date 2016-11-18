@@ -12,24 +12,24 @@ body {
 }
 
 section h2 {
-  text-align: right;
-  font-variant: small-caps;
-}
+  border-image: linear-gradient(to right, ivory, firebrick) 4;
+  border-style: solid;
+  border-width: 0 0 2px 0;
 
-section h2 a:hover::after {
-  content: " […]";
+  text-align: right;
+  font-size: 1.25em;
+  font-variant: small-caps;
 }
 
 section ul {
   list-style-type: none;
 }
 
-section li {
-  transition: .5s;
-  color: ivory; /* $B */
-}
-section li:hover {
-  color: firebrick; /* $F */
+section li em {
+  float: right;
+
+  font-size: .8em;
+  font-style: normal;
 }
 
 div#content hr {

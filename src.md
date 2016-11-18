@@ -13,20 +13,22 @@ Life was a lie, an instance of falsity.
 
 
 
+## Tech Notes
+
+* [Boilerplating Pandoc for Academic Writing
+](/notes/161117_pandoc/)
+*17 Nov 2016*
+
+## My Study Track
+
+* [The Decisional Hardness
+](/mst/1/)
+*1 Nov 2016*
+
 ## Art & Philosophy
 
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
-
-## Tech Notes
-
-
-
-## My Study Track
-
-* [**1 Nov 2016**
-The Decisional Hardness
-](/mst/1/)
 
 
 
@@ -35,8 +37,6 @@ The Decisional Hardness
 <div style="text-align:right">
 <small>
 
-**Misc.**
-\
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Poetry (Chinese)](http://poetry.soimort.org/)
 \
