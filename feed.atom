@@ -5,11 +5,148 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2016-11-17T02:59:02+01:00</updated>
+  <updated>2016-11-18T21:49:34+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
+
+  <entry>
+    <title>Boilerplating Pandoc for Academic Writing</title>
+    <link href="https://www.soimort.org/notes/161117_pandoc" />
+    <id>tag:www.soimort.org,2016:/notes/161117_pandoc</id>
+    <updated>2016-11-17</updated>
+    <author>
+      <name>Mort Yao</name>
+      <email>soi@mort.ninja</email>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+
+<p>For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like <code>title</code>, <code>author</code> and <code>date</code>) into a properly typeset PDF document:</p>
+<pre><code>$ pandoc src.md -o out.pdf</code></pre>
+<p>However, Markdown is not TeX. <em>Not even close.</em> Once you need to have some bleeding edge control over the typesetting outcome, or perhaps just a little refinement on its LaTeX templating, you'll soon notice that Pandoc has its quirks and gotchas. I've been utilizing Pandoc in all my serious academic writing (incl. homework reports) for years, ever since I gave up on learning more about the overwhelmingly sophisticated TeX ecosystem and turned to something that &quot;just works&quot;. Pandoc fits my needs well. And when it doesn't, there's almost always a workaround that achieves the same thing neatly. And this is what this write-up is mostly about.</p>
+<h2 id="tweaking-default.latex-bad-idea.">Tweaking <code>default.latex</code>? Bad idea.</h2>
+<p>You could, of course, modify the default template (<a href="https://github.com/jgm/pandoc-templates/blob/master/default.latex"><code>default.latex</code></a>) provided by Pandoc, as long as you're no stranger to LaTeX. In this way, you can achieve anything you want -- in <em>pure</em> LaTeX.</p>
+<pre><code>$ pandoc <span class="do">--template my-default.latex</span> src.md -o out.pdf</code></pre>
+<p>There are, however, a few problems with this naïve approach:</p>
+<ol style="list-style-type: decimal">
+<li>If you are tweaking the template just for something you're currently working on, you will end up with some highly document-specific, hardly reusable template. Also this won't give you any good for using Pandoc -- you could just write plain LaTeX anyway.</li>
+<li>If Pandoc improves its default template for a newer version, your home-brewed template won't benefit from this (unless you're willing to merge the diffs and resolve any conflicts by hand).</li>
+</ol>
+<p>I'm conservative about changing the templates. If it's a general issue that needs to be fixed in the default template, sending a pull request to <a href="https://github.com/jgm/pandoc-templates">pandoc-templates</a> might be a better idea. Of course, if there's a certain submission format you have to stick with (given LaTeX templates for conference papers), then you will fall back on your own.</p>
+<h2 id="separating-the-formatting-stuff">Separating the formatting stuff</h2>
+<p>I wouldn't claim that I know the best practice of using Pandoc, but there's such a common idiom that cannot be overstressed: <em>Separate presentation and content!</em></p>
+<p>In the YAML front matter of <code>src.md</code> (the main Markdown file you're writing), put only things that matter to your potential readers:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">title:</span> Boilerplating Pandoc for Academic Writing
+<span class="fu">subtitle:</span> or: How I Learned to Stop Typesetting and Concentrate on the Math
+<span class="fu">author:</span> Mort Yao
+<span class="fu">date:</span> 17 November 2016
+<span class="fu">abstract:</span> |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+  ullamco laboris nisi ut aliquip ex ea commodo consequat.
+<span class="ot">---</span></code></pre></div>
+<p>And in a separate YAML file (let's call it <code>default.yaml</code>), here goes the formatting stuff:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">geometry:</span> margin=1.5in
+<span class="fu">indent:</span> true
+<span class="fu">header-includes:</span> |
+  \usepackage<span class="kw">{</span>tcolorbox<span class="kw">}</span>
+  \newcommand\qed<span class="kw">{</span>\hfill\rule{1em<span class="kw">}{</span>1em<span class="kw">}</span>}
+<span class="ot">---</span></code></pre></div>
+<p>Above is my personal default, and it's worth a few words to explain:</p>
+<ul>
+<li><p><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</p>
+<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre></li>
+<li>Set <code>indent</code> to any value other than <code>false</code> if paragraph indentation is desired. (And it is often desired in formal publications.)</li>
+<li><code>header-includes</code> is where you define your own macros, configure existing ones, or claim <code>\usepackage</code> in case you want to use a package not enabled by Pandoc (e.g., <a href="https://www.ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>). Although you might as well define those in other places (e.g., in the content of a Markdown file), <em>don't do that</em>.
+<ul>
+<li>This decent Q.E.D. tombstone: <code>\newcommand\qed{\hfill\rule{1em}{1em}}</code> is my favorite of all time. It doesn't require the <code>amsthm</code> package.</li>
+</ul></li>
+</ul>
+<p>With a separate <code>default.yaml</code>, now here we are:</p>
+<pre><code>$ pandoc <span class="do">default.yaml</span> src.md -o out.pdf</code></pre>
+<h2 id="separating-header-includes">Separating <code>header-includes</code></h2>
+<p>You might have already noticed that the <code>subtitle</code> field won't display in the produced PDF file. As far as I'm concerned (in Pandoc 1.18), this is the expected behavior. See <a href="http://pandoc.org/MANUAL.html#fn1">here in README</a>:</p>
+<blockquote>
+<p>To make <code>subtitle</code> work with other LaTeX document classes, you can add the following to <code>header-includes</code>:</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\providecommand</span>{<span class="fu">\subtitle</span>}[1]{<span class="co">%</span>
+  <span class="bu">\usepackage</span>{<span class="ex">titling</span>}
+  <span class="fu">\posttitle</span>{<span class="co">%</span>
+    <span class="fu">\par\large</span>#1<span class="kw">\end</span>{<span class="ex">center</span>}}
+}</code></pre></div>
+</blockquote>
+<p>Unfortunately, this won't work (until <a href="https://github.com/jgm/pandoc/issues/2139">Issue #2139</a> is resolved) since Pandoc parses the <code>header-includes</code> metadata field as Markdown, and the bracketed <code>[1]</code> is misinterpreted as literals rather than a part of LaTeX control sequence. So the workaround is: Instead of embedding <code>header-includes</code> as a metadata field in YAML, we should separate it into another file for this dedicated purpose (it's simply raw LaTeX anyway), and include it using <code>--include-in-header/-H</code>:</p>
+<pre><code>$ pandoc <span class="do">-H header.tex</span> default.yaml src.md -o out.pdf</code></pre>
+<p>Note that you can't have two <code>header-includes</code> for one document. So the <code>header-includes</code> field specified in YAML metadata will be overridden by the content of <code>header.tex</code>.</p>
+<h2 id="citing-sources">Citing sources</h2>
+<p>While the Markdown syntax for citing is rather easy (<code>[@id]</code>), it takes effort to make things right, especially if you have a certain preferred citation format (APA, MLA, Chicago, IEEE, etc.).</p>
+<p>The suggestion is: Use <a href="https://hackage.haskell.org/package/pandoc-citeproc">pandoc-citeproc</a>. Once you have a list of references you're interested in, you need two things to typeset those nicely in your document:</p>
+<ul>
+<li>A CSL (Citation Style Language) file (<code>.csl</code>), to specify the citation format you want to use.
+<ul>
+<li>You can preview (and download) many common citation styles in the <a href="https://www.zotero.org/styles">Zotero Style Repository</a>.</li>
+</ul></li>
+<li>A BibTeX file (<code>.bib</code>), which is a list of all entries you might cite.
+<ul>
+<li>Citation entries in BibTeX format may be found easily on the Internet, through academic search engines and databases. Concatenate them one by one.</li>
+</ul></li>
+</ul>
+<p>As part of the YAML metadata: (Assume you have <code>ieee.csl</code> and <code>references.bib</code>)</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">csl:</span> ieee.csl
+<span class="fu">bibliography:</span> references.bib</code></pre></div>
+<p>Using <code>pandoc-citeproc</code> as a filter, generate the document with citations:</p>
+<pre><code>$ pandoc <span class="do">--filter pandoc-citeproc</span> -H header.tex default.yaml src.md -o out.pdf</code></pre>
+<p>The list of references is appended to the end of the document. It is often desirable to give the references an obvious title (&quot;References&quot;), start from a new page and avoid any further indentation, so the following comes in the end of the Markdown source:</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\newpage</span>
+<span class="fu">\setlength\parindent</span>{0pt}
+
+# References</code></pre></div>
+<h2 id="putting-it-all-together">Putting it all together!</h2>
+<p>Basically, we need 5 files in total:</p>
+<ul>
+<li>For content:
+<ul>
+<li><code>src.md</code> (Markdown + possibly LaTeX mixed format): Main text.</li>
+<li><code>references.bib</code> (BibTeX/BibLaTeX format): List of references.</li>
+</ul></li>
+<li>For presentation:
+<ul>
+<li><code>default.yaml</code> (YAML format): Format-related metadata.</li>
+<li><code>header.tex</code> (LaTeX format): Content of <code>header-includes</code>; package imports and macro definitions.</li>
+<li><code>ieee.csl</code> (CSL XML format): Citation style.</li>
+</ul></li>
+</ul>
+<p>And one command:</p>
+<pre><code>$ pandoc --filter pandoc-citeproc -H <span class="do">header.tex</span> <span class="do">default.yaml</span> <span class="do">src.md</span> -o out.pdf</code></pre>
+<h2 id="open-question-lightweight-replacement-for-amsthm">Open question: Lightweight replacement for <code>amsthm</code>?</h2>
+<p>Pandoc doesn't provide native support for <a href="https://www.ctan.org/pkg/amsthm"><code>amsthm</code></a> (and I wonder if there will ever be). You can still have the same thing in Pandoc Markdown:</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\newtheorem</span>{definition}{Definition}
+
+<span class="kw">\begin</span>{<span class="ex">definition</span>}
+Man is a rational animal.
+<span class="kw">\end</span>{<span class="ex">definition</span>}</code></pre></div>
+<p>However, everything in between <code>\begin</code> and <code>\end</code> will be treated as raw LaTeX, and the expressiveness of Markdown is lost there. More importantly, this is purely a LaTeX-specific thing, so there's no way for Pandoc to convert this to HTML or any other format (unless you have a filter that does the trick). Consequently, I tend to write all definitions / theorems (lemmas, claims, corollaries, propositions...) in simple Markdown:</p>
+<pre><code>**Definition 1.** *Man is a rational animal.*</code></pre>
+<p>It does have some advantages over <code>amsthm</code>:</p>
+<ul>
+<li>Using <code>amsthm</code>, you cannot see the numbering of each theorem (definition, etc.) in the text editor (well, you can't without a dedicated plugin at least). This is inconvenient when you need to refer to a prior one later. By numbering them explicitly, you can clearly see these ordinals in the Markdown source.</li>
+<li>It is perfectly valid Markdown, so it converts to any format as you wish (HTML, for example).</li>
+</ul>
+<p>This also has some drawbacks compared to using <code>amsthm</code>, though:</p>
+<ul>
+<li>It doesn't have theorem counters. You need to number things explicitly, manually. (Clearly you can't have implicit numbering and explicit numbering at the same time, so here's the trade-off.)</li>
+<li>It doesn't have automatic formatting. That is, you could possibly get the style for a certain entry (plain, definition, remark) wrong.</li>
+<li>Semantically, they are not recognized as theorems, just normal text paragraphs. This is problematic if you want to prevent definitions and theorems from being indented, since there's no way for LaTeX to tell them from a normal text.</li>
+</ul>
+<p>(Probably) The best solution is to write a filter that (conventionally) converts any plain text like <code>Definition 1</code> (and <code>Lemma 2</code>, <code>Theorem 3</code>, etc.) in the beginning of a paragraph to proper Markdown (for HTML target) or corresponding <code>amsthm</code> block (for LaTeX target). Even better, it should be able to do cross-references accordingly (Remember <code>Lemma 10.42</code>? Let's put an anchored link on that!). This is yet to be done, but would be very helpful to someone who does a lot of theorems and proofs thus wants to avoid the kludge of mixing raw LaTeX with semantically evident Markdown.</p>
+
+      </div>
+    </content>
+  </entry>
 
   <entry>
     <title>The Decisional Hardness</title>
