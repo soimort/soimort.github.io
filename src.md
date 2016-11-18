@@ -1,6 +1,6 @@
 ---
 title: Through the Looking-Glass
-subtitle: A random blog.
+subtitle: Mort's random blog.
 author:
 
 include-before: <link rel="stylesheet" href="index.css">
@@ -18,6 +18,10 @@ Life was a lie, an instance of falsity.
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
 
+## Tech Notes
+
+
+
 ## My Study Track
 
 * [**1 Nov 2016**
@@ -31,11 +35,12 @@ The Decisional Hardness
 <div style="text-align:right">
 <small>
 
-Archived:
+**Misc.**
+\
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Poetry (Chinese)](http://poetry.soimort.org/)
 \
-Personal, graphical and (potentially) NSFW stuff:
+(Personal, graphical and potentially NSFW stuff)
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
