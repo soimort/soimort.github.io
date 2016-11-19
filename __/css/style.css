@@ -1,14 +1,14 @@
 /* Akai theme (pandoc HTML5 template)
  * designer:     soimort
- * last updated: 2016-11-17
+ * last updated: 2016-11-19
  */
 
 /* General */
 
 body {
   font-family: /* font stack (normal) */
-  'URW Palladio L', 'Palladio URW', 'TeX Gyre Pagella',
-  Palatino, 'Palatino Linotype', 'Book Antiqua', serif,
+  Palatino, 'Palatino Linotype', 'Book Antiqua',
+  'URW Palladio L', 'Palladio URW', 'TeX Gyre Pagella', serif,
   'HanaMinA', 'Adobe Song Std', 'Source Han Sans',
   'WenQuanYi Micro Hei', 'WenQuanYi Zen Hei',
   'Meiryo', 'Microsoft JhengHei', 'Microsoft YaHei';
