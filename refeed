@@ -8,7 +8,7 @@ id_prefix="tag:www.soimort.org,2016:/"
 feed="feed.atom"
 
 feed_updated=`date --iso-8601=seconds`
-pandoc_options="--filter monkey.py --filter _filters/userParam.hs"
+pandoc_options="--filter monkey.py --filter _filters/monkey+.hs --filter _filters/qed.hs --filter _filters/userParam.hs --filter pandoc-citeproc"
 
 echo """<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <feed xmlns=\"http://www.w3.org/2005/Atom\">
@@ -32,12 +32,17 @@ for src in `ls -t */*/src.md`; do
         continue
     fi
 
-    # extract metadata (only pandoc_title_block is supported)
-    # TODO: yaml_metadata_block support
-    title=`sed -n '1p' "${src}"`
-    title=${title#% }
-    date=`sed -n '3p' "${src}"`
-    date=${date#% }
+    # extract metadata (only yaml_metadata_block)
+    title=`grep -o -E -m 1 '^title:(.*)' "${src}"`
+    title=${title#title: }
+    date=`grep -o -E -m 1 '^date:(.*)' "${src}"`
+    date=${date#date: }
+    echo `grep -o -E -m 1 '^title:(.*)' "${src}"`
+    # pandoc_title_block
+    #title=`sed -n '1p' "${src}"`
+    #title=${title#% }
+    #date=`sed -n '3p' "${src}"`
+    #date=${date#% }
 
     echo """
   <entry>
