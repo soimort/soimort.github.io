@@ -35,8 +35,12 @@ for src in `ls -t */*/src.md`; do
     # extract metadata (only yaml_metadata_block)
     title=`grep -o -E -m 1 '^title:(.*)' "${src}"`
     title=${title#title: }
-    date=`grep -o -E -m 1 '^date:(.*)' "${src}"`
-    date=${date#date: }
+    date=`grep -o -E -m 1 '^date-updated:(.*)' "${src}"`
+    date=${date#date-updated: }
+    if [ -z $date ]; then
+        date=`grep -o -E -m 1 '^date:(.*)' "${src}"`
+        date=${date#date: }
+    fi
     echo `grep -o -E -m 1 '^title:(.*)' "${src}"`
     # pandoc_title_block
     #title=`sed -n '1p' "${src}"`
