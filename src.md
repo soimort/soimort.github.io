@@ -60,7 +60,7 @@ soi@mort.ninja
 | [<i class="fa fa-key" aria-hidden="true"></i>
 `07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 \
-**@soimort** on
+**\@soimort** on
 <a href="https://github.com/soimort" rel="nofollow">
 <i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
 | <a href="https://twitter.com/soimort" rel="nofollow">
