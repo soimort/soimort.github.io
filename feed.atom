@@ -5,7 +5,7 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2016-11-18T21:49:34+01:00</updated>
+  <updated>2016-11-20T23:32:11+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
@@ -160,6 +160,8 @@ Man is a rational animal.
     <content type="xhtml">
       <div xmlns="http://www.w3.org/1999/xhtml">
 
+<p><p style='background-color:yellow'> <strong>(20 Nov 2016) Correction:</strong> P ≠ NP is not sufficient to imply that one-way functions exist. See <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.</p></p>
+<hr />
 <p><strong>Intro.</strong> Starting from November, I'll summarize my study notes on <a href="https://wiki.soimort.org">wiki</a> into weekly blog posts. I always wanted to keep my study progress on track; I feel that it's hard even to convince myself without visible footprints.</p>
 <p>So here we have the first episode. (Hopefully it won't be the last one)</p>
 <hr />
@@ -210,8 +212,11 @@ Man is a rational animal.
 <p><strong>Computational hardness assumption P ≠ NP.</strong> Although it is still an open proposition, many believe that P ≠ NP. Notably, if P ≠ NP holds true,</p>
 <ol style="list-style-type: decimal">
 <li>If a decision problem is polynomial-time unsolvable in general case, we should strive to find approximations or randomized algorithms; exact algorithms cannot be run in worst-case polynomial time thus may not be efficient. This applies to optimization problems too.</li>
-<li>One-way functions exist, which implies that pseudorandom generators and functions exist. Consequently, many cryptographic constructions (private-key encryption, MACs, etc.) are provably computationally secure.</li>
+<li><del>
+One-way functions exist, which implies that pseudorandom generators and functions exist. Consequently, many cryptographic constructions (private-key encryption, MACs, etc.) are provably computationally secure.
+</del></li>
 </ol>
+<p><p style='background-color:yellow'> (I stand corrected: There is no such a known proof showing that P ≠ NP implies the existence of one-way functions. However, reversely, the existence of one-way functions implies that P ≠ NP. There is an informal argument given by Peter Shor on StackExchange<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, rephrased in the section <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.)</p></p>
 <p>Later we will cover the notion of security in cryptography, so there is a refresher of basic probability: (Probability is also considerably used in analyzing the behaviors of non-deterministic algorithms, hash functions, etc.)</p>
 <ul>
 <li><a href="https://wiki.soimort.org/math/probability/">Probability</a>
@@ -224,6 +229,29 @@ Man is a rational animal.
 <li><strong>(Algorithms)</strong> More involved NP-complete problems. Exact algorithms. Approximation algorithms. Probabilistic algorithms.</li>
 <li><strong>(Cryptography)</strong> Information-theoretic/computational security (semantic security, IND, IND-CPA, IND-CCA). Private-key encryption. Message authentication codes. Hash functions. Theoretical constructions (one-way functions, pseudorandomness). Practical constructions (Feistel network, substitution-permutation network, DES, AES).</li>
 </ul>
+<h2 id="p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</h2>
+<p>Consider the following map: <br /><span class="math display"><em>f</em> : (<em>x</em>, <em>r</em>)→<em>s</em></span><br /> where <span class="math inline"><em>x</em></span> is an arbitrary bit string, <span class="math inline"><em>r</em></span> is a string of random bits, and <span class="math inline"><em>s</em></span> is an instance of a <span class="math inline"><em>k</em></span>-SAT problem having <span class="math inline"><em>x</em></span> as a planted solution, while the randomness of <span class="math inline"><em>r</em></span> determines uniquely which <span class="math inline"><em>k</em></span>-SAT problem to choose.</p>
+<p>If we can invert the above function <span class="math inline"><em>f</em></span> (in polynomial time), we must already have solved the corresponding <span class="math inline"><em>k</em></span>-SAT problem <span class="math inline"><em>s</em></span> with a planted solution <span class="math inline"><em>x</em></span>. <span class="math inline"><em>k</em></span>-SAT problems are known to be NP-complete, and inverting such a function would be as hard as solving a <span class="math inline"><em>k</em></span>-SAT problem with a planted solution, that is, inverting <span class="math inline"><em>f</em></span> <em>at one point</em> can be hard. Clearly, should we have a one-way function, then inverting it is guaranteed to be no easier than inverting <span class="math inline"><em>f</em></span>.</p>
+<p>So what does it mean if P ≠ NP? We know that <span class="math inline"><em>k</em></span>-SAT problem is hard to solve in its <em>worst case</em>, so function <span class="math inline"><em>f</em></span> can be made as hard to invert as solving a <span class="math inline"><em>k</em></span>-SAT problem in its <em>worst case</em>. However, we don't know whether it's possible to have a class <span class="math inline">𝒮</span> of <span class="math inline"><em>k</em></span>-SAT problems with planted solutions that are as hard as general-case <span class="math inline"><em>k</em></span>-SAT problems. If such a class <span class="math inline">𝒮</span> exists, then given any <span class="math inline"><em>s</em> ∈ 𝒮</span>, no probabilistic polynomial-time algorithm is able to get <span class="math inline"><em>x</em></span> with a non-negligible probability, so we can conclude that <span class="math inline"><em>f</em></span> is indeed a one-way function. <a href="#ref-selman1992survey"><span class="citation">(<span class="citeproc-not-found" data-reference-id="selman1992survey"><strong>???</strong></span>)</span></a></p>
+<p><strong>Problem 1.1.</strong> Does there exist a class <span class="math inline">𝒮</span> of <span class="math inline"><em>k</em></span>-SAT problems with planted solutions, such that every <span class="math inline"><em>L</em> ∈ 𝒮</span> is NP-hard?</p>
+<p><strong>Conjecture 1.2.</strong> <em>If <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>, then one-way functions exist.</em></p>
+<p>On the other hand, assume that <span class="math inline"><em>f</em></span> is a one-way function, so that one-way functions do exist, then this implies that <span class="math inline"><em>k</em></span>-SAT problem is hard to solve (in its worse case) by a polynomial-time algorithm, thus we have P ≠ NP. By modus tollens, if P = NP, then no one-way function exists. <a href="#ref-abadi1990generating"><span class="citation">(<span class="citeproc-not-found" data-reference-id="abadi1990generating"><strong>???</strong></span>)</span></a></p>
+<p><strong>Theorem 1.3.</strong> <em>If one-way functions exist, then <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>.</em></p>
+<p><em>Proof.</em> <em>(Sketch)</em> Let <span class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}<sup>*</sup></span> be a one-way function. There is a polynomial-time algorithm <span class="math inline"><em>M</em><sub><em>f</em></sub></span> that computes <span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> for all <span class="math inline"><em>x</em></span>, thus, there exists a polynomial-time computable circuit that outputs <span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> for all <span class="math inline"><em>x</em></span>.</p>
+<p>Since <span class="math inline"><em>f</em></span> is a one-way function, that is, for every probabilistic polynomial-time algorithm <span class="math inline">𝒜</span>, there is a negligible function <span class="math inline">negl</span> such that <span class="math inline">Pr[Invert<sub>𝒜, <em>f</em></sub>(<em>n</em>)=1]≤negl(<em>n</em>)</span>, so we know that no <span class="math inline">𝒜</span> can fully compute <span class="math inline"><em>f</em><sup>−1</sup>(<em>x</em>)</span> for any given <span class="math inline"><em>x</em></span>. <span class="math inline">𝒜</span> fully computes <span class="math inline"><em>f</em><sup>−1</sup></span> if and only if it solves the corresponding <code>CIRCUIT-SAT</code> problems of the circuit in all cases. Thus, there must exist some <code>CIRCUIT-SAT</code> problems that cannot be decided by a polynomial-time algorithm, therefore, <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
+<p><em>Remark 1.4.</em> If one can come up with a construction of the one-way function or a proof that such functions exist, then it holds true that <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>.</p>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<p><strong>Books:</strong></p>
+<p>T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, <em>Introduction to Algorithms</em>, 3rd ed.</p>
+<p>M. Sipser, <em>Introduction to the Theory of Computation</em>, 3rd ed.</p>
+<p>J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
 
       </div>
     </content>

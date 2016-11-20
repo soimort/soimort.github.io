@@ -1,6 +1,8 @@
-% Boilerplating Pandoc for Academic Writing
-% Mort Yao
-% 2016-11-17
+---
+title: Boilerplating Pandoc for Academic Writing
+author: Mort Yao
+date: 2016-11-17
+---
 
 For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like `title`, `author` and `date`) into a properly typeset PDF document:
 
