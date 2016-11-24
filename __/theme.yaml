@@ -4,13 +4,21 @@ css: [
   //cdn.soimort.org/fonts/api/URW-Palladio-L.css,
   //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css,
   /__/css/style.css,
+  /__/css/pygments.css,
   ]
+highlighting-css: # no longer needed
 header-includes: [
   <script src="//cdn.soimort.org/jk/latest/jk.min.js"></script>,
   <link rel="icon" href="/favicon.png">,
   <link rel="apple-touch-icon" href="/favicon.png">,
   <link rel="alternate" type="application/atom+xml" href="/feed.atom">,
   ]
+filters:
+  - monkey.py
+  - monkey+.hs
+  - qed.hs
+  - userParam.hs
+  - pandoc-citeproc
 raw-options: [
   --section-divs,
   --smart,

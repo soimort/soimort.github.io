@@ -8,11 +8,6 @@ canonical:           https://www.soimort.org/
 uri-prefix-raw:      https://www.soimort.org
 uri-prefix-history:  https://github.com/soimort/soimort.github.io/commits/master
 uri-prefix-edit:     https://github.com/soimort/soimort.github.io/edit/master
-filters:
-  - monkey.py
-  - monkey+.hs
-  - qed.hs
-  - userParam.hs
-  - pandoc-citeproc
+
 csl:                 ieee-with-url.csl
 ---
