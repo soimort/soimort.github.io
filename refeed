@@ -8,7 +8,7 @@ id_prefix="tag:www.soimort.org,2016:/"
 feed="feed.atom"
 
 feed_updated=`date --iso-8601=seconds`
-pandoc_options="--filter monkey.py --filter _filters/monkey+.hs --filter _filters/qed.hs --filter _filters/userParam.hs --filter pandoc-citeproc"
+pandoc_options="--filter monkey.py --filter monkey+.hs --filter qed.hs --filter userParam.hs --filter pandoc-citeproc"
 
 echo """<?xml version=\"1.0\" encoding=\"utf-8\"?>
 <feed xmlns=\"http://www.w3.org/2005/Atom\">

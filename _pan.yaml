@@ -10,9 +10,9 @@ uri-prefix-history:  https://github.com/soimort/soimort.github.io/commits/master
 uri-prefix-edit:     https://github.com/soimort/soimort.github.io/edit/master
 filters:
   - monkey.py
-  - _filters/monkey+.hs
-  - _filters/qed.hs
-  - _filters/userParam.hs
+  - monkey+.hs
+  - qed.hs
+  - userParam.hs
   - pandoc-citeproc
 csl:                 ieee-with-url.csl
 ---
