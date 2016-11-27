@@ -36,7 +36,7 @@ In the YAML front matter of `src.md` (the main Markdown file you're writing), pu
 ```yaml
 ---
 title: Boilerplating Pandoc for Academic Writing
-subtitle: or: How I Learned to Stop Typesetting and Concentrate on the Math
+subtitle: or How I Learned to Stop Typesetting and Concentrate on the Math
 author: Mort Yao
 date: 17 November 2016
 abstract: |
