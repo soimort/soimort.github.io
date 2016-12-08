@@ -17,7 +17,7 @@ It's mainly four types of applications that account for so-called "work sessions
 
 Terminals don't take up a lot of memory, so I wouldn't mind leaving them open. Typical browsers, including Chromium and Firefox, do support session resuming (and there are even [extensions](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) which allow you to save current tabs and recover them at any later time). Any decent text editor (or IDE) may also be configured to remember open tabs / sessions. After all, average file managers fail to meet my basic needs of productivity.
 
-## File managers: the unremembered UX
+## File managers: The unremembered UX
 
 I'm on GNOME 3, but currently using the [Caja](https://github.com/mate-desktop/caja) file manager -- ever since Nautilus 3.6 decided to remove two or three features I found important to me ([compact mode](https://bugzilla.gnome.org/show_bug.cgi?id=676842), [backspace navigation](https://bugzilla.gnome.org/show_bug.cgi?id=692852)) and introduced an awkward, smug "search-whatever-shit-as-you-type" feature.
 
