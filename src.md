@@ -15,6 +15,9 @@ Life was a lie, an instance of falsity.
 
 ## Tech Notes
 
+* [Remember My Last Tabs, File Manager
+](/notes/161208_caja/)
+*8 Dec 2016*
 * [Boilerplating Pandoc for Academic Writing
 ](/notes/161117_pandoc/)
 *17 Nov 2016*
