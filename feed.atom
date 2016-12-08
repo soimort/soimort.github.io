@@ -5,11 +5,71 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2016-11-21T00:02:16+01:00</updated>
+  <updated>2016-12-08T17:13:44+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
+
+  <entry>
+    <title>Remember My Last Tabs, File Manager</title>
+    <link href="https://www.soimort.org/notes/161208_caja" />
+    <id>tag:www.soimort.org,2016:/notes/161208_caja</id>
+    <updated>2016-12-08</updated>
+    <author>
+      <name>Mort Yao</name>
+      <email>soi@mort.ninja</email>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+
+<p>It's 2016, and I can't believe that there is still no &quot;Continue where you left off&quot; option in most dominant GUI file managers (as far as I know)!</p>
+<p>Yes, it bugs me when I can't restore my last open tabs and I want my old session so badly. Remembering last tabs, if I get the history right, was a feature first introduced by Google Chrome, and soon it started to play an indispensable part in my daily workflow. I'm a multitasker, but the computing resource of my laptop is very limited -- Say, if I have a session in which I am working on a homework report, having loads of folders, web pages and editor buffers open and those can fill up gigabytes of RAM easily, then I realize that I will need to compile something really hard-core, or maybe just take a short rest and do some random surfing on the web, certainly I would rather close all those engrossing processes for the time being, hoping that they could continue with all the open tabs I left off.</p>
+<p>It's mainly four types of applications that account for so-called &quot;work sessions&quot; for me:</p>
+<ul>
+<li>Terminal emulator</li>
+<li>File manager</li>
+<li>Web browser</li>
+<li>Text editor</li>
+</ul>
+<p>Terminals don't take up a lot of memory, so I wouldn't mind leaving them open. Typical browsers, including Chromium and Firefox, do support session resuming (and there are even <a href="https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko">extensions</a> which allow you to save current tabs and recover them at any later time). Any decent text editor (or IDE) may also be configured to remember open tabs / sessions. After all, average file managers fail to meet my basic needs of productivity.</p>
+<h2 id="file-managers-the-unremembered-ux">File managers: the unremembered UX</h2>
+<p>I'm on GNOME 3, but currently using the <a href="https://github.com/mate-desktop/caja">Caja</a> file manager -- ever since Nautilus 3.6 decided to remove two or three features I found important to me (<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676842">compact mode</a>, <a href="https://bugzilla.gnome.org/show_bug.cgi?id=692852">backspace navigation</a>) and introduced an awkward, smug &quot;search-whatever-shit-as-you-type&quot; feature.</p>
+<p>File managers I've tried so far:</p>
+<ul>
+<li>Nautilus (GNOME). As said, already rendered unusable for me.</li>
+<li>Pantheon. Like Nautilus, it doesn't feature a compact mode either.</li>
+<li>Nemo (Cinnamon). Nope, segfaults too often.</li>
+<li>Caja (MATE). It's OK, just what I'm using right now.
+<ul>
+<li>Open issue for saving sessions: <a href="https://github.com/mate-desktop/caja/issues/523" class="uri">https://github.com/mate-desktop/caja/issues/523</a></li>
+</ul></li>
+<li>Dolphin (KDE). OK, unless it's from the foreign land of KDE.
+<ul>
+<li>Open issue for saving sessions: <a href="https://bugs.kde.org/show_bug.cgi?id=246028" class="uri">https://bugs.kde.org/show_bug.cgi?id=246028</a></li>
+</ul></li>
+<li>Konqueror (KDE). It's both a web browser and a file manager, and it's the only one I know that can save / restore open tabs. Unfortunately it has only limited file management functionality. (sufficient as a <em>file viewer</em>, though?)</li>
+</ul>
+<p>Among all above, I settled down with Caja, simply because there was no reasonably good alternative. Still, I'm wishing for something that can save session states for me. After doing a little research, I realized that:</p>
+<ol style="list-style-type: decimal">
+<li>There is no commonly adopted protocol addressing this issue. <a href="https://wiki.gnome.org/Projects/SessionManagement/SavingState">Not even on GNOME</a>.</li>
+<li>There is <a href="https://wiki.gnome.org/Projects/SessionManagement/EggSMClient">EggSMClient</a>, but state saving is implemented on the X (desktop) session level thus only available on the <a href="https://www.x.org/releases/X11R7.7/doc/libSM/xsmp.html">XSMP</a> backend. It works when you logout your desktop session and login, but not when you close the window and restart the application again.</li>
+<li>It is ultimately the application itself which must maintain its session states and restore them when required.</li>
+</ol>
+<h2 id="a-quick-working-patch-for-caja">A quick working patch for Caja</h2>
+<p>Let's take the issue into more technical details. On Caja (or other similarly GTK+/GLib-based file managers), one need to implement:</p>
+<ul>
+<li>On the <code>destroy</code> callback of the main <code>GtkObject</code>, all last remaining session data (e.g., internal states about open tabs, windows) must be saved to disk. (after the main loop ends there's no more chance to get this information back)</li>
+<li>On GUI initialization, read last session data (if exist) from disk, and reopen saved tabs as well as windows.</li>
+<li>On the event of changing state (e.g., creating or closing tab/window, repositioning tabs), session data are updated respectively and, optionally, saved to disk.</li>
+</ul>
+<p>With <code>caja_application_get_session_data()</code>, making a quick workaround that enables Caja to save and restore a session is somewhat trivial labor; however, it seems Caja doesn't record the correct (spatial) ordering of tabs in its session data -- so I wouldn't consider this as a satisfying solution to the issue, and I have no intent to send such an incomplete patch to Caja. Nevertheless, it's better than nothing, and, if ordering of tabs really matters, it would be feasible to write a wrapper script that manipulates the XML file in <code>$HOME/.config/caja/last-session</code>.</p>
+<p>And here goes the patch: (Applied to Caja 1.16.1; definitely UNWARRANTED)</p>
+<script src="https://gist.github.com/soimort/73c75266d1610ff0af68b40e7b07d939.js"></script>
+
+      </div>
+    </content>
+  </entry>
 
   <entry>
     <title>Boilerplating Pandoc for Academic Writing</title>
@@ -40,7 +100,7 @@
 <p>In the YAML front matter of <code>src.md</code> (the main Markdown file you're writing), put only things that matter to your potential readers:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span> Boilerplating Pandoc for Academic Writing
-<span class="fu">subtitle:</span> or: How I Learned to Stop Typesetting and Concentrate on the Math
+<span class="fu">subtitle:</span> or How I Learned to Stop Typesetting and Concentrate on the Math
 <span class="fu">author:</span> Mort Yao
 <span class="fu">date:</span> 17 November 2016
 <span class="fu">abstract:</span> |
