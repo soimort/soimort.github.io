@@ -2,6 +2,7 @@
 title: Remember My Last Tabs, File Manager
 author: Mort Yao
 date: 2016-12-08
+date-updated: 2016-12-13
 ---
 
 It's 2016, and I can't believe that there is still no "Continue where you left off" option in most dominant GUI file managers (as far as I know)!
@@ -46,7 +47,7 @@ Let's take the issue into more technical details. On Caja (or other similarly GT
 * On GUI initialization, read last session data (if exist) from disk, and reopen saved tabs as well as windows.
 * On the event of changing state (e.g., creating or closing tab/window, repositioning tabs), session data are updated respectively and, optionally, saved to disk.
 
-With `caja_application_get_session_data()`, making a quick workaround that enables Caja to save and restore a session is somewhat trivial labor; however, it seems Caja doesn't record the correct (spatial) ordering of tabs in its session data -- so I wouldn't consider this as a satisfying solution to the issue, and I have no intent to send such an incomplete patch to Caja. Nevertheless, it's better than nothing, and, if ordering of tabs really matters, it would be feasible to write a wrapper script that manipulates the XML file in `$HOME/.config/caja/last-session`.
+With `caja_application_get_session_data()`, making a quick workaround that enables Caja to save and restore a session is somewhat trivial labor; however, it seems Caja doesn't record the correct (spatial) ordering of tabs in its session data -- so I wouldn't consider this as a satisfying solution to the issue, and I have no intent to send such an incomplete patch to Caja. Nevertheless, it's better than nothing, and, if ordering of tabs really matters, it would be feasible to write a [wrapper script](https://github.com/soimort/dotfiles/blob/b721e42238a90e88c83d1feb20682d0605367b11/Scripts/Open-Folders) that manipulates the XML file in `$HOME/.config/caja/last-session`.
 
 And here goes the patch: (Applied to Caja 1.16.1; definitely UNWARRANTED)
 
