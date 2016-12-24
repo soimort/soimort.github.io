@@ -15,7 +15,7 @@ include-before: <link rel="stylesheet" href="index.css">
 
 * [The Probable Outcome
 ](/mst/2/)
-*24 Dec 2016*
+*23 Dec 2016*
 * [The Decisional Hardness
 ](/mst/1/)
 *1 Nov 2016*
