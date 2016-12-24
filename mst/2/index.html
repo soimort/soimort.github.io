@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- Akai (pandoc HTML5 template)
+     designer:     soimort
+     last updated: 2016-05-06
+     last adapted: 2016-11-01 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mort Yao">
+    <meta name="dcterms.date" content="2016-12-23">
+    <title>The Probable Outcome</title>
+    <link rel="canonical" href="https://www.soimort.org/mst/2">
+    <style type="text/css">code { white-space: pre; }</style>
+    <link rel="stylesheet" href="//cdn.soimort.org/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.soimort.org/fonts/api/URW-Palladio-L.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/__/css/style.css">
+    <link rel="stylesheet" href="/__/css/pygments.css">
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.soimort.org/jk/latest/jk.min.js"></script>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 class="title"><a href="https://www.soimort.org/mst/2">The Probable Outcome</a></h1>
+        <h1 class="subtitle"><a href="https://www.soimort.org/mst/2">He doesn’t play for the money he wins.</a></h1>
+        <address class="author">Mort Yao</address>
+        <h3 class="date">2016-12-23</h3>
+      </header>
+      <div id="content">
+<p>A refresher of basic probability theory, which is just common knowledge but plays a supporting role in information theory, statistical methods, and consequently, computer science.</p>
+<ul>
+<li><a href="https://wiki.soimort.org/math/probability/">Basic probability theory</a>
+<ul>
+<li>An <strong>experiment</strong> has various <strong>outcomes</strong>. The set of all probable outcomes constitute the <strong>sample space</strong> of that experiment.</li>
+<li>Any <em>measurable</em> subset of the sample space <span class="math inline">\(\Omega\)</span> is known as an <strong>event</strong>.</li>
+<li>A <strong>probability measure</strong> is a real-valued function defined on a set of events <span class="math inline">\(\mathcal{F}\)</span> in a probability space <span class="math inline">\((\Omega,\mathcal{F},\Pr)\)</span> that satisfies measure properties such as countable additivity. (See <strong>Kolmogorov’s axioms</strong>.)</li>
+<li>The <strong>union bound</strong> (Boole’s inequality) follows from the fact that a probability measure is σ-sub-additive.</li>
+<li><em>Events</em> can be <em>independent</em>. The following conditions hold equivalently for any independent events:
+<ul>
+<li><span class="math inline">\(\Pr[A_1 \cap A_2] = \Pr[A_1] \cdot \Pr[A_2]\)</span></li>
+<li><span class="math inline">\(\Pr[A_1|A_2] = \Pr[A_1]\)</span></li>
+</ul></li>
+<li><strong>Bayes’ theorem</strong> and the <strong>law of total probability</strong> describe the basic properties of conditional probability.</li>
+<li>A <strong>random variable</strong> is a mapping that maps a <em>value</em> to an <em>event</em>. Hence, we have probability measure defined on random variables, such as <span class="math inline">\(\Pr[X=x]\)</span>.
+<ul>
+<li>For <em>discrete</em> random variables, a <strong>probability mass function (pmf)</strong> determines a <strong>discrete probability distribution</strong>.</li>
+<li>For <em>continuous</em> random variables, a <strong>probability density function (pdf)</strong> determines a <strong>continuous probability distribution</strong>.</li>
+</ul></li>
+<li><em>Random variables</em> can be <em>uncorrelated</em>. (<span class="math inline">\(\operatorname{Cov}(X,Y)=0 \iff \operatorname{E}[XY] = \operatorname{E}[X] \cdot \operatorname{E}[Y]\)</span>.)
+<ul>
+<li><em>Independent</em> random variables are uncorrelated.</li>
+<li>However, uncorrelated random variables are not necessarily independent.</li>
+</ul></li>
+<li>A <em>distribution</em> can be presented using <strong>moments</strong>:
+<ul>
+<li><strong>Expectation (mean)</strong> <span class="math inline">\(\operatorname{E}[X]\)</span>: first raw moment.</li>
+<li><strong>Variance</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span>: second central moment.</li>
+<li><strong>Skewness</strong> <span class="math inline">\(\operatorname{Skew}(X)\)</span>: third standardized moment.</li>
+<li><strong>Kurtosis</strong> <span class="math inline">\(\operatorname{Kurt}(X)\)</span>: fourth standardized moment.</li>
+<li>For a bounded distribution of probability, the collection of all the moments (of all orders) uniquely determines the distribution.</li>
+<li>Some distributions, notably Cauchy distributions, do not have their moments defined.</li>
+</ul></li>
+<li><strong>Concentration inequalities</strong> provide bounds on how a random variable deviates from some value (usually one of its <em>moments</em>).
+<ul>
+<li><strong>Markov’s inequality</strong> is the simplest and weakest probability bound.</li>
+<li><strong>Chebyshev’s inequality</strong> provides an upper bound on the probability that a random variable deviates from its expectation.</li>
+<li><strong>Chernoff bound</strong> is stronger than Markov’s inequality.</li>
+<li><strong>Hoeffding’s inequality</strong> provides an upper bound on the probability that the sum of random variables deviates from its expectation. It’s also useful for analyzing the number of required samples needed to obtain a confidence interval.</li>
+</ul></li>
+<li>Some common <em>discrete probability distributions</em>:
+<ul>
+<li><strong>Bernoulli distribution</strong>. Special case of Binomial distribution: <span class="math inline">\(\text{B}(1,p)\)</span>.</li>
+<li><strong>Binomial distribution</strong> <span class="math inline">\(\text{B}(n,p)\)</span>. Given number of draws <span class="math inline">\(n\)</span>, the distribution of the number of successes.</li>
+<li><strong>Geometric distribution</strong> <span class="math inline">\(\text{Geom}(p)\)</span>. Special case of negative binomial distribution: <span class="math inline">\(\text{NB}(1,1-p)\)</span>.</li>
+<li><strong>Negative binomial distribution</strong> <span class="math inline">\(\text{NB}(r,p)\)</span>. Given number of failures <span class="math inline">\(r\)</span>, the distribution of the number of successes.</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="probability-measure-distribution-and-generalized-function" class="level2">
+<h2>Probability measure, distribution and generalized function</h2>
+<p>Intuitively, probability is a measure of uncertainty. Mathematically, probability is a real-valued function defined on a set of events in a probability space that satisfies measure properties such as countable additivity (or simply, <em>measure</em> on probability space).</p>
+<p>Typically, a probability density function (pdf) or a probability mass function (pmf) determines a distribution in the probability space.</p>
+<p><strong>Example 2.1.</strong> Consider the wave function of a particle: <span class="math display">\[\Psi(x,t)\]</span> where <span class="math inline">\(x\)</span> is position and <span class="math inline">\(t\)</span> is time.</p>
+<p>If the particle’s position is measured, its location cannot be determined but is described by a probability distribution: The probability that the particle is found in <span class="math inline">\([x, x+\Delta x]\)</span> is <span class="math display">\[\Delta\Pr = |\Psi(x,t)|^2 \Delta x\]</span></p>
+<p>The square modulus of the wave function (which is real-valued, non-negative) <span class="math display">\[\left|\Psi(x, t)\right|^2 = {\Psi(x, t)}^{*}\Psi(x, t) = \rho(x, t)\]</span> is interpreted as the pdf.</p>
+<p>Since the particle must be found somewhere, we have the normalization condition: (by the assumption of unit measure) <span class="math display">\[\int\limits_{-\infty}^\infty |\Psi(x,t)|^2 dx = 1\]</span></p>
+<p>Distributions are also called generalized functions in analysis. It expands the notion of functions to functions whose derivatives may not exist in the classical sense. Thus, it is not uncommon that many probability distributions cannot be described using classical (differentiable) functions. The Dirac delta function <span class="math inline">\(\delta\)</span> (which is a generalized function) is often used to represent a discrete distribution, or a partially discrete, partially continuous distribution, using a pdf.</p>
+</section>
+<section id="bayes-theorem-and-common-fallacies" class="level2">
+<h2>Bayes’ theorem and common fallacies</h2>
+<p>Bayes’ theorem forms the basis for <em>Bayesian inference</em>, which is an important method of statistical inference that updates the probability for a <em>hypothesis</em> as more evidence or information becomes available.</p>
+<p>Hypotheses can also be fallacies. In Bayesian inference, if one can make the assumption that every event occurs independently and the probability is identically distributed throughout lasting trials, it is clear to see that some common beliefs are mistaken.</p>
+<p><strong>Gambler’s fallacy (Monte Carlo fallacy).</strong> If an outcome occurs more frequently than normal during some period, it will happen less frequently in the future; contrariwise, if an outcome happens less frequently than normal during some period, it will happen more frequently in the future. This is presumed to be a means of <em>balancing</em> nature.</p>
+<p>Gambler’s fallacy is considered a fallacy if the probability of outcomes is known to be independently, identically distributed. Assume that the future (the probability of event <span class="math inline">\(A_2\)</span>) has no effect on the past (the probability of event <span class="math inline">\(A_1\)</span>), we have <span class="math inline">\(\Pr[A_1|A_2] = \Pr[A_1]\)</span>. From Bayes’ theorem, it holds true that <span class="math display">\[\Pr[A_2|A_1] = \Pr[A_2]\]</span> That is, past events should not increase or decrease our confidence in a future event.</p>
+<p><strong>Hot-hand fallacy.</strong> A person who has experienced success with a seemingly random event has a greater chance of further success in additional attempts. That is, if an outcome occurs more frequently than normal during some period, it will also happen frequently in the future.</p>
+<p>If psychological factors can be excluded, then hot-hand fallacy is a fallacy caused by people’s confirmation bias. Like the gambler’s fallacy, if we can’t assume that the probability of outcomes is independently, identically distributed, we can’t simply conclude that this belief is mistaken.</p>
+<p><strong>Inverse gambler’s fallacy.</strong> If an unlikely outcome occurs, then the trials must have been repeated many times before.</p>
+<p>Assume that the past (the probability of event <span class="math inline">\(A_1\)</span>) has no effect on the future (the probability of event <span class="math inline">\(A_2\)</span>), we have <span class="math inline">\(\Pr[A_2|A_1] = \Pr[A_2]\)</span>. From Bayes’ theorem, it holds true that <span class="math display">\[\Pr[A_1|A_2] = \Pr[A_1]\]</span> That is, our confidence in <span class="math inline">\(A_1\)</span> should remain unchanged after we observe <span class="math inline">\(A_2\)</span>.</p>
+</section>
+<section id="lln-and-chebyshevs-inequality" class="level2">
+<h2>LLN and Chebyshev’s inequality</h2>
+<p><strong>Fallacies of hasty generalization and slothful induction (law of small numbers).</strong> Informal fallacies reaching an inductive generalization based on insufficient evidence, or denying a reasonable conclusion of an inductive argument.</p>
+<p>Statistically saying, sampling from a small group can lead to misbeliefs that fail to hold for the entire population, if hypothesis testing is not carefully conducted.</p>
+<p><strong>Theorem 2.2. (Law of large numbers)</strong> Let <span class="math inline">\(X_1, \dots, X_n\)</span> be an infinite sequence of i.i.d. Lebesgue integrable random variables with fixed expectation <span class="math inline">\(\operatorname{E}[X_1] = \cdots = \operatorname{E}[X_n] = \mu\)</span>. Define the sample average <span class="math display">\[\overline{X}_n = \frac{1}{n}(X_1 + \dots + X_n)\]</span></p>
+<ol type="1">
+<li><strong>(Weak law of large numbers; Khintchine’s law)</strong> The sample average converges in probability towards the expectation: <span class="math display">\[\lim_{n\to\infty} \Pr[|\overline{X}_n - \mu| &gt; \varepsilon] = 0\]</span></li>
+<li><strong>(Strong law of large numbers)</strong> The sample average converges <em>almost surely</em> to the expectation: <span class="math display">\[\Pr[\lim_{n\to\infty} \overline{X}_n = \mu] = 1\]</span></li>
+</ol>
+<p>Chebyshev’s inequality provides an upper bound on the probability that a random variable deviates from its expected value. Thus, it may be used as a proof for the weak law of large numbers.</p>
+</section>
+<section id="how-is-mathematical-expectation-only-mathematical" class="level2">
+<h2>How is mathematical expectation only “mathematical”?</h2>
+<p>The expected value of a random variable <span class="math inline">\(X\)</span>: <span class="math display">\[\operatorname{E}[X] = \sum_{x \in \mathcal{X}} x \Pr[X=x]\]</span> While it seemingly gives an estimate on how people would “expect” a random variable to take its value, it can sometimes lead to counterintuitive results, as shown by the following paradox.</p>
+<p><strong>St. Petersburg Paradox.</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> A casino offers a game of chance for a gambler to flip a fair coin until it comes up tails. The initial stake starts at <span class="math inline">\(2\)</span> dollars and is doubled every time heads appears. The first time tails appears, the game ends and the gambler wins whatever is in the pot. Thus if the coin comes up tails the first time, the gambler wins <span class="math inline">\(2^1=2\)</span> dollars, and the game ends. If the coin comes up heads, the coin is flipped again. If the coin comes up tails the second time, the gambler wins <span class="math inline">\(2^2=4\)</span> dollars, and the game ends. If the coin comes up heads again, the coin is flipped again. If the coin comes up tails the third time, the gambler wins <span class="math inline">\(2^3=8\)</span> dollars, and the game ends. So on and so like. Eventually the gambler wins <span class="math inline">\(2^k\)</span> dollars, where <span class="math inline">\(k\)</span> is the number of coin flips until tails appears. (It is easy to see that <span class="math inline">\(k\)</span> satisfies the geometric distribution.) What would be a fair price to pay the casino for entering such a game? (Assume that there is no house edge)</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(k\)</span>th coin flip</th>
+<th style="text-align: center;"><span class="math inline">\(\Pr[\text{Tails}]\)</span></th>
+<th style="text-align: center;">Stake ($)</th>
+<th style="text-align: center;">Expected payoff ($)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{4}\)</span></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{8}\)</span></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{16}\)</span></td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{32}\)</span></td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">k</td>
+<td style="text-align: center;"><span class="math inline">\((1/2)^k\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^k\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>The price should be made equal to the expected value that a gambler wins the stake, which is <span class="math display">\[\operatorname{E}[\text{Payoff}]
+= \sum_{k=1}^{+\infty} \left(\frac{1}{2}\right)^k \cdot 2^k
+= \sum_{k=1}^{+\infty} 1
+= +\infty\]</span></p>
+<p>If a rational gambler pays for entering a game if and only if its average payoff is larger than its price, then he would pay any price to enter this game (since the expected payoff of this game is infinitely large). But in reality, few of us are willing to pay even tens of dollars to enter such a game. What went wrong? Furthermore, if <em>mathematical</em> expectation does not reflect correctly what people expect from a game, how to quantify the “<em>true</em>” expectation?</p>
+<p>The St. Petersburg paradox was initially stated by Nicolas Bernoulli in 1713. There are several proposed approaches for solving the paradox, including the <a href="https://en.wikipedia.org/wiki/Expected_utility_hypothesis">expected utility</a> theory with the hypothesis of diminishing marginal utility <a href="#ref-sep-paradox-stpetersburg"><span class="citation" data-cites="sep-paradox-stpetersburg">[1]</span></a>, and the cumulative prospect theory. However, none of them is purely probability theoretical, as they require the use of hypothesized economic/behavioral models.</p>
+</section>
+<section id="bias-of-sample-variance-and-bessels-correction" class="level2">
+<h2>Bias of sample variance and Bessel’s correction</h2>
+<p>In probability theory, the variance of a random variable <span class="math inline">\(X\)</span> is defined as <span class="math display">\[\operatorname{Var}(X) = \operatorname{E}[(X-\mu)^2]
+= \frac{1}{N} \sum_{i=1}^N (X_i-\bar{X})^2\]</span></p>
+<p>In statistics, when calculating the sample variance in order to give an estimation of the population variance, and the population mean is unknown, Bessel’s correction<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> (use of <span class="math inline">\(N-1\)</span> instead of <span class="math inline">\(N\)</span>) is often preferred: <span class="math display">\[s^2 = \frac{1}{N-1} \sum_{i=1}^N (X_i-\bar{X})^2\]</span></p>
+<p>A few remarks and caveats:</p>
+<ol type="1">
+<li>Bessel’s correction is only necessary when the population mean is unknown and estimated as the sample mean.</li>
+<li>Without Bessel’s correction, the estimated variance would be <em>biased</em>; the biased sample variance <span class="math inline">\(s_n^2\)</span> tends to be much smaller than the population variance <span class="math inline">\(\sigma^2\)</span>, whether the sample mean is smaller or larger than the population mean.</li>
+<li>Bessel’s correction does not yield an unbiased estimator of standard deviation, only variance and covariance.</li>
+<li>The corrected estimator often has a larger mean squared error (MSE).</li>
+</ol>
+</section>
+<section id="references-and-further-reading" class="level2">
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>M. Mitzenmacher and E. Upfal, <em>Probability and Computing: Randomized Algorithms and Probabilistic Analysis</em>.</p>
+<p>M. Baron, <em>Probability and Statistics for Computer Scientists</em>, 2nd ed.</p>
+<p><strong>Articles:</strong></p>
+<div id="refs" class="references">
+<div id="ref-sep-paradox-stpetersburg">
+<p>[1] R. Martin, “The st. petersburg paradox,” in <em>The stanford encyclopedia of philosophy</em>, Summer 2014., E. N. Zalta, Ed. <a href="https://plato.stanford.edu/archives/sum2014/entries/paradox-stpetersburg/" class="uri">https://plato.stanford.edu/archives/sum2014/entries/paradox-stpetersburg/</a>; Metaphysics Research Lab, Stanford University, 2014. </p>
+</div>
+</div>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox" class="uri">https://en.wikipedia.org/wiki/St._Petersburg_paradox</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Bessel&#39;s_correction" class="uri">https://en.wikipedia.org/wiki/Bessel's_correction</a><a href="#fnref2">↩</a></p></li>
+</ol>
+</section>
+      </div>
+      <!-- (www.soimort.org) last updated: 2016-05-07 -->
+      <aside id="soimort-toolbar">
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </aside>
+    </article>
+  </body>
+</html>
