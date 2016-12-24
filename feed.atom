@@ -5,11 +5,298 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2016-12-13T18:17:19+01:00</updated>
+  <updated>2016-12-24T03:47:54+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
+
+  <entry>
+    <title>The Probable Outcome</title>
+    <link href="https://www.soimort.org/mst/2" />
+    <id>tag:www.soimort.org,2016:/mst/2</id>
+    <updated>2016-12-23</updated>
+    <author>
+      <name>Mort Yao</name>
+      <email>soi@mort.ninja</email>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+
+<p>A refresher of basic probability theory, which is just common knowledge but plays a supporting role in information theory, statistical methods, and consequently, computer science.</p>
+<ul>
+<li><a href="https://wiki.soimort.org/math/probability/">Basic probability theory</a>
+<ul>
+<li>An <strong>experiment</strong> has various <strong>outcomes</strong>. The set of all probable outcomes constitute the <strong>sample space</strong> of that experiment.</li>
+<li>Any <em>measurable</em> subset of the sample space <span class="math inline"><em>Ω</em></span> is known as an <strong>event</strong>.</li>
+<li>A <strong>probability measure</strong> is a real-valued function defined on a set of events <span class="math inline">ℱ</span> in a probability space <span class="math inline">(<em>Ω</em>, ℱ, Pr)</span> that satisfies measure properties such as countable additivity. (See <strong>Kolmogorov's axioms</strong>.)</li>
+<li>The <strong>union bound</strong> (Boole's inequality) follows from the fact that a probability measure is σ-sub-additive.</li>
+<li><em>Events</em> can be <em>independent</em>. The following conditions hold equivalently for any independent events:
+<ul>
+<li><span class="math inline">Pr[<em>A</em><sub>1</sub> ∩ <em>A</em><sub>2</sub>]=Pr[<em>A</em><sub>1</sub>]⋅Pr[<em>A</em><sub>2</sub>]</span></li>
+<li><span class="math inline">Pr[<em>A</em><sub>1</sub>|<em>A</em><sub>2</sub>]=Pr[<em>A</em><sub>1</sub>]</span></li>
+</ul></li>
+<li><strong>Bayes' theorem</strong> and the <strong>law of total probability</strong> describe the basic properties of conditional probability.</li>
+<li>A <strong>random variable</strong> is a mapping that maps a <em>value</em> to an <em>event</em>. Hence, we have probability measure defined on random variables, such as <span class="math inline">Pr[<em>X</em> = <em>x</em>]</span>.
+<ul>
+<li>For <em>discrete</em> random variables, a <strong>probability mass function (pmf)</strong> determines a <strong>discrete probability distribution</strong>.</li>
+<li>For <em>continuous</em> random variables, a <strong>probability density function (pdf)</strong> determines a <strong>continuous probability distribution</strong>.</li>
+</ul></li>
+<li><em>Random variables</em> can be <em>uncorrelated</em>. (<span class="math inline">Cov(<em>X</em>, <em>Y</em>)=0 ⇔ E[<em>X</em><em>Y</em>]=E[<em>X</em>]⋅E[<em>Y</em>]</span>.)
+<ul>
+<li><em>Independent</em> random variables are uncorrelated.</li>
+<li>However, uncorrelated random variables are not necessarily independent.</li>
+</ul></li>
+<li>A <em>distribution</em> can be presented using <strong>moments</strong>:
+<ul>
+<li><strong>Expectation (mean)</strong> <span class="math inline">E[<em>X</em>]</span>: first raw moment.</li>
+<li><strong>Variance</strong> <span class="math inline">Var(<em>X</em>)</span>: second central moment.</li>
+<li><strong>Skewness</strong> <span class="math inline">Skew(<em>X</em>)</span>: third standardized moment.</li>
+<li><strong>Kurtosis</strong> <span class="math inline">Kurt(<em>X</em>)</span>: fourth standardized moment.</li>
+<li>For a bounded distribution of probability, the collection of all the moments (of all orders) uniquely determines the distribution.</li>
+<li>Some distributions, notably Cauchy distributions, do not have their moments defined.</li>
+</ul></li>
+<li><strong>Concentration inequalities</strong> provide bounds on how a random variable deviates from some value (usually one of its <em>moments</em>).
+<ul>
+<li><strong>Markov's inequality</strong> is the simplest and weakest probability bound.</li>
+<li><strong>Chebyshev's inequality</strong> provides an upper bound on the probability that a random variable deviates from its expectation.</li>
+<li><strong>Chernoff bound</strong> is stronger than Markov's inequality.</li>
+<li><strong>Hoeffding's inequality</strong> provides an upper bound on the probability that the sum of random variables deviates from its expectation. It's also useful for analyzing the number of required samples needed to obtain a confidence interval.</li>
+</ul></li>
+<li>Some common <em>discrete probability distributions</em>:
+<ul>
+<li><strong>Bernoulli distribution</strong>. Special case of Binomial distribution: <span class="math inline">B(1, <em>p</em>)</span>.</li>
+<li><strong>Binomial distribution</strong> <span class="math inline">B(<em>n</em>, <em>p</em>)</span>. Given number of draws <span class="math inline"><em>n</em></span>, the distribution of the number of successes.</li>
+<li><strong>Geometric distribution</strong> <span class="math inline">Geom(<em>p</em>)</span>. Special case of negative binomial distribution: <span class="math inline">NB(1, 1 − <em>p</em>)</span>.</li>
+<li><strong>Negative binomial distribution</strong> <span class="math inline">NB(<em>r</em>, <em>p</em>)</span>. Given number of failures <span class="math inline"><em>r</em></span>, the distribution of the number of successes.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="probability-measure-distribution-and-generalized-function">Probability measure, distribution and generalized function</h2>
+<p>Intuitively, probability is a measure of uncertainty. Mathematically, probability is a real-valued function defined on a set of events in a probability space that satisfies measure properties such as countable additivity (or simply, <em>measure</em> on probability space).</p>
+<p>Typically, a probability density function (pdf) or a probability mass function (pmf) determines a distribution in the probability space.</p>
+<p><strong>Example 2.1.</strong> Consider the wave function of a particle: <br /><span class="math display"><em>Ψ</em>(<em>x</em>, <em>t</em>)</span><br /> where <span class="math inline"><em>x</em></span> is position and <span class="math inline"><em>t</em></span> is time.</p>
+<p>If the particle's position is measured, its location cannot be determined but is described by a probability distribution: The probability that the particle is found in <span class="math inline">[<em>x</em>, <em>x</em> + <em>Δ</em><em>x</em>]</span> is <br /><span class="math display"><em>Δ</em>Pr = |<em>Ψ</em>(<em>x</em>, <em>t</em>)|<sup>2</sup><em>Δ</em><em>x</em></span><br /></p>
+<p>The square modulus of the wave function (which is real-valued, non-negative) <br /><span class="math display">|<em>Ψ</em>(<em>x</em>,<em>t</em>)|<sup>2</sup> = <em>Ψ</em>(<em>x</em>, <em>t</em>)<sup>*</sup><em>Ψ</em>(<em>x</em>, <em>t</em>)=<em>ρ</em>(<em>x</em>, <em>t</em>)</span><br /> is interpreted as the pdf.</p>
+<p>Since the particle must be found somewhere, we have the normalization condition: (by the assumption of unit measure) <br /><span class="math display">$$\int\limits_{-\infty}^\infty |\Psi(x,t)|^2 dx = 1$$</span><br /></p>
+<p>Distributions are also called generalized functions in analysis. It expands the notion of functions to functions whose derivatives may not exist in the classical sense. Thus, it is not uncommon that many probability distributions cannot be described using classical (differentiable) functions. The Dirac delta function <span class="math inline"><em>δ</em></span> (which is a generalized function) is often used to represent a discrete distribution, or a partially discrete, partially continuous distribution, using a pdf.</p>
+<h2 id="bayes-theorem-and-common-fallacies">Bayes' theorem and common fallacies</h2>
+<p>Bayes' theorem forms the basis for <em>Bayesian inference</em>, which is an important method of statistical inference that updates the probability for a <em>hypothesis</em> as more evidence or information becomes available.</p>
+<p>Hypotheses can also be fallacies. In Bayesian inference, if one can make the assumption that every event occurs independently and the probability is identically distributed throughout lasting trials, it is clear to see that some common beliefs are mistaken.</p>
+<p><strong>Gambler's fallacy (Monte Carlo fallacy).</strong> If an outcome occurs more frequently than normal during some period, it will happen less frequently in the future; contrariwise, if an outcome happens less frequently than normal during some period, it will happen more frequently in the future. This is presumed to be a means of <em>balancing</em> nature.</p>
+<p>Gambler's fallacy is considered a fallacy if the probability of outcomes is known to be independently, identically distributed. Assume that the future (the probability of event <span class="math inline"><em>A</em><sub>2</sub></span>) has no effect on the past (the probability of event <span class="math inline"><em>A</em><sub>1</sub></span>), we have <span class="math inline">Pr[<em>A</em><sub>1</sub>|<em>A</em><sub>2</sub>]=Pr[<em>A</em><sub>1</sub>]</span>. From Bayes' theorem, it holds true that <br /><span class="math display">Pr[<em>A</em><sub>2</sub>|<em>A</em><sub>1</sub>]=Pr[<em>A</em><sub>2</sub>]</span><br /> That is, past events should not increase or decrease our confidence in a future event.</p>
+<p><strong>Hot-hand fallacy.</strong> A person who has experienced success with a seemingly random event has a greater chance of further success in additional attempts. That is, if an outcome occurs more frequently than normal during some period, it will also happen frequently in the future.</p>
+<p>If psychological factors can be excluded, then hot-hand fallacy is a fallacy caused by people's confirmation bias. Like the gambler's fallacy, if we can't assume that the probability of outcomes is independently, identically distributed, we can't simply conclude that this belief is mistaken.</p>
+<p><strong>Inverse gambler's fallacy.</strong> If an unlikely outcome occurs, then the trials must have been repeated many times before.</p>
+<p>Assume that the past (the probability of event <span class="math inline"><em>A</em><sub>1</sub></span>) has no effect on the future (the probability of event <span class="math inline"><em>A</em><sub>2</sub></span>), we have <span class="math inline">Pr[<em>A</em><sub>2</sub>|<em>A</em><sub>1</sub>]=Pr[<em>A</em><sub>2</sub>]</span>. From Bayes' theorem, it holds true that <br /><span class="math display">Pr[<em>A</em><sub>1</sub>|<em>A</em><sub>2</sub>]=Pr[<em>A</em><sub>1</sub>]</span><br /> That is, our confidence in <span class="math inline"><em>A</em><sub>1</sub></span> should remain unchanged after we observe <span class="math inline"><em>A</em><sub>2</sub></span>.</p>
+<h2 id="lln-and-chebyshevs-inequality">LLN and Chebyshev's inequality</h2>
+<p><strong>Fallacies of hasty generalization and slothful induction (law of small numbers).</strong> Informal fallacies reaching an inductive generalization based on insufficient evidence, or denying a reasonable conclusion of an inductive argument.</p>
+<p>Statistically saying, sampling from a small group can lead to misbeliefs that fail to hold for the entire population, if hypothesis testing is not carefully conducted.</p>
+<p><strong>Theorem 2.2. (Law of large numbers)</strong> Let <span class="math inline"><em>X</em><sub>1</sub>, …, <em>X</em><sub><em>n</em></sub></span> be an infinite sequence of i.i.d. Lebesgue integrable random variables with fixed expectation <span class="math inline">E[<em>X</em><sub>1</sub>]=⋯=E[<em>X</em><sub><em>n</em></sub>]=<em>μ</em></span>. Define the sample average <br /><span class="math display">$$\overline{X}_n = \frac{1}{n}(X_1 + \dots + X_n)$$</span><br /></p>
+<ol style="list-style-type: decimal">
+<li><strong>(Weak law of large numbers; Khintchine's law)</strong> The sample average converges in probability towards the expectation: <br /><span class="math display">$$\lim_{n\to\infty} \Pr[|\overline{X}_n - \mu| &gt; \varepsilon] = 0$$</span><br /></li>
+<li><strong>(Strong law of large numbers)</strong> The sample average converges <em>almost surely</em> to the expectation: <br /><span class="math display">$$\Pr[\lim_{n\to\infty} \overline{X}_n = \mu] = 1$$</span><br /></li>
+</ol>
+<p>Chebyshev's inequality provides an upper bound on the probability that a random variable deviates from its expected value. Thus, it may be used as a proof for the weak law of large numbers.</p>
+<h2 id="how-is-mathematical-expectation-only-mathematical">How is mathematical expectation only &quot;mathematical&quot;?</h2>
+<p>The expected value of a random variable <span class="math inline"><em>X</em></span>: <br /><span class="math display">E[<em>X</em>]=∑<sub><em>x</em> ∈ 𝒳</sub><em>x</em>Pr[<em>X</em> = <em>x</em>]</span><br /> While it seemingly gives an estimate on how people would &quot;expect&quot; a random variable to take its value, it can sometimes lead to counterintuitive results, as shown by the following paradox.</p>
+<p><strong>St. Petersburg Paradox.</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> A casino offers a game of chance for a gambler to flip a fair coin until it comes up tails. The initial stake starts at <span class="math inline">2</span> dollars and is doubled every time heads appears. The first time tails appears, the game ends and the gambler wins whatever is in the pot. Thus if the coin comes up tails the first time, the gambler wins <span class="math inline">2<sup>1</sup> = 2</span> dollars, and the game ends. If the coin comes up heads, the coin is flipped again. If the coin comes up tails the second time, the gambler wins <span class="math inline">2<sup>2</sup> = 4</span> dollars, and the game ends. If the coin comes up heads again, the coin is flipped again. If the coin comes up tails the third time, the gambler wins <span class="math inline">2<sup>3</sup> = 8</span> dollars, and the game ends. So on and so like. Eventually the gambler wins <span class="math inline">2<sup><em>k</em></sup></span> dollars, where <span class="math inline"><em>k</em></span> is the number of coin flips until tails appears. (It is easy to see that <span class="math inline"><em>k</em></span> satisfies the geometric distribution.) What would be a fair price to pay the casino for entering such a game? (Assume that there is no house edge)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline"><em>k</em></span>th coin flip</th>
+<th align="center"><span class="math inline">Pr[Tails]</span></th>
+<th align="center">Stake ($)</th>
+<th align="center">Expected payoff ($)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center"><span class="math inline">$\frac{1}{2}$</span></td>
+<td align="center">2</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center"><span class="math inline">$\frac{1}{4}$</span></td>
+<td align="center">4</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center"><span class="math inline">$\frac{1}{8}$</span></td>
+<td align="center">8</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center"><span class="math inline">$\frac{1}{16}$</span></td>
+<td align="center">16</td>
+<td align="center">1</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center"><span class="math inline">$\frac{1}{32}$</span></td>
+<td align="center">32</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr class="odd">
+<td align="center">k</td>
+<td align="center"><span class="math inline">(1/2)<sup><em>k</em></sup></span></td>
+<td align="center"><span class="math inline">2<sup><em>k</em></sup></span></td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>The price should be made equal to the expected value that a gambler wins the stake, which is <br /><span class="math display">$$\operatorname{E}[\text{Payoff}]
+= \sum_{k=1}^{+\infty} \left(\frac{1}{2}\right)^k \cdot 2^k
+= \sum_{k=1}^{+\infty} 1
+= +\infty$$</span><br /></p>
+<p>If a rational gambler pays for entering a game if and only if its average payoff is larger than its price, then he would pay any price to enter this game (since the expected payoff of this game is infinitely large). But in reality, few of us are willing to pay even tens of dollars to enter such a game. What went wrong? Furthermore, if <em>mathematical</em> expectation does not reflect correctly what people expect from a game, how to quantify the &quot;<em>true</em>&quot; expectation?</p>
+<p>The St. Petersburg paradox was initially stated by Nicolas Bernoulli in 1713. There are several proposed approaches for solving the paradox, including the <a href="https://en.wikipedia.org/wiki/Expected_utility_hypothesis">expected utility</a> theory with the hypothesis of diminishing marginal utility <a href="#ref-sep-paradox-stpetersburg"><span class="citation">(<span class="citeproc-not-found" data-reference-id="sep-paradox-stpetersburg"><strong>???</strong></span>)</span></a>, and the cumulative prospect theory. However, none of them is purely probability theoretical, as they require the use of hypothesized economic/behavioral models.</p>
+<h2 id="bias-of-sample-variance-and-bessels-correction">Bias of sample variance and Bessel's correction</h2>
+<p>In probability theory, the variance of a random variable <span class="math inline"><em>X</em></span> is defined as <br /><span class="math display">$$\operatorname{Var}(X) = \operatorname{E}[(X-\mu)^2]
+= \frac{1}{N} \sum_{i=1}^N (X_i-\bar{X})^2$$</span><br /></p>
+<p>In statistics, when calculating the sample variance in order to give an estimation of the population variance, and the population mean is unknown, Bessel's correction<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> (use of <span class="math inline"><em>N</em> − 1</span> instead of <span class="math inline"><em>N</em></span>) is often preferred: <br /><span class="math display">$$s^2 = \frac{1}{N-1} \sum_{i=1}^N (X_i-\bar{X})^2$$</span><br /></p>
+<p>A few remarks and caveats:</p>
+<ol style="list-style-type: decimal">
+<li>Bessel's correction is only necessary when the population mean is unknown and estimated as the sample mean.</li>
+<li>Without Bessel's correction, the estimated variance would be <em>biased</em>; the biased sample variance <span class="math inline"><em>s</em><sub><em>n</em></sub><sup>2</sup></span> tends to be much smaller than the population variance <span class="math inline"><em>σ</em><sup>2</sup></span>, whether the sample mean is smaller or larger than the population mean.</li>
+<li>Bessel's correction does not yield an unbiased estimator of standard deviation, only variance and covariance.</li>
+<li>The corrected estimator often has a larger mean squared error (MSE).</li>
+</ol>
+<h2 id="references-and-further-reading">References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>M. Mitzenmacher and E. Upfal, <em>Probability and Computing: Randomized Algorithms and Probabilistic Analysis</em>.</p>
+<p>M. Baron, <em>Probability and Statistics for Computer Scientists</em>, 2nd ed.</p>
+<p><strong>Articles:</strong></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox" class="uri">https://en.wikipedia.org/wiki/St._Petersburg_paradox</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Bessel&#39;s_correction" class="uri">https://en.wikipedia.org/wiki/Bessel's_correction</a><a href="#fnref2">↩</a></p></li>
+</ol>
+</div>
+
+      </div>
+    </content>
+  </entry>
+
+  <entry>
+    <title>The Decisional Hardness</title>
+    <link href="https://www.soimort.org/mst/1" />
+    <id>tag:www.soimort.org,2016:/mst/1</id>
+    <updated>2016-11-20</updated>
+    <author>
+      <name>Mort Yao</name>
+      <email>soi@mort.ninja</email>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+
+<p><p style='background-color:yellow'> <strong>(20 Nov 2016) Correction:</strong> P ≠ NP is not sufficient to imply that one-way functions exist. See <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.</p></p>
+<hr />
+<p><strong>Intro.</strong> Starting from November, I'll summarize my study notes on <a href="https://wiki.soimort.org">wiki</a> into weekly blog posts. I always wanted to keep my study progress on track; I feel that it's hard even to convince myself without visible footprints.</p>
+<p>So here we have the first episode. (Hopefully it won't be the last one)</p>
+<hr />
+<p>Asymptotic notation is an important tool in analyzing the time/space efficiency of algorithms.</p>
+<ul>
+<li><a href="https://wiki.soimort.org/math/calculus/limit/">Limit</a>
+<ul>
+<li>Formal definition of limit (the (ε, δ)-definition) in calculus. Note that limits involving infinity are closely related to asymptotic analysis. In addition to basic limit rules, L'Hôpital's rule is also relevant.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/algo/asymptotic-notation/">Asymptotic notation</a>
+<ul>
+<li>Introduction to the Bachmann–Landau notation family (among them are the most widely-used Big O notation and Big Theta notation).</li>
+<li>Master theorem is used to find the asymptotic bound for recurrence. This is particularly helpful when analyzing recursive algorithms (e.g., binary search, merge sort, tree traversal).</li>
+<li>Based on common orders of asymptotic running time using Big O notation, we can categorize algorithms into various classes of time complexities (among them are P, DLOGTIME, SUBEXP and EXPTIME). Note that we have not formally defined the word &quot;algorithm&quot; and &quot;complexity class&quot; yet.</li>
+</ul></li>
+</ul>
+<p>For decision problems, we now formally define the time complexity classes P and NP, and propose the hardness of NP-complete problems, which plays an indispensable role in the study of algorithm design and modern cryptography.</p>
+<ul>
+<li><a href="https://wiki.soimort.org/comp/language/">Formal language</a>
+<ul>
+<li>Formal definition of language. We will revisit this when studying formal grammars like the context-free grammar and parsing techniques for compilers. For now, it suffices to know that binary string is a common encoding for all kinds of problems (especially, decision problems).</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/decidability/">Decidability</a>
+<ul>
+<li>Among all abstract problems, we are mostly interested in decision problems.</li>
+<li>The decidability of a language depends on whether there exists an algorithm that decides it.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/reducibility/">Reducibility</a>
+<ul>
+<li>Polynomial-time reduction is a commonly used technique that maps one language to another.</li>
+<li>What is a hard language for a complexity class; what is a complete language for a complexity class.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/complexity/time/">Time complexity</a>
+<ul>
+<li>Encodings of concrete problems matter. Normally we would choose a &quot;standard encoding&quot; for our language of interest.</li>
+<li>Polynomial-time algorithms are considered to be efficient and languages which have polynomial-time algorithms that decide them are considered tractable.</li>
+<li>P is the time complexity class of all problems that are polynomial-time solvable.</li>
+<li>NP is the time complexity class of all problems that are polynomial-time verifiable.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/complexity/time/npc/">NP-completeness</a>
+<ul>
+<li>The set of languages that are complete for the complexity class NP, that is, the &quot;hardest problems&quot; in NP.</li>
+<li>NP-complete problems are central in answering the open question whether P = NP.</li>
+<li>We (informally) show that every NP problem is polynomial-time reducible to CIRCUIT-SAT, and that CIRCUIT-SAT is NP-complete.</li>
+<li>There are other problems (SAT, 3-CNF-SAT, CLIQUE, VERTEX-COVER, HAM-CYCLE, TSP, SUBSET-SUM) polynomial-time reducible from one to another, thus they are also shown to be NP-complete.</li>
+</ul></li>
+</ul>
+<p><strong>Computational hardness assumption P ≠ NP.</strong> Although it is still an open proposition, many believe that P ≠ NP. Notably, if P ≠ NP holds true,</p>
+<ol style="list-style-type: decimal">
+<li>If a decision problem is polynomial-time unsolvable in general case, we should strive to find approximations or randomized algorithms; exact algorithms cannot be run in worst-case polynomial time thus may not be efficient. This applies to optimization problems too.</li>
+<li><del>
+One-way functions exist, which implies that pseudorandom generators and functions exist. Consequently, many cryptographic constructions (private-key encryption, MACs, etc.) are provably computationally secure.
+</del></li>
+</ol>
+<p><p style='background-color:yellow'> (I stand corrected: There is no such a known proof showing that P ≠ NP implies the existence of one-way functions. However, reversely, the existence of one-way functions implies that P ≠ NP. There is an informal argument given by Peter Shor on StackExchange<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, rephrased in the section <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.)</p></p>
+<p>Later we will cover the notion of security in cryptography, so there is a refresher of basic probability: (Probability is also considerably used in analyzing the behaviors of non-deterministic algorithms, hash functions, etc.)</p>
+<ul>
+<li><a href="https://wiki.soimort.org/math/probability/">Probability</a>
+<ul>
+<li>An intuitive introduction to basic probability theory based on Kolmogorov's axioms, including the union bound (Boole's inequality) and its generalized form Bonferroni inequalities, the conditional probability and Bayes' theorem. We will revisit the notion of probability space when coming to measure theory.</li>
+</ul></li>
+</ul>
+<p>Plan for next week:</p>
+<ul>
+<li><strong>(Algorithms)</strong> More involved NP-complete problems. Exact algorithms. Approximation algorithms. Probabilistic algorithms.</li>
+<li><strong>(Cryptography)</strong> Information-theoretic/computational security (semantic security, IND, IND-CPA, IND-CCA). Private-key encryption. Message authentication codes. Hash functions. Theoretical constructions (one-way functions, pseudorandomness). Practical constructions (Feistel network, substitution-permutation network, DES, AES).</li>
+</ul>
+<h2 id="p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</h2>
+<p>Consider the following map: <br /><span class="math display"><em>f</em> : (<em>x</em>, <em>r</em>)→<em>s</em></span><br /> where <span class="math inline"><em>x</em></span> is an arbitrary bit string, <span class="math inline"><em>r</em></span> is a string of random bits, and <span class="math inline"><em>s</em></span> is an instance of a <span class="math inline"><em>k</em></span>-SAT problem having <span class="math inline"><em>x</em></span> as a planted solution, while the randomness of <span class="math inline"><em>r</em></span> determines uniquely which <span class="math inline"><em>k</em></span>-SAT problem to choose.</p>
+<p>If we can invert the above function <span class="math inline"><em>f</em></span> (in polynomial time), we must already have solved the corresponding <span class="math inline"><em>k</em></span>-SAT problem <span class="math inline"><em>s</em></span> with a planted solution <span class="math inline"><em>x</em></span>. <span class="math inline"><em>k</em></span>-SAT problems are known to be NP-complete, and inverting such a function would be as hard as solving a <span class="math inline"><em>k</em></span>-SAT problem with a planted solution, that is, inverting <span class="math inline"><em>f</em></span> <em>at one point</em> can be hard. Clearly, should we have a one-way function, then inverting it is guaranteed to be no easier than inverting <span class="math inline"><em>f</em></span>.</p>
+<p>So what does it mean if P ≠ NP? We know that <span class="math inline"><em>k</em></span>-SAT problem is hard to solve in its <em>worst case</em>, so function <span class="math inline"><em>f</em></span> can be made as hard to invert as solving a <span class="math inline"><em>k</em></span>-SAT problem in its <em>worst case</em>. However, we don't know whether it's possible to have a class <span class="math inline">𝒮</span> of <span class="math inline"><em>k</em></span>-SAT problems with planted solutions that are as hard as general-case <span class="math inline"><em>k</em></span>-SAT problems. If such a class <span class="math inline">𝒮</span> exists, then given any <span class="math inline"><em>s</em> ∈ 𝒮</span>, no probabilistic polynomial-time algorithm is able to get <span class="math inline"><em>x</em></span> with a non-negligible probability, so we can conclude that <span class="math inline"><em>f</em></span> is indeed a one-way function. <a href="#ref-selman1992survey"><span class="citation">(<span class="citeproc-not-found" data-reference-id="selman1992survey"><strong>???</strong></span>)</span></a></p>
+<p><strong>Problem 1.1.</strong> Does there exist a class <span class="math inline">𝒮</span> of <span class="math inline"><em>k</em></span>-SAT problems with planted solutions, such that every <span class="math inline"><em>L</em> ∈ 𝒮</span> is NP-hard?</p>
+<p><strong>Conjecture 1.2.</strong> <em>If <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>, then one-way functions exist.</em></p>
+<p>On the other hand, assume that <span class="math inline"><em>f</em></span> is a one-way function, so that one-way functions do exist, then this implies that <span class="math inline"><em>k</em></span>-SAT problem is hard to solve (in its worse case) by a polynomial-time algorithm, thus we have P ≠ NP. By modus tollens, if P = NP, then no one-way function exists. <a href="#ref-abadi1990generating"><span class="citation">(<span class="citeproc-not-found" data-reference-id="abadi1990generating"><strong>???</strong></span>)</span></a></p>
+<p><strong>Theorem 1.3.</strong> <em>If one-way functions exist, then <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>.</em></p>
+<p><em>Proof.</em> <em>(Sketch)</em> Let <span class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}<sup>*</sup></span> be a one-way function. There is a polynomial-time algorithm <span class="math inline"><em>M</em><sub><em>f</em></sub></span> that computes <span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> for all <span class="math inline"><em>x</em></span>, thus, there exists a polynomial-time computable circuit that outputs <span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> for all <span class="math inline"><em>x</em></span>.</p>
+<p>Since <span class="math inline"><em>f</em></span> is a one-way function, that is, for every probabilistic polynomial-time algorithm <span class="math inline">𝒜</span>, there is a negligible function <span class="math inline">negl</span> such that <span class="math inline">Pr[Invert<sub>𝒜, <em>f</em></sub>(<em>n</em>)=1]≤negl(<em>n</em>)</span>, so we know that no <span class="math inline">𝒜</span> can fully compute <span class="math inline"><em>f</em><sup>−1</sup>(<em>x</em>)</span> for any given <span class="math inline"><em>x</em></span>. <span class="math inline">𝒜</span> fully computes <span class="math inline"><em>f</em><sup>−1</sup></span> if and only if it solves the corresponding <code>CIRCUIT-SAT</code> problems of the circuit in all cases. Thus, there must exist some <code>CIRCUIT-SAT</code> problems that cannot be decided by a polynomial-time algorithm, therefore, <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
+<p><em>Remark 1.4.</em> If one can come up with a construction of the one-way function or a proof that such functions exist, then it holds true that <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>.</p>
+<h2 id="references-and-further-reading">References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, <em>Introduction to Algorithms</em>, 3rd ed.</p>
+<p>M. Sipser, <em>Introduction to the Theory of Computation</em>, 3rd ed.</p>
+<p>J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+      </div>
+    </content>
+  </entry>
 
   <entry>
     <title>Remember My Last Tabs, File Manager</title>
@@ -203,115 +490,6 @@ Man is a rational animal.
 <li>Semantically, they are not recognized as theorems, just normal text paragraphs. This is problematic if you want to prevent definitions and theorems from being indented, since there's no way for LaTeX to tell them from a normal text.</li>
 </ul>
 <p>(Probably) The best solution is to write a filter that (conventionally) converts any plain text like <code>Definition 1</code> (and <code>Lemma 2</code>, <code>Theorem 3</code>, etc.) in the beginning of a paragraph to proper Markdown (for HTML target) or corresponding <code>amsthm</code> block (for LaTeX target). Even better, it should be able to do cross-references accordingly (Remember <code>Lemma 10.42</code>? Let's put an anchored link on that!). This is yet to be done, but would be very helpful to someone who does a lot of theorems and proofs thus wants to avoid the kludge of mixing raw LaTeX with semantically evident Markdown.</p>
-
-      </div>
-    </content>
-  </entry>
-
-  <entry>
-    <title>The Decisional Hardness</title>
-    <link href="https://www.soimort.org/mst/1" />
-    <id>tag:www.soimort.org,2016:/mst/1</id>
-    <updated>2016-11-20</updated>
-    <author>
-      <name>Mort Yao</name>
-      <email>soi@mort.ninja</email>
-    </author>
-    <content type="xhtml">
-      <div xmlns="http://www.w3.org/1999/xhtml">
-
-<p><p style='background-color:yellow'> <strong>(20 Nov 2016) Correction:</strong> P ≠ NP is not sufficient to imply that one-way functions exist. See <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.</p></p>
-<hr />
-<p><strong>Intro.</strong> Starting from November, I'll summarize my study notes on <a href="https://wiki.soimort.org">wiki</a> into weekly blog posts. I always wanted to keep my study progress on track; I feel that it's hard even to convince myself without visible footprints.</p>
-<p>So here we have the first episode. (Hopefully it won't be the last one)</p>
-<hr />
-<p>Asymptotic notation is an important tool in analyzing the time/space efficiency of algorithms.</p>
-<ul>
-<li><a href="https://wiki.soimort.org/math/calculus/limit/">Limit</a>
-<ul>
-<li>Formal definition of limit (the (ε, δ)-definition) in calculus. Note that limits involving infinity are closely related to asymptotic analysis. In addition to basic limit rules, L'Hôpital's rule is also relevant.</li>
-</ul></li>
-<li><a href="https://wiki.soimort.org/algo/asymptotic-notation/">Asymptotic notation</a>
-<ul>
-<li>Introduction to the Bachmann–Landau notation family (among them are the most widely-used Big O notation and Big Theta notation).</li>
-<li>Master theorem is used to find the asymptotic bound for recurrence. This is particularly helpful when analyzing recursive algorithms (e.g., binary search, merge sort, tree traversal).</li>
-<li>Based on common orders of asymptotic running time using Big O notation, we can categorize algorithms into various classes of time complexities (among them are P, DLOGTIME, SUBEXP and EXPTIME). Note that we have not formally defined the word &quot;algorithm&quot; and &quot;complexity class&quot; yet.</li>
-</ul></li>
-</ul>
-<p>For decision problems, we now formally define the time complexity classes P and NP, and propose the hardness of NP-complete problems, which plays an indispensable role in the study of algorithm design and modern cryptography.</p>
-<ul>
-<li><a href="https://wiki.soimort.org/comp/language/">Formal language</a>
-<ul>
-<li>Formal definition of language. We will revisit this when studying formal grammars like the context-free grammar and parsing techniques for compilers. For now, it suffices to know that binary string is a common encoding for all kinds of problems (especially, decision problems).</li>
-</ul></li>
-<li><a href="https://wiki.soimort.org/comp/decidability/">Decidability</a>
-<ul>
-<li>Among all abstract problems, we are mostly interested in decision problems.</li>
-<li>The decidability of a language depends on whether there exists an algorithm that decides it.</li>
-</ul></li>
-<li><a href="https://wiki.soimort.org/comp/reducibility/">Reducibility</a>
-<ul>
-<li>Polynomial-time reduction is a commonly used technique that maps one language to another.</li>
-<li>What is a hard language for a complexity class; what is a complete language for a complexity class.</li>
-</ul></li>
-<li><a href="https://wiki.soimort.org/comp/complexity/time/">Time complexity</a>
-<ul>
-<li>Encodings of concrete problems matter. Normally we would choose a &quot;standard encoding&quot; for our language of interest.</li>
-<li>Polynomial-time algorithms are considered to be efficient and languages which have polynomial-time algorithms that decide them are considered tractable.</li>
-<li>P is the time complexity class of all problems that are polynomial-time solvable.</li>
-<li>NP is the time complexity class of all problems that are polynomial-time verifiable.</li>
-</ul></li>
-<li><a href="https://wiki.soimort.org/comp/complexity/time/npc/">NP-completeness</a>
-<ul>
-<li>The set of languages that are complete for the complexity class NP, that is, the &quot;hardest problems&quot; in NP.</li>
-<li>NP-complete problems are central in answering the open question whether P = NP.</li>
-<li>We (informally) show that every NP problem is polynomial-time reducible to CIRCUIT-SAT, and that CIRCUIT-SAT is NP-complete.</li>
-<li>There are other problems (SAT, 3-CNF-SAT, CLIQUE, VERTEX-COVER, HAM-CYCLE, TSP, SUBSET-SUM) polynomial-time reducible from one to another, thus they are also shown to be NP-complete.</li>
-</ul></li>
-</ul>
-<p><strong>Computational hardness assumption P ≠ NP.</strong> Although it is still an open proposition, many believe that P ≠ NP. Notably, if P ≠ NP holds true,</p>
-<ol style="list-style-type: decimal">
-<li>If a decision problem is polynomial-time unsolvable in general case, we should strive to find approximations or randomized algorithms; exact algorithms cannot be run in worst-case polynomial time thus may not be efficient. This applies to optimization problems too.</li>
-<li><del>
-One-way functions exist, which implies that pseudorandom generators and functions exist. Consequently, many cryptographic constructions (private-key encryption, MACs, etc.) are provably computationally secure.
-</del></li>
-</ol>
-<p><p style='background-color:yellow'> (I stand corrected: There is no such a known proof showing that P ≠ NP implies the existence of one-way functions. However, reversely, the existence of one-way functions implies that P ≠ NP. There is an informal argument given by Peter Shor on StackExchange<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, rephrased in the section <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.)</p></p>
-<p>Later we will cover the notion of security in cryptography, so there is a refresher of basic probability: (Probability is also considerably used in analyzing the behaviors of non-deterministic algorithms, hash functions, etc.)</p>
-<ul>
-<li><a href="https://wiki.soimort.org/math/probability/">Probability</a>
-<ul>
-<li>An intuitive introduction to basic probability theory based on Kolmogorov's axioms, including the union bound (Boole's inequality) and its generalized form Bonferroni inequalities, the conditional probability and Bayes' theorem. We will revisit the notion of probability space when coming to measure theory.</li>
-</ul></li>
-</ul>
-<p>Plan for next week:</p>
-<ul>
-<li><strong>(Algorithms)</strong> More involved NP-complete problems. Exact algorithms. Approximation algorithms. Probabilistic algorithms.</li>
-<li><strong>(Cryptography)</strong> Information-theoretic/computational security (semantic security, IND, IND-CPA, IND-CCA). Private-key encryption. Message authentication codes. Hash functions. Theoretical constructions (one-way functions, pseudorandomness). Practical constructions (Feistel network, substitution-permutation network, DES, AES).</li>
-</ul>
-<h2 id="p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</h2>
-<p>Consider the following map: <br /><span class="math display"><em>f</em> : (<em>x</em>, <em>r</em>)→<em>s</em></span><br /> where <span class="math inline"><em>x</em></span> is an arbitrary bit string, <span class="math inline"><em>r</em></span> is a string of random bits, and <span class="math inline"><em>s</em></span> is an instance of a <span class="math inline"><em>k</em></span>-SAT problem having <span class="math inline"><em>x</em></span> as a planted solution, while the randomness of <span class="math inline"><em>r</em></span> determines uniquely which <span class="math inline"><em>k</em></span>-SAT problem to choose.</p>
-<p>If we can invert the above function <span class="math inline"><em>f</em></span> (in polynomial time), we must already have solved the corresponding <span class="math inline"><em>k</em></span>-SAT problem <span class="math inline"><em>s</em></span> with a planted solution <span class="math inline"><em>x</em></span>. <span class="math inline"><em>k</em></span>-SAT problems are known to be NP-complete, and inverting such a function would be as hard as solving a <span class="math inline"><em>k</em></span>-SAT problem with a planted solution, that is, inverting <span class="math inline"><em>f</em></span> <em>at one point</em> can be hard. Clearly, should we have a one-way function, then inverting it is guaranteed to be no easier than inverting <span class="math inline"><em>f</em></span>.</p>
-<p>So what does it mean if P ≠ NP? We know that <span class="math inline"><em>k</em></span>-SAT problem is hard to solve in its <em>worst case</em>, so function <span class="math inline"><em>f</em></span> can be made as hard to invert as solving a <span class="math inline"><em>k</em></span>-SAT problem in its <em>worst case</em>. However, we don't know whether it's possible to have a class <span class="math inline">𝒮</span> of <span class="math inline"><em>k</em></span>-SAT problems with planted solutions that are as hard as general-case <span class="math inline"><em>k</em></span>-SAT problems. If such a class <span class="math inline">𝒮</span> exists, then given any <span class="math inline"><em>s</em> ∈ 𝒮</span>, no probabilistic polynomial-time algorithm is able to get <span class="math inline"><em>x</em></span> with a non-negligible probability, so we can conclude that <span class="math inline"><em>f</em></span> is indeed a one-way function. <a href="#ref-selman1992survey"><span class="citation">(<span class="citeproc-not-found" data-reference-id="selman1992survey"><strong>???</strong></span>)</span></a></p>
-<p><strong>Problem 1.1.</strong> Does there exist a class <span class="math inline">𝒮</span> of <span class="math inline"><em>k</em></span>-SAT problems with planted solutions, such that every <span class="math inline"><em>L</em> ∈ 𝒮</span> is NP-hard?</p>
-<p><strong>Conjecture 1.2.</strong> <em>If <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>, then one-way functions exist.</em></p>
-<p>On the other hand, assume that <span class="math inline"><em>f</em></span> is a one-way function, so that one-way functions do exist, then this implies that <span class="math inline"><em>k</em></span>-SAT problem is hard to solve (in its worse case) by a polynomial-time algorithm, thus we have P ≠ NP. By modus tollens, if P = NP, then no one-way function exists. <a href="#ref-abadi1990generating"><span class="citation">(<span class="citeproc-not-found" data-reference-id="abadi1990generating"><strong>???</strong></span>)</span></a></p>
-<p><strong>Theorem 1.3.</strong> <em>If one-way functions exist, then <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>.</em></p>
-<p><em>Proof.</em> <em>(Sketch)</em> Let <span class="math inline"><em>f</em> : {0, 1}<sup>*</sup> → {0, 1}<sup>*</sup></span> be a one-way function. There is a polynomial-time algorithm <span class="math inline"><em>M</em><sub><em>f</em></sub></span> that computes <span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> for all <span class="math inline"><em>x</em></span>, thus, there exists a polynomial-time computable circuit that outputs <span class="math inline"><em>y</em> = <em>f</em>(<em>x</em>)</span> for all <span class="math inline"><em>x</em></span>.</p>
-<p>Since <span class="math inline"><em>f</em></span> is a one-way function, that is, for every probabilistic polynomial-time algorithm <span class="math inline">𝒜</span>, there is a negligible function <span class="math inline">negl</span> such that <span class="math inline">Pr[Invert<sub>𝒜, <em>f</em></sub>(<em>n</em>)=1]≤negl(<em>n</em>)</span>, so we know that no <span class="math inline">𝒜</span> can fully compute <span class="math inline"><em>f</em><sup>−1</sup>(<em>x</em>)</span> for any given <span class="math inline"><em>x</em></span>. <span class="math inline">𝒜</span> fully computes <span class="math inline"><em>f</em><sup>−1</sup></span> if and only if it solves the corresponding <code>CIRCUIT-SAT</code> problems of the circuit in all cases. Thus, there must exist some <code>CIRCUIT-SAT</code> problems that cannot be decided by a polynomial-time algorithm, therefore, <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
-<p><em>Remark 1.4.</em> If one can come up with a construction of the one-way function or a proof that such functions exist, then it holds true that <span class="math inline"><em>P</em> ≠ <em>N</em><em>P</em></span>.</p>
-<h2 id="references-and-further-reading">References and Further Reading</h2>
-<p><strong>Books:</strong></p>
-<p>T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, <em>Introduction to Algorithms</em>, 3rd ed.</p>
-<p>M. Sipser, <em>Introduction to the Theory of Computation</em>, 3rd ed.</p>
-<p>J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.</p>
-<p><strong>Papers:</strong></p>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p><a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1">↩</a></p></li>
-</ol>
-</div>
 
       </div>
     </content>
