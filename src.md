@@ -6,12 +6,19 @@ author:
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-![I drew a picture of yesterday,
-where all my failings exposed and dreams compromised. \
-Life was a lie, an instance of falsity.
-](https://i0.wp.com/dl.dropboxusercontent.com/s/ne16xw7rmnjewct/header-161116.jpg){ width=61.8% }
+![I'm in the gutter, but some of me are looking at the stars.
+](https://i0.wp.com/dl.dropboxusercontent.com/s/txssre677100u37/header-161224.jpg){ width=61.8% }
 
 
+
+## My Study Track
+
+* [The Probable Outcome
+](/mst/2/)
+*24 Dec 2016*
+* [The Decisional Hardness
+](/mst/1/)
+*1 Nov 2016*
 
 ## Tech Notes
 
@@ -21,12 +28,6 @@ Life was a lie, an instance of falsity.
 * [Boilerplating Pandoc for Academic Writing
 ](/notes/161117_pandoc/)
 *17 Nov 2016*
-
-## My Study Track
-
-* [The Decisional Hardness
-](/mst/1/)
-*1 Nov 2016*
 
 ## Art & Philosophy
 
@@ -48,8 +49,6 @@ Poetry (Chinese)](http://poetry.soimort.org/)
 Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 AKB48 fanblog](http://microblog.soimort.org/)
-| [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
-Forty-eight tales](http://48.soimort.org/)
 
 ***
 
