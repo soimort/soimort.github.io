@@ -94,7 +94,7 @@ Since $f$ is a one-way function, that is, for every probabilistic polynomial-tim
 
 
 
-## References and Further Reading
+## References and further reading
 
 **Books:**
 
