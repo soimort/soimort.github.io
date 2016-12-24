@@ -1,6 +1,6 @@
 /* Akai theme (pandoc HTML5 template)
  * designer:     soimort
- * last updated: 2016-11-19
+ * last updated: 2016-12-24
  */
 
 /* General */
@@ -38,6 +38,15 @@ kbd {
   box-shadow: 2px 2px 2px dimgray;
   background-color: black; /* $T */
   color: ivory; /* $B */
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em;
+}
+table, th, td {
+  border: 1px solid gray;
+  padding: .5em;
 }
 
 
