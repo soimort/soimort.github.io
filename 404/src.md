@@ -16,6 +16,13 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
+table, th, td {
+  border: 0;
+  padding: 0;
+}
+header .subtitle {
+  font-size: 2em;
+}
 aside#soimort-toolbar {
   visibility: hidden;
 }
