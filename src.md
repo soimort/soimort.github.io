@@ -13,6 +13,9 @@ include-before: <link rel="stylesheet" href="index.css">
 
 ## My Study Track
 
+* [The Adversarial Computation
+](/mst/3/)
+*1 Jan 2017*
 * [The Probable Outcome
 ](/mst/2/)
 *23 Dec 2016*
@@ -42,7 +45,7 @@ include-before: <link rel="stylesheet" href="index.css">
 <small>
 
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
-Poetry (Chinese)](http://poetry.soimort.org/)
+Poetry](http://poetry.soimort.org/)
 \
 (Personal, graphical and potentially NSFW stuff)
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
