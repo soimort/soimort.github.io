@@ -1,6 +1,6 @@
 ---
 title: The Adversarial Computation
-subtitle:
+subtitle: Build me an unbreakable cryptosystem.
 author: Mort Yao
 date: 2017-01-01
 ---
