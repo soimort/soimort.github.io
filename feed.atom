@@ -5,11 +5,191 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2016-12-24T03:47:54+01:00</updated>
+  <updated>2017-01-02T06:01:55+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
+
+  <entry>
+    <title>The Adversarial Computation</title>
+    <link href="https://www.soimort.org/mst/3" />
+    <id>tag:www.soimort.org,2016:/mst/3</id>
+    <updated>2017-01-01</updated>
+    <author>
+      <name>Mort Yao</name>
+      <email>soi@mort.ninja</email>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+
+<p><a href="https://wiki.soimort.org/comp/">Theory of computation</a> (computability and complexity) forms the basis for modern cryptography:</p>
+<ul>
+<li>What is an <a href="https://wiki.soimort.org/comp/algorithm/">algorithm</a>?
+<ul>
+<li>An algorithm is a <em>computational method</em> for solving an <em>abstract problem</em>.</li>
+<li>An algorithm takes as input a set <span class="math inline"><em>I</em></span> of <em>problem instances</em>, and outputs a solution from the set <span class="math inline"><em>S</em></span> of <em>problem solutions</em>.</li>
+<li>An algorithm is represented in a well-defined <a href="https://wiki.soimort.org/comp/language/">formal language</a>.</li>
+<li>An algorithm must be able to be represented within a finite amount of time and space (otherwise it cannot be actually used for solving any problem).</li>
+<li>An algorithm can be simulated by any <em>model of computation</em>:
+<ul>
+<li><em>Turing machine</em> is a model implemented through internal <em>states</em>.</li>
+<li><em>λ-calculus</em> is a model based on pure <em>functions</em>.</li>
+<li>All Turing-complete models are equivalent in their computational abilities.</li>
+</ul></li>
+<li>Computability: Not every abstract problem is solvable. Notably, there exists a decision problem for which some instances can neither be accepted nor rejected by any algorithm. (<em>Undecidable problem</em>)</li>
+<li>Complexity:
+<ul>
+<li>The complexity class P is closed under polynomial-time reductions. Hence, proof by reduction can be a useful technique in provable security of cryptosystems.</li>
+<li>If one can prove that P = NP, then one-way functions do not exist. This would invalidate the construction of cryptographically secure pseudorandom generators (PRG). (<em>Pseudorandom generator theorem</em>)</li>
+</ul></li>
+<li>In many scenarios, we assume that an algorithm acts as a stateless computation and takes independent and identically distributed inputs. It differs from a computer program conceptually.</li>
+<li>An algorithm can be either <em>deterministic</em> or <em>probabilistic</em>.
+<ul>
+<li>For probabilistic algorithms, the source of randomness may be from:
+<ul>
+<li>External (physical) input of high entropy.</li>
+<li>Pseudorandomness: Since everything computational is deterministic, the existence of pseudorandomness relies on the (assumed) existence of one-way functions and PRGs.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Generally, pseudorandom generators used in probabilistic algorithms yield random bits according to the uniform distribution, so it is worth mentioning:</p>
+<ul>
+<li>Basic probability theory
+<ul>
+<li><a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">Discrete uniform distribution</a>. <span class="math inline">𝒰{<em>a</em>, <em>b</em>}</span>. The probability distribution where a finite number of values are equally likely to be observed (with probability <span class="math inline">$\frac{1}{b-a+1}$</span>).</li>
+</ul></li>
+</ul>
+<p>Cryptographic schemes are defined as tuples of deterministic or probabilistic algorithms:</p>
+<ul>
+<li><a href="https://wiki.soimort.org/crypto/intro/">Principles of modern cryptography</a>
+<ul>
+<li>Formal description of a <em>private-key encryption scheme</em> <span class="math inline"><em>Π</em> = (Gen, Enc, Dec)</span> with message space <span class="math inline">ℳ</span>.
+<ul>
+<li><span class="math inline">Gen</span>, <span class="math inline">Enc</span>, <span class="math inline">Dec</span> are three algorithms.</li>
+<li>Correctness: <span class="math inline">Dec<sub><em>k</em></sub>(Enc<sub><em>k</em></sub>(<em>m</em>)) = <em>m</em></span>.</li>
+<li>For the correctness equality to hold, <span class="math inline">Dec</span> should be deterministic.</li>
+<li>Assume that we have access to a source of randomness, <span class="math inline">Gen</span> should choose a key at random thus is probabilistic. If <span class="math inline">Gen</span> is deterministic and always generate the same key, such an encryption scheme is of no practical use and easy to break.</li>
+<li><span class="math inline">Enc</span> can be either deterministic (e.g., as in one-time pads) or probabilistic. Later we will see that for an encryption scheme to be CPA-secure, <span class="math inline">Enc</span> should be probabilistic.</li>
+</ul></li>
+<li><strong>Kerchhoffs' principle (Shannon's maxim)</strong> claims that a cryptosystem should be secure even if the scheme <span class="math inline">(Gen, Enc, Dec)</span> is known to the adversary. That is, security should rely solely on the secrecy of the private key.</li>
+<li>Provable security of cryptosystems requires:
+<ol style="list-style-type: decimal">
+<li>Formal definition of security;</li>
+<li>Minimal assumptions;</li>
+<li>Rigorous proofs of security.</li>
+</ol></li>
+<li>Common attacks and notions of security:
+<ul>
+<li><strong>Ciphertext-only attack</strong>.
+<ul>
+<li>A crytosystem is said to be <em>perfectly secret</em> if it is theoretically unbreakable under ciphertext-only attack.</li>
+<li>A cryptosystem is said to be <em>computationally secure</em> if it is resistant to ciphertext-only attack (by any polynomial-time adversary).</li>
+</ul></li>
+<li><strong>Known-plaintext attack (KPA)</strong>. A cryptosystem is <em>KPA-secure</em> if it is resistant to KPA.
+<ul>
+<li>KPA-security implies ciphertext-only security.</li>
+</ul></li>
+<li><strong>Chosen-plaintext attack (CPA)</strong>. A cryptosystem is <em>CPA-secure</em> (or <em>IND-CPA</em>) if it is resistant to CPA.
+<ul>
+<li>IND-CPA implies KPA-security.</li>
+</ul></li>
+<li><strong>Chosen-ciphertext attack (CCA)</strong>. A cryptosystem is <em>CCA-secure</em> (or <em>IND-CCA1</em>) if it is resistant to CCA; furthermore, a cryptosystem is <em>IND-CCA2</em> if it is resistant to adaptive CCA (where the adversary may make further calls to the oracle, but may not submit the challenge ciphertext).
+<ul>
+<li>IND-CCA1 implies IND-CPA.</li>
+<li>IND-CCA2 implies IND-CCA1. Thus, IND-CCA2 is the strongest of above mentioned definitions of security.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/crypto/perfect-secrecy/">Perfect secrecy</a>
+<ul>
+<li>Two equivalent definitions: (proof of equivalence uses Bayes' theorem)
+<ul>
+<li><span class="math inline">Pr[<em>M</em> = <em>m</em> | <em>C</em> = <em>c</em>]=Pr[<em>M</em> = <em>m</em>]</span>. (Observing a ciphertext <span class="math inline"><em>c</em></span> does not leak any information about the underlying message <span class="math inline"><em>m</em></span>)</li>
+<li><span class="math inline">Pr[Enc<sub><em>K</em></sub>(<em>m</em>)=<em>c</em>]=Pr[Enc<sub><em>K</em></sub>(<em>m</em>′) = <em>c</em>]</span>. (The adversary has no bias when distinguishing two messages if given only the ciphertext <span class="math inline"><em>c</em></span>)</li>
+</ul></li>
+<li><strong>Perfect indistinguishability</strong> defined on adversarial indistinguishability experiment <span class="math inline">PrivK<sub>𝒜, <em>Π</em></sub><sup>eav</sup></span>:
+<ul>
+<li><span class="math inline">$\Pr[\mathsf{PrivK}_{\mathcal{A},\Pi}^\mathsf{eav} = 1] = \frac{1}{2}$</span>. (No adversary can win the indistinguishability game with a probability better than random guessing)</li>
+</ul></li>
+<li>Perfect indistinguishability is equivalent to the definition of perfect secrecy.</li>
+<li>The adversarial indistinguishability experiment is a very useful setting in defining provable security, e.g., the definition of computational indistinguishability: (for arbitrary input size <span class="math inline"><em>n</em></span>)
+<ul>
+<li><span class="math inline">$\Pr[\mathsf{PrivK}_{\mathcal{A},\Pi}^\mathsf{eav}(n) = 1] \leq \frac{1}{2} + \mathsf{negl}(n)$</span> where <span class="math inline">negl(<em>n</em>)</span> is a negligible function.</li>
+</ul></li>
+<li>Perfect secrecy implies that <span class="math inline">|𝒦|≥|ℳ|</span>, i.e., the key space must be larger than the message space. If <span class="math inline">|𝒦|&lt;|ℳ|</span>, then the scheme cannot be perfectly secure.</li>
+<li><strong>Shannon's theorem</strong>: If <span class="math inline">|𝒦|=|ℳ|=|𝒞|</span>, an encryption scheme is perfectly secret iff:
+<ul>
+<li><span class="math inline"><em>k</em> ∈ 𝒦</span> is chosen uniformly.</li>
+<li>For every <span class="math inline"><em>m</em> ∈ ℳ</span> and <span class="math inline"><em>c</em> ∈ 𝒞</span>, there exists a unique <span class="math inline"><em>k</em> ∈ 𝒦</span> such that <span class="math inline">Enc<sub><em>k</em></sub>(<em>m</em>)=<em>c</em></span>.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>A brief, formalized overview of some classical ciphers, and their security:</p>
+<ul>
+<li><a href="https://wiki.soimort.org/crypto/one-time-pad/">One-time pad (Vernam cipher)</a>: XOR cipher when <span class="math inline">|𝒦|=|ℳ|</span>.
+<ul>
+<li>One-time pad is perfectly secret. The proof simply follows from Bayes' theorem. (Also verified by Shannon's theorem. While one-time pad was initially introduced in the 19th century and patented by G. Vernam in 1919, it was not until many years later Claude Shannon gave a formal definition of information-theoretical security and proved that one-time pad is a perfectly secret scheme in his groundbreaking paper. <a href="#ref-shannon1949communication"><span class="citation">(<span class="citeproc-not-found" data-reference-id="shannon1949communication"><strong>???</strong></span>)</span></a>)</li>
+<li>One-time pad is deterministic. Moreover, it is a reciprocal cipher (<span class="math inline">Enc = Dec</span>).</li>
+<li>One-time pad is <em>not</em> secure when the same key is applied in multiple encryptions, and it is <em>not</em> CPA-secure. In fact, an adversary can succeed in such indistinguishability experiments with probability 1.</li>
+</ul></li>
+<li>Insecure historical ciphers:
+<ul>
+<li><a href="https://wiki.soimort.org/crypto/classical/shift/">Shift cipher</a>: Defined with key space <span class="math inline">𝒦 = {0, …, <em>n</em> − 1}</span>. (<span class="math inline"><em>n</em> = |<em>Σ</em>|</span>)
+<ul>
+<li><span class="math inline">|𝒦|=<em>n</em></span>, <span class="math inline">|ℳ|=<em>n</em><sup>ℓ</sup></span>.</li>
+<li>Cryptanalysis using frequency analysis.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/crypto/classical/substitution/">Substitution cipher</a>: Defined with key space <span class="math inline">𝒦 = 𝔖<sub><em>Σ</em></sub></span> (symmetric group on <span class="math inline"><em>Σ</em></span>).
+<ul>
+<li><span class="math inline">|𝒦|=<em>n</em>!</span>, <span class="math inline">|ℳ|=<em>n</em><sup>ℓ</sup></span>.</li>
+<li>Cryptanalysis using frequency analysis.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/crypto/classical/vigenere/">Vigenère cipher (poly-alphabetic shift cipher)</a>: Like (mono-alphabetic) shift cipher, but the key length is an (unknown) integer <span class="math inline"><em>t</em></span>.
+<ul>
+<li><span class="math inline">|𝒦|=<em>n</em><sup><em>t</em></sup></span>, <span class="math inline">|ℳ|=<em>n</em><sup>ℓ</sup></span>. (Typically <span class="math inline"><em>t</em> ≪ ℓ</span>)</li>
+<li>Cryptanalysis using Kasiski's method, index of coincidence method and frequency analysis.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Lessons learned from these classical ciphers: While perfect secrecy is easy to achieve (one-time pads), designing practical cryptographic schemes (with shorter keys, and computationally hard to break) can be difficult.</p>
+<h2 id="where-do-random-bits-come-from">Where do random bits come from?</h2>
+<p>The construction of private-key encryption schemes involves probabilistic algorithms. We simply assume that an unlimited supply of independent, unbiased random bits is available for these cryptographic algorithms. But in practice, this is a non-trivial issue, as the source of randomness must provide high-entropy data so as to accommodate cryptographically secure random bits.</p>
+<p>In the perfectly secret scheme of one-time pads, the key generation algorithm <span class="math inline">Gen</span> requires the access to a source of randomness in order to choose the uniformly random key <span class="math inline"><em>k</em> ∈ 𝒦</span>. Practically, high-entropy data may be collected via physical input or even fully written by hand with human labor.</p>
+<p>Theoretically, without external intervention, we have:</p>
+<p><strong>Conjecture 3.1.</strong> <em>Pseudorandom generators exist.</em></p>
+<p><strong>Theorem 3.2. (Pseudorandom generator theorem)</strong> <em>Pseudorandom generators exist if and only if one-way functions exist.</em></p>
+<p>Pseudorandomness is also a basic construction in CPA-secure encryption algorithms (<span class="math inline">Enc</span>), e.g., in stream ciphers and block ciphers.</p>
+<p>So what is an acceptable level of pseudorandomness, if we are not sure whether such generators theoretically exist? Intuitively, if one cannot distinguish between a &quot;pseudorandom&quot; string (generated by a PRG) and a truly random string (chosen according to the uniform distribution), we have confidence that the PRG is a good one. Various statistical tests have been designed for testing the randomness of PRGs.</p>
+<h2 id="pseudorandomness-and-ind-cpa">Pseudorandomness and IND-CPA</h2>
+<p>It holds true that:</p>
+<p><strong>Corollary 3.3.</strong> By redefining the key space, we can assume that any encryption scheme <span class="math inline"><em>Π</em> = (Gen, Enc, Dec)</span> satisfies</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">Gen</span> chooses a uniform key.</li>
+<li><span class="math inline">Enc</span> is deterministic.</li>
+</ol>
+<p>If so, why do we still need probabilistic <span class="math inline">Enc</span> in CPA-secure encryptions? Can't we just make <span class="math inline">Enc</span> deterministic while still being CPA-secure?</p>
+<p>The first thing to realize is that chosen-plaintext attacks are geared towards multiple encryptions (with the same secret key <span class="math inline"><em>k</em></span>), so when the adversary obtains a pair <span class="math inline">(<em>m</em><sub>0</sub>, <em>c</em><sub>0</sub>)</span> such that <span class="math inline">Pr[<em>C</em> = <em>c</em><sub>0</sub> | <em>M</em> = <em>m</em><sub>0</sub>]=1</span>, <em>the key is already leaked</em>. (Recall that the adversary knows the <em>deterministic</em> algorithm <span class="math inline">Enc<sub><em>k</em></sub></span>, thus reversing <span class="math inline"><em>k</em></span> from known <span class="math inline"><em>m</em><sub>0</sub></span> and <span class="math inline"><em>c</em><sub>0</sub></span> can be quite feasible; e.g., in a one-time pad, <span class="math inline"><em>k</em> = <em>m</em><sub>0</sub> ⊕ <em>c</em><sub>0</sub></span>.) The only way to get around this is make <span class="math inline">Enc<sub><em>k</em></sub></span> <em>probabilistic</em> (constructed from a <em>pseudorandom function</em>), such that an adversary cannot reverse the key efficiently within polynomial time.</p>
+<p>Note that perfect secrecy is not possible under CPA, since there is a small possibility that the adversary will reverse the key (by, for example, traversing an exponentially large lookup table of all random bits) and succeed in the further indistinguishability experiment with a slightly higher (but negligible) probability.</p>
+<h2 id="historical-exploits-of-many-time-pad">Historical exploits of many-time pad</h2>
+<p>One-time pad is one of the most (provably) secure encryption schemes, and its secrecy does not rely on any computational hardness assumptions. However, it requires that <span class="math inline">|𝒦|≥|ℳ|</span> (which in fact is a necessary condition for any perfectly secret scheme), thus its real-world use is limited.</p>
+<p>The one-time key <span class="math inline"><em>k</em></span> (uniformly chosen from the key space <span class="math inline">𝒦</span>) may <em>not</em> be simply reused in multiple encryptions. Assume that <span class="math inline">|𝒦|=|ℳ|</span>, for encryptions of <span class="math inline"><em>n</em></span> messages, the message space is expanded to size <span class="math inline">|ℳ|<sup><em>n</em></sup></span>, while the key space remains <span class="math inline">𝒦</span>, thus we have <span class="math inline">|𝒦|&lt;|ℳ|<sup><em>n</em></sup></span>. Such a degraded scheme (many-time pad) is theoretically insecure and vulnerable to several practical cryptanalyses.</p>
+<p>A historical exploit of the vulnerability of many-time pad occurred in the VENONA project, where the U.S. Army's Signal Intelligence Service (later the NSA) aimed at decrypting messages sent by the USSR intelligence agencies (KGB) over a span of 4 decades. As the KGB mistakenly reused some portions of their one-time key codebook, the SIS was able to break a good amount of the messages.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<h2 id="references-and-further-reading">References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>R. L. Benson, &quot;The Venona story.&quot; <a href="https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf" class="uri">https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf</a><a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+      </div>
+    </content>
+  </entry>
 
   <entry>
     <title>The Probable Outcome</title>
