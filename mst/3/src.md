@@ -47,7 +47,7 @@ Cryptographic schemes are defined as tuples of deterministic or probabilistic al
         3. Rigorous proofs of security.
     * Common attacks and notions of security:
         * **Ciphertext-only attack**.
-            * A crytosystem is said to be *perfectly secret* if it is theoretically unbreakable under ciphertext-only attack.
+            * A cryptosystem is said to be *perfectly secret* if it is theoretically unbreakable under ciphertext-only attack.
             * A cryptosystem is said to be *computationally secure* if it is resistant to ciphertext-only attack (by any polynomial-time adversary).
         * **Known-plaintext attack (KPA)**. A cryptosystem is *KPA-secure* if it is resistant to KPA.
             * KPA-security implies ciphertext-only security.

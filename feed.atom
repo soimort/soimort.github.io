@@ -5,7 +5,7 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2017-01-02T06:01:55+01:00</updated>
+  <updated>2017-01-04T05:17:48+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
@@ -84,7 +84,7 @@
 <ul>
 <li><strong>Ciphertext-only attack</strong>.
 <ul>
-<li>A crytosystem is said to be <em>perfectly secret</em> if it is theoretically unbreakable under ciphertext-only attack.</li>
+<li>A cryptosystem is said to be <em>perfectly secret</em> if it is theoretically unbreakable under ciphertext-only attack.</li>
 <li>A cryptosystem is said to be <em>computationally secure</em> if it is resistant to ciphertext-only attack (by any polynomial-time adversary).</li>
 </ul></li>
 <li><strong>Known-plaintext attack (KPA)</strong>. A cryptosystem is <em>KPA-secure</em> if it is resistant to KPA.
