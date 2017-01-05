@@ -13,6 +13,8 @@ include-before: <link rel="stylesheet" href="index.css">
 
 ## My Study Track
 
+> Go hardcore into Computer Science.
+
 * [The Adversarial Computation
 ](/mst/3/)
 *1 Jan 2017*
@@ -25,6 +27,8 @@ include-before: <link rel="stylesheet" href="index.css">
 
 ## Tech Notes
 
+> Be obsessed with your goal. Don't be obsessed with your tool.
+
 * [Remember My Last Tabs, File Manager
 ](/notes/161208_caja/)
 *8 Dec 2016*
@@ -33,6 +37,8 @@ include-before: <link rel="stylesheet" href="index.css">
 *17 Nov 2016*
 
 ## Art & Philosophy
+
+> Ex nihilo nihil fit.
 
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)

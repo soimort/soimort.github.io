@@ -21,6 +21,13 @@ section h2 {
   font-variant: small-caps;
 }
 
+section blockquote {
+  margin: 0;
+  text-align: right;
+  font-size: .9em;
+  font-style: italic;
+}
+
 section ul {
   list-style-type: none;
 }
