@@ -5,11 +5,130 @@
   <link href="https://www.soimort.org/feed.atom" rel="self" />
   <link href="https://www.soimort.org/" />
   <id>tag:www.soimort.org,2016:/</id>
-  <updated>2017-01-04T05:17:48+01:00</updated>
+  <updated>2017-01-11T18:53:38+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
+
+  <entry>
+    <title>The Measurable Entropy</title>
+    <link href="https://www.soimort.org/mst/4" />
+    <id>tag:www.soimort.org,2016:/mst/4</id>
+    <updated>2017-01-11</updated>
+    <author>
+      <name>Mort Yao</name>
+      <email>soi@mort.ninja</email>
+    </author>
+    <content type="xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml">
+
+<p>A brief introduction to basic information theory (entropy/information as a measure for theoretical unpredictability of data) and descriptive statistics (quantitative properties about real-world data including central tendency, dispersion and shape). The maximization of entropy under different constraints yields some common probability distributions: uniform distribution (given no prior knowledge); normal distribution (given that mean and variance are known).</p>
+<ul>
+<li>What is the measure for <strong>information</strong>?
+<ul>
+<li>Intuitively, if a sample appears to be more naturally &quot;random&quot;, then it may contain more &quot;information&quot; of interest since it takes a greater size of data (more bits) to describe. But how to measure this quantitatively?</li>
+<li>Probability-theoretic view: <em>Shannon entropy</em>.</li>
+<li>Algorithmic view: <em>Kolmogorov complexity</em>. (TBD in February or March 2017)</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/info/">Basic information theory</a>
+<ul>
+<li><strong>Shannon entropy</strong>
+<ul>
+<li>For discrete random variable <span class="math inline"><em>X</em></span> with pmf <span class="math inline"><em>p</em>(<em>x</em>)</span>: <br /><span class="math display">H(<em>X</em>)= − ∑<sub><em>x</em> ∈ 𝒳</sub><em>p</em>(<em>x</em>)log<em>p</em>(<em>x</em>).</span><br /></li>
+<li>For continuous random variable <span class="math inline"><em>X</em></span> with pdf <span class="math inline"><em>f</em>(<em>x</em>)</span>: <br /><span class="math display">H(<em>X</em>)= − ∫<sub>𝒳</sub><em>f</em>(<em>x</em>)log<em>f</em>(<em>x</em>)<em>d</em><em>x</em>.</span><br /> (also referred to as <em>differential entropy</em>)</li>
+<li>The notion of entropy is an extension of the one in statistical thermodynamics (Gibbs entropy) and the <a href="https://wiki.soimort.org/math/dynamical-systems/ergodic/">measure-theoretic entropy of dynamical systems</a>.</li>
+<li>Obviously, the entropy is determined by the pmf/pdf, which depends on the parameters of the specific probability distribution.</li>
+<li>In the context of Computer Science, the logarithm in the formula is often taken to the base <span class="math inline">2</span>. Assume that we take a uniform binary string of length <span class="math inline">ℓ</span>, then <br /><span class="math display"><em>p</em>(<em>x</em>)=2<sup>−ℓ</sup></span><br /> Thus, the entropy of the distribution is <br /><span class="math display">H(<em>X</em>)= − ∑<sub><em>x</em> ∈ 𝒳</sub><em>p</em>(<em>x</em>)log<em>p</em>(<em>x</em>)= − (2<sup>ℓ</sup> ⋅ 2<sup>−ℓ</sup>log<sub>2</sub>2<sup>−ℓ</sup>)=ℓ</span><br /> which is just the length of this (<span class="math inline">ℓ</span>-bit) binary string. Therefore, the unit of information (when applying binary logarithm) is often called a <em>bit</em> (also <em>shannon</em>).</li>
+<li>For the <strong>joint entropy</strong> <span class="math inline">H(<em>X</em>, <em>Y</em>)</span> and the <strong>conditional entropy</strong> <span class="math inline">H(<em>X</em> | <em>Y</em>)</span>, the following equation holds: <br /><span class="math display">H(<em>X</em>, <em>Y</em>)=H(<em>X</em> | <em>Y</em>)+H(<em>Y</em>)=H(<em>Y</em> | <em>X</em>)+H(<em>X</em>)</span><br /> Notice that if <span class="math inline">H(<em>X</em> | <em>Y</em>)=H(<em>X</em>)</span>, then <span class="math inline">H(<em>X</em>, <em>Y</em>)=H(<em>X</em>)+H(<em>Y</em>)</span> and <span class="math inline">H(<em>Y</em> | <em>X</em>)=H(<em>Y</em>)</span>. <span class="math inline"><em>X</em></span> and <span class="math inline"><em>Y</em></span> are said to be independent of each other in this case.</li>
+<li><strong>Mutual information</strong> <span class="math inline">I(<em>X</em>; <em>Y</em>)=H(<em>X</em>)+H(<em>Y</em>)−H(<em>X</em>, <em>Y</em>)≥0</span> (equality holds iff <span class="math inline"><em>X</em></span> and <span class="math inline"><em>Y</em></span> are independent). Unlike the joint entropy or the conditional entropy, this notion does not reflect an actual probabilistic event thus it is referred to as <em>information</em> (sometimes <em>correlation</em>) rather than entropy.</li>
+</ul></li>
+<li><strong>Kullback-Leibler divergence (relative entropy)</strong> <br /><span class="math display">$$\operatorname{D}_\mathrm{KL}(p\|q) = \sum_{x\in\mathcal{X}} p(x) \log \frac{p(x)}{q(x)}$$</span><br /> KL divergence is a measurement of the distance of two probability distributions <span class="math inline"><em>p</em>(<em>x</em>)</span> and <span class="math inline"><em>q</em>(<em>x</em>)</span>.
+<ul>
+<li>If <span class="math inline"><em>p</em> = <em>q</em></span>, <span class="math inline">D<sub><em>K</em><em>L</em></sub>(<em>p</em>∥<em>q</em>)=0</span>. (Any distribution has a KL divergence of 0 with itself.)</li>
+<li><span class="math inline">I(<em>X</em>; <em>Y</em>)=D<sub><em>K</em><em>L</em></sub>(<em>p</em>(<em>x</em>, <em>y</em>)∥<em>p</em>(<em>x</em>)<em>p</em>(<em>y</em>))</span>.</li>
+<li><strong>Cross entropy</strong> <br /><span class="math display">H(<em>p</em>, <em>q</em>)=H(<em>p</em>)+D<sub><em>K</em><em>L</em></sub>(<em>p</em>∥<em>q</em>)</span><br /> Notice that cross entropy is defined on two distributions <span class="math inline"><em>p</em></span> and <span class="math inline"><em>q</em></span> rather than two random variables taking one distribution <span class="math inline"><em>p</em></span> (given by joint entropy <span class="math inline">H(<em>X</em>, <em>Y</em>)</span>).</li>
+</ul></li>
+</ul></li>
+<li>Basic probability theory
+<ul>
+<li><a href="https://wiki.soimort.org/math/probability/distributions/normal/">Normal (Gaussian) distribution</a>.
+<ul>
+<li>(Univariate) <span class="math inline"><em>X</em> ∼ 𝒩(<em>μ</em>, <em>σ</em><sup>2</sup>)</span> <br /><span class="math display">$$f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$</span><br /> where <span class="math inline"><em>μ</em></span> is the mean, <span class="math inline"><em>σ</em><sup>2</sup></span> is the variance of the distribution.<br />
+(Multivariate) <span class="math inline">$\boldsymbol x \sim \mathcal{N}_k(\boldsymbol\mu,\mathbf\Sigma)$</span> <br /><span class="math display">$$f(\boldsymbol x) = (2\pi)^{-k/2} |\mathbf\Sigma|^{-1/2} e^{-\frac{1}{2} (\boldsymbol x - \boldsymbol\mu)^\mathrm{T} \Sigma^{-1}(\boldsymbol x - \boldsymbol\mu)}$$</span><br /> where <span class="math inline">$\boldsymbol\mu$</span> is the mean vector, <span class="math inline">$\mathbf\Sigma$</span> is the covariance matrix of the distribution.</li>
+<li><em>Maximum entropy</em>: normal distribution is the probability distribution that maximizes the entropy when the mean <span class="math inline"><em>μ</em></span> and the variance <span class="math inline"><em>σ</em><sup>2</sup></span> are fixed.</li>
+<li>The normal distribution does not have any shape parameter. Moreover, its skewness and excess kurtosis are always 0.</li>
+</ul></li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/math/statistics/">Basic descriptive statistics</a>
+<ul>
+<li><em>Descriptive statistics</em> describe the properties of data sets quantitatively, without making any further inference.</li>
+<li><em>Population</em> vs. <em>sample</em>.</li>
+<li>Three major descriptive statistics:
+<ol style="list-style-type: decimal">
+<li><em>Central tendency</em>: sample means (<strong>arithmetic mean</strong> <span class="math inline"><em>μ</em></span>, geometric, harmonic), <strong>median</strong>, <strong>mode</strong>, mid-range.
+<ul>
+<li>Arithmetic mean is an unbiased estimator of the population mean (expectation).</li>
+<li>Median and mode are most robust in the presence of outliers.</li>
+</ul></li>
+<li><em>Dispersion (or variability)</em>: minimum, maximum, range, IQR (interquartile range), maximum absolute deviation, MAD (mean absolute deviation), <strong>sample variance</strong> <span class="math inline"><em>s</em><sup>2</sup></span> with Bessel's correction, <strong>CV (coefficient of variance)</strong>, <strong>VMR (index of dispersion)</strong>.
+<ul>
+<li>IQR and MAD are robust in the presence of outliers.</li>
+<li>Sample variance (with Bessel's correction) is an unbiased estimator of the population variance.</li>
+<li>CV and VMR are sample standard deviation and sample variance normalized by the mean respectively, thus they are sometimes called <em>relative standard deviation</em> and <em>relative variance</em>; they are <em>not</em> unbiased though.</li>
+</ul></li>
+<li><em>Shape</em>: sample skewness, sample excess kurtosis.
+<ul>
+<li>These statistics show how a sample deviates from normality, since the skewness and the excess kurtosis of a normal distribution are 0. The estimators could vary under different circumstances.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul>
+<h2 id="entropy-as-a-measure">Entropy as a measure<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+For random variables <span class="math inline"><em>X</em></span> and <span class="math inline"><em>Y</em></span>, we define sets <span class="math inline">$\tilde X$</span> and <span class="math inline">$\tilde Y$</span>. Then the information entropy <span class="math inline">H</span> may be viewed as a signed measure <span class="math inline"><em>μ</em></span> over <a href="https://wiki.soimort.org/math/set/">sets</a>:
+
+The inclusion–exclusion principle:
+
+Bayes' theorem:
+
+<h2 id="entropy-and-data-coding">Entropy and data coding</h2>
+<em>Absolute entropy (Shannon entropy)</em> quantifies how much information is contained in some data. For data compression, the entropy gives the minimum size that is needed to reconstruct original data (losslessly). Assume that we want to store a random binary string of length <span class="math inline">ℓ</span> (by &quot;random&quot;, we do not have yet any prior knowledge on what data to be stored). Under the <em>principle of maximum entropy</em>, the entropy of its distribution <span class="math inline"><em>p</em>(<em>x</em>)</span> should be maximized: <br /><span class="math display">maxH(<em>X</em>)=max{−∑<sub><em>x</em> ∈ 𝒳</sub><em>p</em>(<em>x</em>)log<em>p</em>(<em>x</em>)}</span><br /> given the only constraint <br /><span class="math display">∑<sub><em>x</em> ∈ 𝒳</sub><em>p</em>(<em>x</em>)=1</span><br /> Let <span class="math inline"><em>λ</em></span> be the Lagrange multiplier, set <br /><span class="math display">ℒ = −∑<sub><em>x</em> ∈ 𝒳</sub><em>p</em>(<em>x</em>)log<em>p</em>(<em>x</em>)−<em>λ</em>(∑<sub><em>x</em> ∈ 𝒳</sub><em>p</em>(<em>x</em>)−1)</span><br /> We get
+
+<p>That is, the <a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">discrete uniform distribution</a> maximizes the entropy for a random string. Since <span class="math inline">|𝒳|=2<sup>ℓ</sup></span>, we have <span class="math inline"><em>p</em>(<em>x</em>)=2<sup>−ℓ</sup></span> and <span class="math inline">H(<em>X</em>)= − ∑<sub><em>x</em> ∈ 𝒳</sub>2<sup>−ℓ</sup>log<sub>2</sub>2<sup>−ℓ</sup> = ℓ</span> (bits). We conclude that the information that can be represented in a <span class="math inline">ℓ</span>-bit string is at most <span class="math inline">ℓ</span> bits. Some practical results include</p>
+<ul>
+<li>In general, pseudorandom data (assume no prior knowledge) cannot be losslessly compressed, e.g., the uniform key used in one-time pad must have <span class="math inline">log<sub>2</sub>|ℳ|</span> bits (lower bound) so as not to compromise the perfect secrecy.</li>
+<li>Fully correct encoding/decoding of data, e.g., <span class="math inline">Enc(<em>m</em>)</span> and <span class="math inline">Dec(<em>c</em>)</span> algorithms in a private-key encryption scheme, must ensure that the probability distributions of <span class="math inline"><em>m</em> ∈ ℳ</span> and <span class="math inline"><em>c</em> ∈ 𝒞</span> have the same entropy.</li>
+<li>An algorithm with finite input cannot generate randomness infinitely. Consider a circuit that takes the encoded algorithm with some input (<span class="math inline">ℓ</span> bits in total) and outputs some randomness, the entropy of the output data is at most <span class="math inline">ℓ</span> bits. (Further topic: Kolmogorov complexity)</li>
+</ul>
+<p><em>Relative entropy (KL divergence)</em> quantifies how much information diverges between two sets of data. For data differencing, the KL divergence gives the minimum patch size that is needed to reconstruct target data (with distribution <span class="math inline"><em>p</em>(<em>x</em>)</span>) given source data (with distribution <span class="math inline"><em>q</em>(<em>x</em>)</span>).</p>
+<p>In particular, if <span class="math inline"><em>p</em>(<em>x</em>)=<em>q</em>(<em>x</em>)</span>, which means that the two distributions are identical, we have <span class="math inline">D<sub><em>K</em><em>L</em></sub>(<em>p</em>∥<em>q</em>)=0</span>. This follows our intuition that no information is gained or lost during data encoding/decoding. If <span class="math inline"><em>p</em>(<em>x</em><sub>0</sub>)=0</span> at <span class="math inline"><em>x</em> = <em>x</em><sub>0</sub></span>, we take <span class="math inline">$p(x) \log \frac{p(x)}{q(x)} = 0$</span>, to justify the fact that the target data is trivial to reconstruct at this point, no matter how much information <span class="math inline"><em>q</em>(<em>x</em>)</span> contains. However, if <span class="math inline"><em>q</em>(<em>x</em><sub>0</sub>)=0</span> at <span class="math inline"><em>x</em> = <em>x</em><sub>0</sub></span>, we should take <span class="math inline">$p(x) \log \frac{p(x)}{q(x)} = \infty$</span>, so that the target data is impossible to reconstruct if we have only trivial <span class="math inline"><em>q</em>(<em>x</em>)</span> at some point (unless <span class="math inline"><em>p</em>(<em>x</em><sub>0</sub>)=0</span>).</p>
+<p><strong>Lemma 4.1. (Gibbs' inequality)</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>The KL divergence is always non-negative: <span class="math inline">D<sub><em>K</em><em>L</em></sub>(<em>p</em>∥<em>q</em>)≥0</span>.</em></p>
+<p>Informally, Lemma 4.1 simply states that in order to reconstruct target data from source data, either more information (<span class="math inline">D<sub><em>K</em><em>L</em></sub>(<em>p</em>∥<em>q</em>)&gt;0</span>) or no further information (<span class="math inline">D<sub><em>K</em><em>L</em></sub>(<em>p</em>∥<em>q</em>)=0</span>) is needed.</p>
+<h2 id="maximum-entropy-and-normality">Maximum entropy and normality</h2>
+<p><strong>Theorem 4.2.</strong> <em>Normal distribution <span class="math inline">𝒩(<em>μ</em>, <em>σ</em><sup>2</sup>)</span> maximizes the differential entropy for given mean <span class="math inline"><em>μ</em></span> and variance <span class="math inline"><em>σ</em><sup>2</sup></span>.</em></p>
+<p><strong>Proof.</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> Let <span class="math inline"><em>g</em>(<em>x</em>)</span> be a pdf of the normal distribution with mean <span class="math inline"><em>μ</em></span> and variance <span class="math inline"><em>σ</em><sup>2</sup></span>. Let <span class="math inline"><em>f</em>(<em>x</em>)</span> be an arbitrary pdf with the same mean and variance.</p>
+<p>Consider the KL divergence between <span class="math inline"><em>f</em>(<em>x</em>)</span> and <span class="math inline"><em>g</em>(<em>x</em>)</span>. By Lemma 4.1 (Gibbs' inequality): <br /><span class="math display">$$\operatorname{D}_\mathrm{KL}(f\|g) = \int_{-\infty}^\infty f(x) \log \frac{f(x)}{g(x)} dx = \operatorname{H}(f,g) - \operatorname{H}(f) \geq 0$$</span><br /></p>
+Notice that
+
+<p>Therefore, <br /><span class="math display">H(<em>g</em>)≥H(<em>f</em>)</span><br /> That is, the distribution of <span class="math inline"><em>g</em>(<em>x</em>)</span> (Gaussian) always has the maximum entropy. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
+<p>It is also possible to derive the normal distribution directly from the principle of maximum entropy, under the constraint such that <span class="math inline">∫<sub>−∞</sub><sup>∞</sup>(<em>x</em> − <em>μ</em>)<sup>2</sup><em>f</em>(<em>x</em>)<em>d</em><em>x</em> = <em>σ</em><sup>2</sup></span>.</p>
+<p>The well-known central limit theorem (CLT) which states that the sum of independent random variables <span class="math inline">{<em>X</em><sub>1</sub>, …, <em>X</em><sub><em>n</em></sub>}</span> tends toward a normal distribution may be alternatively expressed as the monotonicity of the entropy of the normalized sum: <br /><span class="math display">$$\operatorname{H}\left( \frac{\sum_{i=1}^n X_i}{\sqrt{n}} \right)$$</span><br /> which is an increasing function of <span class="math inline"><em>n</em></span>. <span class="citation">(<span class="citeproc-not-found" data-reference-id="artstein2004solution"><strong>???</strong></span>)</span></p>
+<h2 id="references-and-further-reading">References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>T. M. Cover and J. A. Thomas. <em>Elements of Information Theory</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Information_theory_and_measure_theory" class="uri">https://en.wikipedia.org/wiki/Information_theory_and_measure_theory</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Gibbs&#39;_inequality" class="uri">https://en.wikipedia.org/wiki/Gibbs'_inequality</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution</a><a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+
+      </div>
+    </content>
+  </entry>
 
   <entry>
     <title>The Adversarial Computation</title>
