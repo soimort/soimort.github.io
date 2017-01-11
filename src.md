@@ -13,8 +13,11 @@ include-before: <link rel="stylesheet" href="index.css">
 
 ## My Study Track
 
-> Go hardcore into Computer Science.
+> I know that I know nothing.
 
+* [The Measurable Entropy
+](/mst/4/)
+*11 Jan 2017*
 * [The Adversarial Computation
 ](/mst/3/)
 *1 Jan 2017*
