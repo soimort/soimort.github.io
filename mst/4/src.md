@@ -3,6 +3,7 @@ title: The Measurable Entropy
 subtitle: Maximum entropy, uniformity and normality.
 author: Mort Yao
 date: 2017-01-11
+date-updated: 2017-01-14
 ---
 
 A brief introduction to basic information theory (entropy/information as a measure for theoretical unpredictability of data) and descriptive statistics (quantitative properties about real-world data including central tendency, dispersion and shape). The maximization of entropy under different constraints yields some common probability distributions: uniform distribution (given no prior knowledge); normal distribution (given that mean and variance are known).
@@ -101,9 +102,9 @@ p(x) &= c \qquad \text{(constant)}
 \end{align*}
 That is, the [discrete uniform distribution](https://wiki.soimort.org/math/probability/#discrete-uniform-distribution) maximizes the entropy for a random string. Since $|\mathcal{X}| = 2^\ell$, we have $p(x) = 2^{-\ell}$ and $\operatorname{H}(X) = -\sum_{x\in\mathcal{X}} 2^{-\ell} \log_2 2^{-\ell} = \ell$ (bits). We conclude that the information that can be represented in a $\ell$-bit string is at most $\ell$ bits. Some practical results include
 
-* In general, pseudorandom data (assume no prior knowledge) cannot be losslessly compressed, e.g., the uniform key used in one-time pad must have $\log_2 |\mathcal{M}|$ bits (lower bound) so as not to compromise the perfect secrecy.
+* In general, pseudorandom data (assume no prior knowledge) cannot be losslessly compressed, e.g., the uniform key used in one-time pad must have $\log_2 |\mathcal{M}|$ bits (lower bound) so as not to compromise the perfect secrecy. (Further topic: *Shannon's source coding theorem*)
 * Fully correct encoding/decoding of data, e.g., $\mathsf{Enc}(m)$ and $\mathsf{Dec}(c)$ algorithms in a private-key encryption scheme, must ensure that the probability distributions of $m \in \mathcal{M}$ and $c \in \mathcal{C}$ have the same entropy.
-* An algorithm with finite input cannot generate randomness infinitely. Consider a circuit that takes the encoded algorithm with some input ($\ell$ bits in total) and outputs some randomness, the entropy of the output data is at most $\ell$ bits. (Further topic: Kolmogorov complexity)
+* An algorithm with finite input cannot generate randomness infinitely. Consider a circuit that takes the encoded algorithm with some input ($\ell$ bits in total) and outputs some randomness, the entropy of the output data is at most $\ell$ bits. (Further topic: *Kolmogorov complexity*)
 
 *Relative entropy (KL divergence)* quantifies how much information diverges between two sets of data. For data differencing, the KL divergence gives the minimum patch size that is needed to reconstruct target data (with distribution $p(x)$) given source data (with distribution $q(x)$).
 
