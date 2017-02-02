@@ -1,0 +1,25 @@
+---
+canonical:           https://www.soimort.org/
+
+uri-prefix-raw:      https://www.soimort.org
+uri-prefix-history:  https://github.com/soimort/soimort.github.io/commits/master
+uri-prefix-edit:     https://github.com/soimort/soimort.github.io/edit/master
+
+feed:
+  file:              feed.atom
+  title:             Through the Looking-Glass
+  subtitle:          "Mort Yao's homepage"
+  id-prefix:         tag:www.soimort.org,2017:/
+  author-name:       Mort Yao
+  author-email:      soi@mort.ninja
+feed-template:       feed.xml
+feed-yaml:           feed.yaml
+
+template:            __/template.html
+source:              src.md
+source-metadata:     src.yaml
+source-bibliography: src.bib
+target:              index.html
+
+csl:                 ieee-with-url.csl
+---
