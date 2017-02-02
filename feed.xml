@@ -21,6 +21,7 @@ $for(entry)$
     <author>
       <name>$entry.author-name$</name>
     </author>
+    $for(category)$<category term="$entry.category$" />$endfor$
     <content type="html" xml:lang="en" xml:base="$canonical$">
 <![CDATA[
 $entry.body$
