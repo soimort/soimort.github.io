@@ -41,10 +41,10 @@ Wiki](https://wiki.soimort.org/)
 ](/notes/170203/)
 *3 Feb 2017*
 * [Remember My Last Tabs, File Manager
-](/notes/161208_caja/)
+](/notes/161208/)
 *8 Dec 2016*
 * [Boilerplating Pandoc for Academic Writing
-](/notes/161117_pandoc/)
+](/notes/161117/)
 *17 Nov 2016*
 
 ## Art & Philosophy
