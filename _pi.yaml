@@ -12,8 +12,8 @@ feed:
   author-name:       Mort Yao
   author-email:      soi@mort.ninja
   file:              feed.atom
-feed-template:       feed.xml
-feed-yaml:           feed.yaml
+feed-template:       feed-template.xml
+feed-yaml:           feed-cache.yaml
 
 template:            __/template.html
 source:              src.md
