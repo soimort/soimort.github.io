@@ -3,7 +3,7 @@ title: Through the Looking-Glass
 subtitle: Mort's random blog.
 author:
 
-include-before: <link rel="stylesheet" href="index.css">
+include-before: <link rel="stylesheet" href="/index.css">
 ---
 
 ![
