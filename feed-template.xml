@@ -24,7 +24,7 @@ $for(entry)$
     $for(entry.category)$<category term="$entry.category$" />$endfor$
     <content type="html" xml:lang="en" xml:base="$canonical$">
 <![CDATA[
-$entry.body$
+$entry.body-holder$
 ]]>
     </content>
   </entry>

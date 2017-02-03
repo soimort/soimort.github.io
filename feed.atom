@@ -23,254 +23,143 @@
     
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
-<p>
-A brief introduction to basic information theory (entropy/information as a measure for theoretical unpredictability of data) and descriptive statistics (quantitative properties about real-world data including central tendency, dispersion and shape). The maximization of entropy under different constraints yields some common probability distributions: uniform distribution (given no prior knowledge); normal distribution (given that mean and variance are known).
-</p>
+<p>A brief introduction to basic information theory (entropy/information as a measure for theoretical unpredictability of data) and descriptive statistics (quantitative properties about real-world data including central tendency, dispersion and shape). The maximization of entropy under different constraints yields some common probability distributions: uniform distribution (given no prior knowledge); normal distribution (given that mean and variance are known).</p>
 <ul>
-<li>
-What is the measure for <strong>information</strong>?
+<li>What is the measure for <strong>information</strong>?
 <ul>
-<li>
-Intuitively, if a sample appears to be more naturally “random”, then it may contain more “information” of interest since it takes a greater size of data (more bits) to describe. But how to measure this quantitatively?
-</li>
-<li>
-Probability-theoretic view: <em>Shannon entropy</em>.
-</li>
-<li>
-Algorithmic view: <em>Kolmogorov complexity</em>. (TBD in February or March 2017)
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/info/">Basic information theory</a>
+<li>Intuitively, if a sample appears to be more naturally “random”, then it may contain more “information” of interest since it takes a greater size of data (more bits) to describe. But how to measure this quantitatively?</li>
+<li>Probability-theoretic view: <em>Shannon entropy</em>.</li>
+<li>Algorithmic view: <em>Kolmogorov complexity</em>. (TBD in February or March 2017)</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/info/">Basic information theory</a>
 <ul>
-<li>
-<strong>Shannon entropy</strong>
+<li><strong>Shannon entropy</strong>
 <ul>
-<li>
-For discrete random variable <span class="math inline">(X)</span> with pmf <span class="math inline">(p(x))</span>: <span class="math display">[(X) = -_{x} p(x) p(x).]</span>
-</li>
-<li>
-For continuous random variable <span class="math inline">(X)</span> with pdf <span class="math inline">(f(x))</span>: <span class="math display">[(X) = -_ f(x) f(x) dx.]</span> (also referred to as <em>differential entropy</em>)
-</li>
-<li>
-The notion of entropy is an extension of the one in statistical thermodynamics (Gibbs entropy) and the <a href="https://wiki.soimort.org/math/dynamical-systems/ergodic/">measure-theoretic entropy of dynamical systems</a>.
-</li>
-<li>
-Obviously, the entropy is determined by the pmf/pdf, which depends on the parameters of the specific probability distribution.
-</li>
-<li>
-In the context of Computer Science, the logarithm in the formula is often taken to the base <span class="math inline">(2)</span>. Assume that we take a uniform binary string of length <span class="math inline">()</span>, then <span class="math display">[p(x) = 2^{-}]</span> Thus, the entropy of the distribution is <span class="math display">[(X) = -_{x} p(x) p(x) = - (2<sup>2</sup>{-} _2 2^{-}) = ]</span> which is just the length of this (<span class="math inline">()</span>-bit) binary string. Therefore, the unit of information (when applying binary logarithm) is often called a <em>bit</em> (also <em>shannon</em>).
-</li>
-<li>
-For the <strong>joint entropy</strong> <span class="math inline">((X,Y))</span> and the <strong>conditional entropy</strong> <span class="math inline">((X,|,Y))</span>, the following equation holds: <span class="math display">[(X,Y) = (X,|,Y) + (Y) = (Y,|,X) + (X)]</span> Notice that if <span class="math inline">((X,|,Y) = (X))</span>, then <span class="math inline">((X,Y) = (X) + (Y))</span> and <span class="math inline">((Y,|,X) = (Y))</span>. <span class="math inline">(X)</span> and <span class="math inline">(Y)</span> are said to be independent of each other in this case.
-</li>
-<li>
-<strong>Mutual information</strong> <span class="math inline">((X;Y) = (X) + (Y) - (X,Y) 0)</span> (equality holds iff <span class="math inline">(X)</span> and <span class="math inline">(Y)</span> are independent). Unlike the joint entropy or the conditional entropy, this notion does not reflect an actual probabilistic event thus it is referred to as <em>information</em> (sometimes <em>correlation</em>) rather than entropy.
-</li>
-</ul>
-</li>
-<li>
-<strong>Kullback-Leibler divergence (relative entropy)</strong> <span class="math display">[<em>(p|q) = </em>{x} p(x) ]</span> KL divergence is a measurement of the distance of two probability distributions <span class="math inline">(p(x))</span> and <span class="math inline">(q(x))</span>.
+<li>For discrete random variable <span class="math inline">\(X\)</span> with pmf <span class="math inline">\(p(x)\)</span>: <span class="math display">\[\operatorname{H}(X) = -\sum_{x\in\mathcal{X}} p(x) \log p(x).\]</span></li>
+<li>For continuous random variable <span class="math inline">\(X\)</span> with pdf <span class="math inline">\(f(x)\)</span>: <span class="math display">\[\operatorname{H}(X) = -\int_\mathcal{X} f(x) \log f(x) dx.\]</span> (also referred to as <em>differential entropy</em>)</li>
+<li>The notion of entropy is an extension of the one in statistical thermodynamics (Gibbs entropy) and the <a href="https://wiki.soimort.org/math/dynamical-systems/ergodic/">measure-theoretic entropy of dynamical systems</a>.</li>
+<li>Obviously, the entropy is determined by the pmf/pdf, which depends on the parameters of the specific probability distribution.</li>
+<li>In the context of Computer Science, the logarithm in the formula is often taken to the base <span class="math inline">\(2\)</span>. Assume that we take a uniform binary string of length <span class="math inline">\(\ell\)</span>, then <span class="math display">\[p(x) = 2^{-\ell}\]</span> Thus, the entropy of the distribution is <span class="math display">\[\operatorname{H}(X) = -\sum_{x\in\mathcal{X}} p(x) \log p(x) = - (2^\ell \cdot 2^{-\ell} \log_2 2^{-\ell}) = \ell\]</span> which is just the length of this (<span class="math inline">\(\ell\)</span>-bit) binary string. Therefore, the unit of information (when applying binary logarithm) is often called a <em>bit</em> (also <em>shannon</em>).</li>
+<li>For the <strong>joint entropy</strong> <span class="math inline">\(\operatorname{H}(X,Y)\)</span> and the <strong>conditional entropy</strong> <span class="math inline">\(\operatorname{H}(X\,|\,Y)\)</span>, the following equation holds: <span class="math display">\[\operatorname{H}(X,Y) = \operatorname{H}(X\,|\,Y) + \operatorname{H}(Y) = \operatorname{H}(Y\,|\,X) + \operatorname{H}(X)\]</span> Notice that if <span class="math inline">\(\operatorname{H}(X\,|\,Y) = \operatorname{H}(X)\)</span>, then <span class="math inline">\(\operatorname{H}(X,Y) = \operatorname{H}(X) + \operatorname{H}(Y)\)</span> and <span class="math inline">\(\operatorname{H}(Y\,|\,X) = \operatorname{H}(Y)\)</span>. <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are said to be independent of each other in this case.</li>
+<li><strong>Mutual information</strong> <span class="math inline">\(\operatorname{I}(X;Y) = \operatorname{H}(X) + \operatorname{H}(Y) - \operatorname{H}(X,Y) \geq 0\)</span> (equality holds iff <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent). Unlike the joint entropy or the conditional entropy, this notion does not reflect an actual probabilistic event thus it is referred to as <em>information</em> (sometimes <em>correlation</em>) rather than entropy.</li>
+</ul></li>
+<li><strong>Kullback-Leibler divergence (relative entropy)</strong> <span class="math display">\[\operatorname{D}_\mathrm{KL}(p\|q) = \sum_{x\in\mathcal{X}} p(x) \log \frac{p(x)}{q(x)}\]</span> KL divergence is a measurement of the distance of two probability distributions <span class="math inline">\(p(x)\)</span> and <span class="math inline">\(q(x)\)</span>.
 <ul>
-<li>
-If <span class="math inline">(p = q)</span>, <span class="math inline">(_(p|q) = 0)</span>. (Any distribution has a KL divergence of 0 with itself.)
-</li>
-<li>
-<span class="math inline">((X;Y) = _(p(x,y)|p(x)p(y)))</span>.
-</li>
-<li>
-<strong>Cross entropy</strong> <span class="math display">[(p,q) = (p) + _(p|q)]</span> Notice that cross entropy is defined on two distributions <span class="math inline">(p)</span> and <span class="math inline">(q)</span> rather than two random variables taking one distribution <span class="math inline">(p)</span> (given by joint entropy <span class="math inline">((X,Y))</span>).
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-Basic probability theory
+<li>If <span class="math inline">\(p = q\)</span>, <span class="math inline">\(\operatorname{D}_\mathrm{KL}(p\|q) = 0\)</span>. (Any distribution has a KL divergence of 0 with itself.)</li>
+<li><span class="math inline">\(\operatorname{I}(X;Y) = \operatorname{D}_\mathrm{KL}(p(x,y)\|p(x)p(y))\)</span>.</li>
+<li><strong>Cross entropy</strong> <span class="math display">\[\operatorname{H}(p,q) = \operatorname{H}(p) + \operatorname{D}_\mathrm{KL}(p\|q)\]</span> Notice that cross entropy is defined on two distributions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> rather than two random variables taking one distribution <span class="math inline">\(p\)</span> (given by joint entropy <span class="math inline">\(\operatorname{H}(X,Y)\)</span>).</li>
+</ul></li>
+</ul></li>
+<li>Basic probability theory
 <ul>
-<li>
-<a href="https://wiki.soimort.org/math/probability/distributions/normal/">Normal (Gaussian) distribution</a>.
+<li><a href="https://wiki.soimort.org/math/probability/distributions/normal/">Normal (Gaussian) distribution</a>.
 <ul>
-<li>
-(Univariate) <span class="math inline">(X (,^2))</span> <span class="math display">[f_X(x) =  e^{-}]</span> where <span class="math inline">()</span> is the mean, <span class="math inline">(^2)</span> is the variance of the distribution.<br /> (Multivariate) <span class="math inline">(x _k(,))</span> <span class="math display">[f(x) = (2)^{-k/2} ||^{-1/2} e^{- (x - )^ ^{-1}(x - )}]</span> where <span class="math inline">()</span> is the mean vector, <span class="math inline">()</span> is the covariance matrix of the distribution.
-</li>
-<li>
-<em>Maximum entropy</em>: normal distribution is the probability distribution that maximizes the entropy when the mean <span class="math inline">()</span> and the variance <span class="math inline">(^2)</span> are fixed.
-</li>
-<li>
-The normal distribution does not have any shape parameter. Moreover, its skewness and excess kurtosis are always 0.
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/math/statistics/">Basic descriptive statistics</a>
+<li>(Univariate) <span class="math inline">\(X \sim \mathcal{N}(\mu,\sigma^2)\)</span> <span class="math display">\[f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</span> where <span class="math inline">\(\mu\)</span> is the mean, <span class="math inline">\(\sigma^2\)</span> is the variance of the distribution.<br />
+(Multivariate) <span class="math inline">\(\boldsymbol x \sim \mathcal{N}_k(\boldsymbol\mu,\mathbf\Sigma)\)</span> <span class="math display">\[f(\boldsymbol x) = (2\pi)^{-k/2} |\mathbf\Sigma|^{-1/2} e^{-\frac{1}{2} (\boldsymbol x - \boldsymbol\mu)^\mathrm{T} \Sigma^{-1}(\boldsymbol x - \boldsymbol\mu)}\]</span> where <span class="math inline">\(\boldsymbol\mu\)</span> is the mean vector, <span class="math inline">\(\mathbf\Sigma\)</span> is the covariance matrix of the distribution.</li>
+<li><em>Maximum entropy</em>: normal distribution is the probability distribution that maximizes the entropy when the mean <span class="math inline">\(\mu\)</span> and the variance <span class="math inline">\(\sigma^2\)</span> are fixed.</li>
+<li>The normal distribution does not have any shape parameter. Moreover, its skewness and excess kurtosis are always 0.</li>
+</ul></li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/math/statistics/">Basic descriptive statistics</a>
 <ul>
-<li>
-<em>Descriptive statistics</em> describe the properties of data sets quantitatively, without making any further inference.
-</li>
-<li>
-<em>Population</em> vs. <em>sample</em>.
-</li>
-<li>
-Three major descriptive statistics:
+<li><em>Descriptive statistics</em> describe the properties of data sets quantitatively, without making any further inference.</li>
+<li><em>Population</em> vs. <em>sample</em>.</li>
+<li>Three major descriptive statistics:
 <ol type="1">
-<li>
-<em>Central tendency</em>: sample means (<strong>arithmetic mean</strong> <span class="math inline">()</span>, geometric, harmonic), <strong>median</strong>, <strong>mode</strong>, mid-range.
+<li><em>Central tendency</em>: sample means (<strong>arithmetic mean</strong> <span class="math inline">\(\mu\)</span>, geometric, harmonic), <strong>median</strong>, <strong>mode</strong>, mid-range.
 <ul>
-<li>
-Arithmetic mean is an unbiased estimator of the population mean (expectation).
-</li>
-<li>
-Median and mode are most robust in the presence of outliers.
-</li>
-</ul>
-</li>
-<li>
-<em>Dispersion (or variability)</em>: minimum, maximum, range, IQR (interquartile range), maximum absolute deviation, MAD (mean absolute deviation), <strong>sample variance</strong> <span class="math inline">(s^2)</span> with Bessel’s correction, <strong>CV (coefficient of variance)</strong>, <strong>VMR (index of dispersion)</strong>.
+<li>Arithmetic mean is an unbiased estimator of the population mean (expectation).</li>
+<li>Median and mode are most robust in the presence of outliers.</li>
+</ul></li>
+<li><em>Dispersion (or variability)</em>: minimum, maximum, range, IQR (interquartile range), maximum absolute deviation, MAD (mean absolute deviation), <strong>sample variance</strong> <span class="math inline">\(s^2\)</span> with Bessel’s correction, <strong>CV (coefficient of variance)</strong>, <strong>VMR (index of dispersion)</strong>.
 <ul>
-<li>
-IQR and MAD are robust in the presence of outliers.
-</li>
-<li>
-Sample variance (with Bessel’s correction) is an unbiased estimator of the population variance.
-</li>
-<li>
-CV and VMR are sample standard deviation and sample variance normalized by the mean respectively, thus they are sometimes called <em>relative standard deviation</em> and <em>relative variance</em>; they are <em>not</em> unbiased though.
-</li>
-</ul>
-</li>
-<li>
-<em>Shape</em>: sample skewness, sample excess kurtosis.
+<li>IQR and MAD are robust in the presence of outliers.</li>
+<li>Sample variance (with Bessel’s correction) is an unbiased estimator of the population variance.</li>
+<li>CV and VMR are sample standard deviation and sample variance normalized by the mean respectively, thus they are sometimes called <em>relative standard deviation</em> and <em>relative variance</em>; they are <em>not</em> unbiased though.</li>
+</ul></li>
+<li><em>Shape</em>: sample skewness, sample excess kurtosis.
 <ul>
-<li>
-These statistics show how a sample deviates from normality, since the skewness and the excess kurtosis of a normal distribution are 0. The estimators could vary under different circumstances.
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-</li>
+<li>These statistics show how a sample deviates from normality, since the skewness and the excess kurtosis of a normal distribution are 0. The estimators could vary under different circumstances.</li>
+</ul></li>
+</ol></li>
+</ul></li>
 </ul>
 <section id="entropy-as-a-measure" class="level2">
-<h2>
-Entropy as a measure<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
-</h2>
-For random variables <span class="math inline">(X)</span> and <span class="math inline">(Y)</span>, we define sets <span class="math inline">(X)</span> and <span class="math inline">(Y)</span>. Then the information entropy <span class="math inline">()</span> may be viewed as a signed measure <span class="math inline">()</span> over <a href="https://wiki.soimort.org/math/set/">sets</a>: <span class="math display">[
-
-]</span> The inclusion–exclusion principle: <span class="math display">[
-
-]</span> Bayes’ theorem: <span class="math display">[
-
-]</span>
+<h2>Entropy as a measure<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+For random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we define sets <span class="math inline">\(\tilde X\)</span> and <span class="math inline">\(\tilde Y\)</span>. Then the information entropy <span class="math inline">\(\operatorname{H}\)</span> may be viewed as a signed measure <span class="math inline">\(\mu\)</span> over <a href="https://wiki.soimort.org/math/set/">sets</a>:
+<span class="math display">\[\begin{align*}
+\operatorname{H}(X) &amp;= \mu(\tilde X) \\
+\operatorname{H}(Y) &amp;= \mu(\tilde Y) \\
+\operatorname{H}(X,Y) &amp;= \mu(\tilde X \cup \tilde Y) \qquad \text{(Joint entropy is the measure of a set union)} \\
+\operatorname{H}(X\,|\,Y) &amp;= \mu(\tilde X \setminus \tilde Y) \qquad \text{(Conditional entropy is the measure of a set difference)} \\
+\operatorname{I}(X;Y) &amp;= \mu(\tilde X \cap \tilde Y) \qquad \text{(Mutual information is the measure of a set intersection)}
+\end{align*}\]</span>
+The inclusion–exclusion principle:
+<span class="math display">\[\begin{align*}
+\operatorname{H}(X,Y) &amp;= \operatorname{H}(X) + \operatorname{H}(Y) - \operatorname{I}(X;Y) \\
+\mu(\tilde X \cup \tilde Y) &amp;= \mu(\tilde X) + \mu(\tilde Y) - \mu(\tilde X \cap \tilde Y)
+\end{align*}\]</span>
+Bayes’ theorem:
+<span class="math display">\[\begin{align*}
+\operatorname{H}(X\,|\,Y) &amp;= \operatorname{H}(Y\,|\,X) + \operatorname{H}(X) - \operatorname{H}(Y) \\
+\mu(\tilde X \setminus \tilde Y) &amp;= \mu(\tilde Y \setminus \tilde X) + \mu(\tilde X) - \mu(\tilde Y)
+\end{align*}\]</span>
 </section>
 <section id="entropy-and-data-coding" class="level2">
-<h2>
-Entropy and data coding
-</h2>
-<em>Absolute entropy (Shannon entropy)</em> quantifies how much information is contained in some data. For data compression, the entropy gives the minimum size that is needed to reconstruct original data (losslessly). Assume that we want to store a random binary string of length <span class="math inline">()</span> (by “random”, we do not have yet any prior knowledge on what data to be stored). Under the <em>principle of maximum entropy</em>, the entropy of its distribution <span class="math inline">(p(x))</span> should be maximized: <span class="math display">[(X) = { -<em>{x} p(x) p(x) }]</span> given the only constraint <span class="math display">[</em>{x} p(x) = 1]</span> Let <span class="math inline">()</span> be the Lagrange multiplier, set <span class="math display">[ = - <em>{x} p(x) p(x) - ( </em>{x} p(x) - 1 )]</span> We get <span class="math display">[
-
-]</span>
-<p>
-That is, the <a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">discrete uniform distribution</a> maximizes the entropy for a random string. Since <span class="math inline">(|| = 2^)</span>, we have <span class="math inline">(p(x) = 2^{-})</span> and <span class="math inline">((X) = -_{x} 2^{-} _2 2^{-} = )</span> (bits). We conclude that the information that can be represented in a <span class="math inline">()</span>-bit string is at most <span class="math inline">()</span> bits. Some practical results include
-</p>
+<h2>Entropy and data coding</h2>
+<em>Absolute entropy (Shannon entropy)</em> quantifies how much information is contained in some data. For data compression, the entropy gives the minimum size that is needed to reconstruct original data (losslessly). Assume that we want to store a random binary string of length <span class="math inline">\(\ell\)</span> (by “random”, we do not have yet any prior knowledge on what data to be stored). Under the <em>principle of maximum entropy</em>, the entropy of its distribution <span class="math inline">\(p(x)\)</span> should be maximized: <span class="math display">\[\max \operatorname{H}(X) = \max \left\{ -\sum_{x\in\mathcal{X}} p(x) \log p(x) \right\}\]</span> given the only constraint <span class="math display">\[\sum_{x\in\mathcal{X}} p(x) = 1\]</span> Let <span class="math inline">\(\lambda\)</span> be the Lagrange multiplier, set <span class="math display">\[\mathcal{L} = - \sum_{x\in\mathcal{X}} p(x) \log p(x) - \lambda\left( \sum_{x\in\mathcal{X}} p(x) - 1 \right)\]</span> We get
+<span class="math display">\[\begin{align*}
+\frac{\partial\mathcal{L}}{\partial x} = -p(x)(\log p(x) + 1 + \lambda) &amp;= 0 \\
+\log p(x) &amp;= - \lambda - 1 \\
+p(x) &amp;= c \qquad \text{(constant)}
+\end{align*}\]</span>
+<p>That is, the <a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">discrete uniform distribution</a> maximizes the entropy for a random string. Since <span class="math inline">\(|\mathcal{X}| = 2^\ell\)</span>, we have <span class="math inline">\(p(x) = 2^{-\ell}\)</span> and <span class="math inline">\(\operatorname{H}(X) = -\sum_{x\in\mathcal{X}} 2^{-\ell} \log_2 2^{-\ell} = \ell\)</span> (bits). We conclude that the information that can be represented in a <span class="math inline">\(\ell\)</span>-bit string is at most <span class="math inline">\(\ell\)</span> bits. Some practical results include</p>
 <ul>
-<li>
-In general, pseudorandom data (assume no prior knowledge) cannot be losslessly compressed, e.g., the uniform key used in one-time pad must have <span class="math inline">(_2 ||)</span> bits (lower bound) so as not to compromise the perfect secrecy. (Further topic: <em>Shannon’s source coding theorem</em>)
-</li>
-<li>
-Fully correct encoding/decoding of data, e.g., <span class="math inline">((m))</span> and <span class="math inline">((c))</span> algorithms in a private-key encryption scheme, must ensure that the probability distributions of <span class="math inline">(m )</span> and <span class="math inline">(c )</span> have the same entropy.
-</li>
-<li>
-An algorithm with finite input cannot generate randomness infinitely. Consider a circuit that takes the encoded algorithm with some input (<span class="math inline">()</span> bits in total) and outputs some randomness, the entropy of the output data is at most <span class="math inline">()</span> bits. (Further topic: <em>Kolmogorov complexity</em>)
-</li>
+<li>In general, pseudorandom data (assume no prior knowledge) cannot be losslessly compressed, e.g., the uniform key used in one-time pad must have <span class="math inline">\(\log_2 |\mathcal{M}|\)</span> bits (lower bound) so as not to compromise the perfect secrecy. (Further topic: <em>Shannon’s source coding theorem</em>)</li>
+<li>Fully correct encoding/decoding of data, e.g., <span class="math inline">\(\mathsf{Enc}(m)\)</span> and <span class="math inline">\(\mathsf{Dec}(c)\)</span> algorithms in a private-key encryption scheme, must ensure that the probability distributions of <span class="math inline">\(m \in \mathcal{M}\)</span> and <span class="math inline">\(c \in \mathcal{C}\)</span> have the same entropy.</li>
+<li>An algorithm with finite input cannot generate randomness infinitely. Consider a circuit that takes the encoded algorithm with some input (<span class="math inline">\(\ell\)</span> bits in total) and outputs some randomness, the entropy of the output data is at most <span class="math inline">\(\ell\)</span> bits. (Further topic: <em>Kolmogorov complexity</em>)</li>
 </ul>
-<p>
-<em>Relative entropy (KL divergence)</em> quantifies how much information diverges between two sets of data. For data differencing, the KL divergence gives the minimum patch size that is needed to reconstruct target data (with distribution <span class="math inline">(p(x))</span>) given source data (with distribution <span class="math inline">(q(x))</span>).
-</p>
-<p>
-In particular, if <span class="math inline">(p(x) = q(x))</span>, which means that the two distributions are identical, we have <span class="math inline">(_(p|q) = 0)</span>. This follows our intuition that no information is gained or lost during data encoding/decoding. If <span class="math inline">(p(x_0) = 0)</span> at <span class="math inline">(x=x_0)</span>, we take <span class="math inline">(p(x)  = 0)</span>, to justify the fact that the target data is trivial to reconstruct at this point, no matter how much information <span class="math inline">(q(x))</span> contains. However, if <span class="math inline">(q(x_0) = 0)</span> at <span class="math inline">(x=x_0)</span>, we should take <span class="math inline">(p(x)  = )</span>, so that the target data is impossible to reconstruct if we have only trivial <span class="math inline">(q(x))</span> at some point (unless <span class="math inline">(p(x_0) = 0)</span>).
-</p>
-<p>
-<strong>Lemma 4.1. (Gibbs’ inequality)</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>The KL divergence is always non-negative: <span class="math inline">(_(p|q) 0)</span>.</em>
-</p>
-<p>
-Informally, Lemma 4.1 simply states that in order to reconstruct target data from source data, either more information (<span class="math inline">(<em>(p|q) &gt; 0)</span>) or no further information (<span class="math inline">(</em>(p|q) = 0)</span>) is needed.
-</p>
+<p><em>Relative entropy (KL divergence)</em> quantifies how much information diverges between two sets of data. For data differencing, the KL divergence gives the minimum patch size that is needed to reconstruct target data (with distribution <span class="math inline">\(p(x)\)</span>) given source data (with distribution <span class="math inline">\(q(x)\)</span>).</p>
+<p>In particular, if <span class="math inline">\(p(x) = q(x)\)</span>, which means that the two distributions are identical, we have <span class="math inline">\(\operatorname{D}_\mathrm{KL}(p\|q) = 0\)</span>. This follows our intuition that no information is gained or lost during data encoding/decoding. If <span class="math inline">\(p(x_0) = 0\)</span> at <span class="math inline">\(x=x_0\)</span>, we take <span class="math inline">\(p(x) \log \frac{p(x)}{q(x)} = 0\)</span>, to justify the fact that the target data is trivial to reconstruct at this point, no matter how much information <span class="math inline">\(q(x)\)</span> contains. However, if <span class="math inline">\(q(x_0) = 0\)</span> at <span class="math inline">\(x=x_0\)</span>, we should take <span class="math inline">\(p(x) \log \frac{p(x)}{q(x)} = \infty\)</span>, so that the target data is impossible to reconstruct if we have only trivial <span class="math inline">\(q(x)\)</span> at some point (unless <span class="math inline">\(p(x_0) = 0\)</span>).</p>
+<p><strong>Lemma 4.1. (Gibbs’ inequality)</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> <em>The KL divergence is always non-negative: <span class="math inline">\(\operatorname{D}_\mathrm{KL}(p\|q) \geq 0\)</span>.</em></p>
+<p>Informally, Lemma 4.1 simply states that in order to reconstruct target data from source data, either more information (<span class="math inline">\(\operatorname{D}_\mathrm{KL}(p\|q) &gt; 0\)</span>) or no further information (<span class="math inline">\(\operatorname{D}_\mathrm{KL}(p\|q) = 0\)</span>) is needed.</p>
 </section>
 <section id="maximum-entropy-and-normality" class="level2">
-<h2>
-Maximum entropy and normality
-</h2>
-<p>
-<strong>Theorem 4.2.</strong> <em>Normal distribution <span class="math inline">((,^2))</span> maximizes the differential entropy for given mean <span class="math inline">()</span> and variance <span class="math inline">(^2)</span>.</em>
-</p>
-<p>
-<strong>Proof.</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> Let <span class="math inline">(g(x))</span> be a pdf of the normal distribution with mean <span class="math inline">()</span> and variance <span class="math inline">(^2)</span>. Let <span class="math inline">(f(x))</span> be an arbitrary pdf with the same mean and variance.
-</p>
-<p>
-Consider the KL divergence between <span class="math inline">(f(x))</span> and <span class="math inline">(g(x))</span>. By Lemma 4.1 (Gibbs’ inequality): <span class="math display">[<em>(f|g) = </em>{-}^f(x)  dx = (f,g) - (f) 0]</span>
-</p>
-Notice that <span class="math display">[
-
-]</span>
-<p>
-Therefore, <span class="math display">[(g) (f)]</span> That is, the distribution of <span class="math inline">(g(x))</span> (Gaussian) always has the maximum entropy.
-<p style="text-align:right !important;text-indent:0 !important;position:relative;top:-1em">
-■
-</p>
-</p>
-<p>
-It is also possible to derive the normal distribution directly from the principle of maximum entropy, under the constraint such that <span class="math inline">(_{-}<sup>(x-)</sup>2f(x)dx = ^2)</span>.
-</p>
-<p>
-The well-known central limit theorem (CLT) which states that the sum of independent random variables <span class="math inline">({X_1,,X_n})</span> tends toward a normal distribution may be alternatively expressed as the monotonicity of the entropy of the normalized sum: <span class="math display">[(  )]</span> which is an increasing function of <span class="math inline">(n)</span>. <span class="citation" data-cites="artstein2004solution">[1]</span>
-</p>
+<h2>Maximum entropy and normality</h2>
+<p><strong>Theorem 4.2.</strong> <em>Normal distribution <span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span> maximizes the differential entropy for given mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</em></p>
+<p><strong>Proof.</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> Let <span class="math inline">\(g(x)\)</span> be a pdf of the normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Let <span class="math inline">\(f(x)\)</span> be an arbitrary pdf with the same mean and variance.</p>
+<p>Consider the KL divergence between <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span>. By Lemma 4.1 (Gibbs’ inequality): <span class="math display">\[\operatorname{D}_\mathrm{KL}(f\|g) = \int_{-\infty}^\infty f(x) \log \frac{f(x)}{g(x)} dx = \operatorname{H}(f,g) - \operatorname{H}(f) \geq 0\]</span></p>
+Notice that
+<span class="math display">\[\begin{align*}
+\operatorname{H}(f,g) &amp;= - \int_{-\infty}^\infty f(x) \log g(x) dx \\
+&amp;= - \int_{-\infty}^\infty f(x) \log \left( \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \right) dx \\
+&amp;= \frac{1}{2} \left( \log(2\pi\sigma^2) + 1 \right) \\
+&amp;= \operatorname{H}(g)
+\end{align*}\]</span>
+<p>Therefore, <span class="math display">\[\operatorname{H}(g) \geq \operatorname{H}(f)\]</span> That is, the distribution of <span class="math inline">\(g(x)\)</span> (Gaussian) always has the maximum entropy. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
+<p>It is also possible to derive the normal distribution directly from the principle of maximum entropy, under the constraint such that <span class="math inline">\(\int_{-\infty}^\infty (x-\mu)^2f(x)dx = \sigma^2\)</span>.</p>
+<p>The well-known central limit theorem (CLT) which states that the sum of independent random variables <span class="math inline">\(\{X_1,\dots,X_n\}\)</span> tends toward a normal distribution may be alternatively expressed as the monotonicity of the entropy of the normalized sum: <span class="math display">\[\operatorname{H}\left( \frac{\sum_{i=1}^n X_i}{\sqrt{n}} \right)\]</span> which is an increasing function of <span class="math inline">\(n\)</span>. <span class="citation" data-cites="artstein2004solution">[1]</span></p>
 </section>
 <section id="references-and-further-reading" class="level2">
-<h2>
-References and further reading
-</h2>
-<p>
-<strong>Books:</strong>
-</p>
-<p>
-T. M. Cover and J. A. Thomas. <em>Elements of Information Theory</em>, 2nd ed.
-</p>
-<p>
-<strong>Papers:</strong>
-</p>
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>T. M. Cover and J. A. Thomas. <em>Elements of Information Theory</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
 <div id="refs" class="references">
 <div id="ref-artstein2004solution">
-<p>
-[1] S. Artstein, K. Ball, F. Barthe, and A. Naor, “Solution of shannon’s problem on the monotonicity of entropy,” <em>Journal of the American Mathematical Society</em>, vol. 17, no. 4, pp. 975–982, 2004.
-</p>
+<p>[1] S. Artstein, K. Ball, F. Barthe, and A. Naor, “Solution of shannon’s problem on the monotonicity of entropy,” <em>Journal of the American Mathematical Society</em>, vol. 17, no. 4, pp. 975–982, 2004. </p>
 </div>
 </div>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1">
-<p>
-<a href="https://en.wikipedia.org/wiki/Information_theory_and_measure_theory" class="uri">https://en.wikipedia.org/wiki/Information_theory_and_measure_theory</a><a href="#fnref1">↩</a>
-</p>
-</li>
-<li id="fn2">
-<p>
-<a href="https://en.wikipedia.org/wiki/Gibbs&#39;_inequality" class="uri">https://en.wikipedia.org/wiki/Gibbs'_inequality</a><a href="#fnref2">↩</a>
-</p>
-</li>
-<li id="fn3">
-<p>
-<a href="https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution</a><a href="#fnref3">↩</a>
-</p>
-</li>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Information_theory_and_measure_theory" class="uri">https://en.wikipedia.org/wiki/Information_theory_and_measure_theory</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Gibbs&#39;_inequality" class="uri">https://en.wikipedia.org/wiki/Gibbs'_inequality</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution</a><a href="#fnref3">↩</a></p></li>
 </ol>
 </section>
+
 ]]>
     </content>
   </entry>
@@ -286,386 +175,183 @@ T. M. Cover and J. A. Thomas. <em>Elements of Information Theory</em>, 2nd ed.
     
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
-<p>
-<a href="https://wiki.soimort.org/comp/">Theory of computation</a> (computability and complexity) forms the basis for modern cryptography:
-</p>
+<p><a href="https://wiki.soimort.org/comp/">Theory of computation</a> (computability and complexity) forms the basis for modern cryptography:</p>
 <ul>
-<li>
-What is an <a href="https://wiki.soimort.org/comp/algorithm/">algorithm</a>?
+<li>What is an <a href="https://wiki.soimort.org/comp/algorithm/">algorithm</a>?
 <ul>
-<li>
-An algorithm is a <em>computational method</em> for solving an <em>abstract problem</em>.
-</li>
-<li>
-An algorithm takes as input a set <span class="math inline">(I)</span> of <em>problem instances</em>, and outputs a solution from the set <span class="math inline">(S)</span> of <em>problem solutions</em>.
-</li>
-<li>
-An algorithm is represented in a well-defined <a href="https://wiki.soimort.org/comp/language/">formal language</a>.
-</li>
-<li>
-An algorithm must be able to be represented within a finite amount of time and space (otherwise it cannot be actually used for solving any problem).
-</li>
-<li>
-An algorithm can be simulated by any <em>model of computation</em>:
+<li>An algorithm is a <em>computational method</em> for solving an <em>abstract problem</em>.</li>
+<li>An algorithm takes as input a set <span class="math inline">\(I\)</span> of <em>problem instances</em>, and outputs a solution from the set <span class="math inline">\(S\)</span> of <em>problem solutions</em>.</li>
+<li>An algorithm is represented in a well-defined <a href="https://wiki.soimort.org/comp/language/">formal language</a>.</li>
+<li>An algorithm must be able to be represented within a finite amount of time and space (otherwise it cannot be actually used for solving any problem).</li>
+<li>An algorithm can be simulated by any <em>model of computation</em>:
 <ul>
-<li>
-<em>Turing machine</em> is a model implemented through internal <em>states</em>.
-</li>
-<li>
-<em>λ-calculus</em> is a model based on pure <em>functions</em>.
-</li>
-<li>
-All Turing-complete models are equivalent in their computational abilities.
-</li>
+<li><em>Turing machine</em> is a model implemented through internal <em>states</em>.</li>
+<li><em>λ-calculus</em> is a model based on pure <em>functions</em>.</li>
+<li>All Turing-complete models are equivalent in their computational abilities.</li>
+</ul></li>
+<li>Computability: Not every abstract problem is solvable. Notably, there exists a decision problem for which some instances can neither be accepted nor rejected by any algorithm. (<em>Undecidable problem</em>)</li>
+<li>Complexity:
+<ul>
+<li>The complexity class P is closed under polynomial-time reductions. Hence, proof by reduction can be a useful technique in provable security of cryptosystems.</li>
+<li>If one can prove that P = NP, then one-way functions do not exist. This would invalidate the construction of cryptographically secure pseudorandom generators (PRG). (<em>Pseudorandom generator theorem</em>)</li>
+</ul></li>
+<li>In many scenarios, we assume that an algorithm acts as a stateless computation and takes independent and identically distributed inputs. It differs from a computer program conceptually.</li>
+<li>An algorithm can be either <em>deterministic</em> or <em>probabilistic</em>.
+<ul>
+<li>For probabilistic algorithms, the source of randomness may be from:
+<ul>
+<li>External (physical) input of high entropy.</li>
+<li>Pseudorandomness: Since everything computational is deterministic, the existence of pseudorandomness relies on the (assumed) existence of one-way functions and PRGs.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-<li>
-Computability: Not every abstract problem is solvable. Notably, there exists a decision problem for which some instances can neither be accepted nor rejected by any algorithm. (<em>Undecidable problem</em>)
-</li>
-<li>
-Complexity:
+<p>Generally, pseudorandom generators used in probabilistic algorithms yield random bits according to the uniform distribution, so it is worth mentioning:</p>
 <ul>
-<li>
-The complexity class P is closed under polynomial-time reductions. Hence, proof by reduction can be a useful technique in provable security of cryptosystems.
-</li>
-<li>
-If one can prove that P = NP, then one-way functions do not exist. This would invalidate the construction of cryptographically secure pseudorandom generators (PRG). (<em>Pseudorandom generator theorem</em>)
-</li>
-</ul>
-</li>
-<li>
-In many scenarios, we assume that an algorithm acts as a stateless computation and takes independent and identically distributed inputs. It differs from a computer program conceptually.
-</li>
-<li>
-An algorithm can be either <em>deterministic</em> or <em>probabilistic</em>.
+<li>Basic probability theory
 <ul>
-<li>
-For probabilistic algorithms, the source of randomness may be from:
+<li><a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">Discrete uniform distribution</a>. <span class="math inline">\(\mathcal{U}\{a,b\}\)</span>. The probability distribution where a finite number of values are equally likely to be observed (with probability <span class="math inline">\(\frac{1}{b-a+1}\)</span>).</li>
+</ul></li>
+</ul>
+<p>Cryptographic schemes are defined as tuples of deterministic or probabilistic algorithms:</p>
 <ul>
-<li>
-External (physical) input of high entropy.
-</li>
-<li>
-Pseudorandomness: Since everything computational is deterministic, the existence of pseudorandomness relies on the (assumed) existence of one-way functions and PRGs.
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>
-Generally, pseudorandom generators used in probabilistic algorithms yield random bits according to the uniform distribution, so it is worth mentioning:
-</p>
+<li><a href="https://wiki.soimort.org/crypto/intro/">Principles of modern cryptography</a>
 <ul>
-<li>
-Basic probability theory
+<li>Formal description of a <em>private-key encryption scheme</em> <span class="math inline">\(\Pi=(\mathsf{Gen},\mathsf{Enc},\mathsf{Dec})\)</span> with message space <span class="math inline">\(\mathcal{M}\)</span>.
 <ul>
-<li>
-<a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">Discrete uniform distribution</a>. <span class="math inline">({a,b})</span>. The probability distribution where a finite number of values are equally likely to be observed (with probability <span class="math inline">()</span>).
-</li>
-</ul>
-</li>
-</ul>
-<p>
-Cryptographic schemes are defined as tuples of deterministic or probabilistic algorithms:
-</p>
-<ul>
-<li>
-<a href="https://wiki.soimort.org/crypto/intro/">Principles of modern cryptography</a>
-<ul>
-<li>
-Formal description of a <em>private-key encryption scheme</em> <span class="math inline">(=(,,))</span> with message space <span class="math inline">()</span>.
-<ul>
-<li>
-<span class="math inline">()</span>, <span class="math inline">()</span>, <span class="math inline">()</span> are three algorithms.
-</li>
-<li>
-Correctness: <span class="math inline">(_k(_k(m)) = m)</span>.
-</li>
-<li>
-For the correctness equality to hold, <span class="math inline">()</span> should be deterministic.
-</li>
-<li>
-Assume that we have access to a source of randomness, <span class="math inline">()</span> should choose a key at random thus is probabilistic. If <span class="math inline">()</span> is deterministic and always generate the same key, such an encryption scheme is of no practical use and easy to break.
-</li>
-<li>
-<span class="math inline">()</span> can be either deterministic (e.g., as in one-time pads) or probabilistic. Later we will see that for an encryption scheme to be CPA-secure, <span class="math inline">()</span> should be probabilistic.
-</li>
-</ul>
-</li>
-<li>
-<strong>Kerchhoffs’ principle (Shannon’s maxim)</strong> claims that a cryptosystem should be secure even if the scheme <span class="math inline">((,,))</span> is known to the adversary. That is, security should rely solely on the secrecy of the private key.
-</li>
-<li>
-Provable security of cryptosystems requires:
+<li><span class="math inline">\(\mathsf{Gen}\)</span>, <span class="math inline">\(\mathsf{Enc}\)</span>, <span class="math inline">\(\mathsf{Dec}\)</span> are three algorithms.</li>
+<li>Correctness: <span class="math inline">\(\mathsf{Dec}_k(\mathsf{Enc}_k(m)) = m\)</span>.</li>
+<li>For the correctness equality to hold, <span class="math inline">\(\mathsf{Dec}\)</span> should be deterministic.</li>
+<li>Assume that we have access to a source of randomness, <span class="math inline">\(\mathsf{Gen}\)</span> should choose a key at random thus is probabilistic. If <span class="math inline">\(\mathsf{Gen}\)</span> is deterministic and always generate the same key, such an encryption scheme is of no practical use and easy to break.</li>
+<li><span class="math inline">\(\mathsf{Enc}\)</span> can be either deterministic (e.g., as in one-time pads) or probabilistic. Later we will see that for an encryption scheme to be CPA-secure, <span class="math inline">\(\mathsf{Enc}\)</span> should be probabilistic.</li>
+</ul></li>
+<li><strong>Kerchhoffs’ principle (Shannon’s maxim)</strong> claims that a cryptosystem should be secure even if the scheme <span class="math inline">\((\mathsf{Gen},\mathsf{Enc},\mathsf{Dec})\)</span> is known to the adversary. That is, security should rely solely on the secrecy of the private key.</li>
+<li>Provable security of cryptosystems requires:
 <ol type="1">
-<li>
-Formal definition of security;
-</li>
-<li>
-Minimal assumptions;
-</li>
-<li>
-Rigorous proofs of security.
-</li>
-</ol>
-</li>
-<li>
-Common attacks and notions of security:
+<li>Formal definition of security;</li>
+<li>Minimal assumptions;</li>
+<li>Rigorous proofs of security.</li>
+</ol></li>
+<li>Common attacks and notions of security:
 <ul>
-<li>
-<strong>Ciphertext-only attack</strong>.
+<li><strong>Ciphertext-only attack</strong>.
 <ul>
-<li>
-A cryptosystem is said to be <em>perfectly secret</em> if it is theoretically unbreakable under ciphertext-only attack.
-</li>
-<li>
-A cryptosystem is said to be <em>computationally secure</em> if it is resistant to ciphertext-only attack (by any polynomial-time adversary).
-</li>
-</ul>
-</li>
-<li>
-<strong>Known-plaintext attack (KPA)</strong>. A cryptosystem is <em>KPA-secure</em> if it is resistant to KPA.
+<li>A cryptosystem is said to be <em>perfectly secret</em> if it is theoretically unbreakable under ciphertext-only attack.</li>
+<li>A cryptosystem is said to be <em>computationally secure</em> if it is resistant to ciphertext-only attack (by any polynomial-time adversary).</li>
+</ul></li>
+<li><strong>Known-plaintext attack (KPA)</strong>. A cryptosystem is <em>KPA-secure</em> if it is resistant to KPA.
 <ul>
-<li>
-KPA-security implies ciphertext-only security.
-</li>
-</ul>
-</li>
-<li>
-<strong>Chosen-plaintext attack (CPA)</strong>. A cryptosystem is <em>CPA-secure</em> (or <em>IND-CPA</em>) if it is resistant to CPA.
+<li>KPA-security implies ciphertext-only security.</li>
+</ul></li>
+<li><strong>Chosen-plaintext attack (CPA)</strong>. A cryptosystem is <em>CPA-secure</em> (or <em>IND-CPA</em>) if it is resistant to CPA.
 <ul>
-<li>
-IND-CPA implies KPA-security.
-</li>
-</ul>
-</li>
-<li>
-<strong>Chosen-ciphertext attack (CCA)</strong>. A cryptosystem is <em>CCA-secure</em> (or <em>IND-CCA1</em>) if it is resistant to CCA; furthermore, a cryptosystem is <em>IND-CCA2</em> if it is resistant to adaptive CCA (where the adversary may make further calls to the oracle, but may not submit the challenge ciphertext).
+<li>IND-CPA implies KPA-security.</li>
+</ul></li>
+<li><strong>Chosen-ciphertext attack (CCA)</strong>. A cryptosystem is <em>CCA-secure</em> (or <em>IND-CCA1</em>) if it is resistant to CCA; furthermore, a cryptosystem is <em>IND-CCA2</em> if it is resistant to adaptive CCA (where the adversary may make further calls to the oracle, but may not submit the challenge ciphertext).
 <ul>
-<li>
-IND-CCA1 implies IND-CPA.
-</li>
-<li>
-IND-CCA2 implies IND-CCA1. Thus, IND-CCA2 is the strongest of above mentioned definitions of security.
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/crypto/perfect-secrecy/">Perfect secrecy</a>
+<li>IND-CCA1 implies IND-CPA.</li>
+<li>IND-CCA2 implies IND-CCA1. Thus, IND-CCA2 is the strongest of above mentioned definitions of security.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/crypto/perfect-secrecy/">Perfect secrecy</a>
 <ul>
-<li>
-Two equivalent definitions: (proof of equivalence uses Bayes’ theorem)
+<li>Two equivalent definitions: (proof of equivalence uses Bayes’ theorem)
 <ul>
-<li>
-<span class="math inline">(= )</span>. (Observing a ciphertext <span class="math inline">(c)</span> does not leak any information about the underlying message <span class="math inline">(m)</span>)
-</li>
-<li>
-<span class="math inline">(= )</span>. (The adversary has no bias when distinguishing two messages if given only the ciphertext <span class="math inline">(c)</span>)
-</li>
-</ul>
-</li>
-<li>
-<strong>Perfect indistinguishability</strong> defined on adversarial indistinguishability experiment <span class="math inline">(_{,}^)</span>:
+<li><span class="math inline">\(\Pr[M=m\,|\,C=c] = \Pr[M=m]\)</span>. (Observing a ciphertext <span class="math inline">\(c\)</span> does not leak any information about the underlying message <span class="math inline">\(m\)</span>)</li>
+<li><span class="math inline">\(\Pr[\mathsf{Enc}_K(m)=c] = \Pr[\mathsf{Enc}_K(m&#39;)=c]\)</span>. (The adversary has no bias when distinguishing two messages if given only the ciphertext <span class="math inline">\(c\)</span>)</li>
+</ul></li>
+<li><strong>Perfect indistinguishability</strong> defined on adversarial indistinguishability experiment <span class="math inline">\(\mathsf{PrivK}_{\mathcal{A},\Pi}^\mathsf{eav}\)</span>:
 <ul>
-<li>
-<span class="math inline">(= )</span>. (No adversary can win the indistinguishability game with a probability better than random guessing)
-</li>
-</ul>
-</li>
-<li>
-Perfect indistinguishability is equivalent to the definition of perfect secrecy.
-</li>
-<li>
-The adversarial indistinguishability experiment is a very useful setting in defining provable security, e.g., the definition of computational indistinguishability: (for arbitrary input size <span class="math inline">(n)</span>)
+<li><span class="math inline">\(\Pr[\mathsf{PrivK}_{\mathcal{A},\Pi}^\mathsf{eav} = 1] = \frac{1}{2}\)</span>. (No adversary can win the indistinguishability game with a probability better than random guessing)</li>
+</ul></li>
+<li>Perfect indistinguishability is equivalent to the definition of perfect secrecy.</li>
+<li>The adversarial indistinguishability experiment is a very useful setting in defining provable security, e.g., the definition of computational indistinguishability: (for arbitrary input size <span class="math inline">\(n\)</span>)
 <ul>
-<li>
-<span class="math inline">( + (n))</span> where <span class="math inline">((n))</span> is a negligible function.
-</li>
-</ul>
-</li>
-<li>
-Perfect secrecy implies that <span class="math inline">(|| ||)</span>, i.e., the key space must be larger than the message space. If <span class="math inline">(|| &lt; ||)</span>, then the scheme cannot be perfectly secure.
-</li>
-<li>
-<strong>Shannon’s theorem</strong>: If <span class="math inline">(|| = || = ||)</span>, an encryption scheme is perfectly secret iff:
+<li><span class="math inline">\(\Pr[\mathsf{PrivK}_{\mathcal{A},\Pi}^\mathsf{eav}(n) = 1] \leq \frac{1}{2} + \mathsf{negl}(n)\)</span> where <span class="math inline">\(\mathsf{negl}(n)\)</span> is a negligible function.</li>
+</ul></li>
+<li>Perfect secrecy implies that <span class="math inline">\(|\mathcal{K}| \geq |\mathcal{M}|\)</span>, i.e., the key space must be larger than the message space. If <span class="math inline">\(|\mathcal{K}| &lt; |\mathcal{M}|\)</span>, then the scheme cannot be perfectly secure.</li>
+<li><strong>Shannon’s theorem</strong>: If <span class="math inline">\(|\mathcal{K}| = |\mathcal{M}| = |\mathcal{C}|\)</span>, an encryption scheme is perfectly secret iff:
 <ul>
-<li>
-<span class="math inline">(k )</span> is chosen uniformly.
-</li>
-<li>
-For every <span class="math inline">(m )</span> and <span class="math inline">(c )</span>, there exists a unique <span class="math inline">(k )</span> such that <span class="math inline">(_k(m) = c)</span>.
-</li>
+<li><span class="math inline">\(k \in \mathcal{K}\)</span> is chosen uniformly.</li>
+<li>For every <span class="math inline">\(m \in \mathcal{M}\)</span> and <span class="math inline">\(c \in \mathcal{C}\)</span>, there exists a unique <span class="math inline">\(k \in \mathcal{K}\)</span> such that <span class="math inline">\(\mathsf{Enc}_k(m) = c\)</span>.</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>
-A brief, formalized overview of some classical ciphers, and their security:
-</p>
+<p>A brief, formalized overview of some classical ciphers, and their security:</p>
 <ul>
-<li>
-<a href="https://wiki.soimort.org/crypto/one-time-pad/">One-time pad (Vernam cipher)</a>: XOR cipher when <span class="math inline">(|| = ||)</span>.
+<li><a href="https://wiki.soimort.org/crypto/one-time-pad/">One-time pad (Vernam cipher)</a>: XOR cipher when <span class="math inline">\(|\mathcal{K}| = |\mathcal{M}|\)</span>.
 <ul>
-<li>
-One-time pad is perfectly secret. The proof simply follows from Bayes’ theorem. (Also verified by Shannon’s theorem. While one-time pad was initially introduced in the 19th century and patented by G. Vernam in 1919, it was not until many years later Claude Shannon gave a formal definition of information-theoretical security and proved that one-time pad is a perfectly secret scheme in his groundbreaking paper. <a href="#ref-shannon1949communication"><span class="citation" data-cites="shannon1949communication">[1]</span></a>)
-</li>
-<li>
-One-time pad is deterministic. Moreover, it is a reciprocal cipher (<span class="math inline">( = )</span>).
-</li>
-<li>
-One-time pad is <em>not</em> secure when the same key is applied in multiple encryptions, and it is <em>not</em> CPA-secure. In fact, an adversary can succeed in such indistinguishability experiments with probability 1.
-</li>
-</ul>
-</li>
-<li>
-Insecure historical ciphers:
+<li>One-time pad is perfectly secret. The proof simply follows from Bayes’ theorem. (Also verified by Shannon’s theorem. While one-time pad was initially introduced in the 19th century and patented by G. Vernam in 1919, it was not until many years later Claude Shannon gave a formal definition of information-theoretical security and proved that one-time pad is a perfectly secret scheme in his groundbreaking paper. <a href="#ref-shannon1949communication"><span class="citation" data-cites="shannon1949communication">[1]</span></a>)</li>
+<li>One-time pad is deterministic. Moreover, it is a reciprocal cipher (<span class="math inline">\(\mathsf{Enc} = \mathsf{Dec}\)</span>).</li>
+<li>One-time pad is <em>not</em> secure when the same key is applied in multiple encryptions, and it is <em>not</em> CPA-secure. In fact, an adversary can succeed in such indistinguishability experiments with probability 1.</li>
+</ul></li>
+<li>Insecure historical ciphers:
 <ul>
-<li>
-<a href="https://wiki.soimort.org/crypto/classical/shift/">Shift cipher</a>: Defined with key space <span class="math inline">(={0,,n-1})</span>. (<span class="math inline">(n=||)</span>)
+<li><a href="https://wiki.soimort.org/crypto/classical/shift/">Shift cipher</a>: Defined with key space <span class="math inline">\(\mathcal{K}=\{0,\dots,n-1\}\)</span>. (<span class="math inline">\(n=|\Sigma|\)</span>)
 <ul>
-<li>
-<span class="math inline">(||=n)</span>, <span class="math inline">(||=n^)</span>.
-</li>
-<li>
-Cryptanalysis using frequency analysis.
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/crypto/classical/substitution/">Substitution cipher</a>: Defined with key space <span class="math inline">( = _)</span> (symmetric group on <span class="math inline">()</span>).
+<li><span class="math inline">\(|\mathcal{K}|=n\)</span>, <span class="math inline">\(|\mathcal{M}|=n^\ell\)</span>.</li>
+<li>Cryptanalysis using frequency analysis.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/crypto/classical/substitution/">Substitution cipher</a>: Defined with key space <span class="math inline">\(\mathcal{K} = \mathfrak{S}_\Sigma\)</span> (symmetric group on <span class="math inline">\(\Sigma\)</span>).
 <ul>
-<li>
-<span class="math inline">(||=n!)</span>, <span class="math inline">(||=n^)</span>.
-</li>
-<li>
-Cryptanalysis using frequency analysis.
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/crypto/classical/vigenere/">Vigenère cipher (poly-alphabetic shift cipher)</a>: Like (mono-alphabetic) shift cipher, but the key length is an (unknown) integer <span class="math inline">(t)</span>.
+<li><span class="math inline">\(|\mathcal{K}|=n!\)</span>, <span class="math inline">\(|\mathcal{M}|=n^\ell\)</span>.</li>
+<li>Cryptanalysis using frequency analysis.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/crypto/classical/vigenere/">Vigenère cipher (poly-alphabetic shift cipher)</a>: Like (mono-alphabetic) shift cipher, but the key length is an (unknown) integer <span class="math inline">\(t\)</span>.
 <ul>
-<li>
-<span class="math inline">(||=n^t)</span>, <span class="math inline">(||=n^)</span>. (Typically <span class="math inline">(t )</span>)
-</li>
-<li>
-Cryptanalysis using Kasiski’s method, index of coincidence method and frequency analysis.
-</li>
+<li><span class="math inline">\(|\mathcal{K}|=n^t\)</span>, <span class="math inline">\(|\mathcal{M}|=n^\ell\)</span>. (Typically <span class="math inline">\(t \ll \ell\)</span>)</li>
+<li>Cryptanalysis using Kasiski’s method, index of coincidence method and frequency analysis.</li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>
-Lessons learned from these classical ciphers: While perfect secrecy is easy to achieve (one-time pads), designing practical cryptographic schemes (with shorter keys, and computationally hard to break) can be difficult.
-</p>
+<p>Lessons learned from these classical ciphers: While perfect secrecy is easy to achieve (one-time pads), designing practical cryptographic schemes (with shorter keys, and computationally hard to break) can be difficult.</p>
 <section id="where-do-random-bits-come-from" class="level2">
-<h2>
-Where do random bits come from?
-</h2>
-<p>
-The construction of private-key encryption schemes involves probabilistic algorithms. We simply assume that an unlimited supply of independent, unbiased random bits is available for these cryptographic algorithms. But in practice, this is a non-trivial issue, as the source of randomness must provide high-entropy data so as to accommodate cryptographically secure random bits.
-</p>
-<p>
-In the perfectly secret scheme of one-time pads, the key generation algorithm <span class="math inline">()</span> requires the access to a source of randomness in order to choose the uniformly random key <span class="math inline">(k )</span>. Practically, high-entropy data may be collected via physical input or even fully written by hand with human labor.
-</p>
-<p>
-Theoretically, without external intervention, we have:
-</p>
-<p>
-<strong>Conjecture 3.1.</strong> <em>Pseudorandom generators exist.</em>
-</p>
-<p>
-<strong>Theorem 3.2. (Pseudorandom generator theorem)</strong> <em>Pseudorandom generators exist if and only if one-way functions exist.</em>
-</p>
-<p>
-Pseudorandomness is also a basic construction in CPA-secure encryption algorithms (<span class="math inline">()</span>), e.g., in stream ciphers and block ciphers.
-</p>
-<p>
-So what is an acceptable level of pseudorandomness, if we are not sure whether such generators theoretically exist? Intuitively, if one cannot distinguish between a “pseudorandom” string (generated by a PRG) and a truly random string (chosen according to the uniform distribution), we have confidence that the PRG is a good one. Various statistical tests have been designed for testing the randomness of PRGs.
-</p>
+<h2>Where do random bits come from?</h2>
+<p>The construction of private-key encryption schemes involves probabilistic algorithms. We simply assume that an unlimited supply of independent, unbiased random bits is available for these cryptographic algorithms. But in practice, this is a non-trivial issue, as the source of randomness must provide high-entropy data so as to accommodate cryptographically secure random bits.</p>
+<p>In the perfectly secret scheme of one-time pads, the key generation algorithm <span class="math inline">\(\mathsf{Gen}\)</span> requires the access to a source of randomness in order to choose the uniformly random key <span class="math inline">\(k \in \mathcal{K}\)</span>. Practically, high-entropy data may be collected via physical input or even fully written by hand with human labor.</p>
+<p>Theoretically, without external intervention, we have:</p>
+<p><strong>Conjecture 3.1.</strong> <em>Pseudorandom generators exist.</em></p>
+<p><strong>Theorem 3.2. (Pseudorandom generator theorem)</strong> <em>Pseudorandom generators exist if and only if one-way functions exist.</em></p>
+<p>Pseudorandomness is also a basic construction in CPA-secure encryption algorithms (<span class="math inline">\(\mathsf{Enc}\)</span>), e.g., in stream ciphers and block ciphers.</p>
+<p>So what is an acceptable level of pseudorandomness, if we are not sure whether such generators theoretically exist? Intuitively, if one cannot distinguish between a “pseudorandom” string (generated by a PRG) and a truly random string (chosen according to the uniform distribution), we have confidence that the PRG is a good one. Various statistical tests have been designed for testing the randomness of PRGs.</p>
 </section>
 <section id="pseudorandomness-and-ind-cpa" class="level2">
-<h2>
-Pseudorandomness and IND-CPA
-</h2>
-<p>
-It holds true that:
-</p>
-<p>
-<strong>Corollary 3.3.</strong> By redefining the key space, we can assume that any encryption scheme <span class="math inline">(=(,,))</span> satisfies
-</p>
+<h2>Pseudorandomness and IND-CPA</h2>
+<p>It holds true that:</p>
+<p><strong>Corollary 3.3.</strong> By redefining the key space, we can assume that any encryption scheme <span class="math inline">\(\Pi=(\mathsf{Gen},\mathsf{Enc},\mathsf{Dec})\)</span> satisfies</p>
 <ol type="1">
-<li>
-<span class="math inline">()</span> chooses a uniform key.
-</li>
-<li>
-<span class="math inline">()</span> is deterministic.
-</li>
+<li><span class="math inline">\(\mathsf{Gen}\)</span> chooses a uniform key.</li>
+<li><span class="math inline">\(\mathsf{Enc}\)</span> is deterministic.</li>
 </ol>
-<p>
-If so, why do we still need probabilistic <span class="math inline">()</span> in CPA-secure encryptions? Can’t we just make <span class="math inline">()</span> deterministic while still being CPA-secure?
-</p>
-<p>
-The first thing to realize is that chosen-plaintext attacks are geared towards multiple encryptions (with the same secret key <span class="math inline">(k)</span>), so when the adversary obtains a pair <span class="math inline">((m_0, c_0))</span> such that <span class="math inline">(= 1)</span>, <em>the key is already leaked</em>. (Recall that the adversary knows the <em>deterministic</em> algorithm <span class="math inline">(_k)</span>, thus reversing <span class="math inline">(k)</span> from known <span class="math inline">(m_0)</span> and <span class="math inline">(c_0)</span> can be quite feasible; e.g., in a one-time pad, <span class="math inline">(k = m_0 c_0)</span>.) The only way to get around this is make <span class="math inline">(_k)</span> <em>probabilistic</em> (constructed from a <em>pseudorandom function</em>), such that an adversary cannot reverse the key efficiently within polynomial time.
-</p>
-<p>
-Note that perfect secrecy is not possible under CPA, since there is a small possibility that the adversary will reverse the key (by, for example, traversing an exponentially large lookup table of all random bits) and succeed in the further indistinguishability experiment with a slightly higher (but negligible) probability.
-</p>
+<p>If so, why do we still need probabilistic <span class="math inline">\(\mathsf{Enc}\)</span> in CPA-secure encryptions? Can’t we just make <span class="math inline">\(\mathsf{Enc}\)</span> deterministic while still being CPA-secure?</p>
+<p>The first thing to realize is that chosen-plaintext attacks are geared towards multiple encryptions (with the same secret key <span class="math inline">\(k\)</span>), so when the adversary obtains a pair <span class="math inline">\((m_0, c_0)\)</span> such that <span class="math inline">\(\Pr[C=c_0\,|\,M=m_0] = 1\)</span>, <em>the key is already leaked</em>. (Recall that the adversary knows the <em>deterministic</em> algorithm <span class="math inline">\(\mathsf{Enc}_k\)</span>, thus reversing <span class="math inline">\(k\)</span> from known <span class="math inline">\(m_0\)</span> and <span class="math inline">\(c_0\)</span> can be quite feasible; e.g., in a one-time pad, <span class="math inline">\(k = m_0 \oplus c_0\)</span>.) The only way to get around this is make <span class="math inline">\(\mathsf{Enc}_k\)</span> <em>probabilistic</em> (constructed from a <em>pseudorandom function</em>), such that an adversary cannot reverse the key efficiently within polynomial time.</p>
+<p>Note that perfect secrecy is not possible under CPA, since there is a small possibility that the adversary will reverse the key (by, for example, traversing an exponentially large lookup table of all random bits) and succeed in the further indistinguishability experiment with a slightly higher (but negligible) probability.</p>
 </section>
 <section id="historical-exploits-of-many-time-pad" class="level2">
-<h2>
-Historical exploits of many-time pad
-</h2>
-<p>
-One-time pad is one of the most (provably) secure encryption schemes, and its secrecy does not rely on any computational hardness assumptions. However, it requires that <span class="math inline">(|| ||)</span> (which in fact is a necessary condition for any perfectly secret scheme), thus its real-world use is limited.
-</p>
-<p>
-The one-time key <span class="math inline">(k)</span> (uniformly chosen from the key space <span class="math inline">()</span>) may <em>not</em> be simply reused in multiple encryptions. Assume that <span class="math inline">(|| = ||)</span>, for encryptions of <span class="math inline">(n)</span> messages, the message space is expanded to size <span class="math inline">(||^n)</span>, while the key space remains <span class="math inline">()</span>, thus we have <span class="math inline">(|| &lt; ||^n)</span>. Such a degraded scheme (many-time pad) is theoretically insecure and vulnerable to several practical cryptanalyses.
-</p>
-<p>
-A historical exploit of the vulnerability of many-time pad occurred in the VENONA project, where the U.S. Army’s Signal Intelligence Service (later the NSA) aimed at decrypting messages sent by the USSR intelligence agencies (KGB) over a span of 4 decades. As the KGB mistakenly reused some portions of their one-time key codebook, the SIS was able to break a good amount of the messages.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>
-</p>
+<h2>Historical exploits of many-time pad</h2>
+<p>One-time pad is one of the most (provably) secure encryption schemes, and its secrecy does not rely on any computational hardness assumptions. However, it requires that <span class="math inline">\(|\mathcal{K}| \geq |\mathcal{M}|\)</span> (which in fact is a necessary condition for any perfectly secret scheme), thus its real-world use is limited.</p>
+<p>The one-time key <span class="math inline">\(k\)</span> (uniformly chosen from the key space <span class="math inline">\(\mathcal{K}\)</span>) may <em>not</em> be simply reused in multiple encryptions. Assume that <span class="math inline">\(|\mathcal{K}| = |\mathcal{M}|\)</span>, for encryptions of <span class="math inline">\(n\)</span> messages, the message space is expanded to size <span class="math inline">\(|\mathcal{M}|^n\)</span>, while the key space remains <span class="math inline">\(\mathcal{K}\)</span>, thus we have <span class="math inline">\(|\mathcal{K}| &lt; |\mathcal{M}|^n\)</span>. Such a degraded scheme (many-time pad) is theoretically insecure and vulnerable to several practical cryptanalyses.</p>
+<p>A historical exploit of the vulnerability of many-time pad occurred in the VENONA project, where the U.S. Army’s Signal Intelligence Service (later the NSA) aimed at decrypting messages sent by the USSR intelligence agencies (KGB) over a span of 4 decades. As the KGB mistakenly reused some portions of their one-time key codebook, the SIS was able to break a good amount of the messages.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 </section>
 <section id="references-and-further-reading" class="level2">
-<h2>
-References and further reading
-</h2>
-<p>
-<strong>Books:</strong>
-</p>
-<p>
-J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.
-</p>
-<p>
-<strong>Papers:</strong>
-</p>
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
 <div id="refs" class="references">
 <div id="ref-shannon1949communication">
-<p>
-[1] C. E. Shannon, “Communication theory of secrecy systems,” <em>Bell system technical journal</em>, vol. 28, no. 4, pp. 656–715, 1949.
-</p>
+<p>[1] C. E. Shannon, “Communication theory of secrecy systems,” <em>Bell system technical journal</em>, vol. 28, no. 4, pp. 656–715, 1949. </p>
 </div>
 </div>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1">
-<p>
-R. L. Benson, “The Venona story.” <a href="https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf" class="uri">https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf</a><a href="#fnref1">↩</a>
-</p>
-</li>
+<li id="fn1"><p>R. L. Benson, “The Venona story.” <a href="https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf" class="uri">https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf</a><a href="#fnref1">↩</a></p></li>
 </ol>
 </section>
+
 ]]>
     </content>
   </entry>
@@ -681,403 +367,185 @@ R. L. Benson, “The Venona story.” <a href="https://www.nsa.gov/about/cryptol
     
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
-<p>
-A refresher of basic probability theory, which is just common knowledge but plays a supporting role in information theory, statistical methods, and consequently, computer science.
-</p>
+<p>A refresher of basic probability theory, which is just common knowledge but plays a supporting role in information theory, statistical methods, and consequently, computer science.</p>
 <ul>
-<li>
-<a href="https://wiki.soimort.org/math/probability/">Basic probability theory</a>
+<li><a href="https://wiki.soimort.org/math/probability/">Basic probability theory</a>
 <ul>
-<li>
-An <strong>experiment</strong> has various <strong>outcomes</strong>. The set of all probable outcomes constitute the <strong>sample space</strong> of that experiment.
-</li>
-<li>
-Any <em>measurable</em> subset of the sample space <span class="math inline">()</span> is known as an <strong>event</strong>.
-</li>
-<li>
-A <strong>probability measure</strong> is a real-valued function defined on a set of events <span class="math inline">()</span> in a probability space <span class="math inline">((,,))</span> that satisfies measure properties such as countable additivity. (See <strong>Kolmogorov’s axioms</strong>.)
-</li>
-<li>
-The <strong>union bound</strong> (Boole’s inequality) follows from the fact that a probability measure is σ-sub-additive.
-</li>
-<li>
-<em>Events</em> can be <em>independent</em>. The following conditions hold equivalently for any independent events:
+<li>An <strong>experiment</strong> has various <strong>outcomes</strong>. The set of all probable outcomes constitute the <strong>sample space</strong> of that experiment.</li>
+<li>Any <em>measurable</em> subset of the sample space <span class="math inline">\(\Omega\)</span> is known as an <strong>event</strong>.</li>
+<li>A <strong>probability measure</strong> is a real-valued function defined on a set of events <span class="math inline">\(\mathcal{F}\)</span> in a probability space <span class="math inline">\((\Omega,\mathcal{F},\Pr)\)</span> that satisfies measure properties such as countable additivity. (See <strong>Kolmogorov’s axioms</strong>.)</li>
+<li>The <strong>union bound</strong> (Boole’s inequality) follows from the fact that a probability measure is σ-sub-additive.</li>
+<li><em>Events</em> can be <em>independent</em>. The following conditions hold equivalently for any independent events:
 <ul>
-<li>
-<span class="math inline">(= )</span>
-</li>
-<li>
-<span class="math inline">(= )</span>
-</li>
-</ul>
-</li>
-<li>
-<strong>Bayes’ theorem</strong> and the <strong>law of total probability</strong> describe the basic properties of conditional probability.
-</li>
-<li>
-A <strong>random variable</strong> is a mapping that maps a <em>value</em> to an <em>event</em>. Hence, we have probability measure defined on random variables, such as <span class="math inline">()</span>.
+<li><span class="math inline">\(\Pr[A_1 \cap A_2] = \Pr[A_1] \cdot \Pr[A_2]\)</span></li>
+<li><span class="math inline">\(\Pr[A_1|A_2] = \Pr[A_1]\)</span></li>
+</ul></li>
+<li><strong>Bayes’ theorem</strong> and the <strong>law of total probability</strong> describe the basic properties of conditional probability.</li>
+<li>A <strong>random variable</strong> is a mapping that maps a <em>value</em> to an <em>event</em>. Hence, we have probability measure defined on random variables, such as <span class="math inline">\(\Pr[X=x]\)</span>.
 <ul>
-<li>
-For <em>discrete</em> random variables, a <strong>probability mass function (pmf)</strong> determines a <strong>discrete probability distribution</strong>.
-</li>
-<li>
-For <em>continuous</em> random variables, a <strong>probability density function (pdf)</strong> determines a <strong>continuous probability distribution</strong>.
-</li>
-</ul>
-</li>
-<li>
-<em>Random variables</em> can be <em>uncorrelated</em>. (<span class="math inline">((X,Y)=0 [XY] = [X] [Y])</span>.)
+<li>For <em>discrete</em> random variables, a <strong>probability mass function (pmf)</strong> determines a <strong>discrete probability distribution</strong>.</li>
+<li>For <em>continuous</em> random variables, a <strong>probability density function (pdf)</strong> determines a <strong>continuous probability distribution</strong>.</li>
+</ul></li>
+<li><em>Random variables</em> can be <em>uncorrelated</em>. (<span class="math inline">\(\operatorname{Cov}(X,Y)=0 \iff \operatorname{E}[XY] = \operatorname{E}[X] \cdot \operatorname{E}[Y]\)</span>.)
 <ul>
-<li>
-<em>Independent</em> random variables are uncorrelated.
-</li>
-<li>
-However, uncorrelated random variables are not necessarily independent.
-</li>
-</ul>
-</li>
-<li>
-A <em>distribution</em> can be presented using <strong>moments</strong>:
+<li><em>Independent</em> random variables are uncorrelated.</li>
+<li>However, uncorrelated random variables are not necessarily independent.</li>
+</ul></li>
+<li>A <em>distribution</em> can be presented using <strong>moments</strong>:
 <ul>
-<li>
-<strong>Expectation (mean)</strong> <span class="math inline">([X])</span>: first raw moment.
-</li>
-<li>
-<strong>Variance</strong> <span class="math inline">((X))</span>: second central moment.
-</li>
-<li>
-<strong>Skewness</strong> <span class="math inline">((X))</span>: third standardized moment.
-</li>
-<li>
-<strong>Kurtosis</strong> <span class="math inline">((X))</span>: fourth standardized moment.
-</li>
-<li>
-For a bounded distribution of probability, the collection of all the moments (of all orders) uniquely determines the distribution.
-</li>
-<li>
-Some distributions, notably Cauchy distributions, do not have their moments defined.
-</li>
-</ul>
-</li>
-<li>
-<strong>Concentration inequalities</strong> provide bounds on how a random variable deviates from some value (usually one of its <em>moments</em>).
+<li><strong>Expectation (mean)</strong> <span class="math inline">\(\operatorname{E}[X]\)</span>: first raw moment.</li>
+<li><strong>Variance</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span>: second central moment.</li>
+<li><strong>Skewness</strong> <span class="math inline">\(\operatorname{Skew}(X)\)</span>: third standardized moment.</li>
+<li><strong>Kurtosis</strong> <span class="math inline">\(\operatorname{Kurt}(X)\)</span>: fourth standardized moment.</li>
+<li>For a bounded distribution of probability, the collection of all the moments (of all orders) uniquely determines the distribution.</li>
+<li>Some distributions, notably Cauchy distributions, do not have their moments defined.</li>
+</ul></li>
+<li><strong>Concentration inequalities</strong> provide bounds on how a random variable deviates from some value (usually one of its <em>moments</em>).
 <ul>
-<li>
-<strong>Markov’s inequality</strong> is the simplest and weakest probability bound.
-</li>
-<li>
-<strong>Chebyshev’s inequality</strong> provides an upper bound on the probability that a random variable deviates from its expectation.
-</li>
-<li>
-<strong>Chernoff bound</strong> is stronger than Markov’s inequality.
-</li>
-<li>
-<strong>Hoeffding’s inequality</strong> provides an upper bound on the probability that the sum of random variables deviates from its expectation. It’s also useful for analyzing the number of required samples needed to obtain a confidence interval.
-</li>
-</ul>
-</li>
-<li>
-Some common <em>discrete probability distributions</em>:
+<li><strong>Markov’s inequality</strong> is the simplest and weakest probability bound.</li>
+<li><strong>Chebyshev’s inequality</strong> provides an upper bound on the probability that a random variable deviates from its expectation.</li>
+<li><strong>Chernoff bound</strong> is stronger than Markov’s inequality.</li>
+<li><strong>Hoeffding’s inequality</strong> provides an upper bound on the probability that the sum of random variables deviates from its expectation. It’s also useful for analyzing the number of required samples needed to obtain a confidence interval.</li>
+</ul></li>
+<li>Some common <em>discrete probability distributions</em>:
 <ul>
-<li>
-<strong>Bernoulli distribution</strong>. Special case of Binomial distribution: <span class="math inline">((1,p))</span>.
-</li>
-<li>
-<strong>Binomial distribution</strong> <span class="math inline">((n,p))</span>. Given number of draws <span class="math inline">(n)</span>, the distribution of the number of successes.
-</li>
-<li>
-<strong>Geometric distribution</strong> <span class="math inline">((p))</span>. Special case of negative binomial distribution: <span class="math inline">((1,1-p))</span>.
-</li>
-<li>
-<strong>Negative binomial distribution</strong> <span class="math inline">((r,p))</span>. Given number of failures <span class="math inline">(r)</span>, the distribution of the number of successes.
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li><strong>Bernoulli distribution</strong>. Special case of Binomial distribution: <span class="math inline">\(\text{B}(1,p)\)</span>.</li>
+<li><strong>Binomial distribution</strong> <span class="math inline">\(\text{B}(n,p)\)</span>. Given number of draws <span class="math inline">\(n\)</span>, the distribution of the number of successes.</li>
+<li><strong>Geometric distribution</strong> <span class="math inline">\(\text{Geom}(p)\)</span>. Special case of negative binomial distribution: <span class="math inline">\(\text{NB}(1,1-p)\)</span>.</li>
+<li><strong>Negative binomial distribution</strong> <span class="math inline">\(\text{NB}(r,p)\)</span>. Given number of failures <span class="math inline">\(r\)</span>, the distribution of the number of successes.</li>
+</ul></li>
+</ul></li>
 </ul>
 <section id="probability-measure-distribution-and-generalized-function" class="level2">
-<h2>
-Probability measure, distribution and generalized function
-</h2>
-<p>
-Intuitively, probability is a measure of uncertainty. Mathematically, probability is a real-valued function defined on a set of events in a probability space that satisfies measure properties such as countable additivity (or simply, <em>measure</em> on probability space).
-</p>
-<p>
-Typically, a probability density function (pdf) or a probability mass function (pmf) determines a distribution in the probability space.
-</p>
-<p>
-<strong>Example 2.1.</strong> Consider the wave function of a particle: <span class="math display">[(x,t)]</span> where <span class="math inline">(x)</span> is position and <span class="math inline">(t)</span> is time.
-</p>
-<p>
-If the particle’s position is measured, its location cannot be determined but is described by a probability distribution: The probability that the particle is found in <span class="math inline">([x, x+x])</span> is <span class="math display">[= |(x,t)|^2 x]</span>
-</p>
-<p>
-The square modulus of the wave function (which is real-valued, non-negative) <span class="math display">[|(x, t)|^2 = {(x, t)}^{*}(x, t) = (x, t)]</span> is interpreted as the pdf.
-</p>
-<p>
-Since the particle must be found somewhere, we have the normalization condition: (by the assumption of unit measure) <span class="math display">[_{-}<sup>|(x,t)|</sup>2 dx = 1]</span>
-</p>
-<p>
-Distributions are also called generalized functions in analysis. It expands the notion of functions to functions whose derivatives may not exist in the classical sense. Thus, it is not uncommon that many probability distributions cannot be described using classical (differentiable) functions. The Dirac delta function <span class="math inline">()</span> (which is a generalized function) is often used to represent a discrete distribution, or a partially discrete, partially continuous distribution, using a pdf.
-</p>
+<h2>Probability measure, distribution and generalized function</h2>
+<p>Intuitively, probability is a measure of uncertainty. Mathematically, probability is a real-valued function defined on a set of events in a probability space that satisfies measure properties such as countable additivity (or simply, <em>measure</em> on probability space).</p>
+<p>Typically, a probability density function (pdf) or a probability mass function (pmf) determines a distribution in the probability space.</p>
+<p><strong>Example 2.1.</strong> Consider the wave function of a particle: <span class="math display">\[\Psi(x,t)\]</span> where <span class="math inline">\(x\)</span> is position and <span class="math inline">\(t\)</span> is time.</p>
+<p>If the particle’s position is measured, its location cannot be determined but is described by a probability distribution: The probability that the particle is found in <span class="math inline">\([x, x+\Delta x]\)</span> is <span class="math display">\[\Delta\Pr = |\Psi(x,t)|^2 \Delta x\]</span></p>
+<p>The square modulus of the wave function (which is real-valued, non-negative) <span class="math display">\[\left|\Psi(x, t)\right|^2 = {\Psi(x, t)}^{*}\Psi(x, t) = \rho(x, t)\]</span> is interpreted as the pdf.</p>
+<p>Since the particle must be found somewhere, we have the normalization condition: (by the assumption of unit measure) <span class="math display">\[\int\limits_{-\infty}^\infty |\Psi(x,t)|^2 dx = 1\]</span></p>
+<p>Distributions are also called generalized functions in analysis. It expands the notion of functions to functions whose derivatives may not exist in the classical sense. Thus, it is not uncommon that many probability distributions cannot be described using classical (differentiable) functions. The Dirac delta function <span class="math inline">\(\delta\)</span> (which is a generalized function) is often used to represent a discrete distribution, or a partially discrete, partially continuous distribution, using a pdf.</p>
 </section>
 <section id="bayes-theorem-and-common-fallacies" class="level2">
-<h2>
-Bayes’ theorem and common fallacies
-</h2>
-<p>
-Bayes’ theorem forms the basis for <em>Bayesian inference</em>, which is an important method of statistical inference that updates the probability for a <em>hypothesis</em> as more evidence or information becomes available.
-</p>
-<p>
-Hypotheses can also be fallacies. In Bayesian inference, if one can make the assumption that every event occurs independently and the probability is identically distributed throughout lasting trials, it is clear to see that some common beliefs are mistaken.
-</p>
-<p>
-<strong>Gambler’s fallacy (Monte Carlo fallacy).</strong> If an outcome occurs more frequently than normal during some period, it will happen less frequently in the future; contrariwise, if an outcome happens less frequently than normal during some period, it will happen more frequently in the future. This is presumed to be a means of <em>balancing</em> nature.
-</p>
-<p>
-Gambler’s fallacy is considered a fallacy if the probability of outcomes is known to be independently, identically distributed. Assume that the future (the probability of event <span class="math inline">(A_2)</span>) has no effect on the past (the probability of event <span class="math inline">(A_1)</span>), we have <span class="math inline">(= )</span>. From Bayes’ theorem, it holds true that <span class="math display">[= ]</span> That is, past events should not increase or decrease our confidence in a future event.
-</p>
-<p>
-<strong>Hot-hand fallacy.</strong> A person who has experienced success with a seemingly random event has a greater chance of further success in additional attempts. That is, if an outcome occurs more frequently than normal during some period, it will also happen frequently in the future.
-</p>
-<p>
-If psychological factors can be excluded, then hot-hand fallacy is a fallacy caused by people’s confirmation bias. Like the gambler’s fallacy, if we can’t assume that the probability of outcomes is independently, identically distributed, we can’t simply conclude that this belief is mistaken.
-</p>
-<p>
-<strong>Inverse gambler’s fallacy.</strong> If an unlikely outcome occurs, then the trials must have been repeated many times before.
-</p>
-<p>
-Assume that the past (the probability of event <span class="math inline">(A_1)</span>) has no effect on the future (the probability of event <span class="math inline">(A_2)</span>), we have <span class="math inline">(= )</span>. From Bayes’ theorem, it holds true that <span class="math display">[= ]</span> That is, our confidence in <span class="math inline">(A_1)</span> should remain unchanged after we observe <span class="math inline">(A_2)</span>.
-</p>
+<h2>Bayes’ theorem and common fallacies</h2>
+<p>Bayes’ theorem forms the basis for <em>Bayesian inference</em>, which is an important method of statistical inference that updates the probability for a <em>hypothesis</em> as more evidence or information becomes available.</p>
+<p>Hypotheses can also be fallacies. In Bayesian inference, if one can make the assumption that every event occurs independently and the probability is identically distributed throughout lasting trials, it is clear to see that some common beliefs are mistaken.</p>
+<p><strong>Gambler’s fallacy (Monte Carlo fallacy).</strong> If an outcome occurs more frequently than normal during some period, it will happen less frequently in the future; contrariwise, if an outcome happens less frequently than normal during some period, it will happen more frequently in the future. This is presumed to be a means of <em>balancing</em> nature.</p>
+<p>Gambler’s fallacy is considered a fallacy if the probability of outcomes is known to be independently, identically distributed. Assume that the future (the probability of event <span class="math inline">\(A_2\)</span>) has no effect on the past (the probability of event <span class="math inline">\(A_1\)</span>), we have <span class="math inline">\(\Pr[A_1|A_2] = \Pr[A_1]\)</span>. From Bayes’ theorem, it holds true that <span class="math display">\[\Pr[A_2|A_1] = \Pr[A_2]\]</span> That is, past events should not increase or decrease our confidence in a future event.</p>
+<p><strong>Hot-hand fallacy.</strong> A person who has experienced success with a seemingly random event has a greater chance of further success in additional attempts. That is, if an outcome occurs more frequently than normal during some period, it will also happen frequently in the future.</p>
+<p>If psychological factors can be excluded, then hot-hand fallacy is a fallacy caused by people’s confirmation bias. Like the gambler’s fallacy, if we can’t assume that the probability of outcomes is independently, identically distributed, we can’t simply conclude that this belief is mistaken.</p>
+<p><strong>Inverse gambler’s fallacy.</strong> If an unlikely outcome occurs, then the trials must have been repeated many times before.</p>
+<p>Assume that the past (the probability of event <span class="math inline">\(A_1\)</span>) has no effect on the future (the probability of event <span class="math inline">\(A_2\)</span>), we have <span class="math inline">\(\Pr[A_2|A_1] = \Pr[A_2]\)</span>. From Bayes’ theorem, it holds true that <span class="math display">\[\Pr[A_1|A_2] = \Pr[A_1]\]</span> That is, our confidence in <span class="math inline">\(A_1\)</span> should remain unchanged after we observe <span class="math inline">\(A_2\)</span>.</p>
 </section>
 <section id="lln-and-chebyshevs-inequality" class="level2">
-<h2>
-LLN and Chebyshev’s inequality
-</h2>
-<p>
-<strong>Fallacies of hasty generalization and slothful induction (law of small numbers).</strong> Informal fallacies reaching an inductive generalization based on insufficient evidence, or denying a reasonable conclusion of an inductive argument.
-</p>
-<p>
-Statistically saying, sampling from a small group can lead to misbeliefs that fail to hold for the entire population, if hypothesis testing is not carefully conducted.
-</p>
-<p>
-<strong>Theorem 2.2. (Law of large numbers)</strong> Let <span class="math inline">(X_1, , X_n)</span> be an infinite sequence of i.i.d. Lebesgue integrable random variables with fixed expectation <span class="math inline">([X_1] = = [X_n] = )</span>. Define the sample average <span class="math display">[_n = (X_1 + + X_n)]</span>
-</p>
+<h2>LLN and Chebyshev’s inequality</h2>
+<p><strong>Fallacies of hasty generalization and slothful induction (law of small numbers).</strong> Informal fallacies reaching an inductive generalization based on insufficient evidence, or denying a reasonable conclusion of an inductive argument.</p>
+<p>Statistically saying, sampling from a small group can lead to misbeliefs that fail to hold for the entire population, if hypothesis testing is not carefully conducted.</p>
+<p><strong>Theorem 2.2. (Law of large numbers)</strong> Let <span class="math inline">\(X_1, \dots, X_n\)</span> be an infinite sequence of i.i.d. Lebesgue integrable random variables with fixed expectation <span class="math inline">\(\operatorname{E}[X_1] = \cdots = \operatorname{E}[X_n] = \mu\)</span>. Define the sample average <span class="math display">\[\overline{X}_n = \frac{1}{n}(X_1 + \dots + X_n)\]</span></p>
 <ol type="1">
-<li>
-<strong>(Weak law of large numbers; Khintchine’s law)</strong> The sample average converges in probability towards the expectation: <span class="math display">[_{n} = 0]</span>
-</li>
-<li>
-<strong>(Strong law of large numbers)</strong> The sample average converges <em>almost surely</em> to the expectation: <span class="math display">[= 1]</span>
-</li>
+<li><strong>(Weak law of large numbers; Khintchine’s law)</strong> The sample average converges in probability towards the expectation: <span class="math display">\[\lim_{n\to\infty} \Pr[|\overline{X}_n - \mu| &gt; \varepsilon] = 0\]</span></li>
+<li><strong>(Strong law of large numbers)</strong> The sample average converges <em>almost surely</em> to the expectation: <span class="math display">\[\Pr[\lim_{n\to\infty} \overline{X}_n = \mu] = 1\]</span></li>
 </ol>
-<p>
-Chebyshev’s inequality provides an upper bound on the probability that a random variable deviates from its expected value. Thus, it may be used as a proof for the weak law of large numbers.
-</p>
+<p>Chebyshev’s inequality provides an upper bound on the probability that a random variable deviates from its expected value. Thus, it may be used as a proof for the weak law of large numbers.</p>
 </section>
 <section id="how-is-mathematical-expectation-only-mathematical" class="level2">
-<h2>
-How is mathematical expectation only “mathematical”?
-</h2>
-<p>
-The expected value of a random variable <span class="math inline">(X)</span>: <span class="math display">[[X] = _{x } x ]</span> While it seemingly gives an estimate on how people would “expect” a random variable to take its value, it can sometimes lead to counterintuitive results, as shown by the following paradox.
-</p>
-<p>
-<strong>St. Petersburg Paradox.</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> A casino offers a game of chance for a gambler to flip a fair coin until it comes up tails. The initial stake starts at <span class="math inline">(2)</span> dollars and is doubled every time heads appears. The first time tails appears, the game ends and the gambler wins whatever is in the pot. Thus if the coin comes up tails the first time, the gambler wins <span class="math inline">(2^1=2)</span> dollars, and the game ends. If the coin comes up heads, the coin is flipped again. If the coin comes up tails the second time, the gambler wins <span class="math inline">(2^2=4)</span> dollars, and the game ends. If the coin comes up heads again, the coin is flipped again. If the coin comes up tails the third time, the gambler wins <span class="math inline">(2^3=8)</span> dollars, and the game ends. So on and so like. Eventually the gambler wins <span class="math inline">(2^k)</span> dollars, where <span class="math inline">(k)</span> is the number of coin flips until tails appears. (It is easy to see that <span class="math inline">(k)</span> satisfies the geometric distribution.) What would be a fair price to pay the casino for entering such a game? (Assume that there is no house edge)
-</p>
+<h2>How is mathematical expectation only “mathematical”?</h2>
+<p>The expected value of a random variable <span class="math inline">\(X\)</span>: <span class="math display">\[\operatorname{E}[X] = \sum_{x \in \mathcal{X}} x \Pr[X=x]\]</span> While it seemingly gives an estimate on how people would “expect” a random variable to take its value, it can sometimes lead to counterintuitive results, as shown by the following paradox.</p>
+<p><strong>St. Petersburg Paradox.</strong><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> A casino offers a game of chance for a gambler to flip a fair coin until it comes up tails. The initial stake starts at <span class="math inline">\(2\)</span> dollars and is doubled every time heads appears. The first time tails appears, the game ends and the gambler wins whatever is in the pot. Thus if the coin comes up tails the first time, the gambler wins <span class="math inline">\(2^1=2\)</span> dollars, and the game ends. If the coin comes up heads, the coin is flipped again. If the coin comes up tails the second time, the gambler wins <span class="math inline">\(2^2=4\)</span> dollars, and the game ends. If the coin comes up heads again, the coin is flipped again. If the coin comes up tails the third time, the gambler wins <span class="math inline">\(2^3=8\)</span> dollars, and the game ends. So on and so like. Eventually the gambler wins <span class="math inline">\(2^k\)</span> dollars, where <span class="math inline">\(k\)</span> is the number of coin flips until tails appears. (It is easy to see that <span class="math inline">\(k\)</span> satisfies the geometric distribution.) What would be a fair price to pay the casino for entering such a game? (Assume that there is no house edge)</p>
 <table>
 <thead>
 <tr class="header">
-<th style="text-align: center;">
-<span class="math inline">(k)</span>th coin flip
-</th>
-<th style="text-align: center;">
-<span class="math inline">()</span>
-</th>
-<th style="text-align: center;">
-Stake (<span class="math inline">$)&lt;/th&gt; &lt;th style=&quot;text-align: center;&quot;&gt;Expected payoff ($</span>)
-</th>
+<th style="text-align: center;"><span class="math inline">\(k\)</span>th coin flip</th>
+<th style="text-align: center;"><span class="math inline">\(\Pr[\text{Tails}]\)</span></th>
+<th style="text-align: center;">Stake ($)</th>
+<th style="text-align: center;">Expected payoff ($)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">
-1
-</td>
-<td style="text-align: center;">
-<span class="math inline">()</span>
-</td>
-<td style="text-align: center;">
-2
-</td>
-<td style="text-align: center;">
-1
-</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{2}\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">
-2
-</td>
-<td style="text-align: center;">
-<span class="math inline">()</span>
-</td>
-<td style="text-align: center;">
-4
-</td>
-<td style="text-align: center;">
-1
-</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{4}\)</span></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">
-3
-</td>
-<td style="text-align: center;">
-<span class="math inline">()</span>
-</td>
-<td style="text-align: center;">
-8
-</td>
-<td style="text-align: center;">
-1
-</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{8}\)</span></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">
-4
-</td>
-<td style="text-align: center;">
-<span class="math inline">()</span>
-</td>
-<td style="text-align: center;">
-16
-</td>
-<td style="text-align: center;">
-1
-</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{16}\)</span></td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">
-5
-</td>
-<td style="text-align: center;">
-<span class="math inline">()</span>
-</td>
-<td style="text-align: center;">
-32
-</td>
-<td style="text-align: center;">
-1
-</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{1}{32}\)</span></td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">
-…
-</td>
-<td style="text-align: center;">
-…
-</td>
-<td style="text-align: center;">
-…
-</td>
-<td style="text-align: center;">
-…
-</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">
-k
-</td>
-<td style="text-align: center;">
-<span class="math inline">((1/2)^k)</span>
-</td>
-<td style="text-align: center;">
-<span class="math inline">(2^k)</span>
-</td>
-<td style="text-align: center;">
-1
-</td>
+<td style="text-align: center;">k</td>
+<td style="text-align: center;"><span class="math inline">\((1/2)^k\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^k\)</span></td>
+<td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
-<p>
-The price should be made equal to the expected value that a gambler wins the stake, which is <span class="math display">[[] = <em>{k=1}^{+} ()^k 2^k = </em>{k=1}^{+} 1 = +]</span>
-</p>
-<p>
-If a rational gambler pays for entering a game if and only if its average payoff is larger than its price, then he would pay any price to enter this game (since the expected payoff of this game is infinitely large). But in reality, few of us are willing to pay even tens of dollars to enter such a game. What went wrong? Furthermore, if <em>mathematical</em> expectation does not reflect correctly what people expect from a game, how to quantify the “<em>true</em>” expectation?
-</p>
-<p>
-The St. Petersburg paradox was initially stated by Nicolas Bernoulli in 1713. There are several proposed approaches for solving the paradox, including the <a href="https://en.wikipedia.org/wiki/Expected_utility_hypothesis">expected utility</a> theory with the hypothesis of diminishing marginal utility <a href="#ref-sep-paradox-stpetersburg"><span class="citation" data-cites="sep-paradox-stpetersburg">[1]</span></a>, and the cumulative prospect theory. However, none of them is purely probability theoretical, as they require the use of hypothesized economic/behavioral models.
-</p>
+<p>The price should be made equal to the expected value that a gambler wins the stake, which is <span class="math display">\[\operatorname{E}[\text{Payoff}]
+= \sum_{k=1}^{+\infty} \left(\frac{1}{2}\right)^k \cdot 2^k
+= \sum_{k=1}^{+\infty} 1
+= +\infty\]</span></p>
+<p>If a rational gambler pays for entering a game if and only if its average payoff is larger than its price, then he would pay any price to enter this game (since the expected payoff of this game is infinitely large). But in reality, few of us are willing to pay even tens of dollars to enter such a game. What went wrong? Furthermore, if <em>mathematical</em> expectation does not reflect correctly what people expect from a game, how to quantify the “<em>true</em>” expectation?</p>
+<p>The St. Petersburg paradox was initially stated by Nicolas Bernoulli in 1713. There are several proposed approaches for solving the paradox, including the <a href="https://en.wikipedia.org/wiki/Expected_utility_hypothesis">expected utility</a> theory with the hypothesis of diminishing marginal utility <a href="#ref-sep-paradox-stpetersburg"><span class="citation" data-cites="sep-paradox-stpetersburg">[1]</span></a>, and the cumulative prospect theory. However, none of them is purely probability theoretical, as they require the use of hypothesized economic/behavioral models.</p>
 </section>
 <section id="bias-of-sample-variance-and-bessels-correction" class="level2">
-<h2>
-Bias of sample variance and Bessel’s correction
-</h2>
-<p>
-In probability theory, the variance of a random variable <span class="math inline">(X)</span> is defined as <span class="math display">[(X) = [(X-)^2] =  _{i=1}^N (X_i-{X})^2]</span>
-</p>
-<p>
-In statistics, when calculating the sample variance in order to give an estimation of the population variance, and the population mean is unknown, Bessel’s correction<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> (use of <span class="math inline">(N-1)</span> instead of <span class="math inline">(N)</span>) is often preferred: <span class="math display">[s^2 =  _{i=1}^N (X_i-{X})^2]</span>
-</p>
-<p>
-A few remarks and caveats:
-</p>
+<h2>Bias of sample variance and Bessel’s correction</h2>
+<p>In probability theory, the variance of a random variable <span class="math inline">\(X\)</span> is defined as <span class="math display">\[\operatorname{Var}(X) = \operatorname{E}[(X-\mu)^2]
+= \frac{1}{N} \sum_{i=1}^N (X_i-\bar{X})^2\]</span></p>
+<p>In statistics, when calculating the sample variance in order to give an estimation of the population variance, and the population mean is unknown, Bessel’s correction<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> (use of <span class="math inline">\(N-1\)</span> instead of <span class="math inline">\(N\)</span>) is often preferred: <span class="math display">\[s^2 = \frac{1}{N-1} \sum_{i=1}^N (X_i-\bar{X})^2\]</span></p>
+<p>A few remarks and caveats:</p>
 <ol type="1">
-<li>
-Bessel’s correction is only necessary when the population mean is unknown and estimated as the sample mean.
-</li>
-<li>
-Without Bessel’s correction, the estimated variance would be <em>biased</em>; the biased sample variance <span class="math inline">(s_n^2)</span> tends to be much smaller than the population variance <span class="math inline">(^2)</span>, whether the sample mean is smaller or larger than the population mean.
-</li>
-<li>
-Bessel’s correction does not yield an unbiased estimator of standard deviation, only variance and covariance.
-</li>
-<li>
-The corrected estimator often has a larger mean squared error (MSE).
-</li>
+<li>Bessel’s correction is only necessary when the population mean is unknown and estimated as the sample mean.</li>
+<li>Without Bessel’s correction, the estimated variance would be <em>biased</em>; the biased sample variance <span class="math inline">\(s_n^2\)</span> tends to be much smaller than the population variance <span class="math inline">\(\sigma^2\)</span>, whether the sample mean is smaller or larger than the population mean.</li>
+<li>Bessel’s correction does not yield an unbiased estimator of standard deviation, only variance and covariance.</li>
+<li>The corrected estimator often has a larger mean squared error (MSE).</li>
 </ol>
 </section>
 <section id="references-and-further-reading" class="level2">
-<h2>
-References and further reading
-</h2>
-<p>
-<strong>Books:</strong>
-</p>
-<p>
-M. Mitzenmacher and E. Upfal, <em>Probability and Computing: Randomized Algorithms and Probabilistic Analysis</em>.
-</p>
-<p>
-M. Baron, <em>Probability and Statistics for Computer Scientists</em>, 2nd ed.
-</p>
-<p>
-<strong>Articles:</strong>
-</p>
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>M. Mitzenmacher and E. Upfal, <em>Probability and Computing: Randomized Algorithms and Probabilistic Analysis</em>.</p>
+<p>M. Baron, <em>Probability and Statistics for Computer Scientists</em>, 2nd ed.</p>
+<p><strong>Articles:</strong></p>
 <div id="refs" class="references">
 <div id="ref-sep-paradox-stpetersburg">
-<p>
-[1] R. Martin, “The st. petersburg paradox,” in <em>The stanford encyclopedia of philosophy</em>, Summer 2014., E. N. Zalta, Ed. <a href="https://plato.stanford.edu/archives/sum2014/entries/paradox-stpetersburg/" class="uri">https://plato.stanford.edu/archives/sum2014/entries/paradox-stpetersburg/</a>; Metaphysics Research Lab, Stanford University, 2014.
-</p>
+<p>[1] R. Martin, “The st. petersburg paradox,” in <em>The stanford encyclopedia of philosophy</em>, Summer 2014., E. N. Zalta, Ed. <a href="https://plato.stanford.edu/archives/sum2014/entries/paradox-stpetersburg/" class="uri">https://plato.stanford.edu/archives/sum2014/entries/paradox-stpetersburg/</a>; Metaphysics Research Lab, Stanford University, 2014. </p>
 </div>
 </div>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1">
-<p>
-<a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox" class="uri">https://en.wikipedia.org/wiki/St._Petersburg_paradox</a><a href="#fnref1">↩</a>
-</p>
-</li>
-<li id="fn2">
-<p>
-<a href="https://en.wikipedia.org/wiki/Bessel&#39;s_correction" class="uri">https://en.wikipedia.org/wiki/Bessel's_correction</a><a href="#fnref2">↩</a>
-</p>
-</li>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox" class="uri">https://en.wikipedia.org/wiki/St._Petersburg_paradox</a><a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Bessel&#39;s_correction" class="uri">https://en.wikipedia.org/wiki/Bessel's_correction</a><a href="#fnref2">↩</a></p></li>
 </ol>
 </section>
+
 ]]>
     </content>
   </entry>
@@ -1093,113 +561,54 @@ M. Baron, <em>Probability and Statistics for Computer Scientists</em>, 2nd ed.
     
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
-<p>
-It’s 2016, and I can’t believe that there is still no “Continue where you left off” option in most dominant GUI file managers (as far as I know)!
-</p>
-<p>
-Yes, it bugs me when I can’t restore my last open tabs and I want my old session so badly. Remembering last tabs, if I get the history right, was a feature first introduced by Google Chrome, and soon it started to play an indispensable part in my daily workflow. I’m a multitasker, but the computing resource of my laptop is very limited – Say, if I have a session in which I am working on a homework report, having loads of folders, web pages and editor buffers open and those can fill up gigabytes of RAM easily, then I realize that I will need to compile something really hard-core, or maybe just take a short rest and do some random surfing on the web, certainly I would rather close all those engrossing processes for the time being, hoping that they could continue with all the open tabs I left off.
-</p>
-<p>
-It’s mainly four types of applications that account for so-called “work sessions” for me:
-</p>
+<p>It’s 2016, and I can’t believe that there is still no “Continue where you left off” option in most dominant GUI file managers (as far as I know)!</p>
+<p>Yes, it bugs me when I can’t restore my last open tabs and I want my old session so badly. Remembering last tabs, if I get the history right, was a feature first introduced by Google Chrome, and soon it started to play an indispensable part in my daily workflow. I’m a multitasker, but the computing resource of my laptop is very limited – Say, if I have a session in which I am working on a homework report, having loads of folders, web pages and editor buffers open and those can fill up gigabytes of RAM easily, then I realize that I will need to compile something really hard-core, or maybe just take a short rest and do some random surfing on the web, certainly I would rather close all those engrossing processes for the time being, hoping that they could continue with all the open tabs I left off.</p>
+<p>It’s mainly four types of applications that account for so-called “work sessions” for me:</p>
 <ul>
-<li>
-Terminal emulator
-</li>
-<li>
-File manager
-</li>
-<li>
-Web browser
-</li>
-<li>
-Text editor
-</li>
+<li>Terminal emulator</li>
+<li>File manager</li>
+<li>Web browser</li>
+<li>Text editor</li>
 </ul>
-<p>
-Terminals don’t take up a lot of memory, so I wouldn’t mind leaving them open. Typical browsers, including Chromium and Firefox, do support session resuming (and there are even <a href="https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko">extensions</a> which allow you to save current tabs and recover them at any later time). Any decent text editor (or IDE) may also be configured to remember open tabs / sessions. After all, average file managers fail to meet my basic needs of productivity.
-</p>
+<p>Terminals don’t take up a lot of memory, so I wouldn’t mind leaving them open. Typical browsers, including Chromium and Firefox, do support session resuming (and there are even <a href="https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko">extensions</a> which allow you to save current tabs and recover them at any later time). Any decent text editor (or IDE) may also be configured to remember open tabs / sessions. After all, average file managers fail to meet my basic needs of productivity.</p>
 <section id="file-managers-the-unremembered-ux" class="level2">
-<h2>
-File managers: The unremembered UX
-</h2>
-<p>
-I’m on GNOME 3, but currently using the <a href="https://github.com/mate-desktop/caja">Caja</a> file manager – ever since Nautilus 3.6 decided to remove two or three features I found important to me (<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676842">compact mode</a>, <a href="https://bugzilla.gnome.org/show_bug.cgi?id=692852">backspace navigation</a>) and introduced an awkward, smug “search-whatever-shit-as-you-type” feature.
-</p>
-<p>
-File managers I’ve tried so far:
-</p>
+<h2>File managers: The unremembered UX</h2>
+<p>I’m on GNOME 3, but currently using the <a href="https://github.com/mate-desktop/caja">Caja</a> file manager – ever since Nautilus 3.6 decided to remove two or three features I found important to me (<a href="https://bugzilla.gnome.org/show_bug.cgi?id=676842">compact mode</a>, <a href="https://bugzilla.gnome.org/show_bug.cgi?id=692852">backspace navigation</a>) and introduced an awkward, smug “search-whatever-shit-as-you-type” feature.</p>
+<p>File managers I’ve tried so far:</p>
 <ul>
-<li>
-Nautilus (GNOME). As said, already rendered unusable for me.
-</li>
-<li>
-Pantheon. Like Nautilus, it doesn’t feature a compact mode either.
-</li>
-<li>
-Nemo (Cinnamon). Nope, segfaults too often.
-</li>
-<li>
-Caja (MATE). It’s OK, just what I’m using right now.
+<li>Nautilus (GNOME). As said, already rendered unusable for me.</li>
+<li>Pantheon. Like Nautilus, it doesn’t feature a compact mode either.</li>
+<li>Nemo (Cinnamon). Nope, segfaults too often.</li>
+<li>Caja (MATE). It’s OK, just what I’m using right now.
 <ul>
-<li>
-Open issue for saving sessions: <a href="https://github.com/mate-desktop/caja/issues/523" class="uri">https://github.com/mate-desktop/caja/issues/523</a>
-</li>
-</ul>
-</li>
-<li>
-Dolphin (KDE). OK, unless it’s from the foreign land of KDE.
+<li>Open issue for saving sessions: <a href="https://github.com/mate-desktop/caja/issues/523" class="uri">https://github.com/mate-desktop/caja/issues/523</a></li>
+</ul></li>
+<li>Dolphin (KDE). OK, unless it’s from the foreign land of KDE.
 <ul>
-<li>
-Open issue for saving sessions: <a href="https://bugs.kde.org/show_bug.cgi?id=246028" class="uri">https://bugs.kde.org/show_bug.cgi?id=246028</a>
-</li>
+<li>Open issue for saving sessions: <a href="https://bugs.kde.org/show_bug.cgi?id=246028" class="uri">https://bugs.kde.org/show_bug.cgi?id=246028</a></li>
+</ul></li>
+<li>Konqueror (KDE). It’s both a web browser and a file manager, and it’s the only one I know that can save / restore open tabs. Unfortunately it has only limited file management functionality. (sufficient as a <em>file viewer</em>, though?)</li>
 </ul>
-</li>
-<li>
-Konqueror (KDE). It’s both a web browser and a file manager, and it’s the only one I know that can save / restore open tabs. Unfortunately it has only limited file management functionality. (sufficient as a <em>file viewer</em>, though?)
-</li>
-</ul>
-<p>
-Among all above, I settled down with Caja, simply because there was no reasonably good alternative. Still, I’m wishing for something that can save session states for me. After doing a little research, I realized that:
-</p>
+<p>Among all above, I settled down with Caja, simply because there was no reasonably good alternative. Still, I’m wishing for something that can save session states for me. After doing a little research, I realized that:</p>
 <ol type="1">
-<li>
-There is no commonly adopted protocol addressing this issue. <a href="https://wiki.gnome.org/Projects/SessionManagement/SavingState">Not even on GNOME</a>.
-</li>
-<li>
-There is <a href="https://wiki.gnome.org/Projects/SessionManagement/EggSMClient">EggSMClient</a>, but state saving is implemented on the X (desktop) session level thus only available on the <a href="https://www.x.org/releases/X11R7.7/doc/libSM/xsmp.html">XSMP</a> backend. It works when you logout your desktop session and login, but not when you close the window and restart the application again.
-</li>
-<li>
-It is ultimately the application itself which must maintain its session states and restore them when required.
-</li>
+<li>There is no commonly adopted protocol addressing this issue. <a href="https://wiki.gnome.org/Projects/SessionManagement/SavingState">Not even on GNOME</a>.</li>
+<li>There is <a href="https://wiki.gnome.org/Projects/SessionManagement/EggSMClient">EggSMClient</a>, but state saving is implemented on the X (desktop) session level thus only available on the <a href="https://www.x.org/releases/X11R7.7/doc/libSM/xsmp.html">XSMP</a> backend. It works when you logout your desktop session and login, but not when you close the window and restart the application again.</li>
+<li>It is ultimately the application itself which must maintain its session states and restore them when required.</li>
 </ol>
 </section>
 <section id="a-quick-working-patch-for-caja" class="level2">
-<h2>
-A quick working patch for Caja
-</h2>
-<p>
-Let’s take the issue into more technical details. On Caja (or other similarly GTK+/GLib-based file managers), one need to implement:
-</p>
+<h2>A quick working patch for Caja</h2>
+<p>Let’s take the issue into more technical details. On Caja (or other similarly GTK+/GLib-based file managers), one need to implement:</p>
 <ul>
-<li>
-On the <code>destroy</code> callback of the main <code>GtkObject</code>, all last remaining session data (e.g., internal states about open tabs, windows) must be saved to disk. (after the main loop ends there’s no more chance to get this information back)
-</li>
-<li>
-On GUI initialization, read last session data (if exist) from disk, and reopen saved tabs as well as windows.
-</li>
-<li>
-On the event of changing state (e.g., creating or closing tab/window, repositioning tabs), session data are updated respectively and, optionally, saved to disk.
-</li>
+<li>On the <code>destroy</code> callback of the main <code>GtkObject</code>, all last remaining session data (e.g., internal states about open tabs, windows) must be saved to disk. (after the main loop ends there’s no more chance to get this information back)</li>
+<li>On GUI initialization, read last session data (if exist) from disk, and reopen saved tabs as well as windows.</li>
+<li>On the event of changing state (e.g., creating or closing tab/window, repositioning tabs), session data are updated respectively and, optionally, saved to disk.</li>
 </ul>
-<p>
-With <code>caja_application_get_session_data()</code>, making a quick workaround that enables Caja to save and restore a session is somewhat trivial labor; however, it seems Caja doesn’t record the correct (spatial) ordering of tabs in its session data – so I wouldn’t consider this as a satisfying solution to the issue, and I have no intent to send such an incomplete patch to Caja. Nevertheless, it’s better than nothing, and, if ordering of tabs really matters, it would be feasible to write a <a href="https://github.com/soimort/dotfiles/blob/b721e42238a90e88c83d1feb20682d0605367b11/Scripts/Open-Folders">wrapper script</a> that manipulates the XML file in <code>$HOME/.config/caja/last-session</code>.
-</p>
-<p>
-And here goes the patch: (Applied to Caja 1.16.1; definitely UNWARRANTED)
-</p>
+<p>With <code>caja_application_get_session_data()</code>, making a quick workaround that enables Caja to save and restore a session is somewhat trivial labor; however, it seems Caja doesn’t record the correct (spatial) ordering of tabs in its session data – so I wouldn’t consider this as a satisfying solution to the issue, and I have no intent to send such an incomplete patch to Caja. Nevertheless, it’s better than nothing, and, if ordering of tabs really matters, it would be feasible to write a <a href="https://github.com/soimort/dotfiles/blob/b721e42238a90e88c83d1feb20682d0605367b11/Scripts/Open-Folders">wrapper script</a> that manipulates the XML file in <code>$HOME/.config/caja/last-session</code>.</p>
+<p>And here goes the patch: (Applied to Caja 1.16.1; definitely UNWARRANTED)</p>
 <script src="https://gist.github.com/soimort/73c75266d1610ff0af68b40e7b07d939.js"></script>
 </section>
+
 ]]>
     </content>
   </entry>
@@ -1215,48 +624,25 @@ And here goes the patch: (Applied to Caja 1.16.1; definitely UNWARRANTED)
     
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
-<p>
-For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like <code>title</code>, <code>author</code> and <code>date</code>) into a properly typeset PDF document:
-</p>
+<p>For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like <code>title</code>, <code>author</code> and <code>date</code>) into a properly typeset PDF document:</p>
 <pre><code>$ pandoc src.md -o out.pdf</code></pre>
-<p>
-However, Markdown is not TeX. <em>Not even close.</em> Once you need to have some bleeding edge control over the typesetting outcome, or perhaps just a little refinement on its LaTeX templating, you’ll soon notice that Pandoc has its quirks and gotchas. I’ve been utilizing Pandoc in all my serious academic writing (incl. homework reports) for years, ever since I gave up on learning more about the overwhelmingly sophisticated TeX ecosystem and turned to something that “just works”. Pandoc fits my needs well. And when it doesn’t, there’s almost always a workaround that achieves the same thing neatly. And this is what this write-up is mostly about.
-</p>
+<p>However, Markdown is not TeX. <em>Not even close.</em> Once you need to have some bleeding edge control over the typesetting outcome, or perhaps just a little refinement on its LaTeX templating, you’ll soon notice that Pandoc has its quirks and gotchas. I’ve been utilizing Pandoc in all my serious academic writing (incl. homework reports) for years, ever since I gave up on learning more about the overwhelmingly sophisticated TeX ecosystem and turned to something that “just works”. Pandoc fits my needs well. And when it doesn’t, there’s almost always a workaround that achieves the same thing neatly. And this is what this write-up is mostly about.</p>
 <section id="tweaking-default.latex-bad-idea." class="level2">
-<h2>
-Tweaking <code>default.latex</code>? Bad idea.
-</h2>
-<p>
-You could, of course, modify the default template (<a href="https://github.com/jgm/pandoc-templates/blob/master/default.latex"><code>default.latex</code></a>) provided by Pandoc, as long as you’re no stranger to LaTeX. In this way, you can achieve anything you want – in <em>pure</em> LaTeX.
-</p>
+<h2>Tweaking <code>default.latex</code>? Bad idea.</h2>
+<p>You could, of course, modify the default template (<a href="https://github.com/jgm/pandoc-templates/blob/master/default.latex"><code>default.latex</code></a>) provided by Pandoc, as long as you’re no stranger to LaTeX. In this way, you can achieve anything you want – in <em>pure</em> LaTeX.</p>
 <pre><code>$ pandoc <span class="do">--template my-default.latex</span> src.md -o out.pdf</code></pre>
-<p>
-There are, however, a few problems with this naïve approach:
-</p>
+<p>There are, however, a few problems with this naïve approach:</p>
 <ol type="1">
-<li>
-If you are tweaking the template just for something you’re currently working on, you will end up with some highly document-specific, hardly reusable template. Also this won’t give you any good for using Pandoc – you could just write plain LaTeX anyway.
-</li>
-<li>
-If Pandoc improves its default template for a newer version, your home-brewed template won’t benefit from this (unless you’re willing to merge the diffs and resolve any conflicts by hand).
-</li>
+<li>If you are tweaking the template just for something you’re currently working on, you will end up with some highly document-specific, hardly reusable template. Also this won’t give you any good for using Pandoc – you could just write plain LaTeX anyway.</li>
+<li>If Pandoc improves its default template for a newer version, your home-brewed template won’t benefit from this (unless you’re willing to merge the diffs and resolve any conflicts by hand).</li>
 </ol>
-<p>
-I’m conservative about changing the templates. If it’s a general issue that needs to be fixed in the default template, sending a pull request to <a href="https://github.com/jgm/pandoc-templates">pandoc-templates</a> might be a better idea. Of course, if there’s a certain submission format you have to stick with (given LaTeX templates for conference papers), then you will fall back on your own.
-</p>
+<p>I’m conservative about changing the templates. If it’s a general issue that needs to be fixed in the default template, sending a pull request to <a href="https://github.com/jgm/pandoc-templates">pandoc-templates</a> might be a better idea. Of course, if there’s a certain submission format you have to stick with (given LaTeX templates for conference papers), then you will fall back on your own.</p>
 </section>
 <section id="separating-the-formatting-stuff" class="level2">
-<h2>
-Separating the formatting stuff
-</h2>
-<p>
-I wouldn’t claim that I know the best practice of using Pandoc, but there’s such a common idiom that cannot be overstressed: <em>Separate presentation and content!</em>
-</p>
-<p>
-In the YAML front matter of <code>src.md</code> (the main Markdown file you’re writing), put only things that matter to your potential readers:
-</p>
-<div class="sourceCode">
-<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<h2>Separating the formatting stuff</h2>
+<p>I wouldn’t claim that I know the best practice of using Pandoc, but there’s such a common idiom that cannot be overstressed: <em>Separate presentation and content!</em></p>
+<p>In the YAML front matter of <code>src.md</code> (the main Markdown file you’re writing), put only things that matter to your potential readers:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">title:</span> Boilerplating Pandoc for Academic Writing
 <span class="fu">subtitle:</span> or How I Learned to Stop Typesetting and Concentrate on the Math
 <span class="fu">author:</span> Mort Yao
@@ -1266,209 +652,111 @@ In the YAML front matter of <code>src.md</code> (the main Markdown file you’re
   sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Ut enim ad minim veniam, quis nostrud exercitation
   ullamco laboris nisi ut aliquip ex ea commodo consequat.
-<span class="ot">---</span></code></pre>
-</div>
-<p>
-And in a separate YAML file (let’s call it <code>default.yaml</code>), here goes the formatting stuff:
-</p>
-<div class="sourceCode">
-<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="ot">---</span></code></pre></div>
+<p>And in a separate YAML file (let’s call it <code>default.yaml</code>), here goes the formatting stuff:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
 <span class="fu">geometry:</span> margin=1.5in
 <span class="fu">indent:</span> true
 <span class="fu">header-includes:</span> |
   \usepackage<span class="kw">{</span>tcolorbox<span class="kw">}</span>
   \newcommand\qed<span class="kw">{</span>\hfill\rule{1em<span class="kw">}{</span>1em<span class="kw">}</span>}
-<span class="ot">---</span></code></pre>
-</div>
-<p>
-Above is my personal default, and it’s worth a few words to explain:
-</p>
+<span class="ot">---</span></code></pre></div>
+<p>Above is my personal default, and it’s worth a few words to explain:</p>
 <ul>
-<li>
-<p>
-<code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:
-</p>
-<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre>
-</li>
-<li>
-Set <code>indent</code> to any value other than <code>false</code> if paragraph indentation is desired. (And it is often desired in formal publications.)
-</li>
-<li>
-<code>header-includes</code> is where you define your own macros, configure existing ones, or claim <code></code> in case you want to use a package not enabled by Pandoc (e.g., <a href="https://www.ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>). Although you might as well define those in other places (e.g., in the content of a Markdown file), <em>don’t do that</em>.
+<li><p><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</p>
+<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre></li>
+<li>Set <code>indent</code> to any value other than <code>false</code> if paragraph indentation is desired. (And it is often desired in formal publications.)</li>
+<li><code>header-includes</code> is where you define your own macros, configure existing ones, or claim <code>\usepackage</code> in case you want to use a package not enabled by Pandoc (e.g., <a href="https://www.ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>). Although you might as well define those in other places (e.g., in the content of a Markdown file), <em>don’t do that</em>.
 <ul>
-<li>
-This decent Q.E.D. tombstone: <code></code> is my favorite of all time. It doesn’t require the <code>amsthm</code> package.
-</li>
+<li>This decent Q.E.D. tombstone: <code>\newcommand\qed{\hfill\rule{1em}{1em}}</code> is my favorite of all time. It doesn’t require the <code>amsthm</code> package.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>
-With a separate <code>default.yaml</code>, now here we are:
-</p>
+<p>With a separate <code>default.yaml</code>, now here we are:</p>
 <pre><code>$ pandoc <span class="do">default.yaml</span> src.md -o out.pdf</code></pre>
 </section>
 <section id="separating-header-includes" class="level2">
-<h2>
-Separating <code>header-includes</code>
-</h2>
-<p>
-You might have already noticed that the <code>subtitle</code> field won’t display in the produced PDF file. As far as I’m concerned (in Pandoc 1.18), this is the expected behavior. See <a href="http://pandoc.org/MANUAL.html#fn1">here in README</a>:
-</p>
+<h2>Separating <code>header-includes</code></h2>
+<p>You might have already noticed that the <code>subtitle</code> field won’t display in the produced PDF file. As far as I’m concerned (in Pandoc 1.18), this is the expected behavior. See <a href="http://pandoc.org/MANUAL.html#fn1">here in README</a>:</p>
 <blockquote>
-<p>
-To make <code>subtitle</code> work with other LaTeX document classes, you can add the following to <code>header-includes</code>:
-</p>
-<div class="sourceCode">
-<pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\providecommand</span>{<span class="fu">\subtitle</span>}[1]{<span class="co">%</span>
+<p>To make <code>subtitle</code> work with other LaTeX document classes, you can add the following to <code>header-includes</code>:</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\providecommand</span>{<span class="fu">\subtitle</span>}[1]{<span class="co">%</span>
   <span class="bu">\usepackage</span>{<span class="ex">titling</span>}
   <span class="fu">\posttitle</span>{<span class="co">%</span>
     <span class="fu">\par\large</span>#1<span class="kw">\end</span>{<span class="ex">center</span>}}
-}</code></pre>
-</div>
+}</code></pre></div>
 </blockquote>
-<p>
-Unfortunately, this won’t work (until <a href="https://github.com/jgm/pandoc/issues/2139">Issue #2139</a> is resolved) since Pandoc parses the <code>header-includes</code> metadata field as Markdown, and the bracketed <code>[1]</code> is misinterpreted as literals rather than a part of LaTeX control sequence. So the workaround is: Instead of embedding <code>header-includes</code> as a metadata field in YAML, we should separate it into another file for this dedicated purpose (it’s simply raw LaTeX anyway), and include it using <code>--include-in-header/-H</code>:
-</p>
+<p>Unfortunately, this won’t work (until <a href="https://github.com/jgm/pandoc/issues/2139">Issue #2139</a> is resolved) since Pandoc parses the <code>header-includes</code> metadata field as Markdown, and the bracketed <code>[1]</code> is misinterpreted as literals rather than a part of LaTeX control sequence. So the workaround is: Instead of embedding <code>header-includes</code> as a metadata field in YAML, we should separate it into another file for this dedicated purpose (it’s simply raw LaTeX anyway), and include it using <code>--include-in-header/-H</code>:</p>
 <pre><code>$ pandoc <span class="do">-H header.tex</span> default.yaml src.md -o out.pdf</code></pre>
-<p>
-Note that you can’t have two <code>header-includes</code> for one document. So the <code>header-includes</code> field specified in YAML metadata will be overridden by the content of <code>header.tex</code>.
-</p>
+<p>Note that you can’t have two <code>header-includes</code> for one document. So the <code>header-includes</code> field specified in YAML metadata will be overridden by the content of <code>header.tex</code>.</p>
 </section>
 <section id="citing-sources" class="level2">
-<h2>
-Citing sources
-</h2>
-<p>
-While the Markdown syntax for citing is rather easy (<code><span class="citation">[@id]</span></code>), it takes effort to make things right, especially if you have a certain preferred citation format (APA, MLA, Chicago, IEEE, etc.).
-</p>
-<p>
-The suggestion is: Use <a href="https://hackage.haskell.org/package/pandoc-citeproc">pandoc-citeproc</a>. Once you have a list of references you’re interested in, you need two things to typeset those nicely in your document:
-</p>
+<h2>Citing sources</h2>
+<p>While the Markdown syntax for citing is rather easy (<code>[@id]</code>), it takes effort to make things right, especially if you have a certain preferred citation format (APA, MLA, Chicago, IEEE, etc.).</p>
+<p>The suggestion is: Use <a href="https://hackage.haskell.org/package/pandoc-citeproc">pandoc-citeproc</a>. Once you have a list of references you’re interested in, you need two things to typeset those nicely in your document:</p>
 <ul>
-<li>
-A CSL (Citation Style Language) file (<code>.csl</code>), to specify the citation format you want to use.
+<li>A CSL (Citation Style Language) file (<code>.csl</code>), to specify the citation format you want to use.
 <ul>
-<li>
-You can preview (and download) many common citation styles in the <a href="https://www.zotero.org/styles">Zotero Style Repository</a>.
-</li>
-</ul>
-</li>
-<li>
-A BibTeX file (<code>.bib</code>), which is a list of all entries you might cite.
+<li>You can preview (and download) many common citation styles in the <a href="https://www.zotero.org/styles">Zotero Style Repository</a>.</li>
+</ul></li>
+<li>A BibTeX file (<code>.bib</code>), which is a list of all entries you might cite.
 <ul>
-<li>
-Citation entries in BibTeX format may be found easily on the Internet, through academic search engines and databases. Concatenate them one by one.
-</li>
+<li>Citation entries in BibTeX format may be found easily on the Internet, through academic search engines and databases. Concatenate them one by one.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>
-As part of the YAML metadata: (Assume you have <code>ieee.csl</code> and <code>references.bib</code>)
-</p>
-<div class="sourceCode">
-<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">csl:</span> ieee.csl
-<span class="fu">bibliography:</span> references.bib</code></pre>
-</div>
-<p>
-Using <code>pandoc-citeproc</code> as a filter, generate the document with citations:
-</p>
+<p>As part of the YAML metadata: (Assume you have <code>ieee.csl</code> and <code>references.bib</code>)</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">csl:</span> ieee.csl
+<span class="fu">bibliography:</span> references.bib</code></pre></div>
+<p>Using <code>pandoc-citeproc</code> as a filter, generate the document with citations:</p>
 <pre><code>$ pandoc <span class="do">--filter pandoc-citeproc</span> -H header.tex default.yaml src.md -o out.pdf</code></pre>
-<p>
-The list of references is appended to the end of the document. It is often desirable to give the references an obvious title (“References”), start from a new page and avoid any further indentation, so the following comes in the end of the Markdown source:
-</p>
-<div class="sourceCode">
-<pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\newpage</span>
+<p>The list of references is appended to the end of the document. It is often desirable to give the references an obvious title (“References”), start from a new page and avoid any further indentation, so the following comes in the end of the Markdown source:</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\newpage</span>
 <span class="fu">\setlength\parindent</span>{0pt}
 
-# References</code></pre>
-</div>
+# References</code></pre></div>
 </section>
 <section id="putting-it-all-together" class="level2">
-<h2>
-Putting it all together!
-</h2>
-<p>
-Basically, we need 5 files in total:
-</p>
+<h2>Putting it all together!</h2>
+<p>Basically, we need 5 files in total:</p>
 <ul>
-<li>
-For content:
+<li>For content:
 <ul>
-<li>
-<code>src.md</code> (Markdown + possibly LaTeX mixed format): Main text.
-</li>
-<li>
-<code>references.bib</code> (BibTeX/BibLaTeX format): List of references.
-</li>
-</ul>
-</li>
-<li>
-For presentation:
+<li><code>src.md</code> (Markdown + possibly LaTeX mixed format): Main text.</li>
+<li><code>references.bib</code> (BibTeX/BibLaTeX format): List of references.</li>
+</ul></li>
+<li>For presentation:
 <ul>
-<li>
-<code>default.yaml</code> (YAML format): Format-related metadata.
-</li>
-<li>
-<code>header.tex</code> (LaTeX format): Content of <code>header-includes</code>; package imports and macro definitions.
-</li>
-<li>
-<code>ieee.csl</code> (CSL XML format): Citation style.
-</li>
+<li><code>default.yaml</code> (YAML format): Format-related metadata.</li>
+<li><code>header.tex</code> (LaTeX format): Content of <code>header-includes</code>; package imports and macro definitions.</li>
+<li><code>ieee.csl</code> (CSL XML format): Citation style.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>
-And one command:
-</p>
+<p>And one command:</p>
 <pre><code>$ pandoc --filter pandoc-citeproc -H <span class="do">header.tex</span> <span class="do">default.yaml</span> <span class="do">src.md</span> -o out.pdf</code></pre>
 </section>
 <section id="open-question-lightweight-replacement-for-amsthm" class="level2">
-<h2>
-Open question: Lightweight replacement for <code>amsthm</code>?
-</h2>
-<p>
-Pandoc doesn’t provide native support for <a href="https://www.ctan.org/pkg/amsthm"><code>amsthm</code></a> (and I wonder if there will ever be). You can still have the same thing in Pandoc Markdown:
-</p>
-<div class="sourceCode">
-<pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\newtheorem</span>{definition}{Definition}
+<h2>Open question: Lightweight replacement for <code>amsthm</code>?</h2>
+<p>Pandoc doesn’t provide native support for <a href="https://www.ctan.org/pkg/amsthm"><code>amsthm</code></a> (and I wonder if there will ever be). You can still have the same thing in Pandoc Markdown:</p>
+<div class="sourceCode"><pre class="sourceCode tex"><code class="sourceCode latex"><span class="fu">\newtheorem</span>{definition}{Definition}
 
 <span class="kw">\begin</span>{<span class="ex">definition</span>}
 Man is a rational animal.
-<span class="kw">\end</span>{<span class="ex">definition</span>}</code></pre>
-</div>
-<p>
-However, everything in between <code>\begin</code> and <code>\end</code> will be treated as raw LaTeX, and the expressiveness of Markdown is lost there. More importantly, this is purely a LaTeX-specific thing, so there’s no way for Pandoc to convert this to HTML or any other format (unless you have a filter that does the trick). Consequently, I tend to write all definitions / theorems (lemmas, claims, corollaries, propositions…) in simple Markdown:
-</p>
+<span class="kw">\end</span>{<span class="ex">definition</span>}</code></pre></div>
+<p>However, everything in between <code>\begin</code> and <code>\end</code> will be treated as raw LaTeX, and the expressiveness of Markdown is lost there. More importantly, this is purely a LaTeX-specific thing, so there’s no way for Pandoc to convert this to HTML or any other format (unless you have a filter that does the trick). Consequently, I tend to write all definitions / theorems (lemmas, claims, corollaries, propositions…) in simple Markdown:</p>
 <pre><code>**Definition 1.** *Man is a rational animal.*</code></pre>
-<p>
-It does have some advantages over <code>amsthm</code>:
-</p>
+<p>It does have some advantages over <code>amsthm</code>:</p>
 <ul>
-<li>
-Using <code>amsthm</code>, you cannot see the numbering of each theorem (definition, etc.) in the text editor (well, you can’t without a dedicated plugin at least). This is inconvenient when you need to refer to a prior one later. By numbering them explicitly, you can clearly see these ordinals in the Markdown source.
-</li>
-<li>
-It is perfectly valid Markdown, so it converts to any format as you wish (HTML, for example).
-</li>
+<li>Using <code>amsthm</code>, you cannot see the numbering of each theorem (definition, etc.) in the text editor (well, you can’t without a dedicated plugin at least). This is inconvenient when you need to refer to a prior one later. By numbering them explicitly, you can clearly see these ordinals in the Markdown source.</li>
+<li>It is perfectly valid Markdown, so it converts to any format as you wish (HTML, for example).</li>
 </ul>
-<p>
-This also has some drawbacks compared to using <code>amsthm</code>, though:
-</p>
+<p>This also has some drawbacks compared to using <code>amsthm</code>, though:</p>
 <ul>
-<li>
-It doesn’t have theorem counters. You need to number things explicitly, manually. (Clearly you can’t have implicit numbering and explicit numbering at the same time, so here’s the trade-off.)
-</li>
-<li>
-It doesn’t have automatic formatting. That is, you could possibly get the style for a certain entry (plain, definition, remark) wrong.
-</li>
-<li>
-Semantically, they are not recognized as theorems, just normal text paragraphs. This is problematic if you want to prevent definitions and theorems from being indented, since there’s no way for LaTeX to tell them from a normal text.
-</li>
+<li>It doesn’t have theorem counters. You need to number things explicitly, manually. (Clearly you can’t have implicit numbering and explicit numbering at the same time, so here’s the trade-off.)</li>
+<li>It doesn’t have automatic formatting. That is, you could possibly get the style for a certain entry (plain, definition, remark) wrong.</li>
+<li>Semantically, they are not recognized as theorems, just normal text paragraphs. This is problematic if you want to prevent definitions and theorems from being indented, since there’s no way for LaTeX to tell them from a normal text.</li>
 </ul>
-<p>
-(Probably) The best solution is to write a filter that (conventionally) converts any plain text like <code>Definition 1</code> (and <code>Lemma 2</code>, <code>Theorem 3</code>, etc.) in the beginning of a paragraph to proper Markdown (for HTML target) or corresponding <code>amsthm</code> block (for LaTeX target). Even better, it should be able to do cross-references accordingly (Remember <code>Lemma 10.42</code>? Let’s put an anchored link on that!). This is yet to be done, but would be very helpful to someone who does a lot of theorems and proofs thus wants to avoid the kludge of mixing raw LaTeX with semantically evident Markdown.
-</p>
+<p>(Probably) The best solution is to write a filter that (conventionally) converts any plain text like <code>Definition 1</code> (and <code>Lemma 2</code>, <code>Theorem 3</code>, etc.) in the beginning of a paragraph to proper Markdown (for HTML target) or corresponding <code>amsthm</code> block (for LaTeX target). Even better, it should be able to do cross-references accordingly (Remember <code>Lemma 10.42</code>? Let’s put an anchored link on that!). This is yet to be done, but would be very helpful to someone who does a lot of theorems and proofs thus wants to avoid the kludge of mixing raw LaTeX with semantically evident Markdown.</p>
 </section>
+
 ]]>
     </content>
   </entry>
@@ -1484,237 +772,111 @@ Semantically, they are not recognized as theorems, just normal text paragraphs. 
     
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
-<p>
-<p style="background-color:yellow">
-<strong>(20 Nov 2016) Correction:</strong> P ≠ NP is not sufficient to imply that one-way functions exist. See <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.
-</p>
-</p>
+<p><p style='background-color:yellow'> <strong>(20 Nov 2016) Correction:</strong> P ≠ NP is not sufficient to imply that one-way functions exist. See <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.</p></p>
 <hr />
-<p>
-<strong>Intro.</strong> Starting from November, I’ll summarize my study notes on <a href="https://wiki.soimort.org">wiki</a> into weekly blog posts. I always wanted to keep my study progress on track; I feel that it’s hard even to convince myself without visible footprints.
-</p>
-<p>
-So here we have the first episode. (Hopefully it won’t be the last one)
-</p>
+<p><strong>Intro.</strong> Starting from November, I’ll summarize my study notes on <a href="https://wiki.soimort.org">wiki</a> into weekly blog posts. I always wanted to keep my study progress on track; I feel that it’s hard even to convince myself without visible footprints.</p>
+<p>So here we have the first episode. (Hopefully it won’t be the last one)</p>
 <hr />
-<p>
-Asymptotic notation is an important tool in analyzing the time/space efficiency of algorithms.
-</p>
+<p>Asymptotic notation is an important tool in analyzing the time/space efficiency of algorithms.</p>
 <ul>
-<li>
-<a href="https://wiki.soimort.org/math/calculus/limit/">Limit</a>
+<li><a href="https://wiki.soimort.org/math/calculus/limit/">Limit</a>
 <ul>
-<li>
-Formal definition of limit (the (ε, δ)-definition) in calculus. Note that limits involving infinity are closely related to asymptotic analysis. In addition to basic limit rules, L’Hôpital’s rule is also relevant.
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/algo/asymptotic-notation/">Asymptotic notation</a>
+<li>Formal definition of limit (the (ε, δ)-definition) in calculus. Note that limits involving infinity are closely related to asymptotic analysis. In addition to basic limit rules, L’Hôpital’s rule is also relevant.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/algo/asymptotic-notation/">Asymptotic notation</a>
 <ul>
-<li>
-Introduction to the Bachmann–Landau notation family (among them are the most widely-used Big O notation and Big Theta notation).
-</li>
-<li>
-Master theorem is used to find the asymptotic bound for recurrence. This is particularly helpful when analyzing recursive algorithms (e.g., binary search, merge sort, tree traversal).
-</li>
-<li>
-Based on common orders of asymptotic running time using Big O notation, we can categorize algorithms into various classes of time complexities (among them are P, DLOGTIME, SUBEXP and EXPTIME). Note that we have not formally defined the word “algorithm” and “complexity class” yet.
-</li>
+<li>Introduction to the Bachmann–Landau notation family (among them are the most widely-used Big O notation and Big Theta notation).</li>
+<li>Master theorem is used to find the asymptotic bound for recurrence. This is particularly helpful when analyzing recursive algorithms (e.g., binary search, merge sort, tree traversal).</li>
+<li>Based on common orders of asymptotic running time using Big O notation, we can categorize algorithms into various classes of time complexities (among them are P, DLOGTIME, SUBEXP and EXPTIME). Note that we have not formally defined the word “algorithm” and “complexity class” yet.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>
-For decision problems, we now formally define the time complexity classes P and NP, and propose the hardness of NP-complete problems, which plays an indispensable role in the study of algorithm design and modern cryptography.
-</p>
+<p>For decision problems, we now formally define the time complexity classes P and NP, and propose the hardness of NP-complete problems, which plays an indispensable role in the study of algorithm design and modern cryptography.</p>
 <ul>
-<li>
-<a href="https://wiki.soimort.org/comp/language/">Formal language</a>
+<li><a href="https://wiki.soimort.org/comp/language/">Formal language</a>
 <ul>
-<li>
-Formal definition of language. We will revisit this when studying formal grammars like the context-free grammar and parsing techniques for compilers. For now, it suffices to know that binary string is a common encoding for all kinds of problems (especially, decision problems).
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/comp/decidability/">Decidability</a>
+<li>Formal definition of language. We will revisit this when studying formal grammars like the context-free grammar and parsing techniques for compilers. For now, it suffices to know that binary string is a common encoding for all kinds of problems (especially, decision problems).</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/decidability/">Decidability</a>
 <ul>
-<li>
-Among all abstract problems, we are mostly interested in decision problems.
-</li>
-<li>
-The decidability of a language depends on whether there exists an algorithm that decides it.
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/comp/reducibility/">Reducibility</a>
+<li>Among all abstract problems, we are mostly interested in decision problems.</li>
+<li>The decidability of a language depends on whether there exists an algorithm that decides it.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/reducibility/">Reducibility</a>
 <ul>
-<li>
-Polynomial-time reduction is a commonly used technique that maps one language to another.
-</li>
-<li>
-What is a hard language for a complexity class; what is a complete language for a complexity class.
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/comp/complexity/time/">Time complexity</a>
+<li>Polynomial-time reduction is a commonly used technique that maps one language to another.</li>
+<li>What is a hard language for a complexity class; what is a complete language for a complexity class.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/complexity/time/">Time complexity</a>
 <ul>
-<li>
-Encodings of concrete problems matter. Normally we would choose a “standard encoding” for our language of interest.
-</li>
-<li>
-Polynomial-time algorithms are considered to be efficient and languages which have polynomial-time algorithms that decide them are considered tractable.
-</li>
-<li>
-P is the time complexity class of all problems that are polynomial-time solvable.
-</li>
-<li>
-NP is the time complexity class of all problems that are polynomial-time verifiable.
-</li>
-</ul>
-</li>
-<li>
-<a href="https://wiki.soimort.org/comp/complexity/time/npc/">NP-completeness</a>
+<li>Encodings of concrete problems matter. Normally we would choose a “standard encoding” for our language of interest.</li>
+<li>Polynomial-time algorithms are considered to be efficient and languages which have polynomial-time algorithms that decide them are considered tractable.</li>
+<li>P is the time complexity class of all problems that are polynomial-time solvable.</li>
+<li>NP is the time complexity class of all problems that are polynomial-time verifiable.</li>
+</ul></li>
+<li><a href="https://wiki.soimort.org/comp/complexity/time/npc/">NP-completeness</a>
 <ul>
-<li>
-The set of languages that are complete for the complexity class NP, that is, the “hardest problems” in NP.
-</li>
-<li>
-NP-complete problems are central in answering the open question whether P = NP.
-</li>
-<li>
-We (informally) show that every NP problem is polynomial-time reducible to CIRCUIT-SAT, and that CIRCUIT-SAT is NP-complete.
-</li>
-<li>
-There are other problems (SAT, 3-CNF-SAT, CLIQUE, VERTEX-COVER, HAM-CYCLE, TSP, SUBSET-SUM) polynomial-time reducible from one to another, thus they are also shown to be NP-complete.
-</li>
+<li>The set of languages that are complete for the complexity class NP, that is, the “hardest problems” in NP.</li>
+<li>NP-complete problems are central in answering the open question whether P = NP.</li>
+<li>We (informally) show that every NP problem is polynomial-time reducible to CIRCUIT-SAT, and that CIRCUIT-SAT is NP-complete.</li>
+<li>There are other problems (SAT, 3-CNF-SAT, CLIQUE, VERTEX-COVER, HAM-CYCLE, TSP, SUBSET-SUM) polynomial-time reducible from one to another, thus they are also shown to be NP-complete.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>
-<strong>Computational hardness assumption P ≠ NP.</strong> Although it is still an open proposition, many believe that P ≠ NP. Notably, if P ≠ NP holds true,
-</p>
+<p><strong>Computational hardness assumption P ≠ NP.</strong> Although it is still an open proposition, many believe that P ≠ NP. Notably, if P ≠ NP holds true,</p>
 <ol type="1">
-<li>
-If a decision problem is polynomial-time unsolvable in general case, we should strive to find approximations or randomized algorithms; exact algorithms cannot be run in worst-case polynomial time thus may not be efficient. This applies to optimization problems too.
-</li>
-<li>
-<del>
+<li>If a decision problem is polynomial-time unsolvable in general case, we should strive to find approximations or randomized algorithms; exact algorithms cannot be run in worst-case polynomial time thus may not be efficient. This applies to optimization problems too.</li>
+<li><del>
 One-way functions exist, which implies that pseudorandom generators and functions exist. Consequently, many cryptographic constructions (private-key encryption, MACs, etc.) are provably computationally secure.
-</del>
-</li>
+</del></li>
 </ol>
-<p>
-<p style="background-color:yellow">
-(I stand corrected: There is no such a known proof showing that P ≠ NP implies the existence of one-way functions. However, reversely, the existence of one-way functions implies that P ≠ NP. There is an informal argument given by Peter Shor on StackExchange<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, rephrased in the section <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.)
-</p>
-</p>
-<p>
-Later we will cover the notion of security in cryptography, so there is a refresher of basic probability: (Probability is also considerably used in analyzing the behaviors of non-deterministic algorithms, hash functions, etc.)
-</p>
+<p><p style='background-color:yellow'> (I stand corrected: There is no such a known proof showing that P ≠ NP implies the existence of one-way functions. However, reversely, the existence of one-way functions implies that P ≠ NP. There is an informal argument given by Peter Shor on StackExchange<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, rephrased in the section <a href="#p-versus-np-problem-and-one-way-functions">P versus NP problem and one-way functions</a>.)</p></p>
+<p>Later we will cover the notion of security in cryptography, so there is a refresher of basic probability: (Probability is also considerably used in analyzing the behaviors of non-deterministic algorithms, hash functions, etc.)</p>
 <ul>
-<li>
-<a href="https://wiki.soimort.org/math/probability/">Probability</a>
+<li><a href="https://wiki.soimort.org/math/probability/">Probability</a>
 <ul>
-<li>
-An intuitive introduction to basic probability theory based on Kolmogorov’s axioms, including the union bound (Boole’s inequality) and its generalized form Bonferroni inequalities, the conditional probability and Bayes’ theorem. We will revisit the notion of probability space when coming to measure theory.
-</li>
+<li>An intuitive introduction to basic probability theory based on Kolmogorov’s axioms, including the union bound (Boole’s inequality) and its generalized form Bonferroni inequalities, the conditional probability and Bayes’ theorem. We will revisit the notion of probability space when coming to measure theory.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>
-Plan for next week:
-</p>
+<p>Plan for next week:</p>
 <ul>
-<li>
-<strong>(Algorithms)</strong> More involved NP-complete problems. Exact algorithms. Approximation algorithms. Probabilistic algorithms.
-</li>
-<li>
-<strong>(Cryptography)</strong> Information-theoretic/computational security (semantic security, IND, IND-CPA, IND-CCA). Private-key encryption. Message authentication codes. Hash functions. Theoretical constructions (one-way functions, pseudorandomness). Practical constructions (Feistel network, substitution-permutation network, DES, AES).
-</li>
+<li><strong>(Algorithms)</strong> More involved NP-complete problems. Exact algorithms. Approximation algorithms. Probabilistic algorithms.</li>
+<li><strong>(Cryptography)</strong> Information-theoretic/computational security (semantic security, IND, IND-CPA, IND-CCA). Private-key encryption. Message authentication codes. Hash functions. Theoretical constructions (one-way functions, pseudorandomness). Practical constructions (Feistel network, substitution-permutation network, DES, AES).</li>
 </ul>
 <section id="p-versus-np-problem-and-one-way-functions" class="level2">
-<h2>
-P versus NP problem and one-way functions
-</h2>
-<p>
-Consider the following map: <span class="math display">[f : (x, r) s]</span> where <span class="math inline">(x)</span> is an arbitrary bit string, <span class="math inline">(r)</span> is a string of random bits, and <span class="math inline">(s)</span> is an instance of a <span class="math inline">(k)</span>-SAT problem having <span class="math inline">(x)</span> as a planted solution, while the randomness of <span class="math inline">(r)</span> determines uniquely which <span class="math inline">(k)</span>-SAT problem to choose.
-</p>
-<p>
-If we can invert the above function <span class="math inline">(f)</span> (in polynomial time), we must already have solved the corresponding <span class="math inline">(k)</span>-SAT problem <span class="math inline">(s)</span> with a planted solution <span class="math inline">(x)</span>. <span class="math inline">(k)</span>-SAT problems are known to be NP-complete, and inverting such a function would be as hard as solving a <span class="math inline">(k)</span>-SAT problem with a planted solution, that is, inverting <span class="math inline">(f)</span> <em>at one point</em> can be hard. Clearly, should we have a one-way function, then inverting it is guaranteed to be no easier than inverting <span class="math inline">(f)</span>.
-</p>
-<p>
-So what does it mean if P ≠ NP? We know that <span class="math inline">(k)</span>-SAT problem is hard to solve in its <em>worst case</em>, so function <span class="math inline">(f)</span> can be made as hard to invert as solving a <span class="math inline">(k)</span>-SAT problem in its <em>worst case</em>. However, we don’t know whether it’s possible to have a class <span class="math inline">()</span> of <span class="math inline">(k)</span>-SAT problems with planted solutions that are as hard as general-case <span class="math inline">(k)</span>-SAT problems. If such a class <span class="math inline">()</span> exists, then given any <span class="math inline">(s )</span>, no probabilistic polynomial-time algorithm is able to get <span class="math inline">(x)</span> with a non-negligible probability, so we can conclude that <span class="math inline">(f)</span> is indeed a one-way function. <a href="#ref-selman1992survey"><span class="citation" data-cites="selman1992survey">[1]</span></a>
-</p>
-<p>
-<strong>Problem 1.1.</strong> Does there exist a class <span class="math inline">()</span> of <span class="math inline">(k)</span>-SAT problems with planted solutions, such that every <span class="math inline">(L )</span> is NP-hard?
-</p>
-<p>
-<strong>Conjecture 1.2.</strong> <em>If <span class="math inline">( )</span>, then one-way functions exist.</em>
-</p>
-<p>
-On the other hand, assume that <span class="math inline">(f)</span> is a one-way function, so that one-way functions do exist, then this implies that <span class="math inline">(k)</span>-SAT problem is hard to solve (in its worse case) by a polynomial-time algorithm, thus we have P ≠ NP. By modus tollens, if P = NP, then no one-way function exists. <a href="#ref-abadi1990generating"><span class="citation" data-cites="abadi1990generating">[2]</span></a>
-</p>
-<p>
-<strong>Theorem 1.3.</strong> <em>If one-way functions exist, then <span class="math inline">( )</span>.</em>
-</p>
-<p>
-<em>Proof.</em> <em>(Sketch)</em> Let <span class="math inline">(f : {0,1}^<em>{0,1}^</em>)</span> be a one-way function. There is a polynomial-time algorithm <span class="math inline">(M_f)</span> that computes <span class="math inline">(y=f(x))</span> for all <span class="math inline">(x)</span>, thus, there exists a polynomial-time computable circuit that outputs <span class="math inline">(y=f(x))</span> for all <span class="math inline">(x)</span>.
-</p>
-<p>
-Since <span class="math inline">(f)</span> is a one-way function, that is, for every probabilistic polynomial-time algorithm <span class="math inline">()</span>, there is a negligible function <span class="math inline">()</span> such that <span class="math inline">((n))</span>, so we know that no <span class="math inline">()</span> can fully compute <span class="math inline">(f^{-1}(x))</span> for any given <span class="math inline">(x)</span>. <span class="math inline">()</span> fully computes <span class="math inline">(f^{-1})</span> if and only if it solves the corresponding <code>CIRCUIT-SAT</code> problems of the circuit in all cases. Thus, there must exist some <code>CIRCUIT-SAT</code> problems that cannot be decided by a polynomial-time algorithm, therefore, <span class="math inline">( )</span>.
-<p style="text-align:right !important;text-indent:0 !important;position:relative;top:-1em">
-■
-</p>
-</p>
-<p>
-<em>Remark 1.4.</em> If one can come up with a construction of the one-way function or a proof that such functions exist, then it holds true that <span class="math inline">( )</span>.
-</p>
+<h2>P versus NP problem and one-way functions</h2>
+<p>Consider the following map: <span class="math display">\[f : (x, r) \to s\]</span> where <span class="math inline">\(x\)</span> is an arbitrary bit string, <span class="math inline">\(r\)</span> is a string of random bits, and <span class="math inline">\(s\)</span> is an instance of a <span class="math inline">\(k\)</span>-SAT problem having <span class="math inline">\(x\)</span> as a planted solution, while the randomness of <span class="math inline">\(r\)</span> determines uniquely which <span class="math inline">\(k\)</span>-SAT problem to choose.</p>
+<p>If we can invert the above function <span class="math inline">\(f\)</span> (in polynomial time), we must already have solved the corresponding <span class="math inline">\(k\)</span>-SAT problem <span class="math inline">\(s\)</span> with a planted solution <span class="math inline">\(x\)</span>. <span class="math inline">\(k\)</span>-SAT problems are known to be NP-complete, and inverting such a function would be as hard as solving a <span class="math inline">\(k\)</span>-SAT problem with a planted solution, that is, inverting <span class="math inline">\(f\)</span> <em>at one point</em> can be hard. Clearly, should we have a one-way function, then inverting it is guaranteed to be no easier than inverting <span class="math inline">\(f\)</span>.</p>
+<p>So what does it mean if P ≠ NP? We know that <span class="math inline">\(k\)</span>-SAT problem is hard to solve in its <em>worst case</em>, so function <span class="math inline">\(f\)</span> can be made as hard to invert as solving a <span class="math inline">\(k\)</span>-SAT problem in its <em>worst case</em>. However, we don’t know whether it’s possible to have a class <span class="math inline">\(\mathcal{S}\)</span> of <span class="math inline">\(k\)</span>-SAT problems with planted solutions that are as hard as general-case <span class="math inline">\(k\)</span>-SAT problems. If such a class <span class="math inline">\(\mathcal{S}\)</span> exists, then given any <span class="math inline">\(s \in \mathcal{S}\)</span>, no probabilistic polynomial-time algorithm is able to get <span class="math inline">\(x\)</span> with a non-negligible probability, so we can conclude that <span class="math inline">\(f\)</span> is indeed a one-way function. <a href="#ref-selman1992survey"><span class="citation" data-cites="selman1992survey">[1]</span></a></p>
+<p><strong>Problem 1.1.</strong> Does there exist a class <span class="math inline">\(\mathcal{S}\)</span> of <span class="math inline">\(k\)</span>-SAT problems with planted solutions, such that every <span class="math inline">\(L \in \mathcal{S}\)</span> is NP-hard?</p>
+<p><strong>Conjecture 1.2.</strong> <em>If <span class="math inline">\(\mathrm{P} \neq \mathrm{NP}\)</span>, then one-way functions exist.</em></p>
+<p>On the other hand, assume that <span class="math inline">\(f\)</span> is a one-way function, so that one-way functions do exist, then this implies that <span class="math inline">\(k\)</span>-SAT problem is hard to solve (in its worse case) by a polynomial-time algorithm, thus we have P ≠ NP. By modus tollens, if P = NP, then no one-way function exists. <a href="#ref-abadi1990generating"><span class="citation" data-cites="abadi1990generating">[2]</span></a></p>
+<p><strong>Theorem 1.3.</strong> <em>If one-way functions exist, then <span class="math inline">\(\mathrm{P} \neq \mathrm{NP}\)</span>.</em></p>
+<p><em>Proof.</em> <em>(Sketch)</em> Let <span class="math inline">\(f : \{0,1\}^*\to\{0,1\}^*\)</span> be a one-way function. There is a polynomial-time algorithm <span class="math inline">\(M_f\)</span> that computes <span class="math inline">\(y=f(x)\)</span> for all <span class="math inline">\(x\)</span>, thus, there exists a polynomial-time computable circuit that outputs <span class="math inline">\(y=f(x)\)</span> for all <span class="math inline">\(x\)</span>.</p>
+<p>Since <span class="math inline">\(f\)</span> is a one-way function, that is, for every probabilistic polynomial-time algorithm <span class="math inline">\(\mathcal{A}\)</span>, there is a negligible function <span class="math inline">\(\mathsf{negl}\)</span> such that <span class="math inline">\(\Pr[\mathsf{Invert}_{\mathcal{A},f}(n) = 1] \leq \mathsf{negl}(n)\)</span>, so we know that no <span class="math inline">\(\mathcal{A}\)</span> can fully compute <span class="math inline">\(f^{-1}(x)\)</span> for any given <span class="math inline">\(x\)</span>. <span class="math inline">\(\mathcal{A}\)</span> fully computes <span class="math inline">\(f^{-1}\)</span> if and only if it solves the corresponding <code>CIRCUIT-SAT</code> problems of the circuit in all cases. Thus, there must exist some <code>CIRCUIT-SAT</code> problems that cannot be decided by a polynomial-time algorithm, therefore, <span class="math inline">\(\mathrm{P} \neq \mathrm{NP}\)</span>. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
+<p><em>Remark 1.4.</em> If one can come up with a construction of the one-way function or a proof that such functions exist, then it holds true that <span class="math inline">\(\mathrm{P} \neq \mathrm{NP}\)</span>.</p>
 </section>
 <section id="references-and-further-reading" class="level2">
-<h2>
-References and further reading
-</h2>
-<p>
-<strong>Books:</strong>
-</p>
-<p>
-T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, <em>Introduction to Algorithms</em>, 3rd ed.
-</p>
-<p>
-M. Sipser, <em>Introduction to the Theory of Computation</em>, 3rd ed.
-</p>
-<p>
-J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.
-</p>
-<p>
-<strong>Papers:</strong>
-</p>
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, <em>Introduction to Algorithms</em>, 3rd ed.</p>
+<p>M. Sipser, <em>Introduction to the Theory of Computation</em>, 3rd ed.</p>
+<p>J. Katz and Y. Lindell, <em>Introduction to Modern Cryptography</em>, 2nd ed.</p>
+<p><strong>Papers:</strong></p>
 <div id="refs" class="references">
 <div id="ref-selman1992survey">
-<p>
-[1] A. L. Selman, “A survey of one-way functions in complexity theory,” <em>Mathematical Systems Theory</em>, vol. 25, no. 3, pp. 203–221, 1992.
-</p>
+<p>[1] A. L. Selman, “A survey of one-way functions in complexity theory,” <em>Mathematical Systems Theory</em>, vol. 25, no. 3, pp. 203–221, 1992. </p>
 </div>
 <div id="ref-abadi1990generating">
-<p>
-[2] M. Abadi, E. Allender, A. Broder, J. Feigenbaum, and L. A. Hemachandra, “On generating solved instances of computational problems,” in <em>Proceedings on advances in cryptology</em>, 1990, pp. 297–310.
-</p>
+<p>[2] M. Abadi, E. Allender, A. Broder, J. Feigenbaum, and L. A. Hemachandra, “On generating solved instances of computational problems,” in <em>Proceedings on advances in cryptology</em>, 1990, pp. 297–310. </p>
 </div>
 </div>
 </section>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1">
-<p>
-<a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1">↩</a>
-</p>
-</li>
+<li id="fn1"><p><a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1">↩</a></p></li>
 </ol>
 </section>
+
 ]]>
     </content>
   </entry>
