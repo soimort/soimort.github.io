@@ -7,7 +7,7 @@ uri-prefix-edit:     https://github.com/soimort/soimort.github.io/edit/master
 
 feed:
   title:             Through the Looking-Glass
-  subtitle:          "Mort Yao's homepage"
+  subtitle:          "Mort's random blog."
   id-prefix:         tag:www.soimort.org,2017:/
   author-name:       Mort Yao
   author-email:      soi@mort.ninja
