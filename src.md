@@ -7,7 +7,7 @@ include-before: <link rel="stylesheet" href="/index.css">
 ---
 
 ![
-](https://i0.wp.com/dl.dropboxusercontent.com/s/teaxxcfwexga03y/header-170203.png){ width=36% }
+](https://i0.wp.com/dl.dropboxusercontent.com/s/croje3hsd5xp15l/header-170204.jpg){ width=42% }
 
 
 
