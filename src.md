@@ -32,6 +32,9 @@ include-before: <link rel="stylesheet" href="index.css">
 
 > Be obsessed with your goal. Don't be obsessed with your tool.
 
+* [New Semester, New Feed
+](/notes/170203/)
+*3 Feb 2017*
 * [Remember My Last Tabs, File Manager
 ](/notes/161208_caja/)
 *8 Dec 2016*

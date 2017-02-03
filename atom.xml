@@ -1,1 +1,78 @@
-feed.atom
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Through the Looking-Glass</title>
+  <subtitle>Mort Yao's homepage</subtitle>
+  <link rel="alternate" type="text/html" href="https://www.soimort.org/" />
+  <link rel="self" type="application/atom+xml" href="https://www.soimort.org/feed.atom" />
+  <id>tag:www.soimort.org,2017:/</id>
+  <updated>2017-02-03T00:00:00+01:00</updated>
+  <author>
+    <name>Mort Yao</name>
+    <email>soi@mort.ninja</email>
+  </author>
+
+  <entry>
+    <title>New Semester, New Feed</title>
+    <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/170203" />
+    <id>tag:www.soimort.org,2017:/notes/170203</id>
+    <published>2017-02-03T00:00:00+01:00</published>
+    <updated>2017-02-03T00:00:00+01:00</updated>
+    <author>
+      <name>Mort Yao</name>
+    </author>
+    <category term="news" />
+    <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
+<![CDATA[
+<p style="text-align:center !important;text-indent:0 !important">
+(This post is for readers of my old blog, prior to 2015.)
+</p>
+<p>
+Starting next week, my old feed address (<del><a href="http://www.soimort.org/atom.xml" class="uri">http://www.soimort.org/atom.xml</a></del>) is to be phased out.
+</p>
+<p>
+As some might be wondering, it’s not going to have any more of “fun” posts like it used to during 2011-2014 when I initialized this blog. Instead, it will be geared heavily towards serious Theoretical Computer Science. I’ll keep using this place to post my study notes, mostly related to courses I take or have taken. I have not written a real blog entry yet since I restarted this site in 2016, but planned to focus my future writings on:
+</p>
+<ul>
+<li>
+Mathematical logic, foundations of mathematics, formal languages and semantics, computability and complexity, and algorithmic information theory.
+</li>
+<li>
+Probability, statistics, game and decision theory, and (perhaps) a little about learning theory.
+</li>
+<li>
+(Hopefully) Philosophy of mathematics and intuitionism.
+</li>
+<li>
+Practical applications on various CS fields of interest, e.g., programming languages, cryptography, information security, image processing and computer vision.
+</li>
+</ul>
+<p>
+I guess I’ll also be writing on fine art, films and fictions when catching my breath, either in English or in Chinese, but they won’t be pushed to the main feed for sure.
+</p>
+<p>
+There will be:
+</p>
+<ul>
+<li>
+No more translated posts.
+</li>
+<li>
+No jibber jabber about personal life, or political bullshit.
+</li>
+<li>
+Fewer software tips and tricks, or “how-to hack this stuff” guides.
+</li>
+</ul>
+<p>
+You may still find my old fancy blog in the Internet wayback machine. DISRECOMMENDED. It’s like taking a blue pill and misstepping back into the safe zones.
+</p>
+<p>
+I assume that (for most readers) the new content of my blog is intended to bore (that’s why I’m killing the old feed now), but if you’re in any way interested, <em>welcome to the Wonderland</em>.
+</p>
+<p style="text-align:center !important;text-indent:0 !important">
+<a href="https://www.soimort.org/feed"><img src="https://i.imgur.com/FBn41NF.png" style="width:50.0%" /></a>
+</p>
+]]>
+    </content>
+  </entry>
+</feed>
