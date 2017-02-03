@@ -13,7 +13,7 @@ feed:
   author-email:      soi@mort.ninja
   file:              feed.atom
 feed-template:       feed-template.xml
-feed-yaml:           feed-cache.yaml
+feed-cache:          feed-cache.yaml
 
 template:            __/template.html
 source:              src.md
