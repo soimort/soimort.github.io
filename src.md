@@ -6,14 +6,12 @@ author:
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-![I'm in the gutter, but some of me are looking at the stars.
-](https://i0.wp.com/dl.dropboxusercontent.com/s/txssre677100u37/header-161224.jpg){ width=61.8% }
+![
+](https://i0.wp.com/dl.dropboxusercontent.com/s/teaxxcfwexga03y/header-170203.png){ width=36% }
 
 
 
 ## My Study Track
-
-> I know that I know nothing.
 
 * [The Measurable Entropy
 ](/mst/4/)
@@ -28,9 +26,16 @@ include-before: <link rel="stylesheet" href="index.css">
 ](/mst/1/)
 *1 Nov 2016*
 
-## Tech Notes
+<div style="text-align:right">
+<small>
 
-> Be obsessed with your goal. Don't be obsessed with your tool.
+[<i class="fa fa-edit" aria-hidden="true"></i>
+Wiki](https://wiki.soimort.org/)
+
+</small>
+</div>
+
+## Tech Notes
 
 * [New Semester, New Feed
 ](/notes/170203/)
@@ -43,8 +48,6 @@ include-before: <link rel="stylesheet" href="index.css">
 *17 Nov 2016*
 
 ## Art & Philosophy
-
-> Ex nihilo nihil fit.
 
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
@@ -72,8 +75,9 @@ Subscribe](https://www.soimort.org/feed.atom)
 | [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
 \
-<i class="fa fa-envelope" aria-hidden="true"></i>
-soi@mort.ninja
+**Mort X. Yao**
+&lt;<i class="fa fa-envelope" aria-hidden="true"></i>
+soi@mort.ninja&gt;
 | [<i class="fa fa-key" aria-hidden="true"></i>
 `07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 \
