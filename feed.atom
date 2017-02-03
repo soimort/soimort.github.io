@@ -5,7 +5,7 @@
   <link rel="alternate" type="text/html" href="https://www.soimort.org/" />
   <link rel="self" type="application/atom+xml" href="https://www.soimort.org/feed.atom" />
   <id>tag:www.soimort.org,2017:/</id>
-  <updated>2017-01-11</updated>
+  <updated>2017-01-11T00:00:00+01:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
@@ -15,8 +15,8 @@
     <title>The Measurable Entropy</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/mst/4" />
     <id>tag:www.soimort.org,2017:/mst/4</id>
-    <published>2017-01-11</published>
-    <updated>2017-01-14</updated>
+    <published>2017-01-11T00:00:00+01:00</published>
+    <updated>2017-01-14T00:00:00+01:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
@@ -278,8 +278,8 @@ T. M. Cover and J. A. Thomas. <em>Elements of Information Theory</em>, 2nd ed.
     <title>The Adversarial Computation</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/mst/3" />
     <id>tag:www.soimort.org,2017:/mst/3</id>
-    <published>2017-01-01</published>
-    
+    <published>2017-01-01T00:00:00+01:00</published>
+    <updated>2017-01-01T00:00:00+01:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
@@ -673,8 +673,8 @@ R. L. Benson, “The Venona story.” <a href="https://www.nsa.gov/about/cryptol
     <title>The Probable Outcome</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/mst/2" />
     <id>tag:www.soimort.org,2017:/mst/2</id>
-    <published>2016-12-23</published>
-    
+    <published>2016-12-23T00:00:00+01:00</published>
+    <updated>2016-12-23T00:00:00+01:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
@@ -1085,8 +1085,8 @@ M. Baron, <em>Probability and Statistics for Computer Scientists</em>, 2nd ed.
     <title>Remember My Last Tabs, File Manager</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/161208_caja" />
     <id>tag:www.soimort.org,2017:/notes/161208_caja</id>
-    <published>2016-12-08</published>
-    <updated>2016-12-13</updated>
+    <published>2016-12-08T00:00:00+01:00</published>
+    <updated>2016-12-13T00:00:00+01:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
@@ -1207,8 +1207,8 @@ And here goes the patch: (Applied to Caja 1.16.1; definitely UNWARRANTED)
     <title>Boilerplating Pandoc for Academic Writing</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/161117_pandoc" />
     <id>tag:www.soimort.org,2017:/notes/161117_pandoc</id>
-    <published>2016-11-17</published>
-    
+    <published>2016-11-17T00:00:00+01:00</published>
+    <updated>2016-11-17T00:00:00+01:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
@@ -1476,8 +1476,8 @@ Semantically, they are not recognized as theorems, just normal text paragraphs. 
     <title>The Decisional Hardness</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/mst/1" />
     <id>tag:www.soimort.org,2017:/mst/1</id>
-    <published>2016-11-01</published>
-    <updated>2016-11-20</updated>
+    <published>2016-11-01T00:00:00+01:00</published>
+    <updated>2016-11-20T00:00:00+01:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
