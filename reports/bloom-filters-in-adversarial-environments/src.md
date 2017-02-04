@@ -3,7 +3,6 @@ title: Bloom Filters in Adversarial Environments
 subtitle: Reading report
 author: Mort Yao
 date: 2016-11-15
-category: cryptography
 ---
 
 [+]

@@ -558,7 +558,7 @@ Notice that
     <author>
       <name>Mort Yao</name>
     </author>
-    
+    <category term="tooling" />
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
 <p>It’s 2016, and I can’t believe that there is still no “Continue where you left off” option in most dominant GUI file managers (as far as I know)!</p>
@@ -621,7 +621,7 @@ Notice that
     <author>
       <name>Mort Yao</name>
     </author>
-    
+    <category term="tooling" />
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
 <p>For starters, this is how you might want to turn your well-written Markdown file (with common metadata fields like <code>title</code>, <code>author</code> and <code>date</code>) into a properly typeset PDF document:</p>
@@ -769,7 +769,7 @@ Man is a rational animal.
     <author>
       <name>Mort Yao</name>
     </author>
-    <category term="cryptography" />
+    
     <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
 <![CDATA[
 <p><p style='background-color:yellow'> This is an expository reading summary of a selected <a href="https://eprint.iacr.org/2015/543.pdf">CRYPTO 2015 paper</a> I did as an assignment in KU’s <a href="http://kurser.ku.dk/course/nscphd1080/2016-2017">Introduction to Modern Cryptography</a> course. Adversarial-resilient Bloom filters are the counterparts of cryptographically secure hash functions in an adversarial setting, where adaptive adversaries that have access to a deterministic or non-deterministic query oracle may challenge the data structure in a way that intentionally increases the false positive rate of querying. As a preliminary result, this paper shows that the resistance of Bloom filters against computationally bounded adversaries requires that <a href="/mst/1/#p-versus-np-problem-and-one-way-functions">one-way functions exist</a>; furthermore, such constructions are possible using pseudorandom permutations. I do find the proof a bit involved, but the notions of security introduced for Bloom filters are new and appealing (which I haven’t read previously anywhere else).<br />

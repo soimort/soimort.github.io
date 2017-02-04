@@ -3,6 +3,7 @@ title: Remember My Last Tabs, File Manager
 author: Mort Yao
 date: 2016-12-08
 date-updated: 2016-12-13
+category: tooling
 ---
 
 It's 2016, and I can't believe that there is still no "Continue where you left off" option in most dominant GUI file managers (as far as I know)!
