@@ -35,6 +35,12 @@ Wiki](https://wiki.soimort.org/)
 </small>
 </div>
 
+## Reading Reports
+
+* [[CRYPTO 2015 Paper] Bloom Filters in Adversarial Environments
+](/reports/bloom-filters-in-adversarial-environments/)
+*15 Nov 2016*
+
 ## Tech Notes
 
 * [Remember My Last Tabs, File Manager
