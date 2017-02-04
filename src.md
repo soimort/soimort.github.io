@@ -1,12 +1,12 @@
 ---
 title: Through the Looking-Glass
-subtitle: Mort's random blog.
-author:
+subtitle:
+author: Mort Yao
 
 include-before: <link rel="stylesheet" href="/index.css">
 ---
 
-![
+!["*Memento Mori.*"
 ](https://i0.wp.com/dl.dropboxusercontent.com/s/croje3hsd5xp15l/header-170204.jpg){ width=42% }
 
 
@@ -78,7 +78,7 @@ Subscribe](https://www.soimort.org/feed.atom)
 | [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
 \
-**Mort X. Yao**
+**Mort Yao**
 &lt;<i class="fa fa-envelope" aria-hidden="true"></i>
 soi@mort.ninja&gt;
 | [<i class="fa fa-key" aria-hidden="true"></i>

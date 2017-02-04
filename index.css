@@ -63,3 +63,8 @@ aside#soimort-links #soimort {
 aside#soimort-toolbar {
   visibility: hidden;
 }
+
+address {
+  height: 0;
+  visibility: hidden;
+}
