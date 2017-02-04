@@ -37,9 +37,6 @@ Wiki](https://wiki.soimort.org/)
 
 ## Tech Notes
 
-* [New Semester, New Feed
-](/notes/170203/)
-*3 Feb 2017*
 * [Remember My Last Tabs, File Manager
 ](/notes/161208/)
 *8 Dec 2016*
