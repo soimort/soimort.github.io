@@ -26,8 +26,8 @@ I might be writing one or two blog posts about cryptographic security from an in
     * How to resolve the *regress problem* that the justification of knowledge loops?
         * In **foundationalism**, a statement is inferred from a basis of unprovably sound premises.
             * This approach leads to the (axiomatic) foundations of mathematics and the constructivism.
-            * The fundamentals of modern *mathematics* is the *axiomatic set theory* (which has several variations with different sets of axioms).
-            * The fundamentals of modern *probability theory* is the *Kolmogorov axioms*.
+            * The fundamentals of modern *mathematics* are the *axiomatic set theory* (which has several variations with different sets of axioms).
+            * The fundamentals of modern *probability theory* are the *Kolmogorov axioms*.
             * The computational hardness assumptions in cryptography may also be seen as a practice of foundationalism.
         * In **coherentism**, a statement holds true as long as it coheres with all other justified beliefs, including itself.
         * In **infinitism**, a justification chain is allowed to be infinite, thus there could never be adequate justification for any statement in the chain (which is the point that it is often criticized for).
