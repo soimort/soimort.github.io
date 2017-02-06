@@ -35,7 +35,7 @@ I might be writing one or two blog posts about cryptographic security from an in
         * **Knowledge** is *justified true belief*. (though questioned by the *Gettier problem* [@gettier1963justified])
     * How do we categorize our knowledge?
         * **A priori** knowledge is independent of empirical evidence. Examples: knowledge deduced by logical deductions or mathematical proofs.
-        * **A posteriori** is dependent of empirical evidence. Examples: knowledge induced by statistical inference or learning (either human or machine learning).
+        * **A posteriori** knowledge is dependent of empirical evidence. Examples: knowledge induced by statistical inference or learning (either human or machine learning).
     * **Science** is the approach to filter out unreliable knowledge and gather together reliable knowledge as a **theory**.
     * What qualifies as a science?
         * See the *demarcation problem*.
