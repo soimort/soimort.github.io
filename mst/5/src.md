@@ -23,7 +23,7 @@ I might be writing one or two blog posts about cryptographic security from an in
         * **Empiricism** claims that knowledge comes from empirical evidence.
         * **Rationalism** claims that knowledge requires justification by reasoning.
         * **Skepticism** rejects the certainty in knowledge and claims that it is impossible to have an adequate justification of knowledge.
-    * How to resolve the *regress problem* that the justification of knowledge loops?
+    * How to resolve the *regress problem* that the justification of knowledge is questioned ad infinitum?
         * In **foundationalism**, a statement is inferred from a basis of unprovably sound premises.
             * This approach leads to the (axiomatic) foundations of mathematics and the constructivism.
             * The fundamentals of modern *mathematics* are the *axiomatic set theory* (which has several variations with different sets of axioms).
