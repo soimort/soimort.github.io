@@ -13,6 +13,9 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 ## My Study Track
 
+* [The Fundamental Justification
+](/mst/5/)
+*6 Feb 2017*
 * [The Measurable Entropy
 ](/mst/4/)
 *11 Jan 2017*
