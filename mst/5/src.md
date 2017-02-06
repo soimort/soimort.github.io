@@ -40,7 +40,7 @@ I might be writing one or two blog posts about cryptographic security from an in
     * What qualifies as a science?
         * See the *demarcation problem*.
     * Scientific discovery is made of **hypotheses**. A hypothesis is a proposed explanation or prediction method for a phenomenon.
-        * Only formally proved or statistically tested hypotheses qualifies as reliable knowledge.
+        * Only formally proved or statistically tested hypotheses qualify as reliable knowledge.
         * **Epicurus' principle of multiple explanations**: If multiple hypotheses are consistent with the observations, one should retain them all.
         * **Occam's razor**: Among all hypotheses consistent with the observations, choose the simplest.
         * Epicurus' principle of multiple explanations and Occam's razor find their uses in the learning theory, e.g., Occam's razor bound.
