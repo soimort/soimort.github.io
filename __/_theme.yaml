@@ -21,8 +21,8 @@ filters:
   - pandoc-citeproc
 raw-options: [
   --section-divs,
-  --smart,
   --mathjax,
   ]
+input-format: markdown+smart # produce typographically correct output
 output-format: html5
 ---
