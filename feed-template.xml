@@ -14,7 +14,7 @@
 $for(entry)$
   <entry>
     <title>$entry.title$</title>
-    <link rel="alternate" type="text/html" href="$canonical$$entry.id$" />
+    <link rel="alternate" type="text/html" href="$if(entry.link)$$entry.link$$else$$canonical$$entry.id$$endif$" />
     <id>$feed.id-prefix$$entry.id$</id>
     <published>$entry.published$</published>
     <updated>$if(entry.updated)$$entry.updated$$else$$entry.published$$endif$</updated>
