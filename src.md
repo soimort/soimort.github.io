@@ -38,13 +38,13 @@ Wiki](https://wiki.soimort.org/)
 </small>
 </div>
 
-## Reading Reports
+## Notes
 
 * [[CRYPTO 2015 Paper] Bloom Filters in Adversarial Environments
 ](/reports/bloom-filters-in-adversarial-environments/)
 *15 Nov 2016*
 
-## Tech Notes
+## Technical Notes
 
 * [Remember My Last Tabs, File Manager
 ](/notes/161208/)
@@ -53,7 +53,13 @@ Wiki](https://wiki.soimort.org/)
 ](/notes/161117/)
 *17 Nov 2016*
 
-## Art & Philosophy
+## Math & Computation **/Blog**
+
+* [What I Wish I Knew When Learning Boolean Circuits
+](https://blog.soimort.org/comp/c/boolean-circuit/)
+***New** 24 Feb 2017*
+
+## Art & Philosophy **/Blog**
 
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
