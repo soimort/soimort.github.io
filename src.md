@@ -40,6 +40,9 @@ Wiki](https://wiki.soimort.org/)
 
 ## Notes
 
+* [An Intuitive Exposition of "Proof by Contradiction vs. Proof of Negation"
+](/notes/170306/)
+***New** 6 Mar 2017*
 * [[CRYPTO 2015 Paper] Bloom Filters in Adversarial Environments
 ](/reports/bloom-filters-in-adversarial-environments/)
 *15 Nov 2016*
