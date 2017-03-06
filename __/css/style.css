@@ -1,6 +1,7 @@
 /* Akai theme (pandoc HTML5 template)
  * designer:     soimort
  * last updated: 2016-12-24
+ * last adapted: 2017-03-06
  */
 
 /* General */
@@ -107,6 +108,10 @@ article {
 header {
   text-align: center;
   font-variant: small-caps;
+}
+
+header .title {
+  line-height: 1.25em;
 }
 
 header .subtitle {
