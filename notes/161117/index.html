@@ -53,11 +53,11 @@
 <p>I wouldn’t claim that I know the best practice of using Pandoc, but there’s such a common idiom that cannot be overstressed: <em>Separate presentation and content!</em></p>
 <p>In the YAML front matter of <code>src.md</code> (the main Markdown file you’re writing), put only things that matter to your potential readers:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
-<span class="fu">title:</span> Boilerplating Pandoc for Academic Writing
-<span class="fu">subtitle:</span> or How I Learned to Stop Typesetting and Concentrate on the Math
-<span class="fu">author:</span> Mort Yao
-<span class="fu">date:</span> 17 November 2016
-<span class="fu">abstract:</span> |
+<span class="fu">title:</span><span class="at"> Boilerplating Pandoc for Academic Writing</span>
+<span class="fu">subtitle:</span><span class="at"> or How I Learned to Stop Typesetting and Concentrate on the Math</span>
+<span class="fu">author:</span><span class="at"> Mort Yao</span>
+<span class="fu">date:</span><span class="at"> 17 November 2016</span>
+<span class="fu">abstract:</span><span class="at"> |</span>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit,
   sed do eiusmod tempor incididunt ut labore et dolore magna
   aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -65,9 +65,9 @@
 <span class="ot">---</span></code></pre></div>
 <p>And in a separate YAML file (let’s call it <code>default.yaml</code>), here goes the formatting stuff:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
-<span class="fu">geometry:</span> margin=1.5in
-<span class="fu">indent:</span> true
-<span class="fu">header-includes:</span> |
+<span class="fu">geometry:</span><span class="at"> margin=1.5in</span>
+<span class="fu">indent:</span><span class="at"> true</span>
+<span class="fu">header-includes:</span><span class="at"> |</span>
   \usepackage<span class="kw">{</span>tcolorbox<span class="kw">}</span>
   \newcommand\qed<span class="kw">{</span>\hfill\rule{1em<span class="kw">}{</span>1em<span class="kw">}</span>}
 <span class="ot">---</span></code></pre></div>
@@ -114,8 +114,8 @@
 </ul></li>
 </ul>
 <p>As part of the YAML metadata: (Assume you have <code>ieee.csl</code> and <code>references.bib</code>)</p>
-<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">csl:</span> ieee.csl
-<span class="fu">bibliography:</span> references.bib</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">csl:</span><span class="at"> ieee.csl</span>
+<span class="fu">bibliography:</span><span class="at"> references.bib</span></code></pre></div>
 <p>Using <code>pandoc-citeproc</code> as a filter, generate the document with citations:</p>
 <pre><code>$ pandoc <span class="do">--filter pandoc-citeproc</span> -H header.tex default.yaml src.md -o out.pdf</code></pre>
 <p>The list of references is appended to the end of the document. It is often desirable to give the references an obvious title (“References”), start from a new page and avoid any further indentation, so the following comes in the end of the Markdown source:</p>
