@@ -53,7 +53,7 @@ I would say it's too much of a philosophical choice between classical logic and 
 
 
 
-# References
+## References
 
 [1] Andrzej Filinski, "Course Notes for Semantics and Types, Lecture 1: Logic".
 
