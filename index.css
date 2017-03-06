@@ -21,6 +21,11 @@ section h2 {
   font-variant: small-caps;
 }
 
+section h2 strong {
+  font-size: .75em;
+  opacity: .5;
+}
+
 section blockquote {
   margin: 0;
   text-align: right;
@@ -37,6 +42,13 @@ section li em {
 
   font-size: .8em;
   font-style: normal;
+}
+
+section li em strong {
+  background-color: firebrick;
+  color: white;
+  padding: 6px 10px 4px;
+  border-radius: 5px;
 }
 
 div#content hr {
