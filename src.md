@@ -60,7 +60,7 @@ Wiki](https://wiki.soimort.org/)
 
 * [What I Wish I Knew When Learning Boolean Circuits
 ](https://blog.soimort.org/comp/c/boolean-circuit/)
-***New** 24 Feb 2017*
+*24 Feb 2017*
 
 ## Art & Philosophy **/Blog**
 
