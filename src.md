@@ -42,13 +42,15 @@ Wiki](https://wiki.soimort.org/)
 
 * [An Intuitive Exposition of "Proof by Contradiction vs. Proof of Negation"
 ](/notes/170306/)
-***New** 6 Mar 2017*
+*6 Mar 2017*
 * [[CRYPTO 2015 Paper] Bloom Filters in Adversarial Environments
 ](/reports/bloom-filters-in-adversarial-environments/)
 *15 Nov 2016*
 
 ## Technical Notes
 
+* [A Pandoc Filter for Typesetting Operational Semantics](/notes/170323/)
+***New** 24 Mar 2017*
 * [Remember My Last Tabs, File Manager
 ](/notes/161208/)
 *8 Dec 2016*
@@ -77,7 +79,7 @@ Wiki](https://wiki.soimort.org/)
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Poetry](http://poetry.soimort.org/)
 \
-(Personal, graphical and potentially NSFW stuff)
+*(Personal, graphical and potentially NSFW stuff)* &nbsp;
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
@@ -90,9 +92,8 @@ Subscribe](https://www.soimort.org/feed.atom)
 | [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
 \
-**Mort Yao**
-&lt;<i class="fa fa-envelope" aria-hidden="true"></i>
-soi@mort.ninja&gt;
+<i class="fa fa-envelope" aria-hidden="true"></i>
+soi@mort.ninja
 | [<i class="fa fa-key" aria-hidden="true"></i>
 `07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 \
