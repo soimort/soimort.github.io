@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- Akai (pandoc HTML5 template)
+     designer:     soimort
+     last updated: 2016-05-06
+     last adapted: 2016-11-01 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mort Yao">
+    <meta name="dcterms.date" content="2017-03-23">
+    <title>A Pandoc Filter for Typesetting Operational Semantics</title>
+    <link rel="canonical" href="https://www.soimort.org/notes/170323">
+    <style type="text/css">code { white-space: pre; }</style>
+    <link rel="stylesheet" href="//cdn.soimort.org/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.soimort.org/fonts/latest/URW-Palladio-L.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/__/css/style.css">
+    <link rel="stylesheet" href="/__/css/pygments.css">
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.soimort.org/jk/20160504/jk.min.js"></script>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 class="title"><a href="https://www.soimort.org/notes/170323">A Pandoc Filter for Typesetting Operational Semantics</a></h1>
+        <address class="author">Mort Yao</address>
+        <h3 class="date">2017-03-23</h3>
+      </header>
+      <div id="content">
+<p>Recently I decided to make my life a little easier by simplifying the laborious, tedious math typing that I had to do from time to time. For me this is most relevant for typesetting the formal semantics of programming languages, where proof trees are interwoven with a variety of programming constructs. Here’s my initial intention: To typeset something like (in big-step semantics) <span class="math display">\[
+\frac{
+  \stackrel{\mathcal{E}_0}
+  {\langle b, \sigma \rangle \downarrow \textbf{true}} \qquad
+  \stackrel{\mathcal{E}_1}
+  {\langle c_0, \sigma \rangle \downarrow \sigma&#39;&#39;} \qquad
+  \stackrel{\mathcal{E}_2}
+  {\langle \textbf{while } b \textbf{ do } c_0, \sigma&#39;&#39; \rangle \downarrow \sigma&#39;}}{
+  \langle \textbf{while } b \textbf{ do } c_0, \sigma \rangle \downarrow \sigma&#39;}
+\]</span> Instead of the bloated TeX syntax:</p>
+<div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">  <span class="fu">\frac</span>{
+    <span class="fu">\stackrel</span>{<span class="fu">\mathcal</span>{E}_0}
+    {<span class="fu">\langle</span> b, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\textbf</span>{true}} <span class="fu">\qquad</span>
+    <span class="fu">\stackrel</span>{<span class="fu">\mathcal</span>{E}_1}
+    {<span class="fu">\langle</span> c_0, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;&#39;} <span class="fu">\qquad</span>
+    <span class="fu">\stackrel</span>{<span class="fu">\mathcal</span>{E}_2}
+    {<span class="fu">\langle</span> <span class="fu">\textbf</span>{while } b <span class="fu">\textbf</span>{ do } c_0, <span class="fu">\sigma</span>&#39;&#39; <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;}}{
+    <span class="fu">\langle</span> <span class="fu">\textbf</span>{while } b <span class="fu">\textbf</span>{ do } c_0, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;}</code></pre></div>
+<p>I could just write it more neatly, intuitively, without all those hexes in magic backslashes and braces:</p>
+<pre><code>  &lt;b, sig&gt; ! true                 -- E_0
+  &lt;c_0, sig&gt; ! sig&#39;&#39;              -- E_1
+  &lt;while b do c_0, sig&#39;&#39;&gt; ! sig&#39;  -- E_2
+  ----
+  &lt;while b do c_0, sig&gt; ! sig&#39;</code></pre>
+<p>But, of course, preserving the nice-looking outcome (from either TeX or MathJax).</p>
+<p>Besides natural derivations, we also got a lot of evidently agreeable conventions for typesetting general mathematics: parentheses (brackets, braces) are almost always paired; “<code>\left</code>” and “<code>\right</code>” are very often desired since <span class="math inline">\(\left[\frac{1}{2}\right]\)</span> is a bit less awkward than <span class="math inline">\([\frac{1}{2}]\)</span>; when referring to a function name, “<code>\operatorname</code>” looks aesthetically better; etc. Furthermore, if we write down some math notations in plain text, clearly, “<code>=&gt;</code>” has to be a “<span class="math inline">\(\Rightarrow\)</span>” and “<code>|-&gt;</code>” has to be a “<span class="math inline">\(\mapsto\)</span>”; “<code>|-</code>” means “<span class="math inline">\(\vdash\)</span>” and “<code>|=</code>” means “<span class="math inline">\(\vDash\)</span>”; a standalone letter “<code>N</code>” is just <span class="math inline">\(\mathbb{N}\)</span>; etc. Taking all these matters into consideration, there could be some handy alternative syntax (I call it “lazybones’ syntax”) for typesetting formulas, at least for a specific field someone specializes in, where these conventions are consistent:</p>
+<table style="width:75%;">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 27%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Typesetting outcome</th>
+<th>Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Provability</td>
+<td><span class="math inline">\(\Gamma \vdash \varphi\)</span></td>
+<td><strong>TeX:</strong><br> <code>$\Gamma \vdash \varphi$</code> <br> <strong>Lazybones’:</strong><br> <code>$Gam |- phi$</code></td>
+</tr>
+<tr class="even">
+<td>Validity</td>
+<td><span class="math inline">\(\Gamma \vDash \varphi\)</span></td>
+<td><strong>TeX:</strong><br> <code>$\Gamma \vDash \varphi$</code> <br> <strong>Lazybones’:</strong><br> <code>$Gam |= phi$</code></td>
+</tr>
+<tr class="odd">
+<td>Big-step semantics</td>
+<td><span class="math inline">\(\langle b_0 \land b_1, \sigma \rangle \downarrow t\)</span></td>
+<td><strong>TeX:</strong><br> <code>$\langle b_0 \land b_1, \sigma</code><br><code>\rangle \downarrow t$</code> <br> <strong>Lazybones’:</strong><br> <code>$&lt;b_0 &amp;&amp; b_1, sig&gt; ! t$</code></td>
+</tr>
+<tr class="even">
+<td>Small-step semantics</td>
+<td><span class="math inline">\(\sigma \vdash b_0 \land b_1 \to^* t\)</span></td>
+<td><strong>TeX:</strong><br> <code>$\sigma \vdash b_0 \land b_1</code><br><code>\to^* t$</code> <br> <strong>Lazybones’:</strong><br> <code>$sig |- b_0 &amp;&amp; b_1 -&gt;* t$</code></td>
+</tr>
+<tr class="odd">
+<td>Hoare logic</td>
+<td><span class="math inline">\(\vdash \{A\} \textbf{if } b \textbf{ then } c_0 \textbf{ else } c_1 \{B\}\)</span></td>
+<td><strong>TeX:</strong><br> <code>$\vdash \{A\} \textbf{if } b</code><br><code>\textbf{ then } c_0</code><br><code>\textbf{ else } c_1 \{B\}$</code> <br> <strong>Lazybones’:</strong><br> <code>$|- &lt;[A]&gt; if b then c_0</code><br><code>else c_1 &lt;[B]&gt;$</code></td>
+</tr>
+<tr class="even">
+<td>Denotational semantics</td>
+<td><span class="math inline">\(\mathcal{C}[\![X:=a]\!] = \lambda \sigma . \eta (\sigma[X \mapsto \mathcal{A}[\![a]\!] \sigma])\)</span></td>
+<td><strong>TeX:</strong><br> <code>$\mathcal{C}[\![X:=a]\!] =</code><br><code>\lambda \sigma . \eta</code><br><code>(\sigma[X \mapsto</code><br><code>\mathcal{A}[\![a]\!] \sigma])$</code> <br> <strong>Lazybones’:</strong><br> <code>$C[[X:=a]] = lam sig . eta</code><br><code>(sig[X |-&gt; A[[a]] sig])$</code></td>
+</tr>
+</tbody>
+</table>
+<p>For simplicity, we require that such conventions are <em>regular</em>, i.e., “lazybones’ syntax” may be translated into plain TeX using merely substitutions of regular expressions.</p>
+<p>Let’s consider angle brackets, for which we desire to type in simply “<code>&lt;</code>” and “<code>&gt;</code>” instead of “<code>\langle</code>” and “<code>\rangle</code>”. To avoid any ambiguity (with normal less-than or greater-than sign), it is required that such brackets have no internal spacing, that is, we write “<code>&lt;x, y&gt;</code>” rather than “<code>&lt; x, y &gt;</code>”, but “<code>a &lt; b</code>” instead of “<code>a&lt;b</code>”. Once we fix the transformation rules, implementation would be quite straightforward in Haskell, if we want a pandoc filter to handle these substitutions for everything written in TeX math mode:</p>
+<div class="sourceCode"><pre class="sourceCode hs"><code class="sourceCode haskell">subLAngle s <span class="fu">=</span>
+  subRegex (mkRegex <span class="st">&quot;&lt;([^[:blank:]])&quot;</span>) s <span class="fu">$</span> <span class="st">&quot;\\langle \\1&quot;</span>
+subRAngle s <span class="fu">=</span>
+  subRegex (mkRegex <span class="st">&quot;([^[:blank:]])&gt;&quot;</span>) s <span class="fu">$</span> <span class="st">&quot;\\1\\rangle &quot;</span></code></pre></div>
+<p>So, why bother implementing a pandoc filter rather than just defining some TeX macros? Two main reasons:</p>
+<ol type="1">
+<li>TeX code is nontrivial to write. And you can’t get rid of the ugly backslashes anyway. It would be very hard, if not impossible, to achieve the same thing that you’d do with a pandoc filter. (I would say that TeX is rather fine for <em>typesetting</em>, but <em>only</em> for typesetting; actual programming in TeX seems very awkward for me.)</li>
+<li>TeX macros are just… some code in TeX, which means that you can’t (easily) get it to work for other output formats, especially HTML with MathJax. So if you do a lot of heavy lifting with TeX macros, they won’t play well for display on the Web.</li>
+</ol>
+<p>Surely you can write pandoc filters in <em>any</em> language as you like (officially Haskell and Python). Nothing like plain TeX: they’re easier to implement, unrestricted in the way that they interact with input documents, with a great deal of cool supporting libraries even to blow up the earth. Although here in this case, we are only using some regular expressions to ease our typesetting for operational semantics.</p>
+<p>A proof-of-concept of this idea is <a href="https://github.com/soimort/pandoc-filters/blob/aad6033dfbd7d460d22aa627e04ca388f72af020/semtype.hs">semtype.hs</a>. While undocumented, all tricks it does should be clear from the regular expressions.</p>
+      </div>
+      <!-- (www.soimort.org) last updated: 2016-05-07 -->
+      <aside id="soimort-toolbar">
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </aside>
+    </article>
+  </body>
+</html>
