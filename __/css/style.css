@@ -1,7 +1,7 @@
 /* Akai theme (pandoc HTML5 template)
  * designer:     soimort
  * last updated: 2016-12-24
- * last adapted: 2017-03-06
+ * last adapted: 2017-03-24
  */
 
 /* General */
@@ -126,6 +126,8 @@ header address.author {
 
 header .date {
   font-size: .75em;
+  font-variant: normal;
+  font-weight: normal;
 }
 
 div#content {
