@@ -38,20 +38,22 @@
 <p>Recently I decided to make my life a little easier by simplifying the laborious, tedious math typing that I had to do from time to time. For me this is most relevant for typesetting the formal semantics of programming languages, where proof trees are interwoven with a variety of programming constructs. Here’s my initial intention: To typeset something like (in big-step semantics) <span class="math display">\[
 \frac{
   \stackrel{\mathcal{E}_0}
-  {\langle b, \sigma \rangle \downarrow \textbf{true}} \qquad
+    {\langle b, \sigma \rangle \downarrow \textbf{true}} \qquad
   \stackrel{\mathcal{E}_1}
-  {\langle c_0, \sigma \rangle \downarrow \sigma&#39;&#39;} \qquad
+    {\langle c_0, \sigma \rangle \downarrow \sigma&#39;&#39;} \qquad
   \stackrel{\mathcal{E}_2}
-  {\langle \textbf{while } b \textbf{ do } c_0, \sigma&#39;&#39; \rangle \downarrow \sigma&#39;}}{
-  \langle \textbf{while } b \textbf{ do } c_0, \sigma \rangle \downarrow \sigma&#39;}
+    {\langle \textbf{while } b \textbf{ do } c_0, \sigma&#39;&#39; \rangle \downarrow \sigma&#39;}
+  }{
+    \langle \textbf{while } b \textbf{ do } c_0, \sigma \rangle \downarrow \sigma&#39;}
 \]</span> Instead of the bloated TeX syntax:</p>
 <div class="sourceCode"><pre class="sourceCode latex"><code class="sourceCode latex">  <span class="fu">\frac</span>{
     <span class="fu">\stackrel</span>{<span class="fu">\mathcal</span>{E}_0}
-    {<span class="fu">\langle</span> b, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\textbf</span>{true}} <span class="fu">\qquad</span>
+      {<span class="fu">\langle</span> b, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\textbf</span>{true}} <span class="fu">\qquad</span>
     <span class="fu">\stackrel</span>{<span class="fu">\mathcal</span>{E}_1}
-    {<span class="fu">\langle</span> c_0, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;&#39;} <span class="fu">\qquad</span>
+      {<span class="fu">\langle</span> c_0, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;&#39;} <span class="fu">\qquad</span>
     <span class="fu">\stackrel</span>{<span class="fu">\mathcal</span>{E}_2}
-    {<span class="fu">\langle</span> <span class="fu">\textbf</span>{while } b <span class="fu">\textbf</span>{ do } c_0, <span class="fu">\sigma</span>&#39;&#39; <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;}}{
+      {<span class="fu">\langle</span> <span class="fu">\textbf</span>{while } b <span class="fu">\textbf</span>{ do } c_0, <span class="fu">\sigma</span>&#39;&#39; <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;}
+  }{
     <span class="fu">\langle</span> <span class="fu">\textbf</span>{while } b <span class="fu">\textbf</span>{ do } c_0, <span class="fu">\sigma</span> <span class="fu">\rangle</span> <span class="fu">\downarrow</span> <span class="fu">\sigma</span>&#39;}</code></pre></div>
 <p>I could just write it more neatly, intuitively, without all those hexes in magic backslashes and braces:</p>
 <pre><code>  &lt;b, sig&gt; ! true                 -- E_0
@@ -60,7 +62,7 @@
   ----
   &lt;while b do c_0, sig&gt; ! sig&#39;</code></pre>
 <p>But, of course, preserving the nice-looking outcome (from either TeX or MathJax).</p>
-<p>Besides natural derivations, we also got a lot of evidently agreeable conventions for typesetting general mathematics: parentheses (brackets, braces) are almost always paired; “<code>\left</code>” and “<code>\right</code>” are very often desired since <span class="math inline">\(\left[\frac{1}{2}\right]\)</span> is a bit less awkward than <span class="math inline">\([\frac{1}{2}]\)</span>; when referring to a function name, “<code>\operatorname</code>” looks aesthetically better; etc. Furthermore, if we write down some math notations in plain text, clearly, “<code>=&gt;</code>” has to be a “<span class="math inline">\(\Rightarrow\)</span>” and “<code>|-&gt;</code>” has to be a “<span class="math inline">\(\mapsto\)</span>”; “<code>|-</code>” means “<span class="math inline">\(\vdash\)</span>” and “<code>|=</code>” means “<span class="math inline">\(\vDash\)</span>”; a standalone letter “<code>N</code>” is just <span class="math inline">\(\mathbb{N}\)</span>; etc. Taking all these matters into consideration, there could be some handy alternative syntax (I call it “lazybones’ syntax”) for typesetting formulas, at least for a specific field someone specializes in, where these conventions are consistent:</p>
+<p>Besides natural derivations, we also got a lot of evidently agreeable conventions for typesetting general mathematics: parentheses (brackets, braces) are almost always paired; “<code>\left</code>” and “<code>\right</code>” are very often desired since <span class="math inline">\(\left[\frac{1}{2}\right]\)</span> is a bit less awkward than <span class="math inline">\([\frac{1}{2}]\)</span>; when referring to a function name, “<code>\operatorname</code>” looks aesthetically better; etc. Furthermore, if we write down some math notations in plain text, clearly, “<code>=&gt;</code>” has to be a “<span class="math inline">\(\Rightarrow\)</span>” and “<code>|-&gt;</code>” has to be a “<span class="math inline">\(\mapsto\)</span>”; “<code>|-</code>” means “<span class="math inline">\(\vdash\)</span>” and “<code>|=</code>” means “<span class="math inline">\(\vDash\)</span>”; a standalone letter “<code>N</code>” is just <span class="math inline">\(\mathbb{N}\)</span>; etc. Taking such matters into consideration, there could be some handy alternative syntax (I call it “lazybones’ syntax”) for typesetting formulas, at least for a specific field someone specializes in, where these conventions are consistent:</p>
 <table style="width:75%;">
 <colgroup>
 <col style="width: 23%" />
@@ -107,19 +109,24 @@
 </tr>
 </tbody>
 </table>
-<p>For simplicity, we require that such conventions are <em>regular</em>, i.e., “lazybones’ syntax” may be translated into plain TeX using merely substitutions of regular expressions.</p>
-<p>Let’s consider angle brackets, for which we desire to type in simply “<code>&lt;</code>” and “<code>&gt;</code>” instead of “<code>\langle</code>” and “<code>\rangle</code>”. To avoid any ambiguity (with normal less-than or greater-than sign), it is required that such brackets have no internal spacing, that is, we write “<code>&lt;x, y&gt;</code>” rather than “<code>&lt; x, y &gt;</code>”, but “<code>a &lt; b</code>” instead of “<code>a&lt;b</code>”. Once we fix the transformation rules, implementation would be quite straightforward in Haskell, if we want a pandoc filter to handle these substitutions for everything written in TeX math mode:</p>
+<p>For simplicity, we require that all such transformations are <em>regular</em>, i.e., “lazybones’ syntax” may be translated into plain TeX code using merely substitutions of regular expressions.</p>
+<p>As a basic example, let’s consider angle brackets, for which we desire to type in simply “<code>&lt;</code>” and “<code>&gt;</code>” instead of “<code>\langle</code>” and “<code>\rangle</code>”. To avoid any ambiguity (with normal less-than or greater-than sign), it is required that such brackets have no internal spacing, that is, we write “<code>&lt;x, y&gt;</code>” rather than “<code>&lt; x, y &gt;</code>”, but “<code>1 &lt; 2</code>” instead of “<code>1&lt;2</code>”. Once we fix the transformation rules, implementation would be quite straightforward in Haskell with <code>Text.Regex</code>, if we want a pandoc filter to handle these substitutions for everything embedded in TeX math mode:</p>
 <div class="sourceCode"><pre class="sourceCode hs"><code class="sourceCode haskell">subLAngle s <span class="fu">=</span>
   subRegex (mkRegex <span class="st">&quot;&lt;([^[:blank:]])&quot;</span>) s <span class="fu">$</span> <span class="st">&quot;\\langle \\1&quot;</span>
 subRAngle s <span class="fu">=</span>
-  subRegex (mkRegex <span class="st">&quot;([^[:blank:]])&gt;&quot;</span>) s <span class="fu">$</span> <span class="st">&quot;\\1\\rangle &quot;</span></code></pre></div>
+  subRegex (mkRegex <span class="st">&quot;([^[:blank:]])&gt;&quot;</span>) s <span class="fu">$</span> <span class="st">&quot;\\1\\rangle &quot;</span>
+
+semType m<span class="fu">@</span>(<span class="dt">Math</span> mathType s) <span class="fu">=</span> <span class="kw">do</span>
+  <span class="kw">let</span> s&#39; <span class="fu">=</span> subLAngle <span class="fu">$</span> subRAngle s
+  return <span class="fu">$</span> <span class="dt">Math</span> mathType s&#39;
+semType x <span class="fu">=</span> return x</code></pre></div>
 <p>So, why bother implementing a pandoc filter rather than just defining some TeX macros? Two main reasons:</p>
 <ol type="1">
-<li>TeX code is nontrivial to write. And you can’t get rid of the ugly backslashes anyway. It would be very hard, if not impossible, to achieve the same thing that you’d do with a pandoc filter. (I would say that TeX is rather fine for <em>typesetting</em>, but <em>only</em> for typesetting; actual programming in TeX seems very awkward for me.)</li>
-<li>TeX macros are just… some code in TeX, which means that you can’t (easily) get it to work for other output formats, especially HTML with MathJax. So if you do a lot of heavy lifting with TeX macros, they won’t play well for display on the Web.</li>
+<li>TeX code is nontrivial to write. And you can’t get rid of the overwhelming backslashes quite easily. It would be very hard, if not impossible, to achieve the same thing you’d do with a pandoc filter. (I would say that TeX is rather fine for <em>typesetting</em>, but <em>only</em> for typesetting; actual programming/manipulating macros in TeX seems very awkward for me.)</li>
+<li>TeX macros are just… code in TeX, which means that they’re not designated to work for non-DVI originated publishing formats, such as HTML with MathJax. So if you do a lot of heavy lifting with TeX macros, they won’t play well for display on the Web (unless you’re willing to convert math formulas into pictures).</li>
 </ol>
-<p>Surely you can write pandoc filters in <em>any</em> language as you like (officially Haskell and Python). Nothing like plain TeX: they’re easier to implement, unrestricted in the way that they interact with input documents, with a great deal of cool supporting libraries even to blow up the earth. Although here in this case, we are only using some regular expressions to ease our typesetting for operational semantics.</p>
-<p>A proof-of-concept of this idea is <a href="https://github.com/soimort/pandoc-filters/blob/aad6033dfbd7d460d22aa627e04ca388f72af020/semtype.hs">semtype.hs</a>. While undocumented, all tricks it does should be clear from the regular expressions.</p>
+<p>Surely you can write pandoc filters in <em>any</em> language as you like (officially Haskell and Python). Nothing like plain TeX (despite the fact that it’s Turing-complete): filters are easier to implement, unrestricted in the way that they interact with structured documents, with a great deal of cool supporting libraries even to blow up the earth. Although here in this case, we are only using some no-brainer pattern matching to release our fingers from heavy math typing.</p>
+<p>A proof-of-concept of this is in <a href="https://github.com/soimort/pandoc-filters/blob/aad6033dfbd7d460d22aa627e04ca388f72af020/semtype.hs">semtype.hs</a>. While undocumented, all tricks it does should be clear from the comments and regular expressions themselves.</p>
       </div>
       <!-- (www.soimort.org) last updated: 2016-05-07 -->
       <aside id="soimort-toolbar">
