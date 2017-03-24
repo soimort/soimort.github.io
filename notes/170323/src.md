@@ -44,12 +44,12 @@ Besides natural derivations, we also got a lot of evidently agreeable convention
 
 |                  | Typesetting outcome | Syntax           |
 | ---------------- | ------------------- | ---------------- |
-| Provability | $\Gamma \vdash \varphi$ | **TeX:**<br> `$\Gamma \vdash \varphi$` <br> **Lazybones':**<br> `$Gam |- phi$`
-| Validity | $\Gamma \vDash \varphi$ | **TeX:**<br> `$\Gamma \vDash \varphi$` <br> **Lazybones':**<br> `$Gam |= phi$`
-| Big-step semantics | $\langle b_0 \land b_1, \sigma \rangle \downarrow t$ | **TeX:**<br> `$\langle b_0 \land b_1, \sigma`<br>` \rangle \downarrow t$` <br> **Lazybones':**<br> `$<b_0 && b_1, sig> ! t$`
-| Small-step semantics | $\sigma \vdash b_0 \land b_1 \to^* t$ | **TeX:**<br> `$\sigma \vdash b_0 \land b_1`<br>` \to^* t$` <br> **Lazybones':**<br> `$sig |- b_0 && b_1 ->* t$`
-| Hoare logic | $\vdash \{A\} \textbf{if } b \textbf{ then } c_0 \textbf{ else } c_1 \{B\}$ | **TeX:**<br> `$\vdash \{A\} \textbf{if } b`<br>` \textbf{ then } c_0`<br>` \textbf{ else } c_1 \{B\}$` <br> **Lazybones':**<br> `$|- <[A]> if b then c_0`<br>` else c_1 <[B]>$`
-| Denotational semantics | $\mathcal{C}[\![X:=a]\!] = \lambda \sigma . \eta (\sigma[X \mapsto \mathcal{A}[\![a]\!] \sigma])$ | **TeX:**<br> `$\mathcal{C}[\![X:=a]\!] =`<br>` \lambda \sigma . \eta`<br>` (\sigma[X \mapsto`<br>` \mathcal{A}[\![a]\!] \sigma])$` <br> **Lazybones':**<br> `$C[[X:=a]] = lam sig . eta`<br>` (sig[X |-> A[[a]] sig])$`
+| Provability | $\Gamma \vdash \varphi$ | **TeX:**<br> `\Gamma \vdash \varphi` <br> **Lazybones':**<br> `Gam |- phi`
+| Validity | $\Gamma \vDash \varphi$ | **TeX:**<br> `\Gamma \vDash \varphi` <br> **Lazybones':**<br> `Gam |= phi`
+| Big-step semantics | $\langle b_0 \land b_1, \sigma \rangle \downarrow t$ | **TeX:**<br> `\langle b_0 \land b_1, \sigma`<br>` \rangle \downarrow t` <br> **Lazybones':**<br> `<b_0 && b_1, sig> ! t`
+| Small-step semantics | $\sigma \vdash b_0 \land b_1 \to^* t$ | **TeX:**<br> `\sigma \vdash b_0 \land b_1`<br>` \to^* t` <br> **Lazybones':**<br> `sig |- b_0 && b_1 ->* t`
+| Hoare logic | $\vdash \{A\} \textbf{if } b \textbf{ then } c_0 \textbf{ else } c_1 \{B\}$ | **TeX:**<br> `\vdash \{A\} \textbf{if } b`<br>` \textbf{ then } c_0`<br>` \textbf{ else } c_1 \{B\}` <br> **Lazybones':**<br> `|- <[A]> if b then c_0`<br>` else c_1 <[B]>`
+| Denotational semantics | $\mathcal{C}[\![X:=a]\!] = \lambda \sigma . \eta (\sigma[X \mapsto \mathcal{A}[\![a]\!] \sigma])$ | **TeX:**<br> `\mathcal{C}[\![X:=a]\!] =`<br>` \lambda \sigma . \eta`<br>` (\sigma[X \mapsto`<br>` \mathcal{A}[\![a]\!] \sigma])` <br> **Lazybones':**<br> `C[[X:=a]] = lam sig . eta`<br>` (sig[X |-> A[[a]] sig])`
 
 For simplicity, we require that all such transformations are *regular*, i.e., "lazybones' syntax" may be translated into plain TeX code using merely substitutions of regular expressions.
 
