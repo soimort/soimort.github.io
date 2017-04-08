@@ -5,12 +5,153 @@
   <link rel="alternate" type="text/html" href="https://www.soimort.org/" />
   <link rel="self" type="application/atom+xml" href="https://www.soimort.org/feed.atom" />
   <id>tag:www.soimort.org,2017:/</id>
-  <updated>2017-03-23T00:00:00+01:00</updated>
+  <updated>2017-04-07T00:00:00+02:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
 
+  <entry>
+    <title>Recovering from a Corrupted Arch Linux Upgrade</title>
+    <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/170407" />
+    <id>tag:www.soimort.org,2017:/notes/170407</id>
+    <published>2017-04-07T00:00:00+02:00</published>
+    <updated>2017-04-08T00:00:00+02:00</updated>
+    <author>
+      <name>Mort Yao</name>
+    </author>
+    <category term="engineering" />
+    <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
+<![CDATA[
+<p><strong>(Probably unimportant) Backstory:</strong> It’s been a while since the last full-system upgrade of my Arch Linux laptop – It sat well with me for a span of months’ uptime. When I finally got the time to run a <code>pacman -Syu</code> (so well as to dare any potential issues due to Arch’s infamous instability) earlier today, weird things did happen: Something other than <code>pacman</code> was eating up my CPU. I assumed it was Chromium in the first place, unless it wasn’t this time. It turned out to be <code>gnome-settings-daemon</code> together with some other GUI processes running on GNOME, that were consistently hogging my CPU in turn. And that made a percent of 100% (!). As I killed the seemingly problematic process, something else would insist to emerge on the top of <code>top</code> with similarly excessive CPU usage. I decided that this was an unusual situation and without much further thought, forced a <code>reboot</code> while <code>pacman</code> was still running. Then I ended up with a corrupted system: the kernel didn’t load during the early boot process, complaining about missing <code>modules.devname</code> and that <code>/dev/sda11</code> (which is the root partition) could not be found:</p>
+<pre><code>  Warning: /lib/modules/4.10.8-1-ARCH/modules.devname not found - ignoring
+  starting version 232
+  Waiting 10 seconds for device /dev/sda11 ...
+  ERROR: device &#39;/dev/sda11&#39; not found. Skipping fsck.
+  mount: you must specify the filesystem type
+  You are now being dropped into an emergency shell.</code></pre>
+<p>Without proper modules loaded even the keyboard was not working, so I couldn’t do anything under the emergency shell. But I wasn’t completely out of luck – I have a dual-booting of Arch and Ubuntu, which is prepared just for recovery purposes like this. (otherwise I had to make room for another Live USB, which was a little bit inconvenient; I don’t use those rescue-ware for years)</p>
+<p><strong>Recover an (unbootable) Arch system from another distro:</strong> This is mostly relevant if you can’t boot into the system (due to a corrupted kernel upgrade), otherwise it’s possible to just login from TTY (locally or via SSH) and perform the fix (e.g., in the case that it’s just X, display manager or WM that fails to load but the kernel boots well).</p>
+<ol type="1">
+<li><p>On the host system (e.g., Ubuntu), create a working chroot environment: (Assume that the root for Arch is mounted to <code>/dev/sda11</code>)</p>
+<pre><code># TARGETDEV=&quot;/dev/sda11&quot;
+# TARGETDIR=&quot;/mnt/arch&quot;
+
+# mount $TARGETDEV $TARGETDIR
+# mount -t proc /proc $TARGETDIR/proc
+# mount --rbind /sys $TARGETDIR/sys
+# mount --rbind /dev $TARGETDIR/dev
+
+# cp /etc/hosts $TARGETDIR/etc
+# cp /etc/resolv.conf $TARGETDIR/etc
+# chroot $TARGETDIR rm /etc/mtab 2&gt; /dev/null
+# chroot $TARGETDIR ln -s /proc/mounts /etc/mtab
+
+# chroot $TARGETDIR</code></pre>
+<p>Alternatively, use the <code>arch-chroot</code> script from an <a href="https://mirrors.kernel.org/archlinux/iso/latest/">Arch bootstrap image</a>:</p>
+<pre><code># arch-chroot $TARGETDIR</code></pre></li>
+<li><p>Now that we have a chroot environment with access to the (currently broken) Arch system, continue with unfinished <code>pacman</code> upgrades and clean up any lock file if needed:</p>
+<pre><code>[/mnt/arch]# pacman -Syu</code></pre>
+<p>Or, if there’s any unwanted package upgrade that causes the system to fail, downgrade it.<br />
+The important thing to remember is that, while continuing, a previously failed transaction will not run its hooks anymore. Therefore it might be wiser to find out which exact packages <code>pacman</code> was trying to upgrade in the last transaction (from <code>/var/log/pacman.log</code>) and <em>reinstall</em> all of them, rather than a complementing <code>pacman -Syu</code>. But if it’s known which package is causing the problem (and in this very common case, <code>linux</code>), simply run the following to regenerate initramfs for the new kernel:</p>
+<pre><code>[/mnt/arch]# mkinitcpio -p linux</code></pre>
+<p>And we are done. A few commands and our Arch system is now back and booting.</p></li>
+</ol>
+<p><strong>Why the mess?</strong> Initramfs images need to be regenerated (from a corresponding mkinitcpio preset file) after each kernel update. Starting from Arch’s package <code>linux 4.8.8-2</code>, the calling of <code>mkinitcpio</code> was specified in a PostTransaction alpm hook, in place of an explicit <code>post_install()</code> command to be invoked from the <code>.install</code> script <a href="https://git.archlinux.org/svntogit/packages.git/commit/trunk/linux.install?h=packages/linux&amp;id=617173dcde960f00112ebdfee4c80ede71e67375">as before</a>: (The move towards alpm hooks is said to be a fix for <a href="https://bugs.archlinux.org/task/51818">#51818</a>, as two or more packages in one transaction may need the regeneration of initramfs images)</p>
+<div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="kw">[Trigger]</span>
+<span class="dt">Type </span><span class="ot">=</span><span class="st"> File</span>
+<span class="dt">Operation </span><span class="ot">=</span><span class="st"> Install</span>
+<span class="dt">Operation </span><span class="ot">=</span><span class="st"> Upgrade</span>
+<span class="dt">Target </span><span class="ot">=</span><span class="st"> boot/vmlinuz-%PKGBASE%</span>
+<span class="dt">Target </span><span class="ot">=</span><span class="st"> usr/lib/initcpio/*</span>
+
+<span class="kw">[Action]</span>
+<span class="dt">Description </span><span class="ot">=</span><span class="st"> Updating %PKGBASE% initcpios</span>
+<span class="dt">When </span><span class="ot">=</span><span class="st"> PostTransaction</span>
+<span class="dt">Exec </span><span class="ot">=</span><span class="st"> /usr/bin/mkinitcpio -p %PKGBASE%</span></code></pre></div>
+<p>The faulty part about PostTransaction alpm hooks is that they run in a <em>post-transaction</em> manner; in the context of Arch Linux, a “transaction” means a complete run of <code>pacman</code>, regardless of how many packages it installs or upgrades. Such PostTransaction hooks will not run until all preceding operations succeed. Quoted from the CAVEATS section in the <a href="https://www.archlinux.org/pacman/alpm-hooks.5.html">alpm-hooks(5) Manual Page</a>:</p>
+<blockquote>
+<p>“PostTransaction hooks will <strong>not</strong> run if the transaction fails to complete for any reason.”</p>
+</blockquote>
+<p>This (kind of) misbehavior could lead to unintended aftermath in a failed system upgrade, as it does in the case of the <code>linux</code> package. Confusingly, a <code>pacman</code> “transaction” can be an arbitrary set of unrelated package updates; it could possibly fail to complete at any point (e.g., <code>.install</code> script errors, process accidentally killed, or even power lost), and ideally, it should remain safe while encountering such failures before commit. However, since the generation of <code>initramfs</code> in the PostTransaction hook is actually an <strong>indispensable</strong> step for the newly upgraded <code>linux</code> package here (whether other packages complete their upgrades or not), it is not safe if a <code>pacman</code> “transaction” fails halfway; PostTransaction hook won’t run and all you get is a halfway system that doesn’t boot (so you’ll need to fix that through a fallback or alternative kernel). To see this problem more clearly, think of the following two scenarios:</p>
+<p><strong><em>A successful system upgrade:</em></strong></p>
+<pre><code>    pacman -Syu
+        sanity check (for packages to upgrade)
+            |
+        start upgrading package L (requires hook M to run)
+            |
+        finish upgrading package L
+        start upgrading package A
+            |
+        finish upgrading package A
+        start upgrading package B
+            |
+        finish upgrading package B
+        complete transaction
+        run post-transaction hook M
+            |
+        done.
+    [packages L, A, B are upgraded; hook M is run; working system]</code></pre>
+<p><strong><em>An (ungracefully) failing system upgrade:</em></strong></p>
+<pre><code>    pacman -Syu
+        sanity check (for packages to upgrade)
+            |
+        start upgrading package L (requires hook M to run)
+            |
+        finish upgrading package L
+        start upgrading package A
+            |
+        finish upgrading package A
+        start upgrading package B
+            |
+            crash!
+    [packages L, A are upgraded; hook M is not run; broken system]</code></pre>
+<p><strong>How to perform a system upgrade safely?</strong> Although it ultimately depends on how we define a “safe system upgrade” and how much we want it, some robustness may be achieved at least. It’s clear to see that the upgrade of package <code>L</code> and the run of hook <code>M</code> should be dealt as one transaction, or treating <code>M</code> in a post-transaction way will put us on the risk that if some other package fails to upgrade (or maybe it’s just computer crashes), we end up with having only <code>L</code> upgraded, but not <code>M</code> run (while it is desirable to have both or none).</p>
+<p><strong><em>A (gracefully) failing system upgrade:</em></strong></p>
+<pre><code>        sanity check (for packages to upgrade)
+            |
+        start upgrading package L (requires hook M to run)
+            |
+        finish upgrading package L
+        run hook M
+            |
+        complete transaction
+        start upgrading package A
+            |
+        finish upgrading package A
+        start upgrading package B
+            |
+            crash!
+    [packages L, A are upgraded; hook M is run; working system]</code></pre>
+<p>This is exactly the way things worked before (using the old-fashioned <code>post_install()</code>): It’s less fragile under possible failures, although in order to fix #51818 (another package <code>L2</code> also requires hook <code>M</code> to run), we’ll need to manage the ordering of package upgrades properly:</p>
+<pre><code>        start upgrading package L (requires hook M to run)
+            |
+        finish upgrading package L
+        start upgrading package L2 (requires hook M to run)
+            |
+        finish upgrading package L2
+        run hook M
+            |
+        complete transaction
+        start upgrading package A
+            ...</code></pre>
+<p>That is, <code>L</code>, <code>L2</code> and <code>M</code> are one transaction. It is not allowed to have only <code>L</code> and <code>L2</code>, or only <code>L</code>, without a run of hook <code>M</code>. Other unrelated packages (<code>A</code>, <code>B</code>, …) are prevented from causing such issues in the above scheme. There is still a possibility that the process crashes during the phase of <code>L</code>, <code>L2</code> or <code>M</code>, but the chance would be much smaller, because we are working with a transaction consisting of the strongly coupling upgrades of <code>L</code>, <code>L2</code> and <code>M</code>, not a whole <code>pacman</code> “transaction” consisting of easily hundreds of arbitrary system upgrades and post-transaction hooks. Even better, in case of such failures, we can ask to redo uncommitted transactions anyway so we don’t rerun hooks manually:</p>
+<pre><code>        redo uncommitted transactions (upgrades &amp; hooks)
+            |
+        start upgrading package B
+            ...</code></pre>
+<p>I don’t know if there’s any software management tool implementing this fully recovering approach. Transactions need to be more refined (<code>pacman</code>’s “all is a transaction” is really a naïve semantics to have) and the ordering of upgrades is essential, in order to give best robustness in case of possible crashes during a system upgrade, so it might not be as implementable as most package managers are (although still far less sophisticated than a real-world database). Or – with reasonable efforts – if we cannot guarantee anything for a transaction – maybe a Windows-inspired “user-friendly” warning message like “Don’t turn off your computer” is good enough. (At least you’ll know when you’re breaking shit: a transaction is not completed yet, some necessary hooks are not run, and you’re on your own then.)</p>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>[1] ArchWiki, “Install from existing Linux”. <a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux" class="uri">https://wiki.archlinux.org/index.php/Install_from_existing_Linux</a></p>
+<p>[2] ArchWiki, “Change root”. <a href="https://wiki.archlinux.org/index.php/change_root" class="uri">https://wiki.archlinux.org/index.php/change_root</a></p>
+<p>[3] ArchWiki, “mkinitcpio”. <a href="https://wiki.archlinux.org/index.php/mkinitcpio" class="uri">https://wiki.archlinux.org/index.php/mkinitcpio</a></p>
+<p>[4] alpm-hooks(5) Manual Page. <a href="https://www.archlinux.org/pacman/alpm-hooks.5.html" class="uri">https://www.archlinux.org/pacman/alpm-hooks.5.html</a></p>
+</section>
+
+]]>
+    </content>
+  </entry>
   <entry>
     <title>A Pandoc Filter for Typesetting Operational Semantics</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/170323" />
