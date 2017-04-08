@@ -49,8 +49,10 @@ Wiki](https://wiki.soimort.org/)
 
 ## Technical Notes
 
+* [Recovering from a Corrupted Arch Linux Upgrade](/notes/170407/)
+***New** 8 Apr 2017*
 * [A Pandoc Filter for Typesetting Operational Semantics](/notes/170323/)
-***New** 24 Mar 2017*
+*24 Mar 2017*
 * [Remember My Last Tabs, File Manager
 ](/notes/161208/)
 *8 Dec 2016*
@@ -94,6 +96,8 @@ About me](/about)
 \
 <i class="fa fa-envelope" aria-hidden="true"></i>
 soi@mort.ninja
+| <i class="fa fa-phone-square" aria-hidden="true"></i>
+`+45 2152 8919`
 | [<i class="fa fa-key" aria-hidden="true"></i>
 `07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 \
