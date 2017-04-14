@@ -44,11 +44,11 @@ section li em {
   font-style: normal;
 }
 
-section li em strong {
-  background-color: firebrick;
-  color: white;
-  padding: 6px 10px 4px;
-  border-radius: 5px;
+section li strong {
+  font-size: .8em;
+  font-weight: normal;
+  padding: 8px;
+  opacity: .5;
 }
 
 div#content hr {
@@ -56,6 +56,11 @@ div#content hr {
   height: 1px;
   border: 0;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(178, 34, 34, 0.5), rgba(0, 0, 0, 0));
+}
+
+div#content img {
+  border-radius: 0;
+  box-shadow: -2px 2px 4px firebrick;
 }
 
 aside#soimort-links {
@@ -74,8 +79,4 @@ aside#soimort-links #soimort {
 
 aside#soimort-toolbar {
   visibility: hidden;
-}
-
-address {
-  font-weight: bold;
 }

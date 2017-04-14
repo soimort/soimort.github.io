@@ -6,39 +6,39 @@ author: Mort Yao
 include-before: <link rel="stylesheet" href="/index.css">
 ---
 
-!["*Memento Mori.*"
-](https://i0.wp.com/dl.dropboxusercontent.com/s/croje3hsd5xp15l/header-170204.jpg){ width=42% }
+![*"Per aspera ad astra."*
+](https://i0.wp.com/dl.dropboxusercontent.com/s/u2m6t27wl02wlp1/header-170414.jpg){ width=48% }
 
 
 
 ## My Study Track
 
-* [The Fundamental Justification
-](/mst/5/)
+<div style="text-align:right"><small>
+
+[<i class="fa fa-edit" aria-hidden="true"></i>Wiki](https://wiki.soimort.org/)
+
+</small></div>
+
+* [The Stateful Automata](/mst/6/)
+**#formal languages** **#automata** **#computability**
+*12 Apr 2017*
+* [The Fundamental Justification](/mst/5/)
+**#philosophy**
 *6 Feb 2017*
-* [The Measurable Entropy
-](/mst/4/)
+* [The Measurable Entropy](/mst/4/)
+**#information theory** **#statistics**
 *11 Jan 2017*
-* [The Adversarial Computation
-](/mst/3/)
+* [The Adversarial Computation](/mst/3/)
+**#cryptography**
 *1 Jan 2017*
-* [The Probable Outcome
-](/mst/2/)
+* [The Probable Outcome](/mst/2/)
+**#probability theory**
 *23 Dec 2016*
-* [The Decisional Hardness
-](/mst/1/)
+* [The Decisional Hardness](/mst/1/)
+**#algorithms** **#complexity**
 *1 Nov 2016*
 
-<div style="text-align:right">
-<small>
-
-[<i class="fa fa-edit" aria-hidden="true"></i>
-Wiki](https://wiki.soimort.org/)
-
-</small>
-</div>
-
-## Notes
+## Reading Notes
 
 * [An Intuitive Exposition of "Proof by Contradiction vs. Proof of Negation"
 ](/notes/170306/)
@@ -47,12 +47,12 @@ Wiki](https://wiki.soimort.org/)
 ](/reports/bloom-filters-in-adversarial-environments/)
 *15 Nov 2016*
 
-## Technical Notes
+## Hacking Notes
 
 * [Recovering from a Corrupted Arch Linux Upgrade](/notes/170407/)
-***New** 8 Apr 2017*
+*7 Apr 2017*
 * [A Pandoc Filter for Typesetting Operational Semantics](/notes/170323/)
-*24 Mar 2017*
+*23 Mar 2017*
 * [Remember My Last Tabs, File Manager
 ](/notes/161208/)
 *8 Dec 2016*
@@ -60,13 +60,13 @@ Wiki](https://wiki.soimort.org/)
 ](/notes/161117/)
 *17 Nov 2016*
 
-## Math & Computation **/Blog**
+## Math & Computation **/ Essays**
 
 * [What I Wish I Knew When Learning Boolean Circuits
 ](https://blog.soimort.org/comp/c/boolean-circuit/)
 *24 Feb 2017*
 
-## Art & Philosophy **/Blog**
+## Art & Philosophy **/ Essays**
 
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
@@ -96,8 +96,6 @@ About me](/about)
 \
 <i class="fa fa-envelope" aria-hidden="true"></i>
 soi@mort.ninja
-| <i class="fa fa-phone-square" aria-hidden="true"></i>
-`+45 2152 8919`
 | [<i class="fa fa-key" aria-hidden="true"></i>
 `07DA00CB78203251`](https://keybase.io/soimort/key.asc)
 \
