@@ -116,7 +116,7 @@ While it seemingly gives an estimate on how people would "expect" a random varia
 
 **St. Petersburg Paradox.**^[<https://en.wikipedia.org/wiki/St._Petersburg_paradox>] A casino offers a game of chance for a gambler to flip a fair coin until it comes up tails. The initial stake starts at $2$ dollars and is doubled every time heads appears. The first time tails appears, the game ends and the gambler wins whatever is in the pot. Thus if the coin comes up tails the first time, the gambler wins $2^1=2$ dollars, and the game ends. If the coin comes up heads, the coin is flipped again. If the coin comes up tails the second time, the gambler wins $2^2=4$ dollars, and the game ends. If the coin comes up heads again, the coin is flipped again. If the coin comes up tails the third time, the gambler wins $2^3=8$ dollars, and the game ends. So on and so like. Eventually the gambler wins $2^k$ dollars, where $k$ is the number of coin flips until tails appears. (It is easy to see that $k$ satisfies the geometric distribution.) What would be a fair price to pay the casino for entering such a game? (Assume that there is no house edge)
 
-| $k$th coin flip   | $\Pr[\text{Tails}]$ | Stake ($) | Expected payoff ($) |
+| $k$th coin flip   | $\Pr[\text{Tails}]$ | Stake (`$`) | Expected payoff (`$`) |
 | :---------------: | :-----------------: | :-------: | :-----------------: |
 | 1   | $\frac{1}{2}$ | 2     | 1 |
 | 2   | $\frac{1}{4}$ | 4     | 1 |
