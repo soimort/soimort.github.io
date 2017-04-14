@@ -58,7 +58,7 @@ div#content hr {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(178, 34, 34, 0.5), rgba(0, 0, 0, 0));
 }
 
-div#content img {
+div#content figure img {
   border-radius: 0;
   box-shadow: -2px 2px 4px firebrick;
 }
