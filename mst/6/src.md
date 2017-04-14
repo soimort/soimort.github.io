@@ -1,6 +1,6 @@
 ---
 title: The Stateful Automata
-subtitle:
+subtitle: Languages and Computation.
 author: Mort Yao
 date: 2017-04-12
 date-updated: 2017-04-14
