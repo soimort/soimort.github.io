@@ -7,7 +7,7 @@ include-before: <link rel="stylesheet" href="/index.css">
 ---
 
 ![*"Per aspera ad astra."*
-](https://i0.wp.com/dl.dropboxusercontent.com/s/u2m6t27wl02wlp1/header-170414.jpg){ width=48% }
+](https://i0.wp.com/dl.dropboxusercontent.com/s/my1g2j39ii26yph/header-170418.jpg){ width=42% }
 
 
 

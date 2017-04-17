@@ -59,8 +59,12 @@ div#content hr {
 }
 
 div#content figure img {
-  border-radius: 0;
-  box-shadow: -2px 2px 4px firebrick;
+  box-shadow: 2px 2px 8px;
+}
+
+div#content figure figcaption {
+  padding-top: 1em;
+  opacity: .5;
 }
 
 aside#soimort-links {
