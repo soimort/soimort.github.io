@@ -3,7 +3,7 @@ title: The Stateful Automata
 subtitle: Languages and Computation.
 author: Mort Yao
 date: 2017-04-12
-date-updated: 2017-04-14
+date-updated: 2017-04-18
 ---
 
 * What is a [formal language](https://wiki.soimort.org/comp/language/)? (review of [Mst. #1](/mst/1/))
@@ -153,8 +153,9 @@ If $R$ decides $\textit{HALT}_\textsf{TM}$, then $S$ decides $A_\mathsf{TM}$ by 
 Apart from Turing's original halting problem, other undecidable problems of historical importance include:
 
 * **Post correspondence problem** (Post 1946 [@post1946variant])
+* **Word problem for semigroups** (proposed by Axel Thue in 1914; its undecidability was shown by Emil Post and Andrey Markov Jr. independently in 1947 [@post1947recursive])
 * **The busy beaver game** (Rado 1962 [@rado1962non])
-* **Hilbert's tenth problem** (whose undecidability shown by Matiyasevich's theorem in 1970, and is in no way an obvious result)
+* **Hilbert's tenth problem** (proposed by D. Hilbert in 1900; its undecidability was shown by Matiyasevich's theorem in 1970, and is in no way an obvious result)
 
 Some problems, such as $EQ_\mathsf{TM}$, are not even Turing-recognizable. Another example is $MIN_\mathsf{TM}$:
 $$MIN_\mathsf{TM} = \{ \langle M \rangle\ | \ M \text{ is a minimal Turing machine} \}$$
