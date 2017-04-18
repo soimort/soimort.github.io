@@ -224,6 +224,8 @@ J. E. Hopcroft, R. Motwani, J. D. Ullman, *Introduction to Automata Theory, Lang
 
 **Articles:**
 
+M.Davis, "What is a computation?" *Mathematics Today: Twelve Informal Essays*, pp. 241--267, 1978.
+
 D. Zeilberger, "A 2-Minute Proof of the 2nd-Most Important Theorem of the 2nd Millennium," <http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimTeX/halt>.
 
 **Papers:**
