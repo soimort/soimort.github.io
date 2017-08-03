@@ -5,18 +5,35 @@
   <link rel="alternate" type="text/html" href="https://www.soimort.org/" />
   <link rel="self" type="application/atom+xml" href="https://www.soimort.org/feed.atom" />
   <id>tag:www.soimort.org,2017:/</id>
-  <updated>2017-04-12T00:00:00+02:00</updated>
+  <updated>2017-08-03T00:00:00+02:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
 
   <entry>
+    <title>Understanding Colors – A Walkthrough of Modern Color Theory and Practice</title>
+    <link rel="alternate" type="text/html" href="https://blog.soimort.org/cv/colors/" />
+    <id>tag:www.soimort.org,2017:/posts/170803</id>
+    <published>2017-08-03T00:00:00+02:00</published>
+    <updated>2017-08-03T00:00:00+02:00</updated>
+    <author>
+      <name>Mort Yao</name>
+    </author>
+    <category term="blog" />
+    <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
+<![CDATA[
+
+
+]]>
+    </content>
+  </entry>
+  <entry>
     <title>The Stateful Automata</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/mst/6" />
     <id>tag:www.soimort.org,2017:/mst/6</id>
     <published>2017-04-12T00:00:00+02:00</published>
-    <updated>2017-04-14T00:00:00+02:00</updated>
+    <updated>2017-04-18T00:00:00+02:00</updated>
     <author>
       <name>Mort Yao</name>
     </author>
@@ -279,8 +296,9 @@
 <p>Apart from Turing’s original halting problem, other undecidable problems of historical importance include:</p>
 <ul>
 <li><strong>Post correspondence problem</strong> (Post 1946 <span class="citation" data-cites="post1946variant">[2]</span>)</li>
-<li><strong>The busy beaver game</strong> (Rado 1962 <span class="citation" data-cites="rado1962non">[3]</span>)</li>
-<li><strong>Hilbert’s tenth problem</strong> (whose undecidability shown by Matiyasevich’s theorem in 1970, and is in no way an obvious result)</li>
+<li><strong>Word problem for semigroups</strong> (proposed by Axel Thue in 1914; its undecidability was shown by Emil Post and Andrey Markov Jr. independently in 1947 <span class="citation" data-cites="post1947recursive">[3]</span>)</li>
+<li><strong>The busy beaver game</strong> (Rado 1962 <span class="citation" data-cites="rado1962non">[4]</span>)</li>
+<li><strong>Hilbert’s tenth problem</strong> (proposed by D. Hilbert in 1900; its undecidability was shown by Matiyasevich’s theorem in 1970, and is in no way an obvious result)</li>
 </ul>
 <p>Some problems, such as <span class="math inline">\(EQ_\mathsf{TM}\)</span>, are not even Turing-recognizable. Another example is <span class="math inline">\(MIN_\mathsf{TM}\)</span>: <span class="math display">\[MIN_\mathsf{TM} = \{ \langle M \rangle\ | \ M \text{ is a minimal Turing machine} \}\]</span></p>
 <p><strong>Theorem 6.2.</strong> <span class="math inline">\(MIN_\mathsf{TM}\)</span> is not Turing-recognizable.</p>
@@ -298,7 +316,7 @@
 </section>
 <section id="beyond-turing-machines" class="level2">
 <h2>Beyond Turing machines</h2>
-<p>Per the Church-Turing thesis, a Turing machine (one finite automaton + one infinite linear table) defines the “limitation of computation”. Several hypothetical models (sometimes referred to as <em>hypercomputation</em> <span class="citation" data-cites="davis2004myth">[4]</span> as they are assumed to have the abilities to solve non-Turing-computable problems) have been proposed for the sake of theoretical interest:</p>
+<p>Per the Church-Turing thesis, a Turing machine (one finite automaton + one infinite linear table) defines the “limitation of computation”. Several hypothetical models (sometimes referred to as <em>hypercomputation</em> <span class="citation" data-cites="davis2004myth">[5]</span> as they are assumed to have the abilities to solve non-Turing-computable problems) have been proposed for the sake of theoretical interest:</p>
 <ul>
 <li><strong>Oracle machine</strong>: a know-all machine that can solve a certain non-Turing-computable problem such as <span class="math inline">\(A_\textsf{TM}\)</span> or <span class="math inline">\(\textit{HALT}_\textsf{TM}\)</span> (in a black-boxed way).</li>
 <li><strong>Real computer</strong> (e.g., Blum-Shub-Smale machine): an idealized analog computer that can compute infinite-precision real numbers. (Real numbers are uncountable as shown by Cantor’s diagonal argument, so Turing machines are incapable of handling arbitrary reals)</li>
@@ -322,20 +340,24 @@
 <p>M. Sipser, <em>Introduction to the Theory of Computation</em>, 3rd ed.</p>
 <p>J. E. Hopcroft, R. Motwani, J. D. Ullman, <em>Introduction to Automata Theory, Languages, and Computation</em>, 3rd ed.</p>
 <p><strong>Articles:</strong></p>
-<p>D. Zeilberger, “A 2-Minute Proof of the 2nd-Most Important Theorem of the 2nd Millennium,” <a href="http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimTeX/halt" class="uri">http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimTeX/halt</a>.</p>
+<p>M. Davis, “What is a computation?” <em>Mathematics Today: Twelve Informal Essays</em>, pp. 241–267, 1978.</p>
+<p>D. Zeilberger, “A 2-minute proof of the 2nd-most important theorem of the 2nd millennium,” <a href="http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimTeX/halt" class="uri">http://www.math.rutgers.edu/~zeilberg/mamarim/mamarimTeX/halt</a>.</p>
 <p><strong>Papers:</strong></p>
 <div id="refs" class="references">
 <div id="ref-turing1937computable">
-<p>[1] A. M. Turing, “On computable numbers, with an application to the entscheidungsproblem,” <em>Proceedings of the London mathematical society</em>, vol. 2, no. 1, pp. 230–265, 1937. </p>
+<p>[1] A. M. Turing, “On computable numbers, with an application to the Entscheidungsproblem,” <em>Proceedings of the London Mathematical Society</em>, vol. 2, no. 1, pp. 230–265, 1937. </p>
 </div>
 <div id="ref-post1946variant">
 <p>[2] E. L. Post, “A variant of a recursively unsolvable problem,” <em>Bulletin of the American Mathematical Society</em>, vol. 52, no. 4, pp. 264–268, 1946. </p>
 </div>
+<div id="ref-post1947recursive">
+<p>[3] E. L. Post, “Recursive unsolvability of a problem of Thue,” <em>The Journal of Symbolic Logic</em>, vol. 12, no. 01, pp. 1–11, 1947. </p>
+</div>
 <div id="ref-rado1962non">
-<p>[3] T. Rado, “On non-computable functions,” <em>Bell System Technical Journal</em>, vol. 41, no. 3, pp. 877–884, 1962. </p>
+<p>[4] T. Rado, “On non-computable functions,” <em>Bell System Technical Journal</em>, vol. 41, no. 3, pp. 877–884, 1962. </p>
 </div>
 <div id="ref-davis2004myth">
-<p>[4] M. Davis, “The myth of hypercomputation,” in <em>Alan turing: Life and legacy of a great thinker</em>, Springer, 2004, pp. 195–211. </p>
+<p>[5] M. Davis, “The myth of hypercomputation,” in <em>Alan Turing: Life and legacy of a great thinker</em>, Springer, 2004, pp. 195–211. </p>
 </div>
 </div>
 </section>

@@ -11,7 +11,13 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 
 
-## My Study Track
+## Math & Perception **/ Essays**
+
+* [Understanding Colors -- A Walkthrough of Modern Color Theory and Practice
+](https://blog.soimort.org/cv/colors/)
+*3 Aug 2017*
+
+## My Study Track **/ Summaries**
 
 <div style="text-align:right"><small>
 
@@ -38,16 +44,16 @@ include-before: <link rel="stylesheet" href="/index.css">
 **#algorithms** **#complexity**
 *1 Nov 2016*
 
-## Reading Notes
+## Reading & Thinking **/ Notes**
 
 * [An Intuitive Exposition of "Proof by Contradiction vs. Proof of Negation"
 ](/notes/170306/)
 *6 Mar 2017*
-* [[CRYPTO 2015 Paper] Bloom Filters in Adversarial Environments
+* [Bloom Filters in Adversarial Environments (Reading Report)
 ](/reports/bloom-filters-in-adversarial-environments/)
 *15 Nov 2016*
 
-## Hacking Notes
+## Hacking **/ Notes**
 
 * [Recovering from a Corrupted Arch Linux Upgrade](/notes/170407/)
 *7 Apr 2017*
