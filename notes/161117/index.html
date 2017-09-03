@@ -74,8 +74,10 @@
 <span class="ot">---</span></code></pre></div>
 <p>Above is my personal default, and it’s worth a few words to explain:</p>
 <ul>
-<li><p><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</p>
-<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre></li>
+<li><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</li>
+</ul>
+<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre>
+<ul>
 <li>Set <code>indent</code> to any value other than <code>false</code> if paragraph indentation is desired. (And it is often desired in formal publications.)</li>
 <li><code>header-includes</code> is where you define your own macros, configure existing ones, or claim <code>\usepackage</code> in case you want to use a package not enabled by Pandoc (e.g., <a href="https://www.ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>). Although you might as well define those in other places (e.g., in the content of a Markdown file), <em>don’t do that</em>.
 <ul>

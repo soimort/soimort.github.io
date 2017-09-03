@@ -46,30 +46,32 @@
 <p>Without proper modules loaded even the keyboard was not working, so I couldn’t do anything under the emergency shell. But I wasn’t completely out of luck – I have a dual-booting of Arch and Ubuntu, which is prepared just for recovery purposes like this. (otherwise I had to make room for another Live USB, which was a little bit inconvenient; I don’t use those rescue-ware for years)</p>
 <p><strong>Recover an (unbootable) Arch system from another distro:</strong> This is mostly relevant if you can’t boot into the system (due to a corrupted kernel upgrade), otherwise it’s possible to just login from TTY (locally or via SSH) and perform the fix (e.g., in the case that it’s just X, display manager or WM that fails to load but the kernel boots well).</p>
 <ol type="1">
-<li><p>On the host system (e.g., Ubuntu), create a working chroot environment: (Assume that the root for Arch is mounted to <code>/dev/sda11</code>)</p>
-<pre><code># TARGETDEV=&quot;/dev/sda11&quot;
-# TARGETDIR=&quot;/mnt/arch&quot;
+<li>On the host system (e.g., Ubuntu), create a working chroot environment: (Assume that the root for Arch is mounted to <code>/dev/sda11</code>)</li>
+</ol>
+<pre><code>    # TARGETDEV=&quot;/dev/sda11&quot;
+    # TARGETDIR=&quot;/mnt/arch&quot;
 
-# mount $TARGETDEV $TARGETDIR
-# mount -t proc /proc $TARGETDIR/proc
-# mount --rbind /sys $TARGETDIR/sys
-# mount --rbind /dev $TARGETDIR/dev
+    # mount $TARGETDEV $TARGETDIR
+    # mount -t proc /proc $TARGETDIR/proc
+    # mount --rbind /sys $TARGETDIR/sys
+    # mount --rbind /dev $TARGETDIR/dev
 
-# cp /etc/hosts $TARGETDIR/etc
-# cp /etc/resolv.conf $TARGETDIR/etc
-# chroot $TARGETDIR rm /etc/mtab 2&gt; /dev/null
-# chroot $TARGETDIR ln -s /proc/mounts /etc/mtab
+    # cp /etc/hosts $TARGETDIR/etc
+    # cp /etc/resolv.conf $TARGETDIR/etc
+    # chroot $TARGETDIR rm /etc/mtab 2&gt; /dev/null
+    # chroot $TARGETDIR ln -s /proc/mounts /etc/mtab
 
-# chroot $TARGETDIR</code></pre>
+    # chroot $TARGETDIR</code></pre>
 <p>Alternatively, use the <code>arch-chroot</code> script from an <a href="https://mirrors.kernel.org/archlinux/iso/latest/">Arch bootstrap image</a>:</p>
-<pre><code># arch-chroot $TARGETDIR</code></pre></li>
-<li><p>Now that we have a chroot environment with access to the (currently broken) Arch system, continue with unfinished <code>pacman</code> upgrades and clean up any lock file if needed:</p>
-<pre><code>[/mnt/arch]# pacman -Syu</code></pre>
+<pre><code>    # arch-chroot $TARGETDIR</code></pre>
+<ol start="2" type="1">
+<li>Now that we have a chroot environment with access to the (currently broken) Arch system, continue with unfinished <code>pacman</code> upgrades and clean up any lock file if needed:</li>
+</ol>
+<pre><code>    [/mnt/arch]# pacman -Syu</code></pre>
 <p>Or, if there’s any unwanted package upgrade that causes the system to fail, downgrade it.<br />
 The important thing to remember is that, while continuing, a previously failed transaction will not run its hooks anymore. Therefore it might be wiser to find out which exact packages <code>pacman</code> was trying to upgrade in the last transaction (from <code>/var/log/pacman.log</code>) and <em>reinstall</em> all of them, rather than a complementing <code>pacman -Syu</code>. But if it’s known which package is causing the problem (and in this very common case, <code>linux</code>), simply run the following to regenerate initramfs for the new kernel:</p>
-<pre><code>[/mnt/arch]# mkinitcpio -p linux</code></pre>
-<p>And we are done. A few commands and our Arch system is now back and booting.</p></li>
-</ol>
+<pre><code>    [/mnt/arch]# mkinitcpio -p linux</code></pre>
+<p>And we are done. A few commands and our Arch system is now back and booting.</p>
 <p><strong>Why the mess?</strong> Initramfs images need to be regenerated (from a corresponding mkinitcpio preset file) after each kernel update. Starting from Arch’s package <code>linux 4.8.8-2</code>, the calling of <code>mkinitcpio</code> was specified in a PostTransaction alpm hook, in place of an explicit <code>post_install()</code> command to be invoked from the <code>.install</code> script <a href="https://git.archlinux.org/svntogit/packages.git/commit/trunk/linux.install?h=packages/linux&amp;id=617173dcde960f00112ebdfee4c80ede71e67375">as before</a>: (The move towards alpm hooks is said to be a fix for <a href="https://bugs.archlinux.org/task/51818">#51818</a>, as two or more packages in one transaction may need the regeneration of initramfs images)</p>
 <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="kw">[Trigger]</span>
 <span class="dt">Type </span><span class="ot">=</span><span class="st"> File</span>
