@@ -5,12 +5,57 @@
   <link rel="alternate" type="text/html" href="https://www.soimort.org/" />
   <link rel="self" type="application/atom+xml" href="https://www.soimort.org/feed.atom" />
   <id>tag:www.soimort.org,2017:/</id>
-  <updated>2017-08-03T00:00:00+02:00</updated>
+  <updated>2017-09-02T00:00:00+02:00</updated>
   <author>
     <name>Mort Yao</name>
     <email>soi@mort.ninja</email>
   </author>
 
+  <entry>
+    <title>When GNOME Shell Freezes (But You Have Unsaved Stuff There)</title>
+    <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/170902" />
+    <id>tag:www.soimort.org,2017:/notes/170902</id>
+    <published>2017-09-02T00:00:00+02:00</published>
+    <updated>2017-09-02T00:00:00+02:00</updated>
+    <author>
+      <name>Mort Yao</name>
+    </author>
+    
+    <content type="html" xml:lang="en" xml:base="https://www.soimort.org/">
+<![CDATA[
+<p>In the past few months, I was running into the mysterious bug that GNOME Shell crashes with a segfault in <code>libgjs.so.0.0.0</code>, leaving me an unresponsive desktop:</p>
+<pre><code>  kernel: gnome-shell[963]: segfault at 7f06645fffe8 ip 00007f06d94898dd
+  sp 00007fff562ee7e0 error 4 in libgjs.so.0.0.0[7f06d9</code></pre>
+<p>On crashing GNOME Shell does not restart itself correctly, nor <code>gnome-shell</code> processes are actually terminated, for some unknown reason. When this happens Mutter is completely frozen, <kbd>Alt</kbd>+<kbd>F2</kbd> is unavailable; what’s even worse, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F3</kbd> can’t get you a lifesaving TTY.</p>
+<p>Clearly, the only way one can access the box then is via SSH. But what to do next? While it is possible to simply restart <code>gdm</code> like: (for systemd users)</p>
+<pre><code>$ systemctl restart gdm</code></pre>
+<p>This would, however, destroy the whole X session and all your open GUI processes will be lost! A desirable, more elegant approach is to restart <code>gnome-shell</code> alone, but this requires a few tricks in case you’re working through <code>ssh</code> and <code>killall -9 gnome-shell</code> doesn’t restart GNOME Shell properly.</p>
+<ol type="1">
+<li>Login to the (borked) remote machine, and enable X11 Forwarding in its SSH daemon by modifying <code>/etc/ssh/sshd_config</code>, if you’ve never done it before:<br />
+(Note that this option is not the default on most distros; you’ll have to restart <code>sshd</code> on the remote machine after then.)</li>
+</ol>
+<pre><code>        X11Forwarding yes</code></pre>
+<ol start="2" type="1">
+<li>Login to the remote machine again, with X11 forwarding enabled this time:</li>
+</ol>
+<pre><code>        $ ssh yourUser@yourHost -X</code></pre>
+<ol start="3" type="1">
+<li>On the borked remote machine, kill all the FUBARed <code>gnome-shell</code> processes, if any:</li>
+</ol>
+<pre><code>        $ pkill gnome-shell</code></pre>
+<ol start="4" type="1">
+<li>Set the correct <code>DISPLAY</code> environment otherwise you won’t be able to run a WM from a remote shell:</li>
+</ol>
+<pre><code>        $ export DISPLAY=:0</code></pre>
+<ol start="5" type="1">
+<li>Bring back the GNOME Shell WM, detached (so it can keep running after closing the remote shell):</li>
+</ol>
+<pre><code>        $ setsid gnome-shell</code></pre>
+<p><strong>Related Gjs bug(s).</strong> The bug was there since gjs 1.48 and has been reported multiple times: <a href="https://bugzilla.gnome.org/show_bug.cgi?id=781799">#781799</a>, <a href="https://bugzilla.gnome.org/show_bug.cgi?id=783935">#783935</a>, <a href="https://bugzilla.gnome.org/show_bug.cgi?id=785657">#785657</a>. Still, a recent gjs 1.49 build crashes my desktop: ( It seems rather hard to find out what would trigger the issue, but no more worries when it bumps in the night – Just get back the WM and no running window is lost.</p>
+
+]]>
+    </content>
+  </entry>
   <entry>
     <title>Understanding Colors – A Walkthrough of Modern Color Theory and Practice</title>
     <link rel="alternate" type="text/html" href="https://blog.soimort.org/cv/colors/" />
@@ -387,30 +432,32 @@
 <p>Without proper modules loaded even the keyboard was not working, so I couldn’t do anything under the emergency shell. But I wasn’t completely out of luck – I have a dual-booting of Arch and Ubuntu, which is prepared just for recovery purposes like this. (otherwise I had to make room for another Live USB, which was a little bit inconvenient; I don’t use those rescue-ware for years)</p>
 <p><strong>Recover an (unbootable) Arch system from another distro:</strong> This is mostly relevant if you can’t boot into the system (due to a corrupted kernel upgrade), otherwise it’s possible to just login from TTY (locally or via SSH) and perform the fix (e.g., in the case that it’s just X, display manager or WM that fails to load but the kernel boots well).</p>
 <ol type="1">
-<li><p>On the host system (e.g., Ubuntu), create a working chroot environment: (Assume that the root for Arch is mounted to <code>/dev/sda11</code>)</p>
-<pre><code># TARGETDEV=&quot;/dev/sda11&quot;
-# TARGETDIR=&quot;/mnt/arch&quot;
+<li>On the host system (e.g., Ubuntu), create a working chroot environment: (Assume that the root for Arch is mounted to <code>/dev/sda11</code>)</li>
+</ol>
+<pre><code>    # TARGETDEV=&quot;/dev/sda11&quot;
+    # TARGETDIR=&quot;/mnt/arch&quot;
 
-# mount $TARGETDEV $TARGETDIR
-# mount -t proc /proc $TARGETDIR/proc
-# mount --rbind /sys $TARGETDIR/sys
-# mount --rbind /dev $TARGETDIR/dev
+    # mount $TARGETDEV $TARGETDIR
+    # mount -t proc /proc $TARGETDIR/proc
+    # mount --rbind /sys $TARGETDIR/sys
+    # mount --rbind /dev $TARGETDIR/dev
 
-# cp /etc/hosts $TARGETDIR/etc
-# cp /etc/resolv.conf $TARGETDIR/etc
-# chroot $TARGETDIR rm /etc/mtab 2&gt; /dev/null
-# chroot $TARGETDIR ln -s /proc/mounts /etc/mtab
+    # cp /etc/hosts $TARGETDIR/etc
+    # cp /etc/resolv.conf $TARGETDIR/etc
+    # chroot $TARGETDIR rm /etc/mtab 2&gt; /dev/null
+    # chroot $TARGETDIR ln -s /proc/mounts /etc/mtab
 
-# chroot $TARGETDIR</code></pre>
+    # chroot $TARGETDIR</code></pre>
 <p>Alternatively, use the <code>arch-chroot</code> script from an <a href="https://mirrors.kernel.org/archlinux/iso/latest/">Arch bootstrap image</a>:</p>
-<pre><code># arch-chroot $TARGETDIR</code></pre></li>
-<li><p>Now that we have a chroot environment with access to the (currently broken) Arch system, continue with unfinished <code>pacman</code> upgrades and clean up any lock file if needed:</p>
-<pre><code>[/mnt/arch]# pacman -Syu</code></pre>
+<pre><code>    # arch-chroot $TARGETDIR</code></pre>
+<ol start="2" type="1">
+<li>Now that we have a chroot environment with access to the (currently broken) Arch system, continue with unfinished <code>pacman</code> upgrades and clean up any lock file if needed:</li>
+</ol>
+<pre><code>    [/mnt/arch]# pacman -Syu</code></pre>
 <p>Or, if there’s any unwanted package upgrade that causes the system to fail, downgrade it.<br />
 The important thing to remember is that, while continuing, a previously failed transaction will not run its hooks anymore. Therefore it might be wiser to find out which exact packages <code>pacman</code> was trying to upgrade in the last transaction (from <code>/var/log/pacman.log</code>) and <em>reinstall</em> all of them, rather than a complementing <code>pacman -Syu</code>. But if it’s known which package is causing the problem (and in this very common case, <code>linux</code>), simply run the following to regenerate initramfs for the new kernel:</p>
-<pre><code>[/mnt/arch]# mkinitcpio -p linux</code></pre>
-<p>And we are done. A few commands and our Arch system is now back and booting.</p></li>
-</ol>
+<pre><code>    [/mnt/arch]# mkinitcpio -p linux</code></pre>
+<p>And we are done. A few commands and our Arch system is now back and booting.</p>
 <p><strong>Why the mess?</strong> Initramfs images need to be regenerated (from a corresponding mkinitcpio preset file) after each kernel update. Starting from Arch’s package <code>linux 4.8.8-2</code>, the calling of <code>mkinitcpio</code> was specified in a PostTransaction alpm hook, in place of an explicit <code>post_install()</code> command to be invoked from the <code>.install</code> script <a href="https://git.archlinux.org/svntogit/packages.git/commit/trunk/linux.install?h=packages/linux&amp;id=617173dcde960f00112ebdfee4c80ede71e67375">as before</a>: (The move towards alpm hooks is said to be a fix for <a href="https://bugs.archlinux.org/task/51818">#51818</a>, as two or more packages in one transaction may need the regeneration of initramfs images)</p>
 <div class="sourceCode"><pre class="sourceCode ini"><code class="sourceCode ini"><span class="kw">[Trigger]</span>
 <span class="dt">Type </span><span class="ot">=</span><span class="st"> File</span>
@@ -615,8 +662,8 @@ semType x <span class="fu">=</span> return x</code></pre></div>
     </content>
   </entry>
   <entry>
-    <title><p>An Intuitive Exposition of<br />
-“Proof by Contradiction vs. Proof of Negation”</p></title>
+    <title>An Intuitive Exposition of<br />
+“Proof by Contradiction vs. Proof of Negation”</title>
     <link rel="alternate" type="text/html" href="https://www.soimort.org/notes/170306" />
     <id>tag:www.soimort.org,2017:/notes/170306</id>
     <published>2017-03-06T00:00:00+01:00</published>
@@ -841,34 +888,27 @@ semType x <span class="fu">=</span> return x</code></pre></div>
 </ul>
 <section id="entropy-as-a-measure" class="level2">
 <h2>Entropy as a measure<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
-For random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we define sets <span class="math inline">\(\tilde X\)</span> and <span class="math inline">\(\tilde Y\)</span>. Then the information entropy <span class="math inline">\(\operatorname{H}\)</span> may be viewed as a signed measure <span class="math inline">\(\mu\)</span> over <a href="https://wiki.soimort.org/math/set/">sets</a>:
-<span class="math display">\[\begin{align*}
+<p>For random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, we define sets <span class="math inline">\(\tilde X\)</span> and <span class="math inline">\(\tilde Y\)</span>. Then the information entropy <span class="math inline">\(\operatorname{H}\)</span> may be viewed as a signed measure <span class="math inline">\(\mu\)</span> over <a href="https://wiki.soimort.org/math/set/">sets</a>: <span class="math display">\[\begin{align*}
 \operatorname{H}(X) &amp;= \mu(\tilde X) \\
 \operatorname{H}(Y) &amp;= \mu(\tilde Y) \\
 \operatorname{H}(X,Y) &amp;= \mu(\tilde X \cup \tilde Y) \qquad \text{(Joint entropy is the measure of a set union)} \\
 \operatorname{H}(X\,|\,Y) &amp;= \mu(\tilde X \setminus \tilde Y) \qquad \text{(Conditional entropy is the measure of a set difference)} \\
 \operatorname{I}(X;Y) &amp;= \mu(\tilde X \cap \tilde Y) \qquad \text{(Mutual information is the measure of a set intersection)}
-\end{align*}\]</span>
-The inclusion–exclusion principle:
-<span class="math display">\[\begin{align*}
+\end{align*}\]</span> The inclusion–exclusion principle: <span class="math display">\[\begin{align*}
 \operatorname{H}(X,Y) &amp;= \operatorname{H}(X) + \operatorname{H}(Y) - \operatorname{I}(X;Y) \\
 \mu(\tilde X \cup \tilde Y) &amp;= \mu(\tilde X) + \mu(\tilde Y) - \mu(\tilde X \cap \tilde Y)
-\end{align*}\]</span>
-Bayes’ theorem:
-<span class="math display">\[\begin{align*}
+\end{align*}\]</span> Bayes’ theorem: <span class="math display">\[\begin{align*}
 \operatorname{H}(X\,|\,Y) &amp;= \operatorname{H}(Y\,|\,X) + \operatorname{H}(X) - \operatorname{H}(Y) \\
 \mu(\tilde X \setminus \tilde Y) &amp;= \mu(\tilde Y \setminus \tilde X) + \mu(\tilde X) - \mu(\tilde Y)
-\end{align*}\]</span>
+\end{align*}\]</span></p>
 </section>
 <section id="entropy-and-data-coding" class="level2">
 <h2>Entropy and data coding</h2>
-<em>Absolute entropy (Shannon entropy)</em> quantifies how much information is contained in some data. For data compression, the entropy gives the minimum size that is needed to reconstruct original data (losslessly). Assume that we want to store a random binary string of length <span class="math inline">\(\ell\)</span> (by “random”, we do not have yet any prior knowledge on what data to be stored). Under the <em>principle of maximum entropy</em>, the entropy of its distribution <span class="math inline">\(p(x)\)</span> should be maximized: <span class="math display">\[\max \operatorname{H}(X) = \max \left\{ -\sum_{x\in\mathcal{X}} p(x) \log p(x) \right\}\]</span> given the only constraint <span class="math display">\[\sum_{x\in\mathcal{X}} p(x) = 1\]</span> Let <span class="math inline">\(\lambda\)</span> be the Lagrange multiplier, set <span class="math display">\[\mathcal{L} = - \sum_{x\in\mathcal{X}} p(x) \log p(x) - \lambda\left( \sum_{x\in\mathcal{X}} p(x) - 1 \right)\]</span> We get
-<span class="math display">\[\begin{align*}
+<p><em>Absolute entropy (Shannon entropy)</em> quantifies how much information is contained in some data. For data compression, the entropy gives the minimum size that is needed to reconstruct original data (losslessly). Assume that we want to store a random binary string of length <span class="math inline">\(\ell\)</span> (by “random”, we do not have yet any prior knowledge on what data to be stored). Under the <em>principle of maximum entropy</em>, the entropy of its distribution <span class="math inline">\(p(x)\)</span> should be maximized: <span class="math display">\[\max \operatorname{H}(X) = \max \left\{ -\sum_{x\in\mathcal{X}} p(x) \log p(x) \right\}\]</span> given the only constraint <span class="math display">\[\sum_{x\in\mathcal{X}} p(x) = 1\]</span> Let <span class="math inline">\(\lambda\)</span> be the Lagrange multiplier, set <span class="math display">\[\mathcal{L} = - \sum_{x\in\mathcal{X}} p(x) \log p(x) - \lambda\left( \sum_{x\in\mathcal{X}} p(x) - 1 \right)\]</span> We get <span class="math display">\[\begin{align*}
 \frac{\partial\mathcal{L}}{\partial x} = -p(x)(\log p(x) + 1 + \lambda) &amp;= 0 \\
 \log p(x) &amp;= - \lambda - 1 \\
 p(x) &amp;= c \qquad \text{(constant)}
-\end{align*}\]</span>
-<p>That is, the <a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">discrete uniform distribution</a> maximizes the entropy for a random string. Since <span class="math inline">\(|\mathcal{X}| = 2^\ell\)</span>, we have <span class="math inline">\(p(x) = 2^{-\ell}\)</span> and <span class="math inline">\(\operatorname{H}(X) = -\sum_{x\in\mathcal{X}} 2^{-\ell} \log_2 2^{-\ell} = \ell\)</span> (bits). We conclude that the information that can be represented in a <span class="math inline">\(\ell\)</span>-bit string is at most <span class="math inline">\(\ell\)</span> bits. Some practical results include</p>
+\end{align*}\]</span> That is, the <a href="https://wiki.soimort.org/math/probability/#discrete-uniform-distribution">discrete uniform distribution</a> maximizes the entropy for a random string. Since <span class="math inline">\(|\mathcal{X}| = 2^\ell\)</span>, we have <span class="math inline">\(p(x) = 2^{-\ell}\)</span> and <span class="math inline">\(\operatorname{H}(X) = -\sum_{x\in\mathcal{X}} 2^{-\ell} \log_2 2^{-\ell} = \ell\)</span> (bits). We conclude that the information that can be represented in a <span class="math inline">\(\ell\)</span>-bit string is at most <span class="math inline">\(\ell\)</span> bits. Some practical results include</p>
 <ul>
 <li>In general, pseudorandom data (assume no prior knowledge) cannot be losslessly compressed, e.g., the uniform key used in one-time pad must have <span class="math inline">\(\log_2 |\mathcal{M}|\)</span> bits (lower bound) so as not to compromise the perfect secrecy. (Further topic: <em>Shannon’s source coding theorem</em>)</li>
 <li>Fully correct encoding/decoding of data, e.g., <span class="math inline">\(\mathsf{Enc}(m)\)</span> and <span class="math inline">\(\mathsf{Dec}(c)\)</span> algorithms in a private-key encryption scheme, must ensure that the probability distributions of <span class="math inline">\(m \in \mathcal{M}\)</span> and <span class="math inline">\(c \in \mathcal{C}\)</span> have the same entropy.</li>
@@ -884,14 +924,12 @@ p(x) &amp;= c \qquad \text{(constant)}
 <p><strong>Theorem 4.2.</strong> <em>Normal distribution <span class="math inline">\(\mathcal{N}(\mu,\sigma^2)\)</span> maximizes the differential entropy for given mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</em></p>
 <p><strong>Proof.</strong><a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> Let <span class="math inline">\(g(x)\)</span> be a pdf of the normal distribution with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Let <span class="math inline">\(f(x)\)</span> be an arbitrary pdf with the same mean and variance.</p>
 <p>Consider the KL divergence between <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span>. By Lemma 4.1 (Gibbs’ inequality): <span class="math display">\[\operatorname{D}_\mathrm{KL}(f\|g) = \int_{-\infty}^\infty f(x) \log \frac{f(x)}{g(x)} dx = \operatorname{H}(f,g) - \operatorname{H}(f) \geq 0\]</span></p>
-Notice that
-<span class="math display">\[\begin{align*}
+<p>Notice that <span class="math display">\[\begin{align*}
 \operatorname{H}(f,g) &amp;= - \int_{-\infty}^\infty f(x) \log g(x) dx \\
 &amp;= - \int_{-\infty}^\infty f(x) \log \left( \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}} \right) dx \\
 &amp;= \frac{1}{2} \left( \log(2\pi\sigma^2) + 1 \right) \\
 &amp;= \operatorname{H}(g)
-\end{align*}\]</span>
-<p>Therefore, <span class="math display">\[\operatorname{H}(g) \geq \operatorname{H}(f)\]</span> That is, the distribution of <span class="math inline">\(g(x)\)</span> (Gaussian) always has the maximum entropy. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
+\end{align*}\]</span> Therefore, <span class="math display">\[\operatorname{H}(g) \geq \operatorname{H}(f)\]</span> That is, the distribution of <span class="math inline">\(g(x)\)</span> (Gaussian) always has the maximum entropy. <p style='text-align:right !important;text-indent:0 !important;position:relative;top:-1em'>&#9632;</p></p>
 <p>It is also possible to derive the normal distribution directly from the principle of maximum entropy, under the constraint such that <span class="math inline">\(\int_{-\infty}^\infty (x-\mu)^2f(x)dx = \sigma^2\)</span>.</p>
 <p>The well-known central limit theorem (CLT) which states that the sum of independent random variables <span class="math inline">\(\{X_1,\dots,X_n\}\)</span> tends toward a normal distribution may be alternatively expressed as the monotonicity of the entropy of the normalized sum: <span class="math display">\[\operatorname{H}\left( \frac{\sum_{i=1}^n X_i}{\sqrt{n}} \right)\]</span> which is an increasing function of <span class="math inline">\(n\)</span>. <span class="citation" data-cites="artstein2004solution">[1]</span></p>
 </section>
@@ -909,9 +947,9 @@ Notice that
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Information_theory_and_measure_theory" class="uri">https://en.wikipedia.org/wiki/Information_theory_and_measure_theory</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Gibbs&#39;_inequality" class="uri">https://en.wikipedia.org/wiki/Gibbs'_inequality</a><a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution</a><a href="#fnref3">↩</a></p></li>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Information_theory_and_measure_theory" class="uri">https://en.wikipedia.org/wiki/Information_theory_and_measure_theory</a><a href="#fnref1" class="footnoteBack">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Gibbs&#39;_inequality" class="uri">https://en.wikipedia.org/wiki/Gibbs'_inequality</a><a href="#fnref2" class="footnoteBack">↩</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution" class="uri">https://en.wikipedia.org/wiki/Differential_entropy#Maximization_in_the_normal_distribution</a><a href="#fnref3" class="footnoteBack">↩</a></p></li>
 </ol>
 </section>
 
@@ -1103,7 +1141,7 @@ Notice that
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>R. L. Benson, “The Venona story.” <a href="https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf" class="uri">https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf</a><a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>R. L. Benson, “The Venona story.” <a href="https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf" class="uri">https://www.nsa.gov/about/cryptologic-heritage/historical-figures-publications/publications/coldwar/assets/files/venona_story.pdf</a><a href="#fnref1" class="footnoteBack">↩</a></p></li>
 </ol>
 </section>
 
@@ -1296,8 +1334,8 @@ Notice that
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox" class="uri">https://en.wikipedia.org/wiki/St._Petersburg_paradox</a><a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Bessel&#39;s_correction" class="uri">https://en.wikipedia.org/wiki/Bessel's_correction</a><a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/St._Petersburg_paradox" class="uri">https://en.wikipedia.org/wiki/St._Petersburg_paradox</a><a href="#fnref1" class="footnoteBack">↩</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/Bessel&#39;s_correction" class="uri">https://en.wikipedia.org/wiki/Bessel's_correction</a><a href="#fnref2" class="footnoteBack">↩</a></p></li>
 </ol>
 </section>
 
@@ -1418,8 +1456,10 @@ Notice that
 <span class="ot">---</span></code></pre></div>
 <p>Above is my personal default, and it’s worth a few words to explain:</p>
 <ul>
-<li><p><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</p>
-<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre></li>
+<li><code>geometry</code> is where you control the geometric settings of your document. For example, you may narrow down the page margin to <code>margin=1.5in</code>, and this is equivalent to raw LaTeX:</li>
+</ul>
+<pre><code>\usepackage[margin=1.5in]{geometry}</code></pre>
+<ul>
 <li>Set <code>indent</code> to any value other than <code>false</code> if paragraph indentation is desired. (And it is often desired in formal publications.)</li>
 <li><code>header-includes</code> is where you define your own macros, configure existing ones, or claim <code>\usepackage</code> in case you want to use a package not enabled by Pandoc (e.g., <a href="https://www.ctan.org/pkg/tcolorbox"><code>tcolorbox</code></a>). Although you might as well define those in other places (e.g., in the content of a Markdown file), <em>don’t do that</em>.
 <ul>
@@ -1655,14 +1695,14 @@ Man is a rational animal.
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>We will only consider polynomial-time adversaries here.<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p>For this reason, a <em>yes</em>-answer is also referred to as a <em>maybe</em>-answer in some texts.<a href="#fnref2">↩</a></p></li>
-<li id="fn3"><p>A CDN (Content Delivery Network) is a globally distributed network of proxy servers deployed in multiple data centers, in order to serve cached content to end-users with high availability and high performance.<a href="#fnref3">↩</a></p></li>
-<li id="fn4"><p>In this work, we will consider only steady representations.<a href="#fnref4">↩</a></p></li>
-<li id="fn5"><p>The security parameter <span class="math inline">\(\lambda\)</span> is implied in the initialization algorithm <span class="math inline">\(\mathbf{B}_1\)</span>, thus we denote it as <span class="math inline">\(\mathbf{B}_1(1^\lambda,S)\)</span>.<a href="#fnref5">↩</a></p></li>
-<li id="fn6"><p>To strengthen our definition, we assume that the adversary also gets the set <span class="math inline">\(S\)</span>, and it is important that the adversary can hardly find any false positive even if given <span class="math inline">\(S\)</span>.<a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p>A proof of this can be found in <span class="citation" data-cites="naor2015bloom">[5]</span>.<a href="#fnref7">↩</a></p></li>
-<li id="fn8"><p>Learning model of adaptively changing distributions (ACD).<a href="#fnref8">↩</a></p></li>
+<li id="fn1"><p>We will only consider polynomial-time adversaries here.<a href="#fnref1" class="footnoteBack">↩</a></p></li>
+<li id="fn2"><p>For this reason, a <em>yes</em>-answer is also referred to as a <em>maybe</em>-answer in some texts.<a href="#fnref2" class="footnoteBack">↩</a></p></li>
+<li id="fn3"><p>A CDN (Content Delivery Network) is a globally distributed network of proxy servers deployed in multiple data centers, in order to serve cached content to end-users with high availability and high performance.<a href="#fnref3" class="footnoteBack">↩</a></p></li>
+<li id="fn4"><p>In this work, we will consider only steady representations.<a href="#fnref4" class="footnoteBack">↩</a></p></li>
+<li id="fn5"><p>The security parameter <span class="math inline">\(\lambda\)</span> is implied in the initialization algorithm <span class="math inline">\(\mathbf{B}_1\)</span>, thus we denote it as <span class="math inline">\(\mathbf{B}_1(1^\lambda,S)\)</span>.<a href="#fnref5" class="footnoteBack">↩</a></p></li>
+<li id="fn6"><p>To strengthen our definition, we assume that the adversary also gets the set <span class="math inline">\(S\)</span>, and it is important that the adversary can hardly find any false positive even if given <span class="math inline">\(S\)</span>.<a href="#fnref6" class="footnoteBack">↩</a></p></li>
+<li id="fn7"><p>A proof of this can be found in <span class="citation" data-cites="naor2015bloom">[5]</span>.<a href="#fnref7" class="footnoteBack">↩</a></p></li>
+<li id="fn8"><p>Learning model of adaptively changing distributions (ACD).<a href="#fnref8" class="footnoteBack">↩</a></p></li>
 </ol>
 </section>
 
@@ -1782,7 +1822,7 @@ One-way functions exist, which implies that pseudorandom generators and function
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p><a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p><a href="http://cstheory.stackexchange.com/a/8843/21291" class="uri">http://cstheory.stackexchange.com/a/8843/21291</a><a href="#fnref1" class="footnoteBack">↩</a></p></li>
 </ol>
 </section>
 
