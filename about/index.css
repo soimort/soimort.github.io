@@ -20,6 +20,6 @@ p:first-of-type::first-letter { /* drop cap */
   line-height: 1em;
 }
 
-figure:last-of-type {
+p:last-of-type {
   text-align: right;
 }
