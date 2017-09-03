@@ -55,6 +55,8 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 ## Hacking **/ Notes**
 
+* [When GNOME Shell Freezes (But You Have Unsaved Stuff There)](/notes/170902/)
+*2 Sep 2017*
 * [Recovering from a Corrupted Arch Linux Upgrade](/notes/170407/)
 *7 Apr 2017*
 * [A Pandoc Filter for Typesetting Operational Semantics](/notes/170323/)
