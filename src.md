@@ -6,16 +6,10 @@ author: Mort Yao
 include-before: <link rel="stylesheet" href="/index.css">
 ---
 
-![*"Per aspera ad astra."*
-](https://i0.wp.com/dl.dropboxusercontent.com/s/my1g2j39ii26yph/header-170418.jpg){ width=42% }
+![Man can believe what he argues, but he cannot argue what he argues.
+](https://i0.wp.com/dl.dropboxusercontent.com/s/ih8m0t6mdvfhs0x/header-170909.jpg){ width=32% }
 
 
-
-## Math & Perception **/ Essays**
-
-* [Understanding Colors -- A Walkthrough of Modern Color Theory and Practice
-](https://blog.soimort.org/cv/colors/)
-*3 Aug 2017*
 
 ## My Study Track **/ Summaries**
 
@@ -25,6 +19,9 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 </small></div>
 
+* [The Logical Implication](/mst/7/)
+**#logic**
+*6 Sep 2017*
 * [The Stateful Automata](/mst/6/)
 **#formal languages** **#automata** **#computability**
 *12 Apr 2017*
@@ -73,6 +70,12 @@ include-before: <link rel="stylesheet" href="/index.css">
 * [What I Wish I Knew When Learning Boolean Circuits
 ](https://blog.soimort.org/comp/c/boolean-circuit/)
 *24 Feb 2017*
+
+## Math & Perception **/ Essays**
+
+* [Understanding Colors -- A Walkthrough of Modern Color Theory and Practice
+](https://blog.soimort.org/cv/colors/)
+*3 Aug 2017*
 
 ## Art & Philosophy **/ Essays**
 
