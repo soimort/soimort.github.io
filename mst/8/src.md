@@ -300,10 +300,4 @@ $$\exists x (((x \in P_H \land x \in P_W) \land \forall y ((y \in P_H \land y \i
 
 
 
-## References and further reading
-
-**Books:**
-
-W. V. O. Quine, *Mathematical Logic*.
-
-**Papers:**
+## References
