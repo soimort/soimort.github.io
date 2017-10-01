@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- Akai (pandoc HTML5 template)
+     designer:     soimort
+     last updated: 2016-05-06
+     last adapted: 2016-11-01 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mort Yao">
+    <meta name="dcterms.date" content="2017-09-26">
+    <title>The Referential Use</title>
+    <link rel="canonical" href="https://www.soimort.org/mst/8">
+    <style type="text/css">code { white-space: pre; }</style>
+    <link rel="stylesheet" href="//cdn.soimort.org/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.soimort.org/fonts/latest/URW-Palladio-L.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/__/css/style.css">
+    <link rel="stylesheet" href="/__/css/pygments.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.soimort.org/jk/20160504/jk.min.js"></script>
+    <script src="/__/js/main.js"></script>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 class="title"><a href="https://www.soimort.org/mst/8">The Referential Use</a></h1>
+        <h1 class="subtitle"><a href="https://www.soimort.org/mst/8">Descriptions, names, with sense and reference.</a></h1>
+        <address class="author">Mort Yao</address>
+        <h3 class="date">2017-09-26</h3>
+      </header>
+      <div id="content">
+<p>So I was trying to make some sense of the relevance between language and logic these days, and here comes my rendering of some fundamental issues in the philosophy of language. This should not be taken as a comprehensive summary on the topic, but hopefully it makes clearer how the translation from a natural language to a formal (e.g., first-order) logic can go unambiguously (or ambiguously). Moreover, each subtopic of notes is followed by a reading list introducing main concepts and debates, which are the “real fruits” here.</p>
+<p>Inspired by Wittgenstein’s theory of “Meaning as Use”, it is fair to say that when we use a word, we just mean it. The meaningful use of a word and a mention of it must be distinguished. Quotation, as the canonical device of making the distinction, is central to debates on this topic. Davidson argued that even quoted words can be both a use and a mention. Quine’s invention of quasi-quotations (as an alternative quotational device) is of technical importance, and this notion has found its use in inductive definitions of formal logic, denotational semantics, metaprogramming in Lisp and string interpolations in many practical programming languages.</p>
+<p>As firstly noticed by Frege, the semantics of words embraces two differently supporting aspects: sense and reference. Referring expressions such as descriptions and proper names, may both be denoted using a descriptivist theory (proposed by Russell); the Russellian view of names, however, was criticized by Kripke in favor of a many-worlds causal view.</p>
+<hr />
+<p><strong>On quotation.</strong> In the following text, we will utilize English quotation marks intensively. Quoted text is used as a literal mention of things whatever they enclose. By contrast, unquoted text is used as whatever its meaning is. For example,</p>
+<p style="text-align:center !important;text-indent:0 !important"><em>I</em> am who I am.</p>
+<p>but</p>
+<p style="text-align:center !important;text-indent:0 !important"><em>“I”</em> is a word. <em>“I”</em> is not who I am.</p>
+<p>(This issue will be discussed further in “Use-mention distinction”.)</p>
+<p><strong>Statement.</strong> A <em>statement</em> is defined as a <em>sentence</em> that says something is <em>true</em>. The notions of English words “sentence” and “true” are clear in this informal context, and they all have their naïve meanings. “Something” is just an object (or objects) that the statement talks about.</p>
+<p><strong>Metalanguage and object language.</strong> To make a statement about something, we may use either a formal or a natural language. When that “something” is some language (or languages), we refer to it as the <em>object language</em>(s) that we are talking about and the language we are using to make the very statement as the <em>metalanguage</em>. For example,</p>
+<p style="text-align:center !important;text-indent:0 !important">The German phrase “ein weißes Pferd ist weiß” means “a white horse is white” in English.</p>
+<p>Here we are talking about the isomorphic meanings of two sentences in German and in English (as our object languages), and English is the metalanguage that we use to make the statement. It doesn’t matter which metalanguage we use and whether the metalanguage is identical to one of the object languages, as long as it is capable of representing the semantics we want; The following statement (using Esperanto as the metalanguage) has the same meaning as above:</p>
+<p style="text-align:center !important;text-indent:0 !important">La germana frazo “ein weißes Pferd ist weiß” signifas “a white horse is white” en la angla.</p>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>On the application of metalanguages and object languages in mathematical logic, see:</p>
+<ul>
+<li>G. J. Mattey, “Object Language and Metalanguage.” <a href="http://hume.ucdavis.edu/mattey/phi112/objectmeta_ho.pdf">[PDF]</a></li>
+<li>“Metalanguage,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Metalanguage" class="uri">https://en.wikipedia.org/wiki/Metalanguage</a>.</li>
+<li>“Object Language,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Object_language" class="uri">https://en.wikipedia.org/wiki/Object_language</a>.</li>
+</ul>
+</blockquote>
+<p><strong>Ambiguity in interpretations.</strong> It might be tempting to just use a natural language as our metalanguage, but ambiguity could arise due to the sloppy nature of any human languages. Consider the following statement in Chinese:</p>
+<p style="text-align:center !important;text-indent:0 !important">白馬非馬。<br />
+(A white horse is not a horse.)</p>
+<p>The argument is that the intension of “white horse” consists of the properties of being white and being horse-like, while the intension of “horse” consists merely of the property of being horse-like, hence conceptually “white horse” and “horse” are not identical to each other. However, if we interpret “是 (be)” as “be a kind of” thus “非 (be not)” as “be not a kind of”, as in the usual context, we could immediately tell that it is absurd to say:</p>
+<p style="text-align:center !important;text-indent:0 !important">白馬非馬。<br />
+(A white horse is not a kind of horses.)</p>
+<p>Natural languages can be vague, however we are almost always in need of a definite interpretation when studying the semantics (of whatever language we like). It is most advisable to employ a formal language so that we don’t fall into dialectic traps like this. Consider the formal language of set theory, where we define a relation <span class="math inline">\(P_H\)</span> (“being horse-like”) such that <span class="math inline">\(P_H x\)</span> if and only if <span class="math inline">\(x \in P_H\)</span>, and a relation <span class="math inline">\(P_W\)</span> (“being white”) such that <span class="math inline">\(P_W x\)</span> if and only if <span class="math inline">\(x \in P_W\)</span>. Then we can write the first meaning of the informal statement sloppily, but unambiguously as: <span class="math display">\[\{ x \in P_H : x \in P_W \} \neq P_H\]</span> which is true if and only if there is at least one <span class="math inline">\(x&#39;\)</span> such that <span class="math inline">\(x&#39; \in P_H \land x&#39; \not\in P_W\)</span>, so that <span class="math inline">\(x&#39; \not\in \{ x \in P_H : x \in P_W \}\)</span> but <span class="math inline">\(x&#39; \in P_H\)</span>. There is a plausible argument by nature, since we are easily convinced that “There is a horse that is not white”.</p>
+<p><strong><em>Exercise 8.1.</em></strong> Rewrite <span class="math inline">\(\{ x \in P_H : x \in P_W \} \neq P_H\)</span> formally (i.e., without using set comprehension), in the first-order language of set theory containing only <span class="math inline">\(\in\)</span> as a predicate symbol.</p>
+<p>The second meaning of the statement can be unambiguously written as: <span class="math display">\[\forall x ((x \in P_H \land x \in P_W) \to x \not\in P_H)\]</span> which is true if and only if <span class="math inline">\(\forall x (\lnot (x \in P_H \land x \in P_W))\)</span>, i.e., “There is no such thing as a white horse”; or even <span class="math inline">\(\forall x (x \not\in P_H)\)</span>, i.e., “Nothing is a horse”. Both are ungrounded beliefs contradicting our empirical evidence.</p>
+<p><strong>Ambiguity in referring expressions.</strong> Difficulties in translating from a natural language to a formal language often arise in unintended ways. Consider again, the statement:</p>
+<p style="text-align:center !important;text-indent:0 !important">A white horse is not a kind of horses.</p>
+<p>Doe the mentioned “white horse” refer to any arbitrary object that simply holds the properties of being a white horse, or a very specific white horse that one happens to find to be not a kind of horses? This distinction is significant because in the latter case, we have to formulate the statement using an existential quantification instead of the universal quantification: <span class="math display">\[\exists x ((x \in P_H \land x \in P_W) \land x \not\in P_H)\]</span> that gives us a third meaning of the statement “白馬非馬”.</p>
+<p><strong><em>Exercise 8.2.</em></strong> (1) Can it be the case that the sentence <span class="math inline">\(\exists x ((x \in P_H \land x \in P_W) \land x \not\in P_H)\)</span> is true? (2) Why don’t we formulate its meaning as <span class="math inline">\(\exists x ((x \in P_H \land x \in P_W) \to x \not\in P_H)\)</span>?</p>
+<p><strong>Descriptions and names.</strong> To eliminate any potential ambiguity when referring to something in a natural language, we firstly review three kinds of referring expressions:</p>
+<ol>
+<li><strong>Demonstratives</strong>. Examples: “this”; “this horse”; “that white horse”.</li>
+<li><strong>Descriptions</strong>.
+<ul>
+<li><em>Indefinite</em> descriptions. Examples: “a white horse”.</li>
+<li><em>Definite</em> descriptions. Examples: “the white horse”.</li>
+</ul></li>
+<li><strong>Proper names</strong> (<em>names</em> that uniquely identify their referents). Examples: “Princess Celestia”; “Rainbow Dash”.</li>
+</ol>
+<p>A referring expression (singular term) picks out a particular object (or some particular objects) that the sentence talks about. The demonstratives are clearly context sensitive, so for now we will consider only descriptions and proper names for the sake of unambiguity.</p>
+<p>For indefinite descriptions, consider the following sentence:</p>
+<p style="text-align:center !important;text-indent:0 !important">A white horse is white.</p>
+<p>Based on our preceding discussion, there are two different ways of formulating it:</p>
+<p style="text-align:center !important;text-indent:0 !important">(If there is a white horse, then it is white.) <span class="math display">\[\forall x ((x \in P_H \land x \in P_W) \to x \in P_W)\]</span></p>
+<p>and</p>
+<p style="text-align:center !important;text-indent:0 !important">(There is a white horse which is white.) <span class="math display">\[\exists x ((x \in P_H \land x \in P_W) \land x \in P_W)\]</span></p>
+<p>N.B. The latter (and weaker) formulation is proposed by <a href="https://plato.stanford.edu/entries/russell/">Bertrand Russell</a>. <span class="citation" data-cites="sep-descriptions">[1]</span></p>
+<p>For definite descriptions,</p>
+<p style="text-align:center !important;text-indent:0 !important">The white horse is white.</p>
+<p>How do we understand its semantics? Russell proposed the following formulation:</p>
+<p style="text-align:center !important;text-indent:0 !important">(There is exactly one white horse which is white.) <span class="math display">\[\exists! x ((x \in P_H \land x \in P_W) \land x \in P_W)\]</span></p>
+<p><strong><em>Exercise 8.3.</em></strong> Rewrite the above sentence using the existential quantifier.</p>
+<p>Russell’s theory of descriptions can lead to justified denials of some obviously ridiculous statements. For example, the sentence</p>
+<p style="text-align:center !important;text-indent:0 !important">The invisible pink unicorn is white.</p>
+<p>is puzzling, since we have no idea what an “invisible pink unicorn” would be like. Most of us would agree that there is no such thing as an invisible pink unicorn. Can the above statement be true then? By Russell’s formulation of definite descriptions, we say that this is equivalent to</p>
+<p style="text-align:center !important;text-indent:0 !important">There is exactly one invisible pink unicorn which is white.</p>
+<p>Then we can immediately assert that it is not true, given our belief that no invisible pink unicorn really exists.</p>
+<p>As an alternative view of the theory of descriptions, <a href="https://plato.stanford.edu/entries/frege/">Gottlob Frege</a> suggested that a sentence like above makes use of a definite description that fails to refer (as “invisible pink unicorn” does not refer to anything), thus it does not express a proposition and has no truth value. <span class="citation" data-cites="strawson1950referring">[2]</span></p>
+<p>For proper names, we could say things like</p>
+<p style="text-align:center !important;text-indent:0 !important">Princess Celestia is white.</p>
+<p>It has been disputed, however, whether a descriptivist theory can be applied on proper names. Russell argued that most names have some descriptive meanings, e.g., “Princess Celestia” can be descriptively understood as “The benevolent ruler of Equestria”. Modern causalists such as <a href="https://scholar.google.com/citations?user=MRCc_ugAAAAJ">Saul Kripke</a>, criticized the descriptivist theory <span class="citation" data-cites="kripke1972naming">[3]</span>, for that a name need not be a uniquely identifying description so as to refer to an object; rather, there must be a <em>causal chain</em> that makes the name a reference. For example, we know that the name “Princess Celestia” and the description “The benevolent ruler of Equestria” refer to the same referent because she defeated King Sombra and took over Equestria, or more realistically, the story-writer let her be so. However, in an alternate world where King Sombra still rules Equestria, the name “Princess Celestia” would not have the same referent as “The benevolent ruler of Equestria” (in fact the latter term would actually refer to nothing), but “Princess Celestia” will always be Princess Celestia; that is, a proper name is a <a href="https://en.wikipedia.org/wiki/Rigid_designator"><em>rigid designator</em></a> of objects, while a definite description may refer to very different things due to varying causality in different worlds. Kripke’s causal theory of reference suggested that, a name refers uniquely to the same object in every possible world, regardless of any particular facts about it. By contrast, the descriptivist view of a name may fail to capture its referent consistently in all worlds.</p>
+<p><strong>Sense and reference.</strong> As per discussion on descriptions and names, it is essential to make a distinction between a <em>sense</em> and a <em>reference</em> (this distinction is attributed to Frege’s 1892 work “Über Sinn und Bedeutung” (<em>On Sense and Reference</em>)). A reference denotes a particular object in the world that the term applies, while a sense denotes the way in which the term presents, regardless of what the actual referent is (or whether there is a referent). For example, the description “The invisible pink unicorn” clearly makes sense, but it has no reference in any possible physical world. As a second example, the proper name “Princess Celestia” and the description “The benevolent ruler of Equestria” have different senses (i.e., “Princess Celestia” means Princess Celestia, “The benevolent ruler of Equestria” means the benevolent ruler of Equestria, and these two meanings are never the same), however, they do refer to the same thing in this world.</p>
+<p>It is worth noting that senses may not be injectively mapped to words or phrases, as a word can present different senses in different contexts. For example, the word “structure” has a meaning in mathematical logic, and it also has a meaning in abstract algebra. Despite that their senses are similar in essence, they apply to different domains of mathematics and should not be taken as identical. They can, nonetheless, have one common reference when we talk about a formal language <span class="math inline">\(\mathcal{A}\)</span> of algebra, studying the theory of a particular algebraic structure (e.g., abelian group <span class="math inline">\((A, \cdot)\)</span>) thus it is also a structure <span class="math inline">\(\mathfrak{A}\)</span> that we assign to our language <span class="math inline">\(\mathcal{A}\)</span>.</p>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>On a first introduction to descriptions, proper names, Fregean-Russellian descriptivist theory and Kripke’s causal theory, see Wikipedia:</p>
+<ul>
+<li>“Sense and Reference,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Sense_and_reference" class="uri">https://en.wikipedia.org/wiki/Sense_and_reference</a>.</li>
+<li>“Definite Description,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Definite_description" class="uri">https://en.wikipedia.org/wiki/Definite_description</a>.</li>
+<li>“Proper Name,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Proper_name_(philosophy)" class="uri">https://en.wikipedia.org/wiki/Proper_name_(philosophy)</a>.</li>
+<li>“Descriptivist Theory of Names,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Descriptivist_theory_of_names" class="uri">https://en.wikipedia.org/wiki/Descriptivist_theory_of_names</a>.</li>
+<li>“Causal Theory of Reference,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Causal_theory_of_reference" class="uri">https://en.wikipedia.org/wiki/Causal_theory_of_reference</a>.</li>
+</ul>
+<p>Further reading on descriptions, names and the issue of reference:</p>
+<ul>
+<li>Peter Ludlow, “Descriptions,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/descriptions/" class="uri">https://plato.stanford.edu/entries/descriptions/</a>.</li>
+<li>Marga Reimer and Eliot Michaelson, “Reference,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/reference/" class="uri">https://plato.stanford.edu/entries/reference/</a>.</li>
+<li>P. F. Strawson, “On Referring.” <a href="http://semantics.uchicago.edu/kennedy/classes/f09/semprag1/strawson50.pdf">[PDF]</a></li>
+</ul>
+<p>On Frege’s innovative distinction between sense and reference:</p>
+<ul>
+<li>Gottlob Frege, “On Sense and Reference.” <a href="http://www.scu.edu.tw/philos/98class/Peng/05.pdf">[PDF]</a> (English translation of “Über Sinn und Bedeutung”)</li>
+<li>Michael Dummett, “Frege’s Distinction Between Sense and Reference.”</li>
+</ul>
+<p>Russell’s original essay on his theory of descriptions:</p>
+<ul>
+<li>Bertrand Russell, “On Denoting.” <a href="https://www.uvm.edu/~lderosse/courses/lang/Russell(1905).pdf">[PDF]</a>
+<ul>
+<li>“On Denoting,” Wikipedia, <a href="https://en.wikipedia.org/wiki/On_Denoting" class="uri">https://en.wikipedia.org/wiki/On_Denoting</a>.</li>
+</ul></li>
+</ul>
+<p>Kripke’s objections to descriptivist theories of proper names:</p>
+<ul>
+<li>Saul Kripke, “Naming and Necessity.” <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.472.9081&amp;rep=rep1&amp;type=pdf">[PDF]</a></li>
+</ul>
+</blockquote>
+<p><strong>Use-mention distinction.</strong> When trying to understand the semantics of a natural language, it is also critical to make the distinction between <em>using</em> a word (or phrase) and <em>mentioning</em> it. Consider again, the following sentence:</p>
+<p style="text-align:center !important;text-indent:0 !important">The white horse is white.</p>
+<p>This sentence is true because a white horse is indeed, white (in the conventional interpretation). Furthermore,</p>
+<p style="text-align:center !important;text-indent:0 !important">“The white horse” is a definite description.</p>
+<p>This sentence is also true because the phrase “the white horse” is well defined with a meaning that refers to the collection of horses that are white. However, it does not make much sense to say:</p>
+<p style="text-align:center !important;text-indent:0 !important">The white horse is a definite description.</p>
+<p>Since a white horse is just a white horse, not a word or phrase with meanings. And we would also agree that</p>
+<p style="text-align:center !important;text-indent:0 !important">“The white horse” is white.</p>
+<p>is confusing in some way, because the quotation marks suggest that “the white horse” may not have the intended meaning, i.e., it may appear as a literal mention of the English phrase “white horse” instead.</p>
+<p>It is worth noting that though quotation marks are often an indication of mention while unquoted text is simply used, as in the above example, it is not always the case. <a href="https://plato.stanford.edu/entries/davidson/">Donald Davidson</a> argued that “mixed quotation” exists so that quoted words can be simultaneously used and mentioned. <span class="citation" data-cites="Davidson1979">[4]</span></p>
+<p><strong>Quasi-quotation.</strong> While quotation marks can be used for denoting a mention, a practical issue is that when mentioning something (e.g., a definition), we sometimes need to <em>use</em> the reference of a part of the mention inside it. Recall that when defining a first-order language in <a href="/mst/7/">Mst. #7</a>, we made claims like</p>
+<p style="text-align:center !important;text-indent:0 !important">If <span class="math inline">\(\psi\)</span> is a well-formed formula, <span class="math inline">\((\lnot\psi)\)</span> is a well-formed formula.</p>
+<p>Note that the mention is implicit here, without any extra meta-symbols. Can we just make the definition using quotation marks?</p>
+<p style="text-align:center !important;text-indent:0 !important">If <span class="math inline">\(\psi\)</span> is a well-formed formula, “<span class="math inline">\((\lnot\psi)\)</span>” is a well-formed formula.</p>
+<p>It is immediately clear that the above definition does not fit our intended purpose: Let the open term (in our metalanguage) <span class="math inline">\(\psi\)</span> be the formula (in the object language) “<span class="math inline">\((\alpha \to \beta)\)</span>”, then what we are saying basically is</p>
+<p style="text-align:center !important;text-indent:0 !important">If “<span class="math inline">\((\alpha \to \beta)\)</span>” is a well-formed formula, “<span class="math inline">\((\lnot\psi)\)</span>” is a well-formed formula.</p>
+<p>This sentence does not really make an inductive definition as intended. The problem is that the symbol “<span class="math inline">\(\psi\)</span>” in “‘<span class="math inline">\((\lnot\psi)\)</span>’” is not interpolated as what its use is (i.e., “<span class="math inline">\((\alpha \to \beta)\)</span>”), but only appears as a literal Greek letter in the mention. To resolve this issue, <a href="https://plato.stanford.edu/entries/quine/">W. V. O. Quine</a> introduced the meta-symbols called <em>quasi-quotation</em> <span class="citation" data-cites="Quine1940-QUIML">[5]</span>, so that it is technically feasible to make inductive definitions like this:</p>
+<p style="text-align:center !important;text-indent:0 !important">If <span class="math inline">\(\psi\)</span> is a well-formed formula, ⌜<span class="math inline">\((\lnot\psi)\)</span>⌝ is a well-formed formula.</p>
+<p>Then let <span class="math inline">\(\psi\)</span> be “<span class="math inline">\((\alpha \to \beta)\)</span>”, ⌜<span class="math inline">\((\lnot\psi)\)</span>⌝ becomes “<span class="math inline">\((\lnot (\alpha \to \beta))\)</span>”. We have that</p>
+<p style="text-align:center !important;text-indent:0 !important">If “<span class="math inline">\((\alpha \to \beta)\)</span>” is a well-formed formula, “<span class="math inline">\((\lnot (\alpha \to \beta))\)</span>” is a well-formed formula.</p>
+<p>just as intended.</p>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>On the importance of use-mention distinction:</p>
+<ul>
+<li>“Use-mention Distinction,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Use–mention_distinction" class="uri">https://en.wikipedia.org/wiki/Use–mention_distinction</a>.</li>
+<li>W. V. O. Quine, <em>Mathematical Logic</em>, chap. 1.4. (Use versus Mention)</li>
+<li>A. W. Moore, “How significant is the use/mention distinction?”</li>
+</ul>
+<p>On quotation:</p>
+<ul>
+<li>W. V. O. Quine, <em>Mathematical Logic</em>, chap. 1.5. (Statements about Statements)</li>
+<li>Herman Cappelen and Ernest Lepore, “Quotation,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/quotation/" class="uri">https://plato.stanford.edu/entries/quotation/</a>.</li>
+<li>Donald Davidson, “Quotation.”</li>
+</ul>
+<p>On the practical device of quasi-quotation:</p>
+<ul>
+<li>“Quasi-quotation,” Wikipedia, <a href="https://en.wikipedia.org/wiki/Quasi-quotation" class="uri">https://en.wikipedia.org/wiki/Quasi-quotation</a>.</li>
+<li>W. V. O. Quine, <em>Mathematical Logic</em>, chap. 1.6. (Quasi-Quotation)</li>
+</ul>
+</blockquote>
+<section id="whats-coming-next" class="level2">
+<h2>What’s coming next</h2>
+<p>The use-mention distinction and the auxiliary device of quasi-quotation are philosophically essential not only for the definition of formulas/sentences in formal languages, but also for Alfred Tarski’s semantic theory of <em>truth</em> and <em>models</em>. Deeper debates on the essence of truth often involve the correspondence theory, the deflationary theory and the coherence theory. It is also informing to know how the <em>liar’s paradox</em> and <em>Quine’s paradox</em> can arise from direct or indirect self-referential statements, and what Tarski’s undefinability theorem implies. Michael Dummett’s characterization of the principle of bivalence (in classical logic) as <em>realism</em>, together with the defence of <em>intuitionism</em> (an anti-realism), are also highly relevant for understanding the philosophical basis of modern logic.</p>
+</section>
+<section id="solutions-to-exercises" class="level2">
+<h2>Solutions to exercises</h2>
+<p><strong><em>Exercise 8.1.</em></strong> <span class="math inline">\(\{ x \in P_H : x \in P_W \} \neq P_H\)</span> is just <span class="math display">\[\lnot ((x \in P_H \land x \in P_W) \leftrightarrow x \in P_H)\]</span> which is just <span class="math display">\[((\lnot (x \in P_H \to (\lnot x \in P_W))) \to x \in P_H) \to (\lnot (x \in P_H \to (\lnot (x \in P_H \to (\lnot x \in P_W)))))\]</span></p>
+<p><strong><em>Exercise 8.2.</em></strong> (1) Notice that <span class="math inline">\(\lnot ((x \in P_H \land x \in P_W) \land x \not\in P_H)\)</span> is a tautology, by generalization we get that <span class="math inline">\(\forall x (\lnot ((x \in P_H \land x \in P_W) \land x \not\in P_H))\)</span>. By double negation <span class="math display">\[\lnot (\lnot \forall x (\lnot ((x \in P_H \land x \in P_W) \land x \not\in P_H)))\]</span> which is just <span class="math display">\[\lnot \exists x ((x \in P_H \land x \in P_W) \land x \not\in P_H)\]</span> so <span class="math inline">\(\exists x ((x \in P_H \land x \in P_W) \land x \not\in P_H)\)</span> cannot be satisfied by any interpretation. (or: it is never true.)</p>
+<p>(2) <span class="math inline">\(\exists x ((x \in P_H \land x \in P_W) \to x \not\in P_H)\)</span> is equivalent to <span class="math display">\[\lnot \forall x (\lnot ((x \in P_H \land x \in P_W) \to x \not\in P_H))\]</span> Assume that there is an <span class="math inline">\(x_c\)</span> such that <span class="math inline">\(x_c \not\in P_H\)</span>, then <span class="math inline">\((x_c \in P_H \land x_c \in P_W) \to x_c \not\in P_H\)</span> would be true.</p>
+<p>Notice that given <span class="math inline">\(\Gamma; \forall x (\lnot ((x \in P_H \land x \in P_W) \to x \not\in P_H))\)</span>, by substituting <span class="math inline">\(x\)</span> with <span class="math inline">\(x_c\)</span> we get <span class="math inline">\(\lnot ((x_c \in P_H \land x_c \in P_W) \to x_c \not\in P_H)\)</span>, but that would be inconsistent with our previous assumption. Thus by Reductio ad Absurdum, <span class="math inline">\(\Gamma \vdash \lnot \forall x (\lnot ((x \in P_H \land x \in P_W) \to x \not\in P_H))\)</span>.</p>
+<p>Now that we can be easily convinced that our assumption holds, that is, there exists something that is not a horse. So this formulation would be trivially true!</p>
+<p><strong><em>Exercise 8.3.</em></strong> <span class="math display">\[\exists x (((x \in P_H \land x \in P_W) \land \forall y ((y \in P_H \land y \in P_W) \to y = x)) \land x \in P_W)\]</span></p>
+</section>
+<section id="references-and-further-reading" class="level2">
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>W. V. O. Quine, <em>Mathematical Logic</em>.</p>
+<p><strong>Papers:</strong></p>
+<div id="refs" class="references">
+<div id="ref-sep-descriptions">
+<p>[1] P. Ludlow, “Descriptions,” in <em>The stanford encyclopedia of philosophy</em>, Fall 2013., E. N. Zalta, Ed. <a href="https://plato.stanford.edu/archives/fall2013/entries/descriptions/" class="uri">https://plato.stanford.edu/archives/fall2013/entries/descriptions/</a>; Metaphysics Research Lab, Stanford University, 2013. </p>
+</div>
+<div id="ref-strawson1950referring">
+<p>[2] P. F. Strawson, “On referring,” <em>Mind</em>, vol. 59, no. 235, pp. 320–344, 1950. </p>
+</div>
+<div id="ref-kripke1972naming">
+<p>[3] S. A. Kripke, “Naming and necessity,” in <em>Semantics of natural language</em>, Springer, 1972, pp. 253–355. </p>
+</div>
+<div id="ref-Davidson1979">
+<p>[4] D. Davidson, “Quotation,” <em>Theory and Decision</em>, vol. 11, no. 1, pp. 27–40, Mar. 1979 [Online]. Available: <a href="https://doi.org/10.1007/BF00126690" class="uri">https://doi.org/10.1007/BF00126690</a></p>
+</div>
+<div id="ref-Quine1940-QUIML">
+<p>[5] W. V. Quine, <em>Mathematical logic</em>. Cambridge: Harvard University Press, 1940. </p>
+</div>
+</div>
+</section>
+      </div>
+      <!-- (www.soimort.org) last updated: 2016-05-07 -->
+      <aside id="soimort-toolbar">
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </aside>
+    </article>
+  </body>
+</html>

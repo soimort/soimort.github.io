@@ -19,6 +19,9 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 </small></div>
 
+* [The Referential Use](/mst/8/)
+**#philosophy** **#logic**
+*26 Sep 2017*
 * [The Logical Implication](/mst/7/)
 **#logic**
 *6 Sep 2017*
