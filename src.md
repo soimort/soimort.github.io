@@ -1,7 +1,7 @@
 ---
-title: Through the Looking-Glass
+title: ...Up to Mortality
 subtitle:
-author: Mort Yao
+author:
 
 include-before: <link rel="stylesheet" href="/index.css">
 ---
@@ -11,7 +11,7 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 
 
-## My Study Track **/ Summaries**
+## My Study Track **/ Summaries & Expositions**
 
 <div style="text-align:right"><small>
 
@@ -19,6 +19,9 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 </small></div>
 
+* [The Semantic Truth](/mst/9/)
+**#philosophy** **#logic**
+*7 Oct 2017*
 * [The Referential Use](/mst/8/)
 **#philosophy** **#logic**
 *26 Sep 2017*
@@ -108,6 +111,7 @@ Subscribe](https://www.soimort.org/feed.atom)
 | [<i class="fa fa-user" aria-hidden="true"></i>
 About me](/about)
 \
+**Mort**
 <i class="fa fa-envelope" aria-hidden="true"></i>
 soi@mort.ninja
 | [<i class="fa fa-key" aria-hidden="true"></i>
