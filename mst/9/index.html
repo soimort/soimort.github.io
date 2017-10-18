@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- Akai (pandoc HTML5 template)
+     designer:     soimort
+     last updated: 2016-05-06
+     last adapted: 2016-11-01 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mort Yao">
+    <meta name="dcterms.date" content="2017-10-07">
+    <title>The Semantic Truth</title>
+    <link rel="canonical" href="https://www.soimort.org/mst/9">
+    <style type="text/css">code { white-space: pre; }</style>
+    <link rel="stylesheet" href="//cdn.soimort.org/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.soimort.org/fonts/latest/URW-Palladio-L.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/__/css/style.css">
+    <link rel="stylesheet" href="/__/css/pygments.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.soimort.org/jk/20160504/jk.min.js"></script>
+    <script src="/__/js/main.js"></script>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 class="title"><a href="https://www.soimort.org/mst/9">The Semantic Truth</a></h1>
+        <h1 class="subtitle"><a href="https://www.soimort.org/mst/9">Truth, arguments, and alternative logics.</a></h1>
+        <address class="author">Mort Yao</address>
+        <h3 class="date">2017-10-07</h3>
+      </header>
+      <div id="content">
+<blockquote>
+<p>“This is clear, in the first place, if we define what the true and the false are. To say of what is that it is not, or of what is not that it is, is <em>false</em>, while to say of what is that it is, and of what is not that it is not, is <em>true</em>.”</p>
+</blockquote>
+<p style="text-align:right !important;text-indent:0 !important">– Aristotle, <em>Metaphysics</em></p>
+<hr />
+<p><strong>On truth-bearers.</strong> A <em>truth-bearer</em> is something of what we can talk about the truth-value: a <em>statement</em>, a <em>sentence</em>, a <em>proposition</em>, etc. We will use the three aforementioned notions indistinguishably, but avoid the use of subjective notions such like <em>assertion</em>, <em>belief</em>, <em>intuition</em> and <em>judgment</em> as truth-bearers. (These words however, can occur with their originally intended meanings.)</p>
+<p>In <a href="/mst/7/">Mst. #7</a> we defined that (in a formal language) a sentence is just a well-formed formula with no free variable. Furthermore, in <a href="/mst/8/">Mst. #8</a> we defined a statement, naïvely, as a sentence that says something is true. But what makes a sentence true, or oppositely, not true?</p>
+<p><strong>Aristotle’s definition of truth.</strong> Aristotle’s original truth definition in <em>Metaphysics</em> (360s B.C.) can be denoted using the modern device of Quine’s quasi-quotation, as follows:</p>
+<p style="text-align:center !important;text-indent:0 !important">⌜<span class="math inline">\(\psi\)</span>⌝ is <em>true</em> if and only if <span class="math inline">\(\psi\)</span>.<br />
+⌜<span class="math inline">\(\psi\)</span>⌝ is <em>false</em> if and only if it is not the case that <span class="math inline">\(\psi\)</span>.</p>
+<p>Note that &quot; ⌜<span class="math inline">\(\psi\)</span>⌝&quot; is a <em>mention</em> of some statement while “<span class="math inline">\(\psi\)</span>” is the <em>use</em> of that statement in the metalanguage, so the above definition does make sense (instead of some “be whatever you be” nonsense as it might seem to an untrained eye).</p>
+<p>An implication of this definition, is that “false” is the opposite of “true”. The bivalence of truth and falsity is an essential property of classical logic. Thus, we have the following tautology: <span class="math display">\[\psi \lor \lnot\psi \qquad\text{(Law of Excluded Middle)}\]</span> that is, given any interpretation, whether <span class="math inline">\(\psi\)</span> is true or false, the above proposition is always true (or said to be <em>valid</em>). This fact may be justified via a truth table.</p>
+<p><strong>Theories of truth.</strong> From a metaphysical perspective, several theories of truth have been proposed and well argued:</p>
+<ul>
+<li><strong>Correspondence theory</strong>: The truth is determined solely by how it relates to the world and whether it describes a fact about that world.
+<ul>
+<li>For a statement to be true, there must be an isomorphism to it from the state of the real world that makes it true. Hence, the correspondence view is mainly accepted by realists/Platonists but rejected by most idealists.</li>
+</ul></li>
+<li><strong>Coherence theory</strong>: The truth is determined by how consistent it is with our existing, coherent set of statements or beliefs.</li>
+<li><strong>Pragmatic theory</strong>: The truth is determined by how well it enables us to achieve our goals.</li>
+<li><strong>Deflationary theory</strong> (alternatively under the labels of <strong>redundancy theory</strong>, <strong>disquotational theory</strong>, <strong>prosentential theory</strong> or <strong>minimalist theory</strong>): The assertion of truth of a statement is nothing but an assertion of the statement itself; it does not attribute a property called “truth” to such a statement.
+<ul>
+<li>The most widely accepted definitions of truth in modern treatment of formal logic (by Frege, <a href="https://en.wikipedia.org/wiki/Frank_P._Ramsey">F. P. Ramsey</a>, Quine, etc.), are deflationary in essence.</li>
+</ul></li>
+</ul>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>On the notion of truth and truth-bearers:</p>
+<ul>
+<li>Michael Glanzberg, “Truth,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/truth/" class="uri">https://plato.stanford.edu/entries/truth/</a>.</li>
+<li>Matthew McGrath, “Propositions,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/propositions/" class="uri">https://plato.stanford.edu/entries/propositions/</a>.</li>
+</ul>
+<p>Correspondence theory:</p>
+<ul>
+<li>Marian David, “The Correspondence Theory of Truth,” Stanford Encyclopedia of Philosophy, <a href="http://plato.stanford.edu/entries/truth-correspondence/" class="uri">http://plato.stanford.edu/entries/truth-correspondence/</a>.</li>
+</ul>
+<p>Coherence theory:</p>
+<ul>
+<li>James O. Young, “The Coherence Theory of Truth,” Stanford Encyclopedia of Philosophy, <a href="http://plato.stanford.edu/entries/truth-coherence/" class="uri">http://plato.stanford.edu/entries/truth-coherence/</a>.</li>
+</ul>
+<p>Pragmatic theory:</p>
+<ul>
+<li>Christopher Hookway, “Pragmatism,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/pragmatism/#PraTheTru" class="uri">https://plato.stanford.edu/entries/pragmatism/#PraTheTru</a>.</li>
+</ul>
+<p>Deflationary theory:</p>
+<ul>
+<li>Daniel Stoljar and Nic Damnjanovic, “The Deflationary Theory of Truth,” Stanford Encyclopedia of Philosophy, <a href="http://plato.stanford.edu/entries/truth-deflationary/" class="uri">http://plato.stanford.edu/entries/truth-deflationary/</a>.</li>
+</ul>
+<p>Ramsey’s redundancy theory of truth (a deflationary theory):</p>
+<ul>
+<li>Frank P. Ramsey, “Facts and Propositions.” <a href="https://www.aristoteliansociety.org.uk/pdf/ramsey.pdf">[PDF]</a></li>
+</ul>
+</blockquote>
+<p>Now we consider a (semi-)formal language where we are able to state truth self-referentially.</p>
+<p><strong>Antinomies.</strong></p>
+<ol type="1">
+<li><em>Liar’s paradox.</em></li>
+</ol>
+<p style="text-align:center !important;text-indent:0 !important">This sentence is false.</p>
+<ol start="2" type="1">
+<li><em>Quine’s paradox.</em></li>
+</ol>
+<p style="text-align:center !important;text-indent:0 !important">“Yields falsehood when preceded by its quotation”<br />
+yields falsehood when preceded by its quotation.</p>
+<p>If we take the truth (or falsity) of a statement to be bivalent, then the truth-values of the above two sentences could not be consistently determined. Such antinomies motivated <a href="https://plato.stanford.edu/entries/tarski/">Alfred Tarski</a>’s proposal of the semantic theory of truth, which eliminates such potentially paradoxical use in a formal language.</p>
+<p><strong>Semantic theory of truth. (Tarski, 1933)</strong> Given an object language <span class="math inline">\(\mathcal{L}_0\)</span> and a metalanguage <span class="math inline">\(\mathcal{L}_1\)</span>,</p>
+<p style="text-align:center !important;text-indent:0 !important">⌜<span class="math inline">\(\psi_0\)</span>⌝ is <em>true</em> if and only if <span class="math inline">\(\psi_1\)</span>. (Convention T)</p>
+<p>where “<span class="math inline">\(\psi_0\)</span>” is a sentence in <span class="math inline">\(\mathcal{L}_0\)</span>, “<span class="math inline">\(\psi_1\)</span>” is a sentence in <span class="math inline">\(\mathcal{L}_1\)</span>. It is demanded that <span class="math inline">\(\mathcal{L}_0\)</span> must be contained in <span class="math inline">\(\mathcal{L}_1\)</span>. Moreover, the word “true” (or “false”) does not occur in <span class="math inline">\(\psi_0\)</span>. Thus, no sentence in the object language <span class="math inline">\(\mathcal{L}_0\)</span> can assert the truth/falsity of itself; rather, its truth-value must be asserted by a higher-level metalanguage <span class="math inline">\(\mathcal{L}_1\)</span>. Virtually, it would be intuitive to imagine a semantic hierarchy of formal languages that rules out the use of self-reference: <span class="math display">\[\mathcal{L}_0 \sqsubset \mathcal{L}_1 \sqsubset \mathcal{L}_2 \sqsubset \cdots\]</span> that is, the truth of a sentence in an object language <span class="math inline">\(\mathcal{L}_i\)</span> can only be asserted in <span class="math inline">\(\mathcal{L}_{i+1}\)</span> as the metalanguage. Since there is no final stage in this hierarchy, the “most-meta” truths may never be asserted.</p>
+<p><strong>T-schema.</strong> For a formal language containing a given set of logical connective symbols, we give an inductive definition of truth in the following form:</p>
+<ol type="1">
+<li>⌜<span class="math inline">\(\psi\)</span>⌝ is true if and only if <span class="math inline">\(\psi\)</span>.</li>
+<li>(<em>Negation</em>) ⌜<span class="math inline">\(\lnot\psi\)</span>⌝ is true if and only if <span class="math inline">\(\psi\)</span> is not true.</li>
+<li>(<em>Conditional</em>) ⌜<span class="math inline">\(\psi \to \theta\)</span>⌝ is true if and only if <span class="math inline">\(\psi\)</span> is not true or <span class="math inline">\(\theta\)</span>, or both.</li>
+<li>(<em>Conjunction</em>) ⌜<span class="math inline">\(\psi \land \theta\)</span>⌝ is true if and only if <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\theta\)</span>.</li>
+<li>(<em>Disjunction</em>) ⌜<span class="math inline">\(\psi \lor \theta\)</span>⌝ is true if and only if <span class="math inline">\(\psi\)</span> or <span class="math inline">\(\theta\)</span>, or both.</li>
+<li>(<em>Universality</em>) ⌜<span class="math inline">\(\forall x \psi(x)\)</span>⌝ is true if and only if every object <span class="math inline">\(x\)</span> satisfies <span class="math inline">\(\psi(x)\)</span>.</li>
+<li>(<em>Existence</em>) ⌜<span class="math inline">\(\exists x \psi(x)\)</span>⌝ is true if and only if there is an object <span class="math inline">\(x\)</span> that satisfies <span class="math inline">\(\psi(x)\)</span>.</li>
+</ol>
+<p>(Note that the subscripts distinguishing the object language / metalanguage are implicit.)</p>
+<p>Tarski’s semantic theory of truth is not only limited to the application in philosophical logic though: A similar definition is also used in model theory, where we <a href="https://wiki.soimort.org/math/logic/fol/structures/">define the satisfaction</a> of a formula <span class="math inline">\(\varphi\)</span> with respect to a structure <span class="math inline">\(\mathfrak{A}\)</span> and an assignment <span class="math inline">\(s\)</span> inductively.</p>
+<p><strong>Remark 9.1. (Semantic theory of truth and mathematical logic)</strong> The mathematical counterpart of Tarski’s semantic theory of truth yields the <strong>undefinability theorem (Tarski, 1936)</strong>, which briefly states that arithmetical truth cannot be defined in arithmetic itself (it is worth noting that the proof is a non-trivial one which requires Gödel numbering on formulas in a formal language). The semantic undefinability also has a strong correspondence with the <strong>incompleteness theorems (Gödel, 1931)</strong>, which will be covered in future notes hopefully.</p>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>On Tarski’s semantic theory of truth:</p>
+<ul>
+<li>Wilfrid Hodges, “Tarski’s Truth Definitions,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/tarski-truth/" class="uri">https://plato.stanford.edu/entries/tarski-truth/</a>.</li>
+<li>Alfred Tarski, “The Semantic Conception of Truth: And the Foundations of Semantics.” <a href="http://www.ditext.com/tarski/tarski.html">[HTML]</a></li>
+<li>Alfred Tarski, “Truth and Proof.” <a href="https://cs.nyu.edu/mishra/COURSES/13.LOGIC/Tarski.pdf">[PDF]</a></li>
+</ul>
+</blockquote>
+<p><strong>Truth and objectivity.</strong> Is truth objective? Yes. Given the object language <span class="math inline">\(\mathcal{L}_0\)</span>, consider a sentence <span class="math inline">\(\varphi[s]\)</span> which is true under the model <span class="math inline">\(\mathfrak{A}\)</span>: <span class="math display">\[\models_\mathfrak{A} \varphi[s]\]</span> It is true because we can argue in our metalanguage <span class="math inline">\(\mathcal{L}_1\)</span>, that it is satisfied decidedly; thus it must be a truth in the object language. For example, we can argue extensionally that <span class="math display">\[\models_\mathfrak{A} \text{Morning Star} = \text{Evening Star}\]</span> Opinionatedly, there could be no such thing as a “subjective truth”, since the truth of a sentence must be justified in a higher-level metalanguage (due to the semantic theory of truth). Per the object-metalanguage distinction, truth is only objective by nature. Once we claim that “something holds” without appealing to a metalanguage for justification, then it is merely a <em>belief</em> rather than a <em>truth</em>. Beliefs can be, of course, illogical and ungrounded.</p>
+<p><strong>Logical validity of arguments.</strong> A true sentence may not always be true in every possible structure. Consider: <span class="math display">\[\models_\mathfrak{B} \text{Morning Star} = \text{Evening Star}\]</span> In an alternative universe <span class="math inline">\(\mathfrak{B}\)</span> where Venus fails to be both the morning star and the evening star, such a statement would be trivially false. However, a logical argument must not depend on a specific structure or interpretation of its parameters; that is, when we argue logically that something is true, the argument itself must hold <em>valid</em>. Validity is a purely logical notion here. For example, consider adding the following axiom to our deductive system: <span class="math display">\[t = t&#39; \to t \cong t&#39;\]</span></p>
+<p>One can easily verify that this axiom is valid (i.e., always true): If <span class="math inline">\(t = t&#39;\)</span> is false, then <span class="math inline">\(t = t&#39; \to t \cong t&#39;\)</span> is vacuously true; if <span class="math inline">\(t = t&#39;\)</span> is true, then we have <span class="math inline">\(t \cong t&#39;\)</span> so <span class="math inline">\(t = t&#39; \to t \cong t&#39;\)</span> is also true.</p>
+<p>Specifically, we have</p>
+<p style="text-align:center !important;text-indent:0 !important"><span class="math inline">\(\text{Morning Star} = \text{Evening Star} \to \text{Morning Star} \cong \text{Evening Star}\)</span><br />
+(If the morning star <em>is</em> the evening star, then it <em>is isomorphic to</em> the evening star.)</p>
+<p>By modus ponens, the following deduction applies:</p>
+<p style="text-align:center !important;text-indent:0 !important"><span class="math inline">\(\Gamma; \text{Morning Star} = \text{Evening Star} \quad\vdash\quad \text{Morning Star} \cong \text{Evening Star}\)</span><br />
+(Assume that the morning star <em>is</em> the evening star, then it <em>is isomorphic to</em> the evening star.)</p>
+<p>This is a valid argument, since it follows solely from our set of axioms and rules of inference, but relies on no particular structures or interpretations. Such a valid argument justifies the logical fact that the truth of its premises guarantees the truth of its conclusion; this, however, does not imply anything about the truth of premises (that would depend on the actual interpretation).</p>
+<p><strong>Soundness of arguments.</strong> To put it shortly, a <em>sound</em> argument is just a valid argument with true premises.</p>
+<p style="text-align:center !important;text-indent:0 !important"><span class="math inline">\(\frac{\text{Morning Star} = \text{Evening Star} \qquad \text{Morning Star} = \text{Evening Star} \to \text{Morning Star} \cong \text{Evening Star}}{\text{Morning Star} \cong \text{Evening Star}}\)</span><br />
+(Given that the morning star <em>is</em> the evening star, it <em>is isomorphic to</em> the evening star.)</p>
+<p>Given true premises, the valid argument proves its conclusion: <span class="math inline">\(\text{Morning Star} \cong \text{Evening Star}\)</span>, and we know that it is guaranteed to be true. Such a truth is also called a <em>logical truth</em>, since it follows from a logical consequence of a sound argument in our deductive system. Notice that the above is just an instance of the <strong>soundness theorem</strong>, loosely stated as: Every provable sentence is true.</p>
+<p><strong>Two approaches to logical consequence.</strong></p>
+<ol type="1">
+<li><em>Model-theoretic</em> (or “realist”) approach. The validity of an argument is justified by the <em>absence of counterexample</em>. That is, if we can ever find a structure <span class="math inline">\(\frak{A}\)</span> and an assignment function <span class="math inline">\(s : V \to |\mathfrak{A}|\)</span> such that <span class="math inline">\(\frak{A}\)</span> satisfies every formula in hypotheses <span class="math inline">\(\Gamma\)</span> with <span class="math inline">\(s\)</span>, but <span class="math inline">\(\frak{A}\)</span> fails to satisfy <span class="math inline">\(\varphi\)</span> with <span class="math inline">\(s\)</span>, we will conclude that <span class="math inline">\(\Gamma \not\models \varphi\)</span>. Otherwise, we will have <span class="math inline">\(\Gamma \models \varphi\)</span>, where <span class="math inline">\(\varphi\)</span> is a logical truth.</li>
+<li><em>Proof-theoretic</em> (or “formalist”) approach. The validity of an argument is justified by a <em>deduction</em>. That is, from our set of hypotheses and axioms <span class="math inline">\(\Gamma \cup \Lambda\)</span> we obtain <span class="math inline">\(\varphi\)</span> by applying various rules of inference as a finite sequence, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>, where <span class="math inline">\(\varphi\)</span> is a logical truth.</li>
+</ol>
+<p>By the soundness and completeness theorems <span class="math inline">\(\Gamma \models \varphi \Leftrightarrow \Gamma \vdash \varphi\)</span>, the two approaches agree with each other extensionally.</p>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>Philosophical logic-related issues:</p>
+<ul>
+<li>Jc Beall and Greg Restall, “Logical Consequence,” Stanford Encyclopedia of Philosophy, <a href="http://plato.stanford.edu/entries/logical-consequence/" class="uri">http://plato.stanford.edu/entries/logical-consequence/</a>.</li>
+<li>Dorothy Edgington, “Indicative Conditionals,” Stanford Encyclopedia of Philosophy, <a href="http://plato.stanford.edu/entries/conditionals/" class="uri">http://plato.stanford.edu/entries/conditionals/</a>.</li>
+<li>Michael Nelson, “Existence,” Stanford Encyclopedia of Philosophy, <a href="http://plato.stanford.edu/entries/existence/" class="uri">http://plato.stanford.edu/entries/existence/</a>.</li>
+</ul>
+</blockquote>
+<p><strong>Motivations of alternative logics.</strong> In classical first-order logic, a deductive system preserves the semantic property of truth, as justified by the dual theorems of soundness/completeness. We will see that it does not always sufficiently capture the need for logical reasoning, thus numerous alternative (non-classical) logics has emerged for this reason.</p>
+<ul>
+<li><strong>Modality.</strong> Instead of saying that something is the case, a modal statement says about what <em>could be</em> or <em>must be</em> the case, e.g., “Venus must be the morning star”, “Venus could be both the morning star and the evening star”. <strong>Modal logic</strong> supplements classical logic with two modal operators representing the notions of <em>necessity</em> (□) and <em>possibility</em> (◇).</li>
+<li><strong>Temporality and tense.</strong> Instead of saying that something is the case, a temporal statement says something to be the case as qualified in terms of time, e.g., “Venus is always the morning star”, “The evening star will eventually be visible”. <strong>Temporal logic</strong> (or <strong>tense logic</strong>) supplements classical logic with a set of temporal modal operators.</li>
+<li><strong>Vagueness.</strong> While we could simply say that something is true or false, sometimes questions like “how true is that?” arise, e.g., “Venus is a distant planet”. The vagueness of predicates in natural languages leads to the approach of <strong>many-valued logic</strong>, where we are able to speak of truth-values like “fully true”, “fully false” or “neutral” (<strong>three-valued logic</strong>), or even any real truth-value in between the interval <span class="math inline">\([0,1]\)</span> (infinite valued <strong>fuzzy logic</strong>).</li>
+<li><strong>Heterogeneity.</strong> In the semantics of classical logic, the universe (domain) is assumed to be a homogeneous collection of objects. <strong>Many-sorted logic</strong> allows us to divide the universe into disjoint subsets (sorts) so as to treat objects of different sorts differently.</li>
+<li><strong>Quantification into predicates.</strong> In first-order logic, one can only quantify over a variable in the universe. Using the notation of set theory: <span class="math display">\[v \in |\mathfrak{A}|\]</span> where <span class="math inline">\(v\)</span> is an <em>urelement</em> (i.e., not a set itself).<br />
+In <strong>second-order logic</strong>, any predicate or function may be quantified over as a “second-order variable” (which essentially represents a set), in the power set of the universe: <span class="math display">\[P \subseteq |\mathfrak{A}|^n \in \mathcal{P}(|\mathfrak{A}|)\]</span> <span class="math display">\[f \subseteq |\mathfrak{A}|^{n+1} \in \mathcal{P}(|\mathfrak{A}|)\]</span> In an <strong><span class="math inline">\(n\)</span>-th-order logic</strong>, one can quantify over an <span class="math inline">\(n\)</span>-th-order variable <span class="math inline">\(\chi\)</span> in the <span class="math inline">\((n-1)\)</span>-th-order power set of the universe: (When <span class="math inline">\(n=1\)</span>, the domain is just the original universe.) <span class="math display">\[\chi \in \mathcal{P}^{n-1}(|\mathfrak{A}|)\]</span> Therefore, we can say that higher-order logics are just “set theory in disguise” (Quine), since the set theory in a first-order language is capable of representing notions like “set”, “set of sets”, etc.<br />
+It is worth mentioning here that since the power set operation is definable in second-order logic, second-order logic is expressive enough to simulate any finite-order logic. <span class="citation" data-cites="hintikka1955two">[1]</span></li>
+<li><strong>Empty terms or domains.</strong> In classical logic, a structure <span class="math inline">\(\mathfrak{A}\)</span> (with a non-empty domain <span class="math inline">\(|\mathfrak{A}|\)</span>) assigns each term an interpretation. <strong>Free logic</strong> allows for uninterpreted terms (that do not denote any object); furthermore, <strong>inclusive logic</strong> allows structures to have an empty domain <span class="math inline">\(|\mathfrak{A}| = \emptyset\)</span>.</li>
+</ul>
+<p>It is not uncommon to revise one or more axioms in classical first-order logic. The resulting non-classical logics can be useful in a constructive setting. In the following text, we will use syntactical forms like <span class="math inline">\(\alpha \to \beta\)</span> to denote both a tautological conditional sentence and a valid deduction rule (<span class="math inline">\(\{\alpha\} \vdash \beta\)</span>), as justified by the dual theorems of deduction/resolution.</p>
+<ul>
+<li><strong>Justification.</strong> In classical logic we accept the principle of bivalence (i.e., anything is either true or false), thus we have the following tautologies: <span class="math display">\[\psi \lor \lnot\psi \qquad\text{(Law of Excluded Middle)}\]</span> <span class="math display">\[\lnot\lnot\psi \to \psi \qquad\text{(Double Negation Elimination)}\]</span> <span class="math display">\[(\lnot \psi \to \bot) \to \psi \qquad\text{(Proof by Contradiction)}\]</span> which are denied by <strong>intuitionistic logic</strong>. From a model-theoretic view, there could be logical truths that are not flawed, but not necessarily well justified. In a word, intuitionistic logic attempts to capture the semantic property of <em>justification</em> instead of truth. Particularly, in classical logic, assume that we can prove <span class="math inline">\(\forall x (\lnot\varphi) \to \bot\)</span>, then <span class="math inline">\(\lnot\lnot \forall x (\lnot\varphi) \to \bot\)</span>, by PbC we get <span class="math inline">\(\lnot \forall x (\lnot\varphi)\)</span>, which is just <span class="math inline">\(\exists x \varphi\)</span> – but we have no evidence that such a “witness” <span class="math inline">\(t\)</span> (which truthifies <span class="math inline">\(\varphi^x_t\)</span>) really exists yet. This intuitionistic thinking is extremely helpful in the so-called <em>constructive mathematics</em>, where the proof of the existence of a mathematical object requires a justification by providing an example.</li>
+<li><strong>Inconsistency.</strong> In classical and intuitionistic logics we accept the principle of explosion (<em>ex falso quodlibet</em>), that is, a contradiction <span class="math inline">\(\psi \land \lnot\psi\)</span> (often abbreviated as <span class="math inline">\(\bot\)</span>) would make a theory inconsistent, thus any sentence <span class="math inline">\(\theta\)</span> is trivially true: <span class="math display">\[(\psi \land \lnot\psi) \to \theta \qquad\text{(Ex Falso Quodlibet)}\]</span> Sometimes, however, we are interested in formalizing inconsistent theories in a non-trivial way, in which case trivial truths by explosion must be excluded from our system. <strong>Paraconsistent logic</strong> is any such logic that rejects EFQ (or its equivalents). Specifically, <strong>minimal logic</strong> is the paraconsistent revision of intuitionistic logic.</li>
+</ul>
+<p>In proof theory, <em>substructural logics</em> are a family of non-classical logics where one (or more) <a href="https://en.wikipedia.org/wiki/Structural_rule">structural rule</a> (e.g., weakening, contraction, commutativity, associativity) is absent.</p>
+<ul>
+<li><strong>Relevance of implication.</strong> In classical logic we have the following tautologies (involving material/strict implication): <span class="math display">\[\psi \to (\theta \to \psi) \qquad\text{(1)}\]</span> <span class="math display">\[\lnot\psi \to (\psi \to \theta) \qquad\text{(2)}\]</span> <span class="math display">\[(\psi \to \theta) \lor (\theta \to \phi) \qquad\text{(3)}\]</span> <span class="math display">\[\psi \to (\theta \to \theta) \qquad\text{(4)}\]</span> <span class="math display">\[\psi \to (\theta \lor \lnot\theta) \qquad\text{(5)}\]</span> It is easy to see that they all turn out to be counterintuitive in some way. For example, by (1) we are allowed to argue things like “If Mars is a planet, then Venus is a star implies that Mars is a planet”, but this is clearly absurd not only because Venus isn’t astronomically a star, but also because the fact whether Venus is a star or not, has no direct relevance with Mars being a planet. But the whole sentence is valid in classical logic! <strong>Relevance logic</strong> denies these tautologies, since its implication <span class="math inline">\(\to\)</span> requires that the antecedent must be somehow relevant to the consequent. Relevance logic is both a substructural logic (as it lacks of the structural rule of weakening) and a paraconsistent logic (as it clearly denies EFQ from which any irrelevant truth is trivially deducible).</li>
+<li><strong>Resource consciousness.</strong> With an emphasis on resource boundedness, <strong>linear logic</strong> leaves out both structural rules of weakening and contraction, as a reflection of the limitation that resources cannot always be duplicated or thrown away arbitrarily.</li>
+<li>Other substructural logics include <strong>affine logic</strong>, which allows the structural rule of weakening but disallows contraction; <strong>ordered logic</strong> (non-commutative logic), which disallows the rule of exchange (commutativity) in addition to rejecting weakening and contraction.</li>
+</ul>
+<blockquote style="background:gainsboro; border-radius:1em; padding:.25em 1em; font-size:.8em">
+<p style="text-align:center !important;text-indent:0 !important"><strong><em>Reading list</em></strong></p>
+<p>On classical logic:</p>
+<ul>
+<li>Stewart Shapiro, “Classical Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-classical/" class="uri">https://plato.stanford.edu/entries/logic-classical/</a>.</li>
+</ul>
+<p>On modality and modal logic:</p>
+<ul>
+<li>Boris Kment, “Varieties of Modality,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/modality-varieties/" class="uri">https://plato.stanford.edu/entries/modality-varieties/</a>.</li>
+<li>James Garson, “Modal Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-modal/" class="uri">https://plato.stanford.edu/entries/logic-modal/</a>.</li>
+</ul>
+<p>On temporality, tense and temporal logic:</p>
+<ul>
+<li>Friedrich Hamm and Oliver Bott, “Tense and Aspect,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/tense-aspect/" class="uri">https://plato.stanford.edu/entries/tense-aspect/</a>.</li>
+<li>Valentin Goranko and Antony Galton, “Temporal Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-temporal/" class="uri">https://plato.stanford.edu/entries/logic-temporal/</a>.</li>
+</ul>
+<p>On vagueness, many-valued logic and fuzzy logic:</p>
+<ul>
+<li>Roy Sorensen, “Vagueness,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/vagueness/" class="uri">https://plato.stanford.edu/entries/vagueness/</a>.</li>
+<li>Siegfried Gottwald, “Many-Valued Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-manyvalued/" class="uri">https://plato.stanford.edu/entries/logic-manyvalued/</a>.</li>
+<li>Petr Cintula, Christian G. Fermüller and Carles Noguera, “Fuzzy Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-fuzzy/" class="uri">https://plato.stanford.edu/entries/logic-fuzzy/</a>.</li>
+</ul>
+<p>On quantification, second-order and higher-order logic, and their correspondence with set theory:</p>
+<ul>
+<li>Gabriel Uzquiano, “Quantifiers and Quantification,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/quantification/" class="uri">https://plato.stanford.edu/entries/quantification/</a>.</li>
+<li>Herbert B. Enderton, “Second-order and Higher-order Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-higher-order/" class="uri">https://plato.stanford.edu/entries/logic-higher-order/</a>.</li>
+<li>Jouko Väänänen, “Second-Order Logic and Set Theory.” <a href="http://www.math.helsinki.fi/logic/people/jouko.vaananen/Vaananen_Compass.pdf">[PDF]</a></li>
+</ul>
+<p>On free logic:</p>
+<ul>
+<li>John Nolt, “Free Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-free/" class="uri">https://plato.stanford.edu/entries/logic-free/</a>.</li>
+</ul>
+<p>On intuitionistic logic and constructive mathematics:</p>
+<ul>
+<li>Joan Moschovakis, “Intuitionistic Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-intuitionistic/" class="uri">https://plato.stanford.edu/entries/logic-intuitionistic/</a>.</li>
+<li>Douglas Bridges and Erik Palmgren, “Constructive Mathematics,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/mathematics-constructive/" class="uri">https://plato.stanford.edu/entries/mathematics-constructive/</a>.</li>
+<li>David Meredith, “Separating Minimal, Intuitionist, and Classical Logic.” <a href="https://projecteuclid.org/download/pdf_1/euclid.ndjfl/1093870451">[PDF]</a></li>
+<li>Michael Dummett, “The Philosophical Basis of Intuitionistic Logic.”</li>
+</ul>
+<p>On paraconsistent logic:</p>
+<ul>
+<li>Graham Priest, Koji Tanaka and Zach Weber, “Paraconsistent Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-paraconsistent/" class="uri">https://plato.stanford.edu/entries/logic-paraconsistent/</a>.</li>
+</ul>
+<p>On substructural logics, relevance logic and linear logic:</p>
+<ul>
+<li>Greg Restall, “Substructural Logics,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-substructural/" class="uri">https://plato.stanford.edu/entries/logic-substructural/</a>.</li>
+<li>Edwin Mares, “Relevance Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-relevance/" class="uri">https://plato.stanford.edu/entries/logic-relevance/</a>.</li>
+<li>Roberto Di Cosmo and Dale Miller, “Linear Logic,” Stanford Encyclopedia of Philosophy, <a href="https://plato.stanford.edu/entries/logic-linear/" class="uri">https://plato.stanford.edu/entries/logic-linear/</a>.</li>
+</ul>
+</blockquote>
+<section id="towards-higher-order-logic-hol-and-type-theory" class="level2">
+<h2>Towards higher-order logic (HOL) and type theory</h2>
+<p>As discussed by the subsection of “The limitation of first-order logic” in <a href="/mst/7/">Mst. #7</a>, a practical issue about first-order theory is that it provides no way to express the so-called “well-ordering property” (or its equivalents like the second-order induction axiom) of sets: Every non-empty set of numbers has a least element. <span class="math display">\[\forall P (\exists x Px \to \exists x (Px \land \forall y (Py \to (x = y \lor x &lt; y))))\]</span></p>
+<p>Recall that in first-order logic, we have notably the following model-theoretic results:</p>
+<ol type="1">
+<li>(Completeness) <span class="math inline">\(\Gamma \models \varphi \implies \Gamma \vdash \varphi\)</span>.</li>
+<li>(Compactness) If every finite subset <span class="math inline">\(\Gamma_0\)</span> of <span class="math inline">\(\Gamma\)</span> is satisfiable, then <span class="math inline">\(\Gamma\)</span> is satisfiable.</li>
+<li>(Enumerability) For a countable language, the set of valid formulas is computably enumerable.</li>
+<li>(Löwenheim-Skolem theorem) For a countable language, if a set of sentences has any model, then it has a countable model.</li>
+</ol>
+<p>however, they do not generally hold in the standard semantics of second-order (or any higher-order) logic. As a naïve counterexample <span class="citation" data-cites="sep-logic-higher-order">[2]</span> disproving the compactness, consider a second-order sentence that defines a strict ordering <span class="math inline">\(R\)</span>: <span class="math display">\[\exists R (\forall x \forall y \forall z (Rxy \land Ryz \to Rxz) \land \forall x (\lnot Rxx \land \exists y Rxy))\]</span> let <span class="math inline">\(\lambda_\infty\)</span> be the above sentence, which is true if and only if the universe is an infinite set. Let <span class="math inline">\(\lambda_i\)</span> be the first-order sentence saying that “there are at least <span class="math inline">\(i\)</span> urelements in the universe”. Then the infinite set <span class="math display">\[\Gamma = \{ \lnot \lambda_\infty, \lambda_1, \lambda_2, \lambda_3, \dots \}\]</span> has no model, since <span class="math inline">\(\lnot \lambda_\infty \land \lambda_\omega\)</span> would be a contradiction. However, every finite subset of <span class="math inline">\(\Gamma\)</span> is clearly satisfiable.</p>
+<p>Another intuitive way of thinking this is that since second-order logic is capable of <em>categorically</em> axiomatizing Peano arithmetic (i.e., there is at most one model of arithmetic up to isomorphism), but we would be able to build a non-standard model of arithmetic via ultraproducts given that the compactness theorem holds (as shown in <a href="/mst/7/">Mst. #7</a>), therefore the compactness theorem must be false then.</p>
+<p>In second-order logic, we have two separate “stages” of ranges that one may quantify over: variables and predicates/functions, denoted as set membership: <span class="math display">\[v_0 \in v_1 \in \mathcal{P}(|\mathfrak{A}|)\]</span></p>
+<p>Naturally, in an <span class="math inline">\(n\)</span>-th-order logic we have <span class="math display">\[v_0 \in v_1 \in \cdots \in v_{n-1} \in \mathcal{P}^{n-1}(|\mathfrak{A}|)\]</span></p>
+<p>Once the order of logic is raised to the limit ordinal <span class="math inline">\(\omega\)</span>, we reach the level of <em>type theory</em>. <span class="citation" data-cites="sep-logic-higher-order">[2]</span> Sloppily, in type theory, a type <span class="math inline">\(\text{T}_i\)</span> is just a set <span class="math inline">\(V_i\)</span>, a function <span class="math inline">\(\text{f} : \text{T}_x \to \text{T}_y\)</span> is just a relation set <span class="math inline">\(f\)</span> such that <span class="math inline">\(\forall x \forall y_1 \forall y_2 ((\langle x, y_1 \rangle \in f \land \langle x, y_2 \rangle \in f) \to y_1 = y_2)\)</span>, where <span class="math inline">\(x \in V_x\)</span> and <span class="math inline">\(y_1, y_2 \in V_y\)</span>. Hence to accommodate the function type <span class="math inline">\(\text{f}\)</span>, one needs a power set operation correspondingly in set theory. The <span class="math inline">\(\omega\)</span>-infinite hierarchy of sets of sets: <span class="math display">\[V_0 \in V_1 \in \cdots \in V_n \in \cdots\]</span> where <span class="math inline">\(V_0\)</span> is the empty set <span class="math inline">\(\varnothing\)</span> (a set that has no members), corresponds to the <span class="math inline">\(\omega\)</span>-infinite hierarchy of types of types: <span class="math display">\[\text{Type}_0 : \text{Type}_1 : \cdots : \text{Type}_n : \cdots\]</span> where <span class="math inline">\(\text{Type}_0\)</span> is the bottom type (a type that has no values).</p>
+<p>Both set theory and type theory can serve as logical foundations of mathematics <span class="citation" data-cites="sep-type-theory">[3]</span>, owing to their equivalent expressive power <span class="citation" data-cites="Werner97setsin">[4]</span>. Some differences are worth noting:</p>
+<ol>
+<li>Set theory is built on top of classical first-order logic (although there are recent proposals of intuitionistic set theories), with its semantics denoting a concrete model (e.g., ZFC); type theory is essentially an extension of higher-order logic, which is syntactically strong enough on its own.</li>
+<li>Set theory tends to use a Hilbert-like deductive system, with its specific non-logical axioms (e.g., ZF axioms, Axiom of Choice); type theory tends to use a natural or Gentzen-like deductive system, with its specific logical rules of inference.</li>
+<li>Set theory needs the Axiom of Regularity to establish its well-foundedness, and numbers must be encoded as well-founded sets; in type theory one may define inductive types directly, this makes handling models like Peano arithmetic more easily and naturally.</li>
+<li>So as for a set theory to be constructive, one must reject both LEM (or its equivalents) and AC; a type theory is constructive as long as its underlying logic is constructive (i.e., rejecting LEM).</li>
+<li>Type theory allows many sorts and has a straightforward correspondence with statically typed functional programming, i.e., “propositions as types” and “proofs as programs”. In set theory, functions must be uniquely encoded as power sets in a quite verbose way, which makes it unsuitable for computer-based proof mechanization.</li>
+<li>Both naïve set theory and type theory were under the paradoxical crisis of inconsistency, as revealed by Russell’s paradox and Girard’s paradox respectively. The resolution of these paradoxes has led to multiple axiomatic set theories (e.g., ZF, NBG, NFU) and modern type theories (e.g., Martin-Löf Type Theory, Calculus of Inductive Constructions).</li>
+<li>As an offshoot of set theory we can talk about large cardinals, whose existence is independent of (unprovable in) ZFC; there is no analog to these in proof-centric, constructive type theory yet.</li>
+<li>Set theory was not well tailored for modeling today’s category theory, since not all categories are truly sets; in type theory, it is natural to think of types as objects and function types as morphisms, and a mutual interpretation between the semantics of type theory and category theory would be intuitively possible. <span class="citation" data-cites="sep-type-theory">[3]</span></li>
+</ol>
+</section>
+<section id="references-and-further-reading" class="level2">
+<h2>References and further reading</h2>
+<p><strong>Books:</strong></p>
+<p>Aristotle, <em>Metaphysics</em>. (English translation by W. D. Ross, 1925)<br />
+Available: <a href="https://ebooks.adelaide.edu.au/a/aristotle/metaphysics/" class="uri">https://ebooks.adelaide.edu.au/a/aristotle/metaphysics/</a></p>
+<p>W. V. O. Quine, <em>Philosophy of Logic</em>, 2nd ed.</p>
+<p>Michael Dummett, <em>Truth and Other Enigmas</em>.</p>
+<p>Stewart Shapiro, <em>Foundations Without Foundationalism: A Case for Second-Order Logic</em>.</p>
+<p><strong>Articles:</strong></p>
+<div id="refs" class="references">
+<div id="ref-hintikka1955two">
+<p>[1] J. Hintikka, “Two papers on symbolic logic form and content in quantification theory and reductions in the theory of types,” 1955. </p>
+</div>
+<div id="ref-sep-logic-higher-order">
+<p>[2] H. B. Enderton, “Second-order and higher-order logic,” in <em>The stanford encyclopedia of philosophy</em>, Fall 2015., E. N. Zalta, Ed. <a href="https://plato.stanford.edu/archives/fall2015/entries/logic-higher-order/" class="uri">https://plato.stanford.edu/archives/fall2015/entries/logic-higher-order/</a>; Metaphysics Research Lab, Stanford University, 2015. </p>
+</div>
+<div id="ref-sep-type-theory">
+<p>[3] T. Coquand, “Type theory,” in <em>The stanford encyclopedia of philosophy</em>, Summer 2015., E. N. Zalta, Ed. <a href="https://plato.stanford.edu/archives/sum2015/entries/type-theory/" class="uri">https://plato.stanford.edu/archives/sum2015/entries/type-theory/</a>; Metaphysics Research Lab, Stanford University, 2015. </p>
+</div>
+<div id="ref-Werner97setsin">
+<p>[4] B. Werner, “Sets in types, types in sets,” in <em>Proceedings of tacs’97</em>, 1997, pp. 530–546. </p>
+</div>
+</div>
+</section>
+      </div>
+      <!-- (www.soimort.org) last updated: 2016-05-07 -->
+      <aside id="soimort-toolbar">
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </aside>
+    </article>
+  </body>
+</html>
