@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- Akai (pandoc HTML5 template)
+     designer:     soimort
+     last updated: 2016-05-06
+     last adapted: 2016-11-01 -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="author" content="Mort Yao">
+    <meta name="dcterms.date" content="2017-11-03">
+    <title>Go Away, tracker-store</title>
+    <link rel="canonical" href="https://www.soimort.org/notes/171103">
+    <style type="text/css">code { white-space: pre; }</style>
+    <link rel="stylesheet" href="//cdn.soimort.org/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdn.soimort.org/fonts/latest/URW-Palladio-L.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/__/css/style.css">
+    <link rel="stylesheet" href="/__/css/pygments.css">
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.soimort.org/jk/20160504/jk.min.js"></script>
+    <script src="/__/js/main.js"></script>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.atom">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1 class="title"><a href="https://www.soimort.org/notes/171103">Go Away, tracker-store</a></h1>
+        <address class="author">Mort Yao</address>
+        <h3 class="date">2017-11-03</h3>
+      </header>
+      <div id="content">
+<p>Long story short, after an Arch update the annoying process called <code>tracker-store</code> started to hog my CPU and disk space (again). For some really peculiar reason, GNOME developers decided that everyone should want to use their <del>awesome</del> <a href="https://wiki.gnome.org/Projects/Tracker">Tracker</a> smarty-ware to index everything in pants, and you should not need to turn it off so easily…</p>
+<p>Well, I had had enough of this due to concerns of performance and privacy, and surely uninstalled the <code>tracker</code> package a long time ago, but now it seems GNOME’s canonical file manager <code>nautilus</code> starts to depend on <code>tracker</code> (one of its old dependencies, <code>libtracker-sparql</code>, has now been fused with the <code>tracker</code> package since version 2.0 in Arch’s downstream repository). That explains why it’s back, uninvitedly.</p>
+<p>A few quirks noted (in Tracker 2.0.x):</p>
+<ol type="1">
+<li>The GUI configuration program <code>tracker-preferences</code> has been summarily removed (<a href="https://github.com/GNOME/tracker/commit/d4a8d6e45e991758440276b4ca3ad6e821dfdab2">d4a8d6e</a>), while <code>tracker</code> provides <em>no</em> command-line alternative for intuitive gsettings configuration yet. (Then why would they remove this very helpful GUI?)</li>
+<li>The old trick that appends <code>Hidden=true</code> to an overriding autostart file such as <code>~/.config/autostart/tracker-store.desktop</code> (in [1] [2]) no longer works in 2.0, because….</li>
+<li><code>tracker</code> ships with a systemd user service now (<code>/usr/lib/systemd/user/tracker-store.service</code>), since they obviously think a desktop-level autostart is not enough. While Arch Linux ships wisely with a <code>/usr/lib/systemd/system-preset/99-default.preset</code> containing “<code>disable *</code>” which disables all new units by default [3], there is no equivalent <code>user-preset</code> file doing the same, which means that <code>tracker-store.service</code>, as a user service, is enabled by default and still gets to run on every boot.</li>
+</ol>
+<p>Now that uninstalling <code>tracker</code> is not an option, one has to take both measures to block <code>tracker-store</code> from running:</p>
+<ol type="1">
+<li>Copy the autostart file and override it with a user-specific one: <code>$ cp /etc/xdg/autostart/tracker-store.desktop ~/.config/autostart/tracker-store.desktop</code><br />
+and append to it:<br />
+<code>Hidden=true</code><br />
+(The same step also applies for <code>tracker</code>’s friends, such as <code>tracker-miner-fs</code>, etc.)</li>
+<li>Mask (which is the strongest yet nondestructive way to “disable” a static systemd service completely [4]) all <code>tracker</code>-related services:</li>
+</ol>
+<pre><code>        $ systemctl --user mask tracker-store</code></pre>
+<p>Look ma, no more hogs. Back to work!</p>
+<section id="references" class="level2">
+<h2>References</h2>
+<p>[1] Ask Ubuntu, “tracker-store and tracker-miner-fs eating up my CPU on every startup”. <a href="https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup" class="uri">https://askubuntu.com/questions/346211/tracker-store-and-tracker-miner-fs-eating-up-my-cpu-on-every-startup</a></p>
+<p>[2] “Disabling GNOME Tracker and Other Info”. <a href="https://gist.github.com/vancluever/d34b41eb77e6d077887c" class="uri">https://gist.github.com/vancluever/d34b41eb77e6d077887c</a></p>
+<p>[3] ArchWiki, “systemd”. <a href="https://wiki.archlinux.org/index.php/Systemd" class="uri">https://wiki.archlinux.org/index.php/Systemd</a></p>
+<p>[4] FreeDesktop.org, “systemctl(1)”. <a href="https://www.freedesktop.org/software/systemd/man/systemctl.html" class="uri">https://www.freedesktop.org/software/systemd/man/systemctl.html</a></p>
+</section>
+      </div>
+      <!-- (www.soimort.org) last updated: 2016-05-07 -->
+      <aside id="soimort-toolbar">
+        <a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+      </aside>
+    </article>
+  </body>
+</html>

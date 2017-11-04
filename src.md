@@ -58,6 +58,8 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 ## Hacking **/ Notes**
 
+* [Go Away, tracker-store](/notes/171103/)
+*3 Nov 2017*
 * [When GNOME Shell Freezes (But You Have Unsaved Stuff There)](/notes/170902/)
 *2 Sep 2017*
 * [Recovering from a Corrupted Arch Linux Upgrade](/notes/170407/)
