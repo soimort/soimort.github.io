@@ -49,6 +49,9 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 ## Reading & Thinking **/ Notes**
 
+* [Underrated Gems (1) -- Tarski's Undefinability Theorem
+](/notes/171109/)
+*9 Nov 2017*
 * [An Intuitive Exposition of "Proof by Contradiction vs. Proof of Negation"
 ](/notes/170306/)
 *6 Mar 2017*
