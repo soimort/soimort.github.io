@@ -3,7 +3,7 @@ title: Underrated Gems (1)
 subtitle: "Tarski's undefinability theorem"
 author: Mort Yao
 date: 2017-11-09
-date-updated: 2017-11-11
+date-updated: 2017-11-17
 category: logic
 ---
 
@@ -15,7 +15,7 @@ In a listless afternoon I questioned myself: What are some of the most neglected
 
 ---
 
-It should be put in the first paragraph of the preface to *[The Book](https://en.wikipedia.org/wiki/Paul_Erdős#Personality) on logic*, if there could be one, that *truth in any language cannot be defined in the same language*. We have the classical *liar's sentence* which says that "This sentence is false". If this kind of inconsistency does not seem too disastrous to bug you yet, as you may guarantee not to involve yourself into any circular reasoning, then think about the following *truth-teller's sentence*:
+It should be put in the first paragraph of the preface to *[The Book](https://en.wikipedia.org/wiki/Paul_Erdős#Personality) on logic*, if there could be one, that *truth in any language cannot be defined in the language itself*. We have the classical *liar's sentence* which says that "This sentence is false". If this kind of inconsistency does not seem too disastrous to bug you yet, as you may guarantee not to involve yourself into any circular reasoning, then think about the following *truth-teller's sentence*:
 
 :=
 If this sentence is true, then God exists.
