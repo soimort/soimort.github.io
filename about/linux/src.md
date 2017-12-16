@@ -7,7 +7,7 @@ date: 2017-12-16
 
 I use Arch Linux exclusively as my working OS since 2012. There were glitches and nonsleepiness, but also kludges and full control -- if I don't like how something works, I fork it myself. No proprietary code runs on my machines.
 
-I have a personal Arch Linux [repository](ftp://arch.mort.ninja/x86_64/) that hosts some pre-built unofficial Arch packages, mostly at my own convenience:
+I have a personal Arch Linux [repository](http://arch.mort.ninja/x86_64/) that hosts some pre-built unofficial Arch packages, mostly at my own convenience:
 
 1. *Programming language*-related:
    * `z3-git`
