@@ -15,7 +15,7 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 <div style="text-align:right"><small>
 
-[<i class="fa fa-edit" aria-hidden="true"></i>Wiki](https://wiki.soimort.org/)
+[<i class="fa fa-edit" aria-hidden="true"></i> My Wiki](https://wiki.soimort.org/)
 
 </small></div>
 
@@ -60,6 +60,12 @@ include-before: <link rel="stylesheet" href="/index.css">
 *15 Nov 2016*
 
 ## Hacking **/ Notes**
+
+<div style="text-align:right"><small>
+
+[<i class="fa fa-edit" aria-hidden="true"></i> My Arch Linux Repository](/about/linux/)
+
+</small></div>
 
 * [Go Away, tracker-store](/notes/171103/)
 *3 Nov 2017*
