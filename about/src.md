@@ -1,5 +1,5 @@
 ---
-title: Follow the white rabbit.
+title: Follow the White Rabbit.
 subtitle:
 author: Mort Yao
 date: 2016-08-11

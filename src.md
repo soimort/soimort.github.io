@@ -63,7 +63,9 @@ include-before: <link rel="stylesheet" href="/index.css">
 
 <div style="text-align:right"><small>
 
-[<i class="fa fa-edit" aria-hidden="true"></i> My Arch Linux Repository](/about/linux/)
+[<i class="fa fa-cogs" aria-hidden="true"></i> My Arch Linux repository](/about/linux/)
+|
+[<i class="fa fa-wrench" aria-hidden="true"></i> Selected software](/about/foss/)
 
 </small></div>
 
