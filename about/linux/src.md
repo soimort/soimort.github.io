@@ -2,7 +2,7 @@
 title: My Arch Linux Repository
 subtitle:
 author: Mort Yao
-date: 2017-12-16
+date: 2018-04-19
 ---
 
 I use Arch Linux exclusively as my working OS since 2012. There were glitches and nonsleepiness, but also kludges and full control -- if I don't like how something works, I fork it myself. No proprietary code runs on my machines.
@@ -15,7 +15,6 @@ I have a personal Arch Linux [repository](http://arch.mort.ninja/x86_64/) that h
    * `mathcomp-git`
    * ... and more.
 2. *Desktop*:
-   * `meine-mutter` (my personal fork of Mutter 3.26, GNOME's window manager)
    * `mi-caja` (my personal fork of Caja 1.16, MATE's file manager)
    * `scite-gtk2` (SciTE built with GTK+ 2)
 
