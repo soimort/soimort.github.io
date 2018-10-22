@@ -1,17 +1,28 @@
 ---
-title: ...Up to Mortality
+title: To Type a Mockingbird
 subtitle:
 author:
 
 include-before: <link rel="stylesheet" href="/index.css">
 ---
 
-![Man can believe what he argues, but he cannot argue what he argues.
-](https://i0.wp.com/dl.dropboxusercontent.com/s/ih8m0t6mdvfhs0x/header-170909.jpg){ width=32% }
+![**
+](https://i0.wp.com/dl.dropboxusercontent.com/s/qawcyrowaeniur6/evolution.png){ width=50% }
 
 
 
-## My Study Track **/ Summaries & Expositions**
+<div style="font-size:.9em;opacity:.75">
+
+> *"Coleridge observes that all men are born Aristotelians or Platonists. The latter feel that classes, orders, and genres are realities; the former, that they are generalizations.*
+> *For the latter, language is nothing but an approximative set of symbols; for the former, it is the map of the universe."*
+
+:< -- Jorge Luis Borges
+
+</div>
+
+
+
+## Study Traces **/ Notes**
 
 <div style="text-align:right"><small>
 
@@ -20,44 +31,37 @@ include-before: <link rel="stylesheet" href="/index.css">
 </small></div>
 
 * [The Semantic Truth](/mst/9/)
-**#philosophy** **#logic**
-*7 Oct 2017*
+*#philosophy #logic*
 * [The Referential Use](/mst/8/)
-**#philosophy** **#logic**
-*26 Sep 2017*
+*#philosophy #logic*
 * [The Logical Implication](/mst/7/)
-**#logic**
-*6 Sep 2017*
+*#logic*
 * [The Stateful Automata](/mst/6/)
-**#formal languages** **#automata** **#computability**
-*12 Apr 2017*
+*#formal languages #automata #computability*
 * [The Fundamental Justification](/mst/5/)
-**#philosophy**
-*6 Feb 2017*
+*#philosophy*
 * [The Measurable Entropy](/mst/4/)
-**#information theory** **#statistics**
-*11 Jan 2017*
+*#information theory #statistics*
 * [The Adversarial Computation](/mst/3/)
-**#cryptography**
-*1 Jan 2017*
+*#cryptography*
 * [The Probable Outcome](/mst/2/)
-**#probability theory**
-*23 Dec 2016*
+*#probability theory*
 * [The Decisional Hardness](/mst/1/)
-**#algorithms** **#complexity**
-*1 Nov 2016*
+*#algorithms #complexity*
 
-## Reading & Thinking **/ Notes**
+## Mind Dumps **/ Notes**
 
 * [Underrated Gems (1) -- Tarski's Undefinability Theorem
 ](/notes/171109/)
-*9 Nov 2017*
+*#logic*
 * [An Intuitive Exposition of "Proof by Contradiction vs. Proof of Negation"
 ](/notes/170306/)
-*6 Mar 2017*
+*#logic*
 * [Bloom Filters in Adversarial Environments (Reading Report)
 ](/reports/bloom-filters-in-adversarial-environments/)
-*15 Nov 2016*
+*#cryptography*
+
+<!--
 
 ## Hacking **/ Notes**
 
@@ -99,12 +103,16 @@ include-before: <link rel="stylesheet" href="/index.css">
 * [The Anatomy of Impermanence -- On Buddhist Photography by Manabu Yamanaka
 ](https://blog.soimort.org/art/manabu-yamanaka/)
 
+-->
+
 
 
 :|
 
 <div style="text-align:right">
 <small>
+
+<!--
 
 [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 Poetry](http://poetry.soimort.org/)
@@ -114,6 +122,8 @@ Poetry](http://poetry.soimort.org/)
 Photolog](http://log.soimort.org/)
 | [<i class="fa fa-tumblr-square" aria-hidden="true"></i>
 AKB48 fanblog](http://microblog.soimort.org/)
+
+-->
 
 ***
 
