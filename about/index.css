@@ -10,7 +10,7 @@
 }
 
 #content > figure:first-of-type > img:hover {
-  background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/cjc1aw9sa4pc1ex/soimort_mono_heart_96.jpg');
+  /* background-image: url('https://i0.wp.com/dl.dropboxusercontent.com/s/cjc1aw9sa4pc1ex/soimort_mono_heart_96.jpg'); */
 }
 
 p:first-of-type::first-letter { /* drop cap */

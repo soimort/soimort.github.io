@@ -1,13 +1,20 @@
 ---
-title: Follow the White Rabbit.
+title: About Me
 subtitle:
 author: Mort Yao
-date: 2016-08-11
+date: 2018-10-22
 
 include-before: <link rel="stylesheet" href="index.css">
 ---
 
-<figure><img/></figure>
+<!-- figure><img/></figure -->
+
+![THIS PAGE INTENTIONALLY LEFT BLANK.
+](https://i0.wp.com/dl.dropboxusercontent.com/s/1tzl7x5iduxgr9m/perky-lambda_96.png)
+
+
+
+<!--
 
 Mort is a slow learner, a wannabe perfectionist, a born skeptic, a not-so-geeky geek, and yet an overwhelmed Computer Science student.
 
@@ -20,3 +27,5 @@ Unsurprisingly, Mort is aware of a lot about what he doesn't know or hasn't expe
 Mort is a man; all men are mortal. Hence the name. (self-referentially!)
 
 ![](//cdn.soimort.org/resources/signature.png)
+
+-->
