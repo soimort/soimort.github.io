@@ -74,3 +74,17 @@ aside#soimort-links #soimort {
 aside#soimort-toolbar {
   visibility: hidden;
 }
+
+@media (prefers-color-scheme: dark) {
+    body,
+    blockquote {
+        background: #000 !important;
+        color: #ddd !important;
+    }
+    blockquote {
+        border: 1px solid #222;
+    }
+    figure {
+        filter: invert(1);
+    }
+}
